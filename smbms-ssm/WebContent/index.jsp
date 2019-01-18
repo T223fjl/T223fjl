@@ -22,6 +22,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     This is my JSP page. <br>
-    <script type='text/javascript'>alert('添加用户成功！');location='Query';</script>
+    <script type='text/javascript'>alert('添加用户成功     00000！');location='Query';</script>
   </body>
 </html>
