@@ -5,3 +5,7 @@
 /log4j.properties
 /mybatis-config.xml
 /pojo/
+/service/
+/servlet/
+/springmvc-servlet.xml
+/util/
