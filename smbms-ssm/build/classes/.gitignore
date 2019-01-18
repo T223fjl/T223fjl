@@ -1,0 +1,7 @@
+/applicationContext-MyBatis.xml
+/controller/
+/dao/
+/interceptor/
+/log4j.properties
+/mybatis-config.xml
+/pojo/

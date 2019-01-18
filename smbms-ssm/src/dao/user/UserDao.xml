@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.user.UserDao">
+	
+	<update id="pwdmodify" parameterType="User">
+	UPDATE smbms_user SET userPassword=#{userPassword} where id=#{id}
+	</update>
+	
+	
+	<select id="login" resultType="User" parameterType="User">
+	select *,r.roleName FROM smbms_user u INNER JOIN smbms_role r on(u.userRole=r.id)
+	 where userCode=#{userCode} and userPassword=#{userPassword}
+	</select>
+	
+	
+	<update id="modify" parameterType="User">
+	UPDATE smbms_user SET userName=#{userName},gender=#{gender},birthday=#{birthday},phone=#{phone},
+	address=#{address},userRole=#{userRole},modifyBy=#{modifyBy},modifyDate=now() where id=#{id}
+	</update>
+	
+	<delete id="deletes" >
+	DELETE FROM smbms_user where id in
+	<foreach collection="array" open="(" close=")" separator="," item="ids">
+		#{ids}
+	</foreach>
+	</delete>
+	
+	<delete id="delete" parameterType="int">
+	DELETE FROM smbms_user where id=#{id}
+	</delete>
+	<select id="queryById" resultType="User" parameterType="int">
+	select *,r.roleName FROM smbms_user u INNER JOIN smbms_role r on(u.userRole=r.id) where u.id=#{id}
+	</select>
+	
+	<insert id="add" parameterType="User">
+	INSERT INTO `smbms_user` VALUES (null, #{userCode}, #{userName}, #{userPassword}, #{gender}, 
+	#{birthday}, #{phone}, 
+	#{address},#{userRole}, 1, now(), null, null);
+	</insert>
+	
+	<select id="query" resultType="User">
+	select u.id,u.userCode,u.userName,u.gender,u.birthday,u.phone,u.address,r.roleName,u.createdBy,u.creationDate,u.modifyDate,u.modifyBy,u.modifyDate 
+ 	from smbms_user as u INNER JOIN smbms_role as r where r.id=u.userRole 
+ 	 ORDER BY u.id desc LIMIT #{form},#{pageSize}
+	</select>
+	<select id="queryRole" resultType="Role">
+	SELECT * from smbms_role
+	</select>
+	
+	<select id="getCount" resultType="int" >
+	SELECT count(*) from smbms_user
+	</select>
+	
+	<select id="queryByNameRole" resultType="User">
+	select u.id,u.userCode,u.userName,u.gender,u.birthday,u.phone,u.address,r.roleName,u.createdBy,u.creationDate,u.modifyDate,u.modifyBy,u.modifyDate 
+ 	from smbms_user as u INNER JOIN smbms_role as r where r.id=u.userRole  
+ 	<if test="userName!=null and userName!='' ">
+ 		and u.userName like concat('%',#{userName},'%') 
+ 	</if>
+ 	<if test="userRole!=0 and userRole!=null">
+ 		and u.userRole=#{userRole} 
+ 	</if>
+ 	 ORDER BY u.id desc  LIMIT #{form},#{pageSize}
+	</select>
+	
+	<select id="queryByNameRoleCount" resultType="int">
+	select count(*)
+ 	from smbms_user as u INNER JOIN smbms_role as r where r.id=u.userRole  
+ 	<if test="userName!=null and userName!='' ">
+ 		and u.userName like concat('%',#{userName},'%') 
+ 	</if>
+ 	<if test="userRole!=0 and userRole!=null">
+ 		and u.userRole=#{userRole} 
+ 	</if>
+ 	 ORDER BY u.id desc 
+	</select>
+</mapper>
