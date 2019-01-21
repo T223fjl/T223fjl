@@ -10,7 +10,6 @@
 		function add(){
 		var rows = $("#T130add");
  		var newRow = rows.children('input').eq(0).clone();
- 		
  		newRow.appendTo(rows);
  		rows.append('<br/>');
 	}
