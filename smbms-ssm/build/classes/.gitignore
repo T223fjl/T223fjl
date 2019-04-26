@@ -1,3 +1,7 @@
 /service/
 /servlet/
 /util/
+/controller/
+/dao/
+/interceptor/
+/pojo/

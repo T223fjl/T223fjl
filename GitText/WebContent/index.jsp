@@ -13,6 +13,8 @@
 	<div id="allmap"></div>
 </body>
 </html>
+
+
 <script type="text/javascript">
 	// 百度地图API功能
 	var map = new BMap.Map("allmap");    // 创建Map实例
