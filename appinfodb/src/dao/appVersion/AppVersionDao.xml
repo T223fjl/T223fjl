@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.appVersion.AppVersionDao">
+	
+	<select id="queryNew" resultType="AppVersion">
+	SELECT * from app_version ORDER BY id desc limit 1
+	</select>
+	
+	<update id="delfile">
+		UPDATE `appinfodb`.`app_version` SET  `downloadLink`=null,
+		`apkLocPath`=null, `apkFileName`=null  WHERE (`id`=#{id});
+	</update>
+
+	<update id="updAppVersion">
+	UPDATE `appinfodb`.`app_version` SET   `versionInfo`=#{versionInfo}, 
+	`downloadLink`=#{downloadLink}, `versionSize`=#{versionSize}, `modifyBy`=1, `modifyDate`=now(), 
+	`apkLocPath`=#{apkLocPath}, `apkFileName`=#{apkFileName}  WHERE (`id`=#{id});
+	</update>
+	
+	<delete id="delAppVersion" parameterType="Integer">
+	DELETE FROM app_version where appid=${appid}
+	</delete>
+
+	<insert id="addAppVersion" parameterType="AppVersion">
+	INSERT INTO `appinfodb`.`app_version` (`id` ,`appId`, `versionNo`, `versionInfo`, `publishStatus`, `downloadLink`, `versionSize`, `createdBy`, `creationDate`, `modifyBy`, `modifyDate`, `apkLocPath`, `apkFileName`) 
+	VALUES ( null,#{appId}, #{versionNo}, #{versionInfo}, '3', #{downloadLink}, #{versionSize}, '1', now(), NULL, NULL, #{apkLocPath}, #{apkFileName});
+	
+	</insert>
+	
+	
+	
+	<select id="queryByAppId" resultType="AppVersion">
+		SELECT * from app_version where appid=#{appid}
+	</select>
+	
+	<select id="queryById" resultType="AppVersion">
+		SELECT * from app_version where id=#{id}
+	</select>
+	
+	<select id="query" resultType="AppVersion">
+		SELECT * from app_version
+	</select>
+
+</mapper>

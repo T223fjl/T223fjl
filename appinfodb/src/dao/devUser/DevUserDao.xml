@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.devUser.DevUserDao">
+
+	
+	<select id="Login_devUser" resultType="DevUser" parameterType="DevUser">
+		select * from  dev_user b   where b.devCode=#{devCode}
+ 		and b.devPassword=#{devPassword} 
+	</select>
+
+	<select id="check_devUserByCode" resultType="int" >
+	select count(1) from  dev_user where devCode=#{devCode}
+	</select>
+</mapper>

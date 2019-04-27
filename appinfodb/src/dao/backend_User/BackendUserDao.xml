@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.backend_User.BackendUserDao">
+
+	
+	<select id="Login_backend_User" resultType="BackendUser" parameterType="BackendUser">
+	select *,d.valueName from  backend_user b  JOIN 
+data_dictionary d on(b.userType=d.valueId)  where b.userCode=#{userCode}
+ and b.userPassword=#{userPassword} and d.typeName='用户类型'
+	</select>
+
+<select id="check_backUserByCode" resultType="int" >
+	select count(1) from  backend_user where userCode=#{userCode}
+	</select>
+</mapper>
