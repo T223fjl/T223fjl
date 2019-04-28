@@ -368,6 +368,10 @@ public class DevCategoryController {
 		}
 		return null;
 	}
+	
+	
+	
+	
 	@RequestMapping("/flatform/app/categorylevellist.json")
 	public @ResponseBody List<AppCategory> QueryInfo(String pid,Model model){
 		List<AppCategory> list=null;
@@ -498,6 +502,11 @@ public class DevCategoryController {
 	public String main(Model model) {
 		return "developer/main";
 	}
-
-	
+	//Í³¼ÆÍ¼±í
+	@RequestMapping("/flatform/app/highchat.json")
+	public @ResponseBody List<AppInfo> highchat(Model model){
+		List<AppInfo> appInfoList=appinfoService.query(1,null, 1, 2, 0, 0, (1-1)*5, 5);
+			return appInfoList;
+		
+	}
 }

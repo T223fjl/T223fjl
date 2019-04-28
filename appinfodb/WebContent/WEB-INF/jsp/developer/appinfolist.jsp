@@ -1,6 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="common/header.jsp"%>
+
+<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+	<select id="select_chart">
+		<option value="spline">曲线图</option>
+		<option value="column">柱状图</option>
+		<option value="pie">饼图</option>
+	</select>
+		<script src="/statics/js/t223.js"></script>
+	<a id="aa" onclick="aaa()">曲线图</a>
+	<div id="t223" style="width: 600px; height: 400px;"></div>
+	
+
+	
 <div class="clearfix"></div>
 <div class="row">
 	<div class="col-md-12">
