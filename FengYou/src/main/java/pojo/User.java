@@ -3,21 +3,21 @@ package pojo;
 import java.util.Date;
 
 public class User {
-	private int id;
+	private Integer id;
 	private String name;
-	private String phone;
+	private int phone;
 	private String pwd;
-	private String idcard;
-	private int sex;
-	private String email;
-	private String address;
-	private int status;
-	private int delete;
-	private Date birthday;
-	public int getId() {
+	private  int idcard;
+	private  int sex;
+	private  String email;
+	private  String address;
+	private  int status;
+	private  int delete;
+	private  Date birthday;
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -26,10 +26,10 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getPhone() {
+	public int getPhone() {
 		return phone;
 	}
-	public void setPhone(String phone) {
+	public void setPhone(int phone) {
 		this.phone = phone;
 	}
 	public String getPwd() {
@@ -38,10 +38,10 @@ public class User {
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
 	}
-	public String getIdcard() {
+	public int getIdcard() {
 		return idcard;
 	}
-	public void setIdcard(String idcard) {
+	public void setIdcard(int idcard) {
 		this.idcard = idcard;
 	}
 	public int getSex() {
@@ -80,6 +80,8 @@ public class User {
 	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
 	}
+	
+
 	
 	
 }

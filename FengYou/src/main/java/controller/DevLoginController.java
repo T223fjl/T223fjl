@@ -40,6 +40,11 @@ public class DevLoginController {
 
 	}
 	
+	// 跳转前台一级页面
+			@RequestMapping("/NewFile")
+			public String NewFile(Model model) {
+				return "developer/NewFile";
+			}
 	
 	// 跳转前台一级页面
 		@RequestMapping("/toIndex")
