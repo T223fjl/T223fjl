@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -45,22 +46,22 @@
 					<div class="nav_t">全部商品分类</div>
 					<div class="leftNav">
 						<ul>
-							<c:forEach items="${productCategoryVoList}" var="temp">
+							<c:forEach items="${levels}" var="temp">
 								<li>
 									<div class="fj">
 										<span class="n_img"><span></span> <img
-											src="${pageContext.request.contextPath }/statics/images/${temp.iconClass}" /></span>
+											src="${pageContext.request.contextPath }/statics/images/${temp.name}" /></span>
 										<span class="fl">${temp.name}</span>
 									</div>
 									<div class="zj">
 										<div class="zj_l">
-											<c:forEach items="${temp.productCategory}" var="vo">
+											<c:forEach items="${temp.sonLevels}" var="vo">
 												<div class="zj_l_c">
 													<h2>
 														<a
 															href="${ctx}/ProductServlet?action=queryProductList&level=2&category=${vo.id}">${vo.name}</a>
 													</h2>
-													<c:forEach items="${vo.productCategory}" var="vo2">
+													<c:forEach items="${vo.sonLevels}" var="vo2">
 														<a
 															href="${ctx}/ProductServlet?action=queryProductList&level=3&category=${vo2.id}">${vo2.name}</a> |
                                             </c:forEach>

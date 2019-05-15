@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +10,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import pojo.Level;
 import pojo.User;
+import service.LevelService;
 import service.UserService;
 
 @Controller
@@ -16,6 +20,9 @@ public class DevLoginController {
 
 	@Autowired
 	private UserService userService;
+	@Autowired
+	private LevelService levelService;
+
 
 	@RequestMapping("/dologin")
 	public String login(@RequestParam(required = false) String name,
@@ -41,10 +48,12 @@ public class DevLoginController {
 	}
 	
 	// 跳转前台一级页面
-			@RequestMapping("/NewFile")
-			public String NewFile(Model model) {
-				return "developer/NewFile";
-			}
+		@RequestMapping("/NewFile")
+		public String NewFile(HttpSession session) {
+			List<Level> levels=levelService.queryLevel();
+			session.setAttribute("levels", levels);
+			return "developer/NewFile";
+		}
 	
 	// 跳转前台一级页面
 		@RequestMapping("/toIndex")
