@@ -6,7 +6,7 @@ import java.util.Date;
  * 
  * @author Administrator 房型表：
  */
-public class house {
+public class House {
 	private int houseId; // 房型ID
 	private int hotelId;// 酒店id外键
 	private String houseType;// 房间床型

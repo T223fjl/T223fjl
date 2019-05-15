@@ -4,7 +4,7 @@ package pojo;
  * @author Administrator
  *
  */
-public class dictionarydate {
+public class Dictionarydate {
 	private int id;               //字典id
 	private String typeCode;      //配置项英文意思
 	private int dictCode;         //业务代码编号

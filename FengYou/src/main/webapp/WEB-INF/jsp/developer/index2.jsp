@@ -134,14 +134,12 @@ class="btn_filter_sure">确定</span>
 </div>
 <ul class="filter_cb_list filter_cb_list1">
 	<c:forEach var="price" items="${ prices}" step="1" varStatus="statu">
-	<li method="price" data-id="${statu.count }" data-low="${fn:substring(price, 0,1)}" data-high="${fn:substring(price,2)}"
+	<li method="price" data-id="${statu.count }" data-low="${fn:split(price, '-')[0]}" data-high="${fn:split(price, '-')[1]}"
 	data-name="${price}元">
 	<i class="icon_radio1"></i><span>${price}元</span><input
 	type="radio"/>
 	</li>
-	
 	</c:forEach>
-
 </ul>
 </div>
 </div>
@@ -156,445 +154,26 @@ class="b-line"></i></div>
 <div method="star" data-id="-1"
 class="filter_unlimited filter_unlimited_on">不限</div>
 <ul class="filter_cb_list">
-<li method="star" data-id="2" data-name="经济/客栈"
-data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>经济/客栈</span><input type="checkbox"/>
-</li>
-<li method="star" data-id="3" data-name="三星/舒适"
-data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>三星/舒适</span><input type="checkbox"/>
-</li>
-<li method="star" data-id="4" data-name="四星/高档"
-data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>四星/高档</span><input type="checkbox"/>
-</li>
-<li method="star" data-id="5" data-name="五星/豪华"
-data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>五星/豪华</span><input type="checkbox"/>
-</li>
+		<c:forEach var="star" items="${ stars}" step="1" varStatus="statu">
+		<li method="star" data-id="${statu.count }" data-name="${star }"
+		data-selected="0">
+		<i class="icon_checkbox1"></i>
+		<span>${star }</span><input type="checkbox"/>
+		</li>
+	</c:forEach>
+		
+		
 </ul>
 </div>
 </div>
 </div>
 <!-- star end -->
-<!--1010.人数 1011.设施 1015.主题 3.品牌 -->
-<!-- 3.品牌 -->
-<div class="filter_item " method="brandFilterPart" data-typeId="3"
-data-multi="1">
-<div class="filter_title">
-<span class="icon_filter_prod"></span>品牌<i
-class="b-line"></i>
-</div>
-<div class="filter_option_box">
-<div class="filter_option">
-<div method="brand" data-id="-1" class="filter_unlimited filter_unlimited_on">
-不限 </div>
-<ul class="filter_cb_list" method="brandList">
-<li method="brand" data-typeId="3" data-id="32" data-name="如家"
-data-selected="0"
->
-<i class="icon_checkbox1"></i>
-<span>如家</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="56" data-name="汉庭"
-data-selected="0"
->
-<i class="icon_checkbox1"></i>
-<span>汉庭</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="53" data-name="7天"
-data-selected="0"
->
-<i class="icon_checkbox1"></i>
-<span>7天</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="41" data-name="速8"
-data-selected="0"
->
-<i class="icon_checkbox1"></i>
-<span>速8</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="34" data-name="锦江之星"
-data-selected="0"
->
-<i class="icon_checkbox1"></i>
-<span>锦江之星</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="44" data-name="格林豪泰"
-data-selected="0"
->
-<i class="icon_checkbox1"></i>
-<span>格林豪泰</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="111" data-name="布丁"
-data-selected="0"
->
-<i class="icon_checkbox1"></i>
-<span>布丁</span><input type="checkbox"/>
-</li>
-</ul>
-<div class="filter_cb_more" method="showAllBrand"
-data-showAll="0">舒适/高档/豪华品牌</div>
-<div class="icon_hl_more1 filter_more" method="showAllBrand" data-showAll="0"
-data-btn="brand"></div>
-<!-- allbrand start -->
-<div id="allBrandDiv" method="allBrand" class="more_finfo" style="display: none;">
-<div class="filter_layer">
-<h4 class="filter_close">
-<a title="关闭" href="javascript:void(0);"
-method="closeBrand"><span
-class="hide">关闭</span></a>
-</h4>
-<div class="brand_box">
-<h3>经济</h3>
-<div class="brand_list" id="allBrandList">
-<ul>
-<li method="brand" data-typeId="3" data-id="39502"
-data-name="飘HOME" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>飘HOME</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="32"
-data-name="如家" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>如家</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="56"
-data-name="汉庭" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>汉庭</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="53"
-data-name="7天" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>7天</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="39862"
-data-name="Q加" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>Q加</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="34"
-data-name="锦江之星" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>锦江之星</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="35"
-data-name="莫泰" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>莫泰</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="41"
-data-name="速8" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>速8</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="44"
-data-name="格林豪泰" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>格林豪泰</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="39501"
-data-name="银座佳驿" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>银座佳驿</span><input type="checkbox"/>
-</li>
-</ul>
-<ul>
-<li method="brand" data-typeId="3" data-id="111"
-data-name="布丁" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>布丁</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="84"
-data-name="尚客优" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>尚客优</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="29305"
-data-name="易佰连锁" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>易佰连锁</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="342"
-data-name="锐思特" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>锐思特</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="33"
-data-name="欣燕都" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>欣燕都</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="39408"
-data-name="格盟(格林联盟)" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>格盟(格林联盟)</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="39983"
-data-name="贝壳酒店" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>贝壳酒店</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="412"
-data-name="怡莱(华住)" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>怡莱(华住)</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="39466"
-data-name="青皮树" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>青皮树</span><input type="checkbox"/>
-</li>
-</ul>
-</div>
-</div>
-<div class="brand_box">
-<h3>舒适</h3>
-<div class="brand_list" id="allBrandList">
-<ul>
-<li method="brand" data-typeId="3" data-id="97"
-data-name="维也纳" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>维也纳</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="312"
-data-name="宜必思" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>宜必思</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="330"
-data-name="智选假日" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>智选假日</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="39421"
-data-name="锦江之星品尚" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>锦江之星品尚</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="29323"
-data-name="全季" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>全季</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="39494"
-data-name="时光漫步" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>时光漫步</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="39400"
-data-name="喆啡" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>喆啡</span><input type="checkbox"/>
-</li>
-</ul>
-</div>
-</div>
-<div class="brand_box">
-<h3>高档</h3>
-<div class="brand_list" id="allBrandList">
-<ul>
-<li method="brand" data-typeId="3" data-id="7"
-data-name="锦江" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>锦江</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="47"
-data-name="戴斯" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>戴斯</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="40"
-data-name="华美达" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>华美达</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="29154"
-data-name="假日" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>假日</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="6"
-data-name="首旅建国" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>首旅建国</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="39"
-data-name="金陵连锁" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>金陵连锁</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="29156"
-data-name="福朋喜来登" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>福朋喜来登</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="65"
-data-name="桔子" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>桔子</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="547"
-data-name="诺富特" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>诺富特</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="621"
-data-name="美爵" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>美爵</span><input type="checkbox"/>
-</li>
-</ul>
-<ul>
-<li method="brand" data-typeId="3" data-id="7494"
-data-name="雅乐轩" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>雅乐轩</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="17762"
-data-name="万怡" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>万怡</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="686"
-data-name="雅阁" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>雅阁</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="39568"
-data-name="花筑" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>花筑</span><input type="checkbox"/>
-</li>
-</ul>
-</div>
-</div>
-<div class="brand_box">
-<h3>豪华</h3>
-<div class="brand_list" id="allBrandList">
-<ul>
-<li method="brand" data-typeId="3" data-id="313"
-data-name="喜来登" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>喜来登</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="316"
-data-name="皇冠假日" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>皇冠假日</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="23"
-data-name="豪生" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>豪生</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="15"
-data-name="洲际" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>洲际</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="14"
-data-name="希尔顿" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>希尔顿</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="11"
-data-name="香格里拉" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>香格里拉</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="423"
-data-name="威斯汀" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>威斯汀</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="45"
-data-name="凯宾斯基" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>凯宾斯基</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="436"
-data-name="铂尔曼" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>铂尔曼</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="29155"
-data-name="希尔顿逸林" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>希尔顿逸林</span><input type="checkbox"/>
-</li>
-</ul>
-<ul>
-<li method="brand" data-typeId="3" data-id="13"
-data-name="万豪" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>万豪</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="29270"
-data-name="JW万豪" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>JW万豪</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="393"
-data-name="万丽" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>万丽</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="422"
-data-name="君悦" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>君悦</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="73"
-data-name="温德姆" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>温德姆</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="488"
-data-name="丽思卡尔顿" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>丽思卡尔顿</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="104"
-data-name="四季" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>四季</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="12"
-data-name="日航" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>日航</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="6676"
-data-name="丽笙" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>丽笙</span><input type="checkbox"/>
-</li>
-<li method="brand" data-typeId="3" data-id="29269"
-data-name="万豪行政公寓" data-selected="0">
-<i class="icon_checkbox1"></i>
-<span>万豪行政公寓</span><input type="checkbox"/>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<!-- allbrand end -->
-</div>
-</div>
-</div>
-<!--1010.人数 1011.设施 1015.主题 3.品牌 -->
+
 <!--1010.人数 1011.设施 1015.主题 -->
 <div class="filter_item " method="themeFilterPart" data-typeId="1015"
 data-multi="1">
 <div class="filter_title">
-<span class="icon_filter_theme"></span>主题<i
+<span class="icon_filter_theme"></span>酒店类型<i
 class="b-line"></i>
 </div>
 <div class="filter_option_box">
@@ -602,113 +181,24 @@ class="b-line"></i>
 <div method="theme" data-id="-1" class="filter_unlimited filter_unlimited_on">
 不限 </div>
 <ul class="filter_cb_list" method="themeList">
-<li method="theme" data-typeId="1015" data-id="10001" data-name="商务出行"
-data-selected="0"
->
-<i class="icon_checkbox1"></i>
-<span>商务出行</span><input type="checkbox"/>
-</li>
-<li method="theme" data-typeId="1015" data-id="10007" data-name="亲子酒店"
-data-selected="0"
->
-<i class="icon_checkbox1"></i>
-<span>亲子酒店</span><input type="checkbox"/>
-</li>
-<li method="theme" data-typeId="1015" data-id="10002" data-name="休闲度假"
-data-selected="0"
->
-<i class="icon_checkbox1"></i>
-<span>休闲度假</span><input type="checkbox"/>
-</li>
-<li method="theme" data-typeId="1015" data-id="10003" data-name="浪漫情侣"
-data-selected="0"
->
-<i class="icon_checkbox1"></i>
-<span>浪漫情侣</span><input type="checkbox"/>
-</li>
-<li method="theme" data-typeId="1015" data-id="10006" data-name="购物便捷"
-data-selected="0"
->
-<i class="icon_checkbox1"></i>
-<span>购物便捷</span><input type="checkbox"/>
-</li>
-<li method="theme" data-typeId="1015" data-id="10026" data-name="四合院"
-data-selected="0"
->
-<i class="icon_checkbox1"></i>
-<span>四合院</span><input type="checkbox"/>
-</li>
-<li method="theme" data-typeId="1015" data-id="10014" data-name="精品酒店"
-data-selected="0"
->
-<i class="icon_checkbox1"></i>
-<span>精品酒店</span><input type="checkbox"/>
-</li>
-<li method="theme" data-typeId="1015" data-id="10011" data-name="设计师酒店"
-data-selected="0"
->
-<i class="icon_checkbox1"></i>
-<span>设计师酒店</span><input type="checkbox"/>
-</li>
-<li method="theme" data-typeId="1015" data-id="10044" data-name="会议酒店"
-data-selected="0"
-style="display:none" data-mark="1" >
-<i class="icon_checkbox1"></i>
-<span>会议酒店</span><input type="checkbox"/>
-</li>
-<li method="theme" data-typeId="1015" data-id="10043" data-name="交通枢纽"
-data-selected="0"
-style="display:none" data-mark="1" >
-<i class="icon_checkbox1"></i>
-<span>交通枢纽</span><input type="checkbox"/>
-</li>
-<li method="theme" data-typeId="1015" data-id="10112" data-name="地铁周边"
-data-selected="0"
-style="display:none" data-mark="1" >
-<i class="icon_checkbox1"></i>
-<span>地铁周边</span><input type="checkbox"/>
-</li>
-<li method="theme" data-typeId="1015" data-id="10143" data-name="大学周边"
-data-selected="0"
-style="display:none" data-mark="1" >
-<i class="icon_checkbox1"></i>
-<span>大学周边</span><input type="checkbox"/>
-</li>
-<li method="theme" data-typeId="1015" data-id="10142" data-name="火车站周边"
-data-selected="0"
-style="display:none" data-mark="1" >
-<i class="icon_checkbox1"></i>
-<span>火车站周边</span><input type="checkbox"/>
-</li>
-<li method="theme" data-typeId="1015" data-id="10145" data-name="机场周边"
-data-selected="0"
-style="display:none" data-mark="1" >
-<i class="icon_checkbox1"></i>
-<span>机场周边</span><input type="checkbox"/>
-</li>
-<li method="theme" data-typeId="1015" data-id="10039" data-name="园林建筑"
-data-selected="0"
-style="display:none" data-mark="1" >
-<i class="icon_checkbox1"></i>
-<span>园林建筑</span><input type="checkbox"/>
-</li>
-<li method="theme" data-typeId="1015" data-id="10139" data-name="温泉酒店"
-data-selected="0"
-style="display:none" data-mark="1" >
-<i class="icon_checkbox1"></i>
-<span>温泉酒店</span><input type="checkbox"/>
-</li>
+	<c:forEach var="type" items="${ types}" step="1" varStatus="statu">
+		<li method="theme" data-typeId="${type.type }" data-id="${type.id }" data-name="${type.name }"
+		data-selected="0">
+		<i class="icon_checkbox1"></i>
+		<span>${type.name }</span><input type="checkbox"/>
+		</li>
+	</c:forEach>
+
 </ul>
 <div class="icon_hl_more1 filter_more" method="showAllOps" data-showAll="0"></div>
 </div>
 </div>
 </div>
 <!--1010.人数 1011.设施 1015.主题 3.品牌 -->
-<!--1010.人数 1011.设施 1015.主题 -->
 <div class="filter_item " method="facilityFilterPart" data-typeId="1011"
 data-multi="1">
 <div class="filter_title">
-<span class="icon_filter_serv"></span>服务<i
+<span class="icon_filter_serv"></span>所在城市<i
 class="b-line"></i>
 </div>
 <div class="filter_option_box">
@@ -716,112 +206,22 @@ class="b-line"></i>
 <div method="facility" data-id="-1" class="filter_unlimited filter_unlimited_on">
 不限 </div>
 <ul class="filter_cb_list" method="facilityList">
-<li method="facility" data-typeId="1011" data-id="100000205" data-name="免费WiFi"
-data-selected="0"
->
-<i class="icon_checkbox1"></i>
-<span>免费WiFi</span><input type="checkbox"/>
-</li>
-<li method="facility" data-typeId="1011" data-id="100000208" data-name="会议设施"
-data-selected="0"
->
-<i class="icon_checkbox1"></i>
-<span>会议设施</span><input type="checkbox"/>
-</li>
-<li method="facility" data-typeId="1011" data-id="100000197" data-name="免费停车"
-data-selected="0"
->
-<i class="icon_checkbox1"></i>
-<span>免费停车</span><input type="checkbox"/>
-</li>
-<li method="facility" data-typeId="1011" data-id="100000225" data-name="餐厅"
-data-selected="0"
->
-<i class="icon_checkbox1"></i>
-<span>餐厅</span><input type="checkbox"/>
-</li>
-<li method="facility" data-typeId="1011" data-id="100000268" data-name="室外游泳池"
-data-selected="0"
->
-<i class="icon_checkbox1"></i>
-<span>室外游泳池</span><input type="checkbox"/>
-</li>
-<li method="facility" data-typeId="1011" data-id="100000160" data-name="健身中心"
-data-selected="0"
->
-<i class="icon_checkbox1"></i>
-<span>健身中心</span><input type="checkbox"/>
-</li>
-<li method="facility" data-typeId="1011" data-id="100000163" data-name="室内游泳池"
-data-selected="0"
->
-<i class="icon_checkbox1"></i>
-<span>室内游泳池</span><input type="checkbox"/>
-</li>
-<li method="facility" data-typeId="1011" data-id="100000010" data-name="叫醒服务"
-data-selected="0"
->
-<i class="icon_checkbox1"></i>
-<span>叫醒服务</span><input type="checkbox"/>
-</li>
-<li method="facility" data-typeId="1011" data-id="100000017" data-name="行李寄存"
-data-selected="0"
-style="display:none" data-mark="1" >
-<i class="icon_checkbox1"></i>
-<span>行李寄存</span><input type="checkbox"/>
-</li>
-<li method="facility" data-typeId="1011" data-id="100000242" data-name="免费接机服务"
-data-selected="0"
-style="display:none" data-mark="1" >
-<i class="icon_checkbox1"></i>
-<span>免费接机服务</span><input type="checkbox"/>
-</li>
+	<c:forEach var="city" items="${ citys}" step="1" varStatus="statu">
+		<li method="facility" data-typeId="${city.type }" data-id="${city.id }" data-name="${city.name }"
+		data-selected="0">
+		<i class="icon_checkbox1"></i>
+		<span>${city.name }</span><input type="checkbox"/>
+		</li>
+	</c:forEach>
+
+
 </ul>
 <div class="icon_hl_more1 filter_more" method="showAllOps" data-showAll="0"></div>
 </div>
 </div>
 </div>
 <!-- discount start -->
-<div class="filter_item filter_last" method="discountFilterPart" data-typeId="1011" data-multi="1">
-<div class="filter_title discount">
-<span class="hot">HOT</span>
-<span class="icon_filter_serv"></span>优惠
-<i class="b-line"></i>
-</div>
-<div class="filter_option_box">
-<div class="filter_option">
-<div method="discount" data-id="-1" class="filter_unlimited filter_unlimited_on">
-不限 </div>
-<ul class="filter_cb_list" method="discount">
-<li method="discount" data-typeId="1013" data-id="5" data-name="全部促销优惠" data-selected="0" class="grey" title="登陆即可查看含有优惠的酒店" data-disabled = "1" >
-<i class="icon_checkbox1"></i>
-<span>全部促销优惠</span>
-<input type="checkbox" />
-</li>
-<li method="discount" data-typeId="1013" data-id="1" data-name="有返现" data-selected="0" class="grey" title="登陆即可查看含有该返现优惠的酒店" data-disabled = "1" >
-<i class="icon_checkbox1"></i>
-<span>有返现</span>
-<input type="checkbox" />
-</li>
-<li method="discount" data-typeId="1013" data-id="2" data-name="天天特价" data-selected="0" class="grey" title="登陆即可查看含有该立减优惠的酒店" data-disabled = "1" >
-<i class="icon_checkbox1"></i>
-<span>天天特价</span>
-<input type="checkbox" />
-</li>
-<li method="discount" data-typeId="1013" data-id="3" data-name="超值促销" data-selected="0" class="grey" title="登陆即可查看含有该立减优惠的酒店" data-disabled = "1" >
-<i class="icon_checkbox1"></i>
-<span>超值促销</span>
-<input type="checkbox" />
-</li>
-<li method="discount" data-typeId="1013" data-id="4" data-name="本月特惠" data-selected="0" class="grey" title="登陆即可查看含有该立减优惠的酒店" data-disabled = "1" >
-<i class="icon_checkbox1"></i>
-<span>本月特惠</span>
-<input type="checkbox" />
-</li>
-</ul>
-</div>
-</div>
-</div>
+
 <!-- discount end -->
 </div>
 
@@ -3320,6 +2720,7 @@ data-mapType="0" data-hotelid="40101018" data-hotelname="北京渔阳饭店" dat
     }
 </script>
 <script type="text/javascript">
+	
     var _tcq = _tcq || [];
     var _timediff = -1;
     if (typeof _tcopentime != "undefined") {

@@ -6,7 +6,7 @@ import java.util.Date;
  * @author Administrator
  *
  */
-public class hotel {
+public class Hotel {
 	private int hotelId;           //酒店ID
 	private String productNo;      //产品编号
 	private String hotelName;      //酒店名称

@@ -1,5 +1,6 @@
 package controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -63,7 +64,13 @@ public class DevLoginController {
 	
 	// 跳转前台二级页面
 	@RequestMapping("/toIndex2")
-	public String toIndex2(Model model) {
+	public String toIndex2(HttpSession session) {
+		List<String> prices=new ArrayList<String>();
+		List<String> stars=new ArrayList<String>();
+		prices.add("10-30");
+		stars.add("一星");
+		session.setAttribute("stars", stars);
+		session.setAttribute("prices", prices);
 		return "developer/index2";
 	}
 

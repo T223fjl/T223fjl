@@ -1,6 +1,6 @@
 package pojo;
 
-public class mycollection {
+public class Mycollection {
 	private int id;
 	private int conbyUserId;
 	private int hotelById;

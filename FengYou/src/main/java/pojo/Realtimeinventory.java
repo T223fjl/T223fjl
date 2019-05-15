@@ -8,7 +8,7 @@ import java.util.Date;
  * @author Administrator
  *
  */
-public class realtimeinventory {
+public class Realtimeinventory {
 	private int id; // 临时库存id
 	private int hotelId;// 酒店id
 	private int houseId;// 房型id

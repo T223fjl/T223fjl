@@ -5,9 +5,9 @@ import java.util.Date;
 public class User {
 	private Integer id;
 	private String name;
-	private int phone;
+	private String phone;
 	private String pwd;
-	private  int idcard;
+	private  String idcard;
 	private  int sex;
 	private  String email;
 	private  String address;
@@ -26,10 +26,10 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getPhone() {
+	public String getPhone() {
 		return phone;
 	}
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 	public String getPwd() {
@@ -38,10 +38,10 @@ public class User {
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
 	}
-	public int getIdcard() {
+	public String getIdcard() {
 		return idcard;
 	}
-	public void setIdcard(int idcard) {
+	public void setIdcard(String idcard) {
 		this.idcard = idcard;
 	}
 	public int getSex() {
