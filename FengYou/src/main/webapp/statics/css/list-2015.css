@@ -425,11 +425,10 @@
 }
 
 .filter_custom {
+	
 	width: 240px;
 	text-align: right;
-	position: absolute;
-	right: 175px;
-	top: 7px
+	
 }
 
 .filter_custom .input_f12 {
@@ -3108,9 +3107,7 @@ top
 	.hotel_inf_sale {
 		height: 20px
 	}
-	.filter_custom {
-		right: 90px
-	}
+
 	.h_info_b2 {
 		margin-top: 4px
 	}

@@ -20,6 +20,20 @@ public class Hotel {
 	private int level3;         //三级分类地址
 	private String fileUrl;     //酒店图片
 	private int hotelphone;
+	private String hotelServe;
+	public int getHotelphone() {
+		return hotelphone;
+	}
+	public void setHotelphone(int hotelphone) {
+		this.hotelphone = hotelphone;
+	}
+	
+	public String getHotelServe() {
+		return hotelServe;
+	}
+	public void setHotelServe(String hotelServe) {
+		this.hotelServe = hotelServe;
+	}
 	public int getHotelId() {
 		return hotelId;
 	}

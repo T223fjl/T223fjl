@@ -15,5 +15,7 @@ public class UserServiceImpl implements UserService{
 	public User login(User user) {
 		return userDao.login(user);
 	}
-
+	public int Registration(User user) {
+		return userDao.Registration(user);
+	}
 }

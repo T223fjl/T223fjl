@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -32,6 +32,14 @@
 	href="${pageContext.request.contextPath }/statics/css/common_index.css" />
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath }/statics/css/style.css" />
+<script type="text/javascript"
+	src="${pageContext.request.contextPath }/statics/js/jquery-1.11.1.min_044d0927.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath }/statics/js/jquery.bxslider_e88acd1b.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath }/statics/js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath }/statics/js/menu.js"></script>
 </head>
 <body>
 	<!--Begin Header Begin-->
@@ -81,9 +89,9 @@
 							href="${ctx}/ProductServlet?action=queryProductList&level=1&category=${temp.id}">${temp.name}</a></li>
 					</c:forEach>
 				</ul>
-<!-- 				<div class="m_ad"> -->
-<!-- <!-- 					<a href="#" onclick="huodong()" style="color: orange;">中秋送好礼！</a> --> 
-<!-- 				</div> -->
+				<!-- 				<div class="m_ad"> -->
+				<!-- <!-- 					<a href="#" onclick="huodong()" style="color: orange;">中秋送好礼！</a> -->
+				<!-- 				</div> -->
 				<!--End 商品分类详情 End-->
 			</div>
 		</div>
@@ -110,8 +118,6 @@
 						</div>
 					</div>
 				</div>
-				<script type="text/javascript" src="${pageContext.request.contextPath }/statics/js/jquery-1.11.1.min_044d0927.js"></script>
-				<script type="text/javascript" src="${pageContext.request.contextPath }/statics/js/jquery.bxslider_e88acd1b.js"></script>
 				<script type="text/javascript"
 					src="${pageContext.request.contextPath }/statics/js/jquery1.8.3.min.js"></script>
 				<script type="text/javascript">
