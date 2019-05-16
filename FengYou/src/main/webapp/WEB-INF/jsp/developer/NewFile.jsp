@@ -51,7 +51,7 @@
 			<div class="menu">
 				<!--Begin 商品分类详情 Begin-->
 				<div class="nav">
-					<div class="nav_t">全部商品分类</div>
+					<div class="nav_t">全部酒店分类</div>
 					<div class="leftNav">
 						<ul>
 							<c:forEach items="${levels}" var="temp">

@@ -32,43 +32,8 @@
             <span>已有风游账号，</span>
             <a href="${pageContext.request.contextPath }/login.jsp">直接登录</a>
     </h1>
-    <!-- 持卡注册 start -->
-        <div id="CooperationCard">
-            <div class="ml135 haveCard"><input type="checkbox" id="IshaveCardReg"  value="0">我有艺龙合作卡            </div>
-            <dl class="Card clx" style="display: none">
-                <dt><span class="cf00">*</span>卡类型：</dt>
-                <dd>
-                    <select class="w250"  id="cardParentType" name="cardParentType">
-                            <option value="12">银行卡类</option>
-                            <option value="17">酒店合作类</option>
-                            <option value="13">无线通讯类</option>
-                            <option value="14">购物消费类</option>
-                            <option value="15">航空类</option>
-                            <option value="16">其他</option>
-                            <option value="11">所有联名卡[按首字拼音排序]</option>
-                    </select>
-                </dd>
-                <dt ><span class="cf00">*</span>卡名称：</dt>
-                <dd >
-                    <select class="w250" name="cardChildType" id="cardChildType">
-
-                    </select>
-                </dd>
-                <dt>卡号：</dt>
-                <dd>
-                    <input type="text" id="cardRegCardNo"> <em id="cardregview" class="nowrap"
-                                                               style="display:none;"><span class="TipsIcon"></span>请填写以CA为开头的卡号，查询卡号请致电凤凰知音客服95583，或登录
-                    <a href="http://ffp.airchina.com.cn/" target="_blank">知音官网</a> 查询</em>
-                </dd>
-                <!--<dt method="elongCardPwd"><span class="cf00">*</span>艺龙卡密码：-->
-                <!--</dt>-->
-                <!--<dd method="elongCardValue">-->
-                    <!--<input type="password" name="cardRegCardPwd" id="cardRegCardPwd">-->
-                <!--</dd>-->
-            </dl>
-        </div>
-    <!-- 持卡注册 end -->
-<form action="${pageContext.request.contextPath }/user/Registration" method="post"   >
+  
+<form action="${pageContext.request.contextPath }/registration" method="post"   >
     <ul class="FillMge" id="regBaseMessage">
         <li class="phonenum_wrap">
                     <p><span class="cf00">*</span>手机：</p>
@@ -79,14 +44,14 @@
 
                             </ul>
                         </span>
-                        <span><input class="w150 phone_input" value="" maxlength="11"
+                        <span><input id='phone' class="w150 phone_input" value="" maxlength="11"
                                      isDynamic=true name="phone" /></span>
                     </span>
         </li>
          <li class="phonenum_wrap">
                     <p><span class="cf00">*</span>用户名：</p>
                     <span>
-                        <span><input class="w150 phone_input"  value="" maxlength="11"
+                        <span><input id='name' class="w150 phone_input"  value="" maxlength="11"
                                      isDynamic=true name="name"/></span>
                     </span>
         </li>
@@ -108,18 +73,18 @@
             </li> -->
         <li>
             <p><span class="cf00">*</span>邮箱： </p>
-            <span><input class="w150" name="email"/></span>
+            <span><input id='email'  class="w150" name="email"/></span>
         </li>
         <li class="pass_level">
             <p><span class="cf00">*</span>密码：</p>
-            <span><input class="w150" name="pwd" type="password"/></span>
+            <span><input class="w150" id="pwd" name="pwd" type="password"/></span>
             <i style="display: none;" id="pwstrengthtxt"></i>
             <tt class="mb5" id="pwstrength" style="display: none"><s class="low"></s><s class="normal"></s><s
                     class="high"></s> </tt>
         </li>
         <li>
             <p><span class="cf00">*</span>再次输入密码：</p>
-            <span><input class="w150"  name="pwd2"
+            <span><input class="w150" id="pwd2"  name="pwd2"
                          type="password"/></span>
         </li>
         <li>
@@ -192,35 +157,64 @@
 	            checkCode.innerHTML = code;
 	        }
 	    }
-	    
-	    //检查验证码是否正确
-	    function validateCode()
-	    {
-	    	
-	        //获取显示区生成的验证码
-	        var checkCode = document.getElementById("validateCode").innerHTML;
-	        //获取输入的验证码
-	        var inputCode = document.getElementById("inputCode").value;
-	        console.log(checkCode);
-	        console.log(inputCode);
-	        if (inputCode.length <= 0)
-	        {
-	            alert("请输入验证码！");
-	        }
-	        else if (inputCode.toUpperCase() != checkCode.toUpperCase())
-	        {
-	            alert("验证码输入有误！");
-	            createCode(4);
-	        }
-	        else
-	        {
-	            alert("验证码正确！");
-	         
-	        }  
-	    } 	
 	    $(function() {
 			$("form").submit(function(){
-				alert(0)
+				
+				var phone=$("#phone").val();
+				if(phone==''){
+					alert("请输入手机号")
+					return false;
+				}else{
+					if(phone.length!=11){
+						alert("请输入正确的手机号")
+						return false;
+					}
+				}
+				var name=$("#name").val();
+				if(name==''){
+					alert("请输入用户名")
+					return false;
+				}
+				var Code=$("#inputCode").val();
+				if (Code==0)
+		        {
+		            alert("请输入验证码！");
+		            return false;
+		        }
+				var email=$("#email").val();
+				if(email==''){
+					alert("请输入邮箱")
+					return false;
+				}
+				var pwd=$("#pwd").val();
+				if(pwd==''){
+					alert("请输入密码")
+					return false;
+				}
+				var pwd2=$("#pwd2").val();
+				if(pwd2==''){
+					alert("请再次输入密码")
+					return false;
+				}
+				
+				//获取显示区生成的验证码
+		        var checkCode = document.getElementById("validateCode").innerHTML;
+		        //获取输入的验证码
+		        var inputCode = document.getElementById("inputCode").value;
+		        console.log(checkCode);
+		        console.log(inputCode);
+		     	 if (inputCode.toUpperCase() != checkCode.toUpperCase())
+		        {
+		            alert("验证码输入有误！");
+		            createCode(4);
+		            return false;
+		        }
+		        else
+		        {
+		            alert("验证码正确！");
+		            return true;
+		         
+		        }  
 			})
 		})
 		

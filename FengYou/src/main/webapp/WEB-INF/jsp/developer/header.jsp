@@ -519,9 +519,9 @@ to {
 			</div>
 			<nav class="header-bar-nav">
 			<ul class="header-nav-first">
-				<li class="has-child"><a href="nofollow" href=""
+				<li class="has-child"><a  href="${pageContext.request.contextPath }/login.jsp"
 					target="_blank">请登录</a></li>
-				<li class="has-child"><a href="" target="_blank">快速注册</a></li>
+				<li class="has-child"><a href="${pageContext.request.contextPath }/register_cn.jsp" target="_blank">快速注册</a></li>
 				<li class="has-child"><a href="" target="_blank">会员中心</a></li>
 				<li class="has-child"><a href="" target="_blank">帮助中心</a></li>
 			</ul>

@@ -69,8 +69,9 @@ public class LoginRegController {
 		}
 	}
 	
-	@RequestMapping("/Registration")
-	public int Registration(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+	//前台注册
+	@RequestMapping("/registration")
+	public void Registration(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		//int userId = Integer.parseInt(request.getParameter("id"));  
 		String phone=request.getParameter("phone");
 		String name=request.getParameter("name");
@@ -83,7 +84,8 @@ public class LoginRegController {
 		user.setPwd(pwd);
 		System.out.println("name:"+user.getName());
 		int s=userService.Registration(user);
-		request.getRequestDispatcher("/login.jsp").forward(request, response);
-		return s;
+		if(s>0){
+			response.sendRedirect("/FengYou/login.jsp");
+		}
 	}
 }

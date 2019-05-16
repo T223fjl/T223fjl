@@ -78,7 +78,7 @@
 					</div>
 
 					<div class="inputbox login_code err" id="ValidateCodeDiv" style="display: block;">
-						<input class="blur" id="inputCode" type="text" value="验证码" method="CheckValidateCode_Dynamic" language="cn">
+						<input class="blur" id="inputCode" type="text" placeholder="验证码" method="CheckValidateCode_Dynamic" language="cn">
 						<div id="checkCode" class="code"  onclick="createCode(4)" style="float: right;margin-right: 80px" ></div><br/>
 						<a href="#"  onclick="createCode(4)" style="float: right;margin-right: 80px">换一张</a>
 					</div>
