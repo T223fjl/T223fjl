@@ -92,21 +92,20 @@
         </li>
         <li>
             <p><span class="cf00">*</span>输入验证码：</p>
-            <span><input class="vCode" id="validateCode" name="validateCode"/></span>
-            <img src="${pageContext.request.contextPath }/statics/picture/53596038cb554c27a6aa801d3f079850.gif" alt="验证码"
-                 id="validateImg"
-                 >
-            <a href="#?" id="changeCode">看不清，换一张</a>
-            <span id="validate_code_tip_info"></span>
+            <span> <input class="blur" id="inputCode" type="text"  method="CheckValidateCode_Dynamic" language="cn"></span>
+			<div id="validateCode" class="vCode"  onclick="createCode(4)" ></div>
+			<a href="javascript:void(0)"  onclick="createCode(4)">换一张</a>
+			<span id="validate_code_tip_info"></span>
+            
         </li>
-            <li>
+           <!--  <li>
                 <p><span class="cf00">*</span>短信验证码：</p>
                 <span>
                     <input maxlength="6" class="w150 vCode" id="smsCodeInput" name="smsCodeInput"
                            type="text">
                         <span class="messcode" id="getSmsCode" userful="true">获取短信验证码</span>
                 </span>
-            </li>
+            </li> -->
         <li>
             <p><span class="cf00">*</span>邮箱： </p>
             <span><input class="w150" name="email"/></span>
@@ -131,7 +130,7 @@
         </li>
     </ul>
         <div class="ml135 agree">
-            <input type="checkbox" name="" id="isHadReadItems">同意艺龙旅行网服务条款
+            <input type="checkbox" name="" id="isHadReadItems">同意风游旅行网服务条款
             <a href="#?" id="readItems">查看条款</a>
         </div>
     <!-- 注册条款 -->
@@ -162,7 +161,70 @@
 <script src="${pageContext.request.contextPath }/statics/js/index.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath }/statics/js/require2.1.16.min.js"
         data-main="/passport/js/register/v5/register.js"></script>
-
+		
+		<script type="text/javascript">
+		//页面加载时，生成随机验证码
+	    window.onload=function(){
+	     createCode(4);    
+	    }
+		//生成验证码的方法
+	    function createCode(length) {
+	        var code = "";
+	        var codeLength = parseInt(length); //验证码的长度
+	        var checkCode = document.getElementById("validateCode");
+	        ////所有候选组成验证码的字符，当然也可以用中文的
+	        var codeChars = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+	        'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
+	        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'); 
+	        //循环组成验证码的字符串
+	        for (var i = 0; i < codeLength; i++)
+	        {
+	            //获取随机验证码下标
+	            var charNum = Math.floor(Math.random() * 62);
+	            //组合成指定字符验证码
+	            code += codeChars[charNum];
+	        }
+	        if (checkCode)
+	        {
+	            //为验证码区域添加样式名
+	            checkCode.className = "code";
+	            //将生成验证码赋值到显示区
+	            checkCode.innerHTML = code;
+	        }
+	    }
+	    
+	    //检查验证码是否正确
+	    function validateCode()
+	    {
+	    	
+	        //获取显示区生成的验证码
+	        var checkCode = document.getElementById("validateCode").innerHTML;
+	        //获取输入的验证码
+	        var inputCode = document.getElementById("inputCode").value;
+	        console.log(checkCode);
+	        console.log(inputCode);
+	        if (inputCode.length <= 0)
+	        {
+	            alert("请输入验证码！");
+	        }
+	        else if (inputCode.toUpperCase() != checkCode.toUpperCase())
+	        {
+	            alert("验证码输入有误！");
+	            createCode(4);
+	        }
+	        else
+	        {
+	            alert("验证码正确！");
+	         
+	        }  
+	    } 	
+	    $(function() {
+			$("form").submit(function(){
+				alert(0)
+			})
+		})
+		
+		</script>
 
     </body>
 </html>

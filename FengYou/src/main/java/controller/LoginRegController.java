@@ -33,10 +33,9 @@ public class LoginRegController {
 		System.out.println(pwd);
 		System.out.println(dUser);
 		if (dUser != null) {
-
 			session.setAttribute("loginUser", dUser);
 			session.removeAttribute("error");
-			return "403";
+			return "redirect:/NewFile";
 		} else {
 			session.setAttribute("error", "用户名或密码不正确");
 			return "login";
