@@ -43,7 +43,9 @@ public class DevController {
 
 	// 跳转前台一级页面
 	@RequestMapping("/toIndex")
-	public String toIndex(Model model) {
+	public String toIndex(HttpSession session) {
+		List<Level> levels = levelService.queryLevel();
+		session.setAttribute("levels", levels);
 		return "developer/index";
 	}
 
@@ -80,5 +82,31 @@ public class DevController {
 	@RequestMapping("/toHuiyuan")
 	public String toHuiyuan(Model model) {
 		return "developer/huiyuan";
+	}
+	//查询会员信息
+		@RequestMapping("/UserInfo")
+		public String view( String id,Model model) throws NumberFormatException, Exception{
+		User user = userService.getUserInfo(Integer.valueOf(id));
+		System.out.println("id="+id+"电话"+user.getPhone());
+			model.addAttribute(user);
+			return "developer/userlist";
+		}
+		
+	/**
+	 * 修改用户
+	 * @param user
+	 * @param model
+	 * @return
+	 * @throws NumberFormatException
+	 * @throws Exception
+	 */
+	@RequestMapping(value="/modifyUser")
+	public String modifyUser(User user,Model model) throws NumberFormatException, Exception{
+		
+            int result=userService.updateUser(user);
+			if(result>0){
+				return "developer/userlist";
+			}
+		return "developer/userlist";
 	}
 }

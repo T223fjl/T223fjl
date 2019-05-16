@@ -250,6 +250,12 @@
 		    //检查验证码是否正确
 		    function validateCode()
 		    {
+// 		    	 if(devCode==null||devCode.length==0){
+// 			        	alert("用户名不能为空");
+// 			        }
+// 			        if(devPassword==null||devPassword.length==0){
+// 			        	alert("密码不能为空");
+// 			        }
 		    	//获取用户名
 		    	var devCode=document.getElementById("UserName").value;
 		    	
@@ -273,18 +279,12 @@
 		        }
 		        else
 		        {
-		            alert("验证码正确！");
-		         
+		            location.href="dologin?name="+devCode+"&pwd="+devPassword;
 		        }  
 		        
-		        if(devCode==null||devCode.length==0){
-		        	alert("用户名不能为空");
-		        }
-		        if(devPassword==null||devPassword.length==0){
-		        	alert("密码不能为空");
-		        }
+		       
 		        
-		        location.href="dologin?name="+devCode+"&pwd="+devPassword;
+		       
 		    } 
 		</script>
 		<script type="text/javascript" src="${pageContext.request.contextPath }/statics/js/login/query1.8.3.min.js"></script>

@@ -1,7 +1,11 @@
 package controller;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
+import javax.annotation.Resource;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,7 +16,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import pojo.Mycollection;
 import pojo.User;
 import service.UserService;
 
@@ -20,6 +26,14 @@ import service.UserService;
 public class LoginRegController {
 	@Autowired
 	private UserService userService;
+
+	@RequestMapping("/mtest")
+	public @ResponseBody Map ff() {
+		Map<String, String> m = new HashMap<String, String>();
+		m.put("mm", "10");
+		m.put("mm0", "100");
+		return m;
+	}
 
 	// 前台登录
 	@RequestMapping("/dologin")
@@ -29,13 +43,12 @@ public class LoginRegController {
 		user.setName(name);
 		user.setPwd(pwd);
 		User dUser = userService.login(user);
-		System.out.println(name);
-		System.out.println(pwd);
-		System.out.println(dUser);
 		if (dUser != null) {
+			List<Mycollection> collections = userService.queryMycollection();
+			session.setAttribute("collections", collections);
 			session.setAttribute("loginUser", dUser);
 			session.removeAttribute("error");
-			return "redirect:/NewFile";
+			return "redirect:/toIndex";
 		} else {
 			session.setAttribute("error", "用户名或密码不正确");
 			return "login";
@@ -48,6 +61,7 @@ public class LoginRegController {
 	public String toLogin(Model model) {
 		return "backend/login";
 	}
+
 	// 后台登陆
 	@RequestMapping("/backLogin")
 	public String backLogin(String name, String pwd, Model model, HttpSession session) {
@@ -68,24 +82,36 @@ public class LoginRegController {
 			return "403";
 		}
 	}
-	
-	//前台注册
+
+	// 前台注册
 	@RequestMapping("/registration")
-	public void Registration(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		//int userId = Integer.parseInt(request.getParameter("id"));  
-		String phone=request.getParameter("phone");
-		String name=request.getParameter("name");
-		String email=request.getParameter("email");
-		String pwd=request.getParameter("pwd");
-		User user=new User();
+	public void Registration(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// int userId = Integer.parseInt(request.getParameter("id"));
+		String phone = request.getParameter("phone");
+		String name = request.getParameter("name");
+		String email = request.getParameter("email");
+		String pwd = request.getParameter("pwd");
+		User user = new User();
 		user.setPhone(phone);
 		user.setName(name);
 		user.setEmail(email);
 		user.setPwd(pwd);
-		System.out.println("name:"+user.getName());
-		int s=userService.Registration(user);
-		if(s>0){
+		System.out.println("name:" + user.getName());
+		int s = userService.Registration(user);
+		if (s > 0) {
 			response.sendRedirect("/FengYou/login.jsp");
+		}
+	}
+
+	// 用户注销
+	@RequestMapping(value = "/logout")
+	public void logout(HttpSession session, HttpServletResponse response) {
+		session.removeAttribute("loginUser");
+		try {
+			response.sendRedirect("/FengYou/login.jsp");
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 }

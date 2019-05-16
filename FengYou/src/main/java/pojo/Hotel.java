@@ -19,8 +19,15 @@ public class Hotel {
 	private int level2;          //二级分类地址
 	private int level3;         //三级分类地址
 	private String fileUrl;     //酒店图片
-	private int hotelphone;
-	private String hotelServe;
+	private int hotelphone;		
+	private String hotelServe;//服务
+	private String hotelServePy;//服务拼音
+	public String getHotelServePy() {
+		return hotelServePy;
+	}
+	public void setHotelServePy(String hotelServePy) {
+		this.hotelServePy = hotelServePy;
+	}
 	public int getHotelphone() {
 		return hotelphone;
 	}

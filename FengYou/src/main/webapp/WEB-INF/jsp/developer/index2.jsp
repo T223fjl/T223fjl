@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="renderer" content="webkit">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-    <title>【北京酒店】北京酒店预订_北京住宿价格_北京宾馆查询_艺龙旅行网</title>
+    <title>风游旅行网</title>
     <link rel="icon"
           href="http://m.elongstatic.com/static/webapp/pc_static/pc_hotel/other/common/pic/favicon.ico?t=201411070740"
           type="image/x-icon"/>
@@ -34,7 +34,7 @@
 <link rel="stylesheet" type="text/css" href='${pageContext.request.contextPath }/statics/css/list_intro_room.css' />
 </head>
 <body >
-              <!-- ===================== header 2019-04-29 start ===================== --> <div id="header" class="header" v='20190429' b='hotels' g='NaN' lg='f'> <div class="header_top response_wrap3 clearfix" style="width: 1200px;"> <div class="logo"> <a href="http://www.elong.com" title="艺龙旅行网">艺龙旅行网</a></div>  <div class="right mt5"> <div class="branch_menu left mr10"> <span><a href="http://imall.elong.com/" rel="nofollow">里程商城</a></span> <b></b> <span class='online-customer'><a target='_blank' href='http://my.elong.com/kf/index?g=31878' rel='nofollow'>在线客服</a></span> <b></b><span class=""><a target="_blank" href="http://my.elong.com/helpCenter/index" rel="nofollow">帮助中心</a></span> <b></b><span class='language' method="newSpanLang"> <a href="#?" method="eng">English</a><i class='com_icon04 left'></i><p><a href="http://hotel.elong.com/trans2cn/?target=http://hotel.elong.com" title="简体版" rel="nofollow">简体版</a> <a href="http://hotel.elong.com/trans2tw/?target=http://hotel.elong.com" rel="nofollow" title="繁體版">繁体版</a></p> </span> </div> <span class="one_panic one_panicxcx mr10 left"> <i class="com_iconxcx left"></i> <em>小程序</em> <em>体验更轻盈</em> <div class="only_xcx"> <i class="com_arrow_xcx"></i> </div> </span> <a class='one_panic mr10 left' href="http://promotion.elong.com/index/cn/2016/elong_app_down/index.html" rel="nofollow" target="_blank"><i class='com_icon01 left'></i><em>手机版</em><em method="newPromotion">专享五折起</em> <div class="only_phone" method="onlyPhoneDiv" style="display: none"> <i class="com_arrow_tl"></i> </div> </a> <span class="online_phone left"> <i class='com_icon02 left'></i> <em>7&#215;24 客服电话</em><b class='' method='newPhoneNo'><i class='com_icon03 right'></i>95711</b> <div class="on_phonnum" method="newPhoneDiv"> <i class="com_arrow_tl"></i> <ul> <!--当鼠标移入时显示--> <li><p>国内：95711</p></li> <li class="last"><p>港澳台及海外：86-551-6529-9777</p></li> </ul> </div> </span> </div> </div> <!--导航--> <div class="nav_box"> <div id="nav" class="response_wrap3" style="width: 1200px;"> <ul class="link" id="channelMenu"> <li sid="28632" ><a href="http://www.elong.com" title="艺龙旅行网" id="nav_home">首页</a></li> <li sid="28639"  class="on"><a title="酒店预订" href="http://hotel.elong.com/" id="nav_hotels">国内酒店</a></li> <li style="display:none;" sid="41493"><a href="http://tuan.elong.com/" id="A1" title="酒店团购">团购</a></li> <li sid="28642" ><a href="http://ihotel.elong.com/" id="nav_hotelsw" title="国际•港澳台酒店">国际•港澳台酒店<span class="icon_coupon"></span></a></li> <li style="display:none;" sid="" ><a href="http://jia.elong.com/" id="nav_apartment" title="短租公寓">短租公寓<span class="icon_apart" style="background: url(${pageContext.request.contextPath }/statics/images/icon2015-0.png) no-repeat; background-position: -307px 0;"></span></a> </li> <li style="display:none;" sid="52756"><a href="http://qiang.elong.com" title="限时抢">限时抢</a> <li sid="28640" ><a href="http://flight.elong.com/" title="机票预订">国内•国际机票<span style="left: 60px; background-position: -589px -29px; " class="icon_coupon"></span></a></li> <li sid="28640" ><a href="http://m.elongstatic.com/static/webapp/train/website/railway.html" title="火车票">火车票</a></li> <li sid="28640" ><a href="http://bus.elong.com/ly" title="汽车票">汽车票</a></li> <li><a href="http://trip.elong.com/" title="旅游指南">旅游指南</a></li> <li><a href="https://tmc.ly.com/" title="商旅" target='_blank'>商旅</a></li> </ul><div class="account" method="dvAccount"> <input type="hidden" id="hidden_memberid_user" value="" /> <input type="hidden" id="hidden_user_name" value="" />  <div class="log" id="user_display_login"> <span><a href="https://secure.elong.com/passport/login_cn.html" rel="nofollow" rel="nofollow">登录</a></span>|<span><a href="https://secure.elong.com/passport/register_cn.html?rnd=20190510164713" rel="nofollow" rel="nofollow">注册</a> </span> </div>  <!--弹出--> <div class="drop_box_log pt" style="display: none" id="div_user_center">  <div class="new_btnLogin"> <a href="https://secure.elong.com/passport/login_cn.html" rel="nofollow">登录</a> </div>  <ul class='clx'> <li class='icon_d1'><b></b><a href="http://my.elong.com/hotel/MyHotelOrderList_cn.html?rnd=20190510164713" rel="nofollow">酒店订单</a></li> <li class='icon_d2' style="display:none;" ><b></b><a href="http://my.elong.com/GrouponOrder_cn.html?rnd=20190510164713" rel="nofollow">团购订单</a></li> <li class='icon_d3'><a href="http://my.elong.com/Flight/FlightOrder_cn.html?rnd=20190510164713" rel="nofollow">机票订单</a></li> <li class='icon_d4'><a href="http://my.elong.com/train/orderlist?rnd=20190510164713" rel="nofollow">火车票订单</a></li> <li class='icon_d5'><b></b><a href="http://my.elong.com/CashCoupon_cn.html?flag=Cash&rnd=20190510164713" rel="nofollow">现金账户</a></li> <li class='icon_d6'><b></b><a href="http://my.elong.com/ly/lyOrderFill?rnd=20190510164713" rel="nofollow">汽车票订单</a></li> <li class='icon_d7'><b></b><a href="http://my.elong.com/hotel/hotelfavlist_cn.html?rnd=20190510164713" rel="nofollow">酒店收藏</a></li> <li class='icon_d8'><b style='display: none;' id='comment_notice'>9</b> <a id="n_comment_a" href="http://my.elong.com/Hotel/reviewedorderlist_cn.html?rnd=20190510164713" rel="nofollow">我的点评</a></li> <li class='icon_d9'><b></b><a href="http://my.elong.com/me_personalcenter_cn" rel="nofollow">个人设置</a></li> </ul>  </div> <!--弹出 end--> </div></div> </div> <style type="text/css"> .appWrap { background: url(${pageContext.request.contextPath }/statics/images/app-com.png) no-repeat 0 -483px } .appBox .close { background: url(${pageContext.request.contextPath }/statics/images/app-com.png) no-repeat -328px -182px; _background-image: url(http://www.elongstatic.com/images/other/app-com-ie6.png); } .appBox .close:hover { background-position: -358px -182px; } .appBox .intro { width: 480px; height: 210px; background: url(${pageContext.request.contextPath }/statics/images/fx_btm.png) no-repeat 0 0px; font-size: 0; line-height: 0; overflow: hidden; position: absolute; top: 27px; left: 33px; } .appBox .way i { display: inline-block; width: 43px; height: 43px; margin-right: 5px; background: url(${pageContext.request.contextPath }/statics/images/app-com.png) no-repeat 0 -334px; _background-image: url(http://www.elongstatic.com/images/other/app-com-ie6.png); vertical-align: middle; } .appBox .way .but { width: 170px; height: 30px; background: url(${pageContext.request.contextPath }/statics/images/app-com.png) no-repeat -181px -334px; _background-image: url(http://www.elongstatic.com/images/other/app-com-ie6.png); border: 0; text-align: center; color: #fff; font: 16px "Microsoft Yahei", Simsun, sans-serif; cursor: pointer; } .appBox .way .but:hover { background-position: -181px -364px; } .appBox .way .success i { width: 20px; height: 16px; margin-right: 5px; background: url(${pageContext.request.contextPath }/statics/images/app-com.png) no-repeat -181px -394px; _background-image: url(http://www.elongstatic.com/images/other/app-com-ie6.png); vertical-align: middle; } </style> <div class="clear"></div> </div> <!-- ===================== header end ===================== --> 
+              <!-- ===================== header 2019-04-29 start ===================== --> <div id="header" class="header" v='20190429' b='hotels' g='NaN' lg='f'> <div class="header_top response_wrap3 clearfix" style="width: 1200px;"> <div class="logo"> <a href="http://www.elong.com" title="风游旅行网">风游旅行网</a></div>  <div class="right mt5"> <div class="branch_menu left mr10"> <span><a href="http://imall.elong.com/" rel="nofollow">里程商城</a></span> <b></b> <span class='online-customer'><a target='_blank' href='http://my.elong.com/kf/index?g=31878' rel='nofollow'>在线客服</a></span> <b></b><span class=""><a target="_blank" href="http://my.elong.com/helpCenter/index" rel="nofollow">帮助中心</a></span> <b></b><span class='language' method="newSpanLang"> <a href="#?" method="eng">English</a><i class='com_icon04 left'></i><p><a href="http://hotel.elong.com/trans2cn/?target=http://hotel.elong.com" title="简体版" rel="nofollow">简体版</a> <a href="http://hotel.elong.com/trans2tw/?target=http://hotel.elong.com" rel="nofollow" title="繁體版">繁体版</a></p> </span> </div> <span class="one_panic one_panicxcx mr10 left"> <i class="com_iconxcx left"></i> <em>小程序</em> <em>体验更轻盈</em> <div class="only_xcx"> <i class="com_arrow_xcx"></i> </div> </span> <a class='one_panic mr10 left' href="http://promotion.elong.com/index/cn/2016/elong_app_down/index.html" rel="nofollow" target="_blank"><i class='com_icon01 left'></i><em>手机版</em><em method="newPromotion">专享五折起</em> <div class="only_phone" method="onlyPhoneDiv" style="display: none"> <i class="com_arrow_tl"></i> </div> </a> <span class="online_phone left"> <i class='com_icon02 left'></i> <em>7&#215;24 客服电话</em><b class='' method='newPhoneNo'><i class='com_icon03 right'></i>95711</b> <div class="on_phonnum" method="newPhoneDiv"> <i class="com_arrow_tl"></i> <ul> <!--当鼠标移入时显示--> <li><p>国内：95711</p></li> <li class="last"><p>港澳台及海外：86-551-6529-9777</p></li> </ul> </div> </span> </div> </div> <!--导航--> <div class="nav_box"> <div id="nav" class="response_wrap3" style="width: 1200px;"> <ul class="link" id="channelMenu"> <li sid="28632" ><a href="http://www.elong.com" title="风游旅行网" id="nav_home">首页</a></li> <li sid="28639"  class="on"><a title="酒店预订" href="http://hotel.elong.com/" id="nav_hotels">国内酒店</a></li> <li style="display:none;" sid="41493"><a href="http://tuan.elong.com/" id="A1" title="酒店团购">团购</a></li> <li sid="28642" ><a href="http://ihotel.elong.com/" id="nav_hotelsw" title="国际•港澳台酒店">国际•港澳台酒店<span class="icon_coupon"></span></a></li> <li style="display:none;" sid="" ><a href="http://jia.elong.com/" id="nav_apartment" title="短租公寓">短租公寓<span class="icon_apart" style="background: url(${pageContext.request.contextPath }/statics/images/icon2015-0.png) no-repeat; background-position: -307px 0;"></span></a> </li> <li style="display:none;" sid="52756"><a href="http://qiang.elong.com" title="限时抢">限时抢</a> <li sid="28640" ><a href="http://flight.elong.com/" title="机票预订">国内•国际机票<span style="left: 60px; background-position: -589px -29px; " class="icon_coupon"></span></a></li> <li sid="28640" ><a href="http://m.elongstatic.com/static/webapp/train/website/railway.html" title="火车票">火车票</a></li> <li sid="28640" ><a href="http://bus.elong.com/ly" title="汽车票">汽车票</a></li> <li><a href="http://trip.elong.com/" title="旅游指南">旅游指南</a></li> <li><a href="https://tmc.ly.com/" title="商旅" target='_blank'>商旅</a></li> </ul><div class="account" method="dvAccount"> <input type="hidden" id="hidden_memberid_user" value="" /> <input type="hidden" id="hidden_user_name" value="" />  <div class="log" id="user_display_login"> <span><a href="https://secure.elong.com/passport/login_cn.html" rel="nofollow" rel="nofollow">登录</a></span>|<span><a href="https://secure.elong.com/passport/register_cn.html?rnd=20190510164713" rel="nofollow" rel="nofollow">注册</a> </span> </div>  <!--弹出--> <div class="drop_box_log pt" style="display: none" id="div_user_center">  <div class="new_btnLogin"> <a href="https://secure.elong.com/passport/login_cn.html" rel="nofollow">登录</a> </div>  <ul class='clx'> <li class='icon_d1'><b></b><a href="http://my.elong.com/hotel/MyHotelOrderList_cn.html?rnd=20190510164713" rel="nofollow">酒店订单</a></li> <li class='icon_d2' style="display:none;" ><b></b><a href="http://my.elong.com/GrouponOrder_cn.html?rnd=20190510164713" rel="nofollow">团购订单</a></li> <li class='icon_d3'><a href="http://my.elong.com/Flight/FlightOrder_cn.html?rnd=20190510164713" rel="nofollow">机票订单</a></li> <li class='icon_d4'><a href="http://my.elong.com/train/orderlist?rnd=20190510164713" rel="nofollow">火车票订单</a></li> <li class='icon_d5'><b></b><a href="http://my.elong.com/CashCoupon_cn.html?flag=Cash&rnd=20190510164713" rel="nofollow">现金账户</a></li> <li class='icon_d6'><b></b><a href="http://my.elong.com/ly/lyOrderFill?rnd=20190510164713" rel="nofollow">汽车票订单</a></li> <li class='icon_d7'><b></b><a href="http://my.elong.com/hotel/hotelfavlist_cn.html?rnd=20190510164713" rel="nofollow">酒店收藏</a></li> <li class='icon_d8'><b style='display: none;' id='comment_notice'>9</b> <a id="n_comment_a" href="http://my.elong.com/Hotel/reviewedorderlist_cn.html?rnd=20190510164713" rel="nofollow">我的点评</a></li> <li class='icon_d9'><b></b><a href="http://my.elong.com/me_personalcenter_cn" rel="nofollow">个人设置</a></li> </ul>  </div> <!--弹出 end--> </div></div> </div> <style type="text/css"> .appWrap { background: url(${pageContext.request.contextPath }/statics/images/app-com.png) no-repeat 0 -483px } .appBox .close { background: url(${pageContext.request.contextPath }/statics/images/app-com.png) no-repeat -328px -182px; _background-image: url(http://www.elongstatic.com/images/other/app-com-ie6.png); } .appBox .close:hover { background-position: -358px -182px; } .appBox .intro { width: 480px; height: 210px; background: url(${pageContext.request.contextPath }/statics/images/fx_btm.png) no-repeat 0 0px; font-size: 0; line-height: 0; overflow: hidden; position: absolute; top: 27px; left: 33px; } .appBox .way i { display: inline-block; width: 43px; height: 43px; margin-right: 5px; background: url(${pageContext.request.contextPath }/statics/images/app-com.png) no-repeat 0 -334px; _background-image: url(http://www.elongstatic.com/images/other/app-com-ie6.png); vertical-align: middle; } .appBox .way .but { width: 170px; height: 30px; background: url(${pageContext.request.contextPath }/statics/images/app-com.png) no-repeat -181px -334px; _background-image: url(http://www.elongstatic.com/images/other/app-com-ie6.png); border: 0; text-align: center; color: #fff; font: 16px "Microsoft Yahei", Simsun, sans-serif; cursor: pointer; } .appBox .way .but:hover { background-position: -181px -364px; } .appBox .way .success i { width: 20px; height: 16px; margin-right: 5px; background: url(${pageContext.request.contextPath }/statics/images/app-com.png) no-repeat -181px -394px; _background-image: url(http://www.elongstatic.com/images/other/app-com-ie6.png); vertical-align: middle; } </style> <div class="clear"></div> </div> <!-- ===================== header end ===================== --> 
   <!-- 新版图层start -->
 <div id="newBox" class="newBox"></div>
   <!-- 新版图层end -->
@@ -59,21 +59,9 @@
 
     <div class="cont_box response_wrap3" method="listPageContainer">
 <div class="mt10 mb10">
-<h2 class="t24 left yahei mr20">
-北京酒店预订 </h2>
-<div class="pt5 link555">
-<a title="艺龙旅行网" href="http://www.elong.com">首页</a>
-<span class="simsun">&gt;</span>
-<a title="酒店" href="/">酒店</a>
-<span class="simsun">&gt;</span>
-<a title="北京酒店" href="/beijing/">
-北京酒店 </a>
-<span class="simsun">&gt;</span>
-<h1 class="breadcrumb" id="lastCrumbs">
-北京酒店
-</h1>
-</div>
+
 </div>        <div method="searchBox" id="m_searchBox" data-id="mainSearchBox"  class="search_box mb5">
+            
             <div data-wrap="cityWrap" class="search_item search_termini">
                 <label>
                     <span>目的地</span>
@@ -120,7 +108,7 @@ class="b-line"></i></div>
 <div class="filter_option">
 <div method="price" data-id="-1" data-low="0" data-high="0"
 class="filter_unlimited filter_unlimited_on">不限</div>
-<div class="filter_custom" style="border:1px solid black;margin-left: 1000px">
+<div class="filter_custom" >
 <span class="mr5">自定义</span>
 <span class="mr5"><input method="lowPrice" type="number" class="input_f12"/></span>
 <span class="mr5 cddd">—</span>
@@ -294,7 +282,10 @@ class="b-line"></i>
 <div class="h_info">
 <div class="h_info_pic" data-mark = "img_${ hotel.hotelId}_container" method="">
 <a href="/${ hotel.hotelId}/" target="_blank">
-<img method="bigImg" data-hotelid="${ hotel.hotelId}" data-producttype="0" data-needdatacache="true" data-mark="img_${ hotel.hotelId}" onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-f-pic.jpg'" src="http://m.elongstatic.com/static/webapp/pc_static/common/pic/loading180_130.gif" data-src="http://pavo.elongstatic.com/i/Hotel180_135/nw_0004Tb3A.jpg" big-src="http://pavo.elongstatic.com/i/Hotel480_350/nw_0004Tb3A.jpg" alt="${hotel.hotelName }" width="180" height="130" />
+<img method="bigImg" data-hotelid="${ hotel.hotelId}" data-producttype="0" data-needdatacache="true" data-mark="img_${ hotel.hotelId}" onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-f-pic.jpg'" src="http://m.elongstatic.com/static/webapp/pc_static/common/pic/loading180_130.gif" 
+data-src="${pageContext.request.contextPath }/${hotel.fileUrl }" 
+big-src="${pageContext.request.contextPath }/${hotel.fileUrl }" 
+alt="${hotel.hotelName }" width="180" height="130" />
 </a>
 </div>
 <div class="h_info_text">
@@ -322,24 +313,34 @@ class="b-line"></i>
 <span method="review" class="h_info_comt_bg" >
 <i class="t20 c37e">${hotel.hotelRatings }&nbsp;</i><i class="t20">棒极了</i>
 </span>
-<span class="c555 block mt5" data-score="${hotel.hotelRatings }">共<b>10025</b>条点评</span>
+<%-- <span class="c555 block mt5" data-score="${hotel.hotelRatings }">共<b>10025</b>条点评</span> --%>
 </a>
-<span class="block listTagItem">“出行方便”</span>
+	<!-- <span class="block listTagItem">“出行方便”</span> -->
 <!-- 收藏 -->
-<div class="h_add_cc">
-<span class="add_collect on" method="collectable" data-hotelid="${hotel.hotelId }">
-<i class="icon_add_coll"></i>
-<span data-showname="favStatus">
-<%-- ${hotel.collection }  --%>已收藏 </span>
-</span>
-</div>
+	
+		<div class="h_add_cc">
+		<span class="add_collect on" method="collectable" data-hotelid="${hotel.hotelId }">
+		
+		<c:forEach items="${collections }" var="col">
+			<c:if test="${hotel.id==col.hotelById }">
+			<i class="icon_add_coll"></i>
+			<span data-showname="favStatus">
+			已收藏 
+			</span>
+			</c:if>
+		</c:forEach>
+		
+		</span>
+		
+		</div>
+	
 </div>
 <!---------------->
 <div class="h_info_base">
 <p class="h_info_b1">
 <a href="toIndex3" target="_blank" title="${hotel.hotelName }"><span class="icon_nmb">1</span><span class="info_cn">${hotel.hotelName }</span></a>
-<i class="icon_crown_new" title="战略合作酒店，为艺龙会员提供优质服务及优惠房价" ></i>
-<b class="icon_stars icon_elevel5" title="艺龙用户评定为豪华型酒店"></b>
+<i class="icon_crown_new" title="战略合作酒店，为风游会员提供优质服务及优惠房价" ></i>
+<b class="icon_stars icon_elevel3" title="风游用户评定为豪华型酒店"></b>
 </p>
 <p class="h_info_b2">
 ${fn:split(hotel.hotelAddress, " ")[2]} 
@@ -352,10 +353,10 @@ data-mapType="0" data-hotelid="${hotel.hotelId }" data-hotelname="${hotel.hotelN
 </p>
 <div class="hotel_inf_sale clearfix mt5">
 <p class="h_comt_other">
-<c:forEach var="service" items="${fn:split(hotel.hotelServe, ',')}" step="1" varStatus="statu">
+<c:forEach var="service" items="${fn:split(hotel.hotelServePy, ',')}" step="1" varStatus="statu">
+		
 		<span class="icon_faci_${service}" title="${service}"></span>
 	</c:forEach>
-<span class="icon_faci_wifi" title="WiFi上网"></span>
 
 
 </p>
@@ -365,10 +366,10 @@ data-mapType="0" data-hotelid="${hotel.hotelId }" data-hotelname="${hotel.hotelN
 </div>
 <!--------------------------Map Start--------------------------------------->
 <!-- 地图 start-->
-<div id="h_map_wrap50101525" style="display:none; height: 410px;">
+<div id="h_map_wrap${hotel.hotelId }" style="display:none; height: 410px;">
 </div>
 <!-- 地图 end-->
-<div id="soso_map_wrap50101525" style="display:none" class='mt10'></div>
+<div id="soso_map_wrap${hotel.hotelId }" style="display:none" class='mt10'></div>
 <!--------------------------Map End------------------------------------------->
 <!--------------------------Review Start----------------------------------------->
 <!--------------------------Review End------------------------------------------->
@@ -379,199 +380,7 @@ data-mapType="0" data-hotelid="${hotel.hotelId }" data-hotelname="${hotel.hotelN
 
 </c:forEach>
 
-<div class="h_item mvt_171218" id="hotel40101133" method="hotelItem" data-hotelid="40101133" >
-<div class="h_info">
-<div class="h_info_pic" data-mark = "img_40101133_container" method="">
-<a href="/40101133/" target="_blank">
-<img method="bigImg" data-hotelid="40101133" data-producttype="0" data-needdatacache="true" data-mark="img_40101133" onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-f-pic.jpg'" src="http://m.elongstatic.com/static/webapp/pc_static/common/pic/loading180_130.gif" data-src="http://pavo.elongstatic.com/i/Hotel180_135/nw_0004HBop.jpg" big-src="http://pavo.elongstatic.com/i/Hotel480_350/nw_0004HBop.jpg" alt="北京大方饭店" width="180" height="130" />
-</a>
-</div>
-<div class="h_info_text">
-<!---------------->
-<div class="h_info_pri">
-<p>
-<a href="/40101133/" target="_blank">
-<span class="c666">&yen</span>
-<span class="h_pri_num ">598</span>
-<span class="cf55">起</span>
-</a>
-</p>
-<p class="intro_room" method="recommendRoom" title="热销房型推荐" data-hotelid="40101133" data-producttype="0" data-needdatacache="true">查看推荐房型<i></i></p>
-<p class="mt5">
-</p>
-<div class="to_detail">
-<p class="lastt_book mt10" id="recentOrder_40101133"></p>
-<a class="t14" href="/40101133/" target="_blank">
-查看详情 </a>
-</div>
-</div>
-<!---------------->
-<div class="h_info_comt">
-<a href="/40101133/#review" target="_blank" class="h_comt_data">
-<span method="review" class="h_info_comt_bg" >
-<i class="t20 c37e">4.4&nbsp;</i><i class="t20">挺好哒</i>
-</span>
-<span class="c555 block mt5" data-score="4.4">共<b>6053</b>条点评</span>
-</a>
-<span class="block listTagItem">“离西站近”</span>
-<!-- 收藏 -->
-<div class="h_add_cc">
-<span class="add_collect " method="collectable" data-hotelid="40101133">
-<i class="icon_add_coll"></i>
-<span data-showname="favStatus">
-收藏 </span>
-</span>
-</div>
-</div>
-<!---------------->
-<div class="h_info_base">
-<p class="h_info_b1">
-<a href="/40101133/" target="_blank" title="北京大方饭店"><span class="icon_nmb">2</span><span class="info_cn">北京大方饭店</span></a>
-<i class="icon_crown_new" title="战略合作酒店，为艺龙会员提供优质服务及优惠房价" ></i>
-<b class="icon_stars icon_star4" title="国家旅游局评定星级为4星级"></b>
-</p>
-<p class="h_info_b2">
-<a href="/beijing/center010111/" data-recall="true">[西客站]</a>
-西客站南广场东侧
-<span class="info_b2_l">
-<span class="l1" title="北京大方饭店地图" method="showMap" data-lng="116.331250987" data-lat="39.898654015"
-data-mapType="0" data-hotelid="40101133" data-hotelname="北京大方饭店" data-hotelrank="2" data-hoteladdress="西客站南广场东侧" >
-<i class="icon_land_map"></i>地图
-</span>
-</span>
-</p>
-<div class="hotel_inf_sale clearfix mt5">
-<p class="h_comt_other">
-<span class="icon_faci_wifi" title="WiFi上网"></span>
-<span class="icon_faci_tcc" title="停车场"></span>
-<span class="icon_faci_ct" title="餐厅"></span>
-<span class="icon_faci_xljc" title="行李寄存"></span>
-<span class="icon_faci_jsf" title="健身房"></span>
-</p>
-</div>
-<div class="tagList clearfix">
-<ul>
-<li class="childHotel">
-<p>浪漫情侣</p>
-</li>
-<li class="childHotel">
-<p>亲子酒店</p>
-</li>
-</ul>
-</div>
-</div>
-<!---------------->
-</div>
-<!--------------------------Map Start--------------------------------------->
-<!-- 地图 start-->
-<div id="h_map_wrap40101133" style="display:none; height: 410px;">
-</div>
-<!-- 地图 end-->
-<div id="soso_map_wrap40101133" style="display:none" class='mt10'></div>
-<!--------------------------Map End------------------------------------------->
-<!--------------------------Review Start----------------------------------------->
-<!--------------------------Review End------------------------------------------->
-<!--------------------------psgRecommend start------------------------------------------->
-<!--------------------------psgRecommend End------------------------------------------->
-</div>
-</div>
 
-
-<div class="h_item mvt_171218" id="hotel30101020" method="hotelItem" data-hotelid="30101020" >
-<div class="h_info">
-<div class="h_info_pic" data-mark = "img_30101020_container" method="">
-<a href="/30101020/" target="_blank">
-<img method="bigImg" data-hotelid="30101020" data-producttype="0" data-needdatacache="true" data-mark="img_30101020" onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-f-pic.jpg'" src="http://m.elongstatic.com/static/webapp/pc_static/common/pic/loading180_130.gif" data-src="http://pavo.elongstatic.com/i/Hotel180_135/nw_0004XED5.jpg" big-src="http://pavo.elongstatic.com/i/Hotel480_350/nw_0004XED5.jpg" alt="北京华泰饭店" width="180" height="130" />
-</a>
-</div>
-<div class="h_info_text">
-<!---------------->
-<div class="h_info_pri">
-<p>
-<a href="/30101020/" target="_blank">
-<span class="c666">&yen</span>
-<span class="h_pri_num ">308</span>
-<span class="cf55">起</span>
-</a>
-</p>
-<p class="intro_room" method="recommendRoom" title="热销房型推荐" data-hotelid="30101020" data-producttype="0" data-needdatacache="true">查看推荐房型<i></i></p>
-<p class="mt5">
-</p>
-<div class="to_detail">
-<p class="lastt_book mt10" id="recentOrder_30101020"></p>
-<a class="t14" href="/30101020/" target="_blank">
-查看详情 </a>
-</div>
-</div>
-<!---------------->
-<div class="h_info_comt">
-<a href="/30101020/#review" target="_blank" class="h_comt_data">
-<span method="review" class="h_info_comt_bg" >
-<i class="t20 c37e">4.2&nbsp;</i><i class="t20">挺好哒</i>
-</span>
-<span class="c555 block mt5" data-score="4.2">共<b>5090</b>条点评</span>
-</a>
-<span class="block listTagItem">“出行方便”</span>
-<!-- 收藏 -->
-<div class="h_add_cc">
-<span class="add_collect " method="collectable" data-hotelid="30101020">
-<i class="icon_add_coll"></i>
-<span data-showname="favStatus">
-收藏 </span>
-</span>
-</div>
-</div>
-<!---------------->
-<div class="h_info_base">
-<p class="h_info_b1">
-<a href="/30101020/" target="_blank" title="北京华泰饭店"><span class="icon_nmb">5</span><span class="info_cn">北京华泰饭店</span></a>
-<i class="icon_crown_new" title="战略合作酒店，为艺龙会员提供优质服务及优惠房价" ></i>
-<b class="icon_stars icon_elevel3" title="艺龙用户评定为舒适型酒店"></b>
-</p>
-<p class="h_info_b2">
-<a href="/beijing/center010145/" data-recall="true">[双井/劲松]</a>
-东三环南路13号,劲松东口
-<span class="info_b2_l">
-<span class="l1" title="北京华泰饭店地图" method="showMap" data-lng="116.465627836" data-lat="39.885703712"
-data-mapType="0" data-hotelid="30101020" data-hotelname="北京华泰饭店" data-hotelrank="5" data-hoteladdress="东三环南路13号,劲松东口" >
-<i class="icon_land_map"></i>地图
-</span>
-</span>
-</p>
-<div class="hotel_inf_sale clearfix mt5">
-<p class="h_comt_other">
-<span class="icon_faci_wifi" title="WiFi上网"></span>
-<span class="icon_faci_tcc" title="停车场"></span>
-<span class="icon_faci_ct" title="餐厅"></span>
-<span class="icon_faci_xljc" title="行李寄存"></span>
-</p>
-</div>
-<div class="tagList clearfix">
-<ul>
-<li class="childHotel">
-<p>浪漫情侣</p>
-</li>
-<li class="childHotel">
-<p>商务出行</p>
-</li>
-</ul>
-</div>
-</div>
-<!---------------->
-</div>
-<!--------------------------Map Start--------------------------------------->
-<!-- 地图 start-->
-<div id="h_map_wrap30101020" style="display:none; height: 410px;">
-</div>
-<!-- 地图 end-->
-<div id="soso_map_wrap30101020" style="display:none" class='mt10'></div>
-<!--------------------------Map End------------------------------------------->
-<!--------------------------Review Start----------------------------------------->
-<!--------------------------Review End------------------------------------------->
-<!--------------------------psgRecommend start------------------------------------------->
-<!--------------------------psgRecommend End------------------------------------------->
-</div>
-</div>
 
 </div>
 
@@ -579,16 +388,18 @@ data-mapType="0" data-hotelid="30101020" data-hotelname="北京华泰饭店" dat
     </div>
     <div id="pageContainer" class="paging1">
         <input type="hidden" name="requesturl" value="">
-<a href="javascript:void(0)" class="on">1</a>
-<a method="page" data-index="2" href="javascript:void(0)" title="第2页">2</a>
-<a method="page" data-index="3" href="javascript:void(0)" title="第3页">3</a>
-<a method="page" data-index="4" href="javascript:void(0)" title="第4页">4</a>
-<a method="page" data-index="5" href="javascript:void(0)" title="第5页">5</a>
-<a method="page" data-index="6" href="javascript:void(0)" title="第6页">6</a>
-<a method="page" data-index="7" href="javascript:void(0)" title="第7页">7</a>
-<span>...</span>
-<a method="page" data-index="695" href="javascript:void(0)" title="第695页">695</a>
-<a method="page" data-index="2" href="javascript:void(0)" class="page_next" title="下一页">下一页</a>    </div>
+		<a href="javascript:void(0)" class="on">1</a>
+		<a method="page" data-index="2" href="javascript:void(0)" title="第2页">2</a>
+		<a method="page" data-index="3" href="javascript:void(0)" title="第3页">3</a>
+		<a method="page" data-index="4" href="javascript:void(0)" title="第4页">4</a>
+		<a method="page" data-index="5" href="javascript:void(0)" title="第5页">5</a>
+		<a method="page" data-index="6" href="javascript:void(0)" title="第6页">6</a>
+		<a method="page" data-index="7" href="javascript:void(0)" title="第7页">7</a>
+		<span>...</span>
+		<a method="page" data-index="695" href="javascript:void(0)" title="第695页">695</a>
+		<a method="page" data-index="2" href="javascript:void(0)" class="page_next" title="下一页">下一页</a>   
+ </div>
+ 
     </div>
     <!-- 右侧内容 -->
     <div id="rightSpanDiv">
@@ -630,317 +441,6 @@ data-mapType="0" data-hotelid="30101020" data-hotelname="北京华泰饭店" dat
 
     <div class="clx"></div>
     <a name="mapstop" id="mapstop"></a>
-<div class="listSEO clearfix mt10 mb10" style="width: 100%;">
-<h2> 北京酒店信息<i class="icon_SEO_e" id="showseodetail"></i></h2>
-<div class="hotelsNearby link999" style="display:none;">
-<h3>北京酒店最新用户点评</h3>
-<p>北京金地酒店(首都机场店)房间清洁，接送机场，前台及司机服务态度都很好。北京机场快捷酒店酒店位置很好，离机场很近 有叫早服务 有免费班车接送 但只能送到T3航站楼 要去T2航站楼的话 需要做穿梭巴士过去 不太方便山水时尚酒店(北京通州梨园地铁站店)挺好的，住了两晚，但就是离市中心比较远，去各个地方旅游不是太方便吧北京新侨诺富特饭店Best Location 名副其实，交通便捷，品牌酒店值得信赖北京贝尔特酒店最近旁边在施工，电鎬声响了一夜，马桶也不好使，估计因为雾霾卫生间的换气扇一直没开，吐槽一下。首旅集团北京好苑建国酒店环境很好，服务热情，室内卫生搞得很好，有问题耐心解答北京金都假日酒店交通很方便，周边非常繁华，酒店设施环境都很好，下次还回来。北京亚奥国际酒店(原劳动大厦)非常不错，去住过很多次了，位置不错，交通方便，早餐非常好，而且参加展会也非常方便，法国老人非常喜欢。北京华侨大厦华侨大厦位置佳，房间大（30平米，服务好，性价比较高。只是早餐平淡，不够五星。北京远通维景国际大酒店北京酒店相对来说偏贵，周围饭店不多，交通比较方便北京千禧大酒店经常会入住的酒店，感觉前台服务还挺热情，但是新员工还要加强培训。另外，早餐的品种要有所变化，不过牛肉粥还不错。锦江集团北京辽宁大厦住了很多次，房间不错，交通方便，从机场过来很顺。ZHotels智尚酒店(北京王府井中心店)位置很好，离王府井大街200米左右，离故宫2000米左右。估计是老宾馆，卫生间下水不好。周边有好多小吃店。瑞客门服务公寓(北京建国门店)这家店住的很温馨，休息的很舒服，卫生搞的很干净，楼下有超市和7－Eleven便利店很方便，想吃好的可以去双子座南面吃眉州东坡或那家小馆，网评都是不错的，如果赶上吃饭点过去就是排队。离秀水、国贸和王府井都很近，这个价位住这里很划算。北京诺金酒店非常棒的酒店，无论是环境还是服务都无可挑剔！因个人原因请求可否延迟退房，居然同意，这点特别令人感动。极力推荐！逐陆客栈海洋主题精品酒店我订的是海之义高级双床房，一进房间就好像进入海洋一样，房间布局堪称完美，环境整洁服务周到让人无比舒心，外窗通风比较好，给我一种家的感觉</p>
-<h3>北京住宿推荐</h3>
-<p>您可以在艺龙网站北京酒店预订页面选择特定的住宿需求，小艺将依据您的住宿需求推荐相应的酒店/宾馆/住宿。依据住宿价格需求，小艺可以为您推荐150元下的客栈经济型住宿、150-300元的快捷连锁宾馆或是价格稍高的星级品牌酒店。依据北京住宿位置的需求，小艺可以为您推荐诸如北京热门区域酒店，比如北京的国贸CBD、燕莎/农展馆、王府井商业区、东直门/簋街、房山城区、十渡风景区、大兴农业观光区、密云古北水镇、天坛、建国门、鸟巢/国家会议中心等。北京今日特价酒店频道中的优质住宿是小艺精心筛选推荐的，如果您觉得不错，欢迎您把艺龙北京住宿推荐给更多的小伙伴。</p>
-<h3>北京住宿攻略</h3>
-<p>小艺为您带来2016年最新的北京住宿攻略，北京住宿价格会随预订需求的变化而产生一些波动，通常来讲周末与节假日北京酒店住宿的价格会比平时略高，在北京不同的区域（昌平区、朝阳区、崇文区、大兴区、东城区、房山区、丰台区、海淀区、怀柔区、门头沟区 ）住宿价格也往往相差很多，小艺建议使用预付的方式提前预订，锁定低价酒店，确保有房，放心出行。查看北京旅游攻略，请您移步艺龙旅行攻略频道。</p>
-<h3>北京主题酒店</h3>
-<p>
-<a href="http://www.elong.com/farmhouse/beijing/">北京农家乐</a>
-|
-<a href="http://www.elong.com/apartment/beijing/">北京公寓</a>
-|
-<a href="http://www.elong.com/youth/beijing/">北京青年旅舍</a>
-|
-<a href="http://www.elong.com/inn/beijing/">北京客栈</a>
-|
-<a href="http://www.elong.com/theme/beijing/">北京主题酒店</a>
-|
-<a href="http://www.elong.com/shortrent/beijing/">北京短租公寓</a>
-|
-<a href="http://www.elong.com/love/beijing/">北京情侣酒店</a>
-</p>
-<h3>北京机场周边酒店</h3>
-<p>
-<a href="http://hotel.elong.com/landmark/5312593/">南苑机场附近酒店</a>
-|
-<a href="http://hotel.elong.com/landmark/5707389/">首都国际机场3号航站楼附近酒店</a>
-|
-<a href="http://hotel.elong.com/landmark/5714537/">首都国际机场附近酒店</a>
-|
-<a href="http://hotel.elong.com/landmark/6307431/">首都机场附近酒店</a>
-</p>
-<h3>北京火车站周边酒店</h3>
-<p>
-<a href="http://hotel.elong.com/landmark/5367483/">北京南站附近酒店</a>
-|
-<a href="http://hotel.elong.com/landmark/5568603/">北京北站附近酒店</a>
-|
-<a href="http://hotel.elong.com/landmark/6305976/">北京西站附近酒店</a>
-|
-<a href="http://hotel.elong.com/landmark/6306274/">北京站附近酒店</a>
-</p>
-<h3>北京地铁周边酒店</h3>
-<p>
-<a href="http://hotel.elong.com/landmark/5456203/">西单站附近酒店</a>
-|
-<a href="http://hotel.elong.com/landmark/5456331/">东单站附近酒店</a>
-|
-<a href="http://hotel.elong.com/landmark/5463937/">国贸站附近酒店</a>
-|
-<a href="http://hotel.elong.com/landmark/5490301/">金台夕照站附近酒店</a>
-|
-<a href="http://hotel.elong.com/landmark/5490366/">灯市口站附近酒店</a>
-|
-<a href="http://hotel.elong.com/landmark/5494380/">北土城站附近酒店</a>
-|
-<a href="http://hotel.elong.com/landmark/5506093/">呼家楼站附近酒店</a>
-|
-<a href="http://hotel.elong.com/landmark/5510263/">东四站附近酒店</a>
-</p>
-<h3>北京汽车站周边酒店</h3>
-<p>
-<a href="http://hotel.elong.com/landmark/5273331/">窦店汽车站附近酒店</a>
-|
-<a href="http://hotel.elong.com/landmark/5280840/">房山客运站附近酒店</a>
-|
-<a href="http://hotel.elong.com/landmark/5288945/">北京高客长途客运有限责任公司附近酒店</a>
-|
-<a href="http://hotel.elong.com/landmark/5289591/">大兴长途汽车站附近酒店</a>
-|
-<a href="http://hotel.elong.com/landmark/5292582/">黄村长途汽车站附近酒店</a>
-</p>
-<h3>北京星级/快捷酒店</h3>
-<p>
-<a href="/beijing/star2.html">北京快捷酒店预订</a>
-|
-<a href="/beijing/star3.html">北京三星级酒店预订</a>
-|
-<a href="/beijing/star4.html">北京四星级酒店预订</a>
-|
-<a href="/beijing/star5.html">北京五星级酒店预订</a>
-</p>
-<h3>北京各行政区内的酒店</h3>
-<p>
-<a href="/beijing/district100020203/">昌平区酒店预订</a>
-|
-<a href="/beijing/district100025798/">朝阳区酒店预订</a>
-|
-<a href="/beijing/district100757037/">崇文区酒店预订</a>
-|
-<a href="/beijing/district100020713/">大兴区酒店预订</a>
-|
-<a href="/beijing/district100021413/">东城区酒店预订</a>
-|
-<a href="/beijing/district100021618/">房山区酒店预订</a>
-|
-<a href="/beijing/district100022230/">丰台区酒店预订</a>
-|
-<a href="/beijing/district100022610/">海淀区酒店预订</a>
-|
-<a href="/beijing/district100023288/">怀柔区酒店预订</a>
-|
-<a href="/beijing/district100023621/">门头沟区酒店预订</a>
-|
-<a href="/beijing/district100026390/">密云县酒店预订</a>
-|
-<a href="/beijing/district100023916/">平谷区酒店预订</a>
-|
-<a href="/beijing/district100024237/">石景山区酒店预订</a>
-|
-<a href="/beijing/district100024388/">顺义区酒店预订</a>
-|
-<a href="/beijing/district100024931/">通州区酒店预订</a>
-|
-<a href="/beijing/district100025527/">西城区酒店预订</a>
-|
-<a href="/beijing/district100757045/">宣武区酒店预订</a>
-|
-<a href="/beijing/district100026834/">延庆县酒店预订</a>
-</p>
-<h3>北京酒店品牌</h3>
-<p>
-<a href="/beijing/chain53.html">北京铂涛酒店预订</a>
-|
-<a href="/beijing/chain111.html">北京布丁酒店预订</a>
-|
-<a href="/beijing/chain44.html">北京格林豪泰酒店预订</a>
-|
-<a href="/beijing/chain29305.html">北京易佰连锁酒店预订</a>
-|
-<a href="/beijing/chain41.html">北京速8酒店预订</a>
-|
-<a href="/beijing/chain56.html">北京汉庭酒店预订</a>
-|
-<a href="/beijing/chain6.html">北京首旅建国酒店预订</a>
-|
-<a href="/beijing/chain65.html">北京桔子酒店预订</a>
-|
-<a href="/beijing/chain32.html">北京如家酒店预订</a>
-|
-<a href="/beijing/chain1671.html">北京99连锁酒店预订</a>
-|
-<a href="/beijing/chain626.html">北京嘉利华酒店预订</a>
-|
-<a href="/beijing/chain33.html">北京欣燕都酒店预订</a>
-|
-<a href="/beijing/chain36.html">北京雅诗阁酒店预订</a>
-|
-<a href="/beijing/chain330.html">北京智选假日酒店预订</a>
-|
-<a href="/beijing/chain1986.html">北京中油阳光酒店预订</a>
-|
-<a href="/beijing/chain1034.html">北京都市118酒店预订</a>
-|
-<a href="/beijing/chain363.html">北京凯宾酒店预订</a>
-|
-<a href="/beijing/chain34.html">北京锦江之星酒店预订</a>
-|
-<a href="/beijing/chain67.html">北京飘HOME酒店预订</a>
-|
-<a href="/beijing/chain7.html">北京锦江酒店预订</a>
-|
-<a href="/beijing/chain624.html">北京金泰之家酒店预订</a>
-|
-<a href="/beijing/chain78.html">北京禧龙酒店预订</a>
-|
-<a href="/beijing/chain29312.html">北京玉渊潭酒店预订</a>
-|
-<a href="/beijing/chain525.html">北京富润酒店预订</a>
-|
-<a href="/beijing/chain61.html">北京富驿酒店酒店预订</a>
-|
-<a href="/beijing/chain104.html">北京四季酒店预订</a>
-|
-<a href="/beijing/chain29154.html">北京假日酒店预订</a>
-|
-<a href="/beijing/chain40.html">北京华美达酒店预订</a>
-|
-<a href="/beijing/chain423.html">北京威斯汀酒店预订</a>
-|
-<a href="/beijing/chain366.html">北京丽晶酒店预订</a>
-|
-<a href="/beijing/chain316.html">北京皇冠假日酒店预订</a>
-|
-<a href="/beijing/chain313.html">北京喜来登酒店预订</a>
-|
-<a href="/beijing/chain509.html">北京99快捷酒店预订</a>
-|
-<a href="/beijing/chain73.html">北京温德姆酒店预订</a>
-|
-<a href="/beijing/chain29323.html">北京全季酒店预订</a>
-|
-<a href="/beijing/chain64.html">北京中安之家酒店预订</a>
-|
-<a href="/beijing/chain21.html">北京港中旅维景酒店预订</a>
-|
-<a href="/beijing/chain24.html">北京天伦酒店预订</a>
-|
-<a href="/beijing/chain62.html">北京神舟商旅酒店预订</a>
-|
-<a href="/beijing/chain31.html">北京最佳西方酒店预订</a>
-|
-<a href="/beijing/chain547.html">北京诺富特酒店预订</a>
-|
-<a href="/beijing/chain488.html">北京丽思卡尔顿酒店预订</a>
-|
-<a href="/beijing/chain71.html">北京金广酒店预订</a>
-|
-<a href="/beijing/chain370.html">北京99旅馆酒店预订</a>
-|
-<a href="/beijing/chain84.html">北京尚客优酒店预订</a>
-|
-<a href="/beijing/chain29303.html">北京W酒店预订</a>
-|
-<a href="/beijing/chain342.html">北京锐思特酒店预订</a>
-|
-<a href="/beijing/chain29269.html">北京万豪行政公寓酒店预订</a>
-|
-<a href="/beijing/chain412.html">北京怡莱酒店预订</a>
-|
-<a href="/beijing/chain333.html">北京银座佳驿酒店预订</a>
-|
-<a href="/beijing/chain29327.html">北京途家酒店预订</a>
-|
-<a href="/beijing/chain425.html">北京星程酒店预订</a>
-|
-<a href="/beijing/chain15.html">北京洲际酒店预订</a>
-|
-<a href="/beijing/chain2.html">北京雅高酒店预订</a>
-|
-<a href="/beijing/chain18.html">北京马哥孛罗酒店预订</a>
-|
-<a href="/beijing/chain58.html">北京千禧酒店预订</a>
-|
-<a href="/beijing/chain739.html">北京柏悦酒店预订</a>
-|
-<a href="/beijing/chain6032.html">北京星河湾酒店预订</a>
-|
-<a href="/beijing/chain37.html">北京开元酒店预订</a>
-|
-<a href="/beijing/chain13.html">北京万豪酒店预订</a>
-|
-<a href="/beijing/chain74.html">北京山水时尚酒店预订</a>
-|
-<a href="/beijing/chain621.html">北京美爵酒店预订</a>
-|
-<a href="/beijing/chain47.html">北京戴斯酒店预订</a>
-|
-<a href="/beijing/chain312.html">北京宜必思酒店预订</a>
-|
-<a href="/beijing/chain355.html">北京岭南佳园酒店预订</a>
-|
-<a href="/beijing/chain436.html">北京铂尔曼酒店预订</a>
-|
-<a href="/beijing/chain393.html">北京万丽酒店预订</a>
-|
-<a href="/beijing/chain97.html">北京维也纳酒店预订</a>
-|
-<a href="/beijing/chain569.html">北京中海酒店预订</a>
-|
-<a href="/beijing/chain14.html">北京希尔顿酒店预订</a>
-|
-<a href="/beijing/chain11.html">北京香格里拉酒店预订</a>
-|
-<a href="/beijing/chain12.html">北京日航酒店预订</a>
-|
-<a href="/beijing/chain29156.html">北京福朋喜来登酒店预订</a>
-|
-<a href="/beijing/chain28.html">北京海航酒店预订</a>
-|
-<a href="/beijing/chain29155.html">北京希尔顿逸林酒店预订</a>
-|
-<a href="/beijing/chain75.html">北京西翠之旅酒店预订</a>
-|
-<a href="/beijing/chain52.html">北京雅悦酒店预订</a>
-|
-<a href="/beijing/chain374.html">北京山水酒店预订</a>
-|
-<a href="/beijing/chain16.html">北京富豪酒店预订</a>
-|
-<a href="/beijing/chain98.html">北京城市客栈酒店预订</a>
-|
-<a href="/beijing/chain490.html">北京怡家酒店预订</a>
-|
-<a href="/beijing/chain7494.html">北京雅乐轩酒店预订</a>
-|
-<a href="/beijing/chain1251.html">北京朗豪酒店预订</a>
-|
-<a href="/beijing/chain39.html">北京金陵连锁酒店预订</a>
-|
-<a href="/beijing/chain29299.html">北京鲁能酒店酒店预订</a>
-|
-<a href="/beijing/chain57.html">北京逸羽酒店预订</a>
-|
-<a href="/beijing/chain6676.html">北京丽笙酒店预订</a>
-|
-<a href="/beijing/chain23.html">北京豪生酒店预订</a>
-|
-<a href="/beijing/chain17762.html">北京万怡酒店预订</a>
-|
-<a href="/beijing/chain422.html">北京君悦酒店预订</a>
-</p>
-<h3>合作伙伴</h3>
-<p>
-<a href="https://m.ctrip.com/html5/you/place/Beijing1.html">北京旅游</a>
-</p>
-</div>
-</div>
 </div>
 <div id="searchLoadingDiv" data-bindid="loadingContent" style="display:none">
     <div class="ht-load">
@@ -961,11 +461,11 @@ data-mapType="0" data-hotelid="30101020" data-hotelname="北京华泰饭店" dat
 </div>
 <div class="fix_tool" id="right-box-list">
 <ul>
-<li class="cate_01" data-rightblock="1"><a href="http://my.elong.com/" target="_blank" style="display: block;"></a><span style="display: none;">我的账户</span></li>
-<li class="cate_02" data-rightblock="2"><a href="http://my.elong.com/cashcoupon_cn.html" target="_blank" style="display: block;"></a><span style="display: none;">我的钱包</span></li>
-<li class="cate_03" data-rightblock="3"><a href="#?" style="display: block;"></a><span style="display: none;">我的收藏</span></li>
-<li class="cate_05" data-rightblock="5"><a href="#?" style="display: block;"></a><span style="display: none;">在线客服</span></li>
-<li class="cate_06" data-rightblock="6"><a href="#?" style="display: block;"></a><span style="display: none;">在线反馈</span></li>
+<li class="cate_01" data-rightblock="1"><a href="#" target="_blank" style="display: block;"></a><span style="display: none;">我的账户</span></li>
+<li class="cate_02" data-rightblock="2"><a href="#" target="_blank" style="display: block;"></a><span style="display: none;">我的钱包</span></li>
+<li class="cate_03" data-rightblock="3"><a href="#" style="display: block;"></a><span style="display: none;">我的收藏</span></li>
+<li class="cate_05" data-rightblock="5"><a href="#" style="display: block;"></a><span style="display: none;">在线客服</span></li>
+<li class="cate_06" data-rightblock="6"><a href="#" style="display: block;"></a><span style="display: none;">在线反馈</span></li>
 </ul>
 <div class="go_top" id="rightBoxGoTop" style="display: none">
 <a href="#top"></a>
@@ -1100,8 +600,13 @@ data-mapType="0" data-hotelid="30101020" data-hotelname="北京华泰饭店" dat
   <script type='text/javascript' src="${pageContext.request.contextPath }/statics/js/vst.js" charset="utf-8"></script>
 <script data-main='//file.40017.cn/js40017cnproduct/cn/h/elong_pc/201957_14.10fe5/list/list.js?20190507162743' src='${pageContext.request.contextPath }/statics/js/require.js'></script>
 
-          <!-- ===================== footer 20190403 start ===================== --> <div class="clear"></div> <div class="footer" r="3"> <div class="footer_info"> <dl> <dt>加盟合作</dt> <dd> <a href="http://hotel.elong.com/union/join.html#?" title="酒店加盟" rel="nofollow">酒店加盟</a> </dd> <dd> <a href="http://open.elong.com/" title="机票酒店分销联盟" rel="nofollow">开放平台</a> </dd> <dd> <a href="http://promotion.elong.com/hotel/cn/elongagent/elongagent.html " title="旅游产品代理合作" rel="nofollow">代理合作</a> </dd> <dd> <a href="http://promotion.elong.com/web/adservice/adservice.html" title="在线广告服务" rel="nofollow">广告服务</a> </dd> <dd> <a href="http://ebooking.elong.com/ebkauth/login" title="艺龙商家中心" rel="nofollow">商家中心</a> </dd> </dl> <dl> <dt>关于艺龙</dt> <dd> <a href="http://hotel.elong.com/directory/" title="酒店大全">酒店大全</a> </dd><dd> <a href="http://ihotel.elong.com/sitemap/" title="国际酒店">国际酒店</a> </dd><dd> <a href="http://promotion.elong.com/web/insurance/index.html" title="旅行保险">旅行保险</a> </dd><dd> <a href="http://promotion.elong.com/index/cn/campus/index.html" title="校园招聘" rel="nofollow">校园招聘</a> </dd> <dd> <a href="https://d.elong.com/a/contact" title="联系艺龙旅行网" rel="nofollow">联系我们</a> </dd> </dl> <dl> <dt>艺龙APP下载</dt> <dd class="pt10"> <i class="cm_icon footer_info_app"></i> </dd> </dl> <dl> <dt>艺龙官方微信</dt> <dd class="pt10"> <i class="cm_icon footer_info_wx"></i> </dd> </dl> <dl> <dt>艺龙官方小程序</dt> <dd class="pt10"><i class="cm_icon footer_info_xcx"></i></dd> </dl> </div> <div class="clx"></div> <div class="footer_copy"> &#169; 2000 - 2019 北京艺龙信息技术有限公司, eLong, Inc or its affiliates. All Rights Reserved. <i class="cm_icon"></i> <a rel="nofollow" target="_blank" href="http://m.elongstatic.com/pcheaderfooter/2018/06/files/headerfoot/img/ICP_20180015.pdf">ICP证:合B2-20180015</a> <br> <a rel="nofollow" target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502026059"> <i style=" background-image: url(static/images/anbei.png); background-size: contain; background-position: 0; height: 20px; width: 20px;"></i> 京公网安备11010502026059号</a> <i class="cm_icon"></i> <a rel="nofollow" target="_blank" href="http://m.elongstatic.com/pcheaderfooter/2018/06/files/headerfoot/img/company_105145723.pdf">经营执照</a> <i class="cm_icon"></i> <a rel="nofollow" target="_blank" href="http://m.elongstatic.com/hotel/eltk/eltk.html">《艺龙旅行网服务条款》</a><i class="cm_icon"></i>违法和不良信息举报电话：95711-9<i class="cm_icon"></i><a rel="nofollow" href="mailto:wfjb@ly.com">举报邮箱：wfjb@ly.com</a></div> <div class="footer_safe"> <a class="cm_icon qua-1" href="https://trustsealinfo.websecurity.norton.com/splash?form_file=fdf/splash.fdf&dn=*.elong.com&lang=zh_CN" rel="nofollow" target="_blank" alt="SSL加密认证" title="SSL加密认证">SSL加密认证</a> <a title="艺龙网通过PCI认证" alt="艺龙网通过PCI认证" target="_blank" rel="nofollow" href="http://www.atsec.cn/cn/pci-attestation/Elong-PCIAttestation-atsec-PCI-DSS-C-01128.jpg" class="cm_icon qua-6">艺龙网通过PCI认证</a><a class="cm_icon qua-3" href="http://www.itrust.org.cn/Home/Index/satification_certificate/wm/MY2019042401.html" rel="nofollow" target="_blank" alt="信赖商业计划" title="信赖商业计划">信用评级</a> <a class="cm_icon qua-5" href="https://ss.knet.cn/verifyseal.dll?sn=e14021111010646180fggu000000&amp;ct=df&amp;a=1&amp;pa=500267" rel="nofollow" onclick="CNNIC_change('urlknet')" tabindex="-1" id="urlknet" target="_blank" title="可信用网站身份验证" alt="可信用网站身份验证">可信用网站身份验证</a> <a class="cm_icon qua-4" href="http://search.szfw.org/cert/l/CX20120918001652001722" rel="nofollow" target="_blank" title="诚信示范企业" alt="诚信示范企业">诚信示范企业</a> <a alt="品牌官网认证" title="品牌官网认证" target="_blank" rel="nofollow" href="http://si.trustutn.org/info?sn=912170105026585086807&amp;certType=1" class="cm_icon qua-7">品牌官网认证</a> </div> </div> <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/statics/css/styles.css"> <!-- ===================== footer end ===================== --> 
+          <!-- ===================== footer 20190403 start ===================== --> <div class="clear"></div> <div class="footer" r="3"> <div class="footer_info"> <dl> <dt>加盟合作</dt> <dd> <a href="http://hotel.elong.com/union/join.html#?" title="酒店加盟" rel="nofollow">酒店加盟</a> </dd> <dd> <a href="http://open.elong.com/" title="机票酒店分销联盟" rel="nofollow">开放平台</a> </dd> <dd> <a href="http://promotion.elong.com/hotel/cn/elongagent/elongagent.html " title="旅游产品代理合作" rel="nofollow">代理合作</a> </dd> <dd> <a href="http://promotion.elong.com/web/adservice/adservice.html" title="在线广告服务" rel="nofollow">广告服务</a> </dd> <dd> <a href="http://ebooking.elong.com/ebkauth/login" title="风游商家中心" rel="nofollow">商家中心</a> </dd> </dl> <dl> <dt>关于风游</dt> <dd> <a href="http://hotel.elong.com/directory/" title="酒店大全">酒店大全</a> </dd><dd> <a href="http://ihotel.elong.com/sitemap/" title="国际酒店">国际酒店</a> </dd><dd> <a href="http://promotion.elong.com/web/insurance/index.html" title="旅行保险">旅行保险</a> </dd><dd> <a href="http://promotion.elong.com/index/cn/campus/index.html" title="校园招聘" rel="nofollow">校园招聘</a> </dd> <dd> <a href="https://d.elong.com/a/contact" title="联系风游旅行网" rel="nofollow">联系我们</a> </dd> </dl> <dl> <dt>风游APP下载</dt> <dd class="pt10"> <i class="cm_icon footer_info_app"></i> </dd> </dl> <dl> <dt>风游官方微信</dt> <dd class="pt10"> <i class="cm_icon footer_info_wx"></i> </dd> </dl> <dl> <dt>风游官方小程序</dt> <dd class="pt10"><i class="cm_icon footer_info_xcx"></i></dd> </dl> </div> <div class="clx"></div> <div class="footer_copy"> &#169; 2000 - 2019 北京风游信息技术有限公司, eLong, Inc or its affiliates. All Rights Reserved. <i class="cm_icon"></i> <a rel="nofollow" target="_blank" href="http://m.elongstatic.com/pcheaderfooter/2018/06/files/headerfoot/img/ICP_20180015.pdf">ICP证:合B2-20180015</a> <br> <a rel="nofollow" target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502026059"> <i style=" background-image: url(static/images/anbei.png); background-size: contain; background-position: 0; height: 20px; width: 20px;"></i> 京公网安备11010502026059号</a> <i class="cm_icon"></i> <a rel="nofollow" target="_blank" href="http://m.elongstatic.com/pcheaderfooter/2018/06/files/headerfoot/img/company_105145723.pdf">经营执照</a> <i class="cm_icon"></i> <a rel="nofollow" target="_blank" href="http://m.elongstatic.com/hotel/eltk/eltk.html">《风游旅行网服务条款》</a><i class="cm_icon"></i>违法和不良信息举报电话：95711-9<i class="cm_icon"></i><a rel="nofollow" href="mailto:wfjb@ly.com">举报邮箱：wfjb@ly.com</a></div> <div class="footer_safe"> <a class="cm_icon qua-1" href="https://trustsealinfo.websecurity.norton.com/splash?form_file=fdf/splash.fdf&dn=*.elong.com&lang=zh_CN" rel="nofollow" target="_blank" alt="SSL加密认证" title="SSL加密认证">SSL加密认证</a> <a title="风游网通过PCI认证" alt="风游网通过PCI认证" target="_blank" rel="nofollow" href="http://www.atsec.cn/cn/pci-attestation/Elong-PCIAttestation-atsec-PCI-DSS-C-01128.jpg" class="cm_icon qua-6">风游网通过PCI认证</a><a class="cm_icon qua-3" href="http://www.itrust.org.cn/Home/Index/satification_certificate/wm/MY2019042401.html" rel="nofollow" target="_blank" alt="信赖商业计划" title="信赖商业计划">信用评级</a> <a class="cm_icon qua-5" href="https://ss.knet.cn/verifyseal.dll?sn=e14021111010646180fggu000000&amp;ct=df&amp;a=1&amp;pa=500267" rel="nofollow" onclick="CNNIC_change('urlknet')" tabindex="-1" id="urlknet" target="_blank" title="可信用网站身份验证" alt="可信用网站身份验证">可信用网站身份验证</a> <a class="cm_icon qua-4" href="http://search.szfw.org/cert/l/CX20120918001652001722" rel="nofollow" target="_blank" title="诚信示范企业" alt="诚信示范企业">诚信示范企业</a> <a alt="品牌官网认证" title="品牌官网认证" target="_blank" rel="nofollow" href="http://si.trustutn.org/info?sn=912170105026585086807&amp;certType=1" class="cm_icon qua-7">品牌官网认证</a> </div> </div> <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/statics/css/styles.css"> <!-- ===================== footer end ===================== --> 
 <!-- 可信网站LOGO安装开始 -->
-
+<script type="text/javascript" src="${pageContext.request.contextPath }/statics/js/jquery1.8.3.min.js"></script>
+	<script type="text/javascript">
+		$(".mvt_171218").hover(function() {
+				
+		})
+	</script>
 </body>
 </html>

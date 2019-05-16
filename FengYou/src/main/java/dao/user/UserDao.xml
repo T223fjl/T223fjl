@@ -8,7 +8,28 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="login" parameterType="User" resultType="User">
 		select * from user where name=#{name} and pwd=#{pwd}
 	</select>
+	<select id="queryMycollection" resultType="Mycollection">
+		select * from Mycollection 
+	</select>
+	
 	<insert id="Registration" parameterType="User">
 		INSERT INTO user(phone,name,email,pwd,sex) VALUES (#{phone},#{name},#{email},#{pwd},1)
 	</insert>
+	<select id="getUserInfo" resultType="pojo.User">
+	select * from user where id=#{id}
+	</select>
+	
+		<update id="updateUser" parameterType="pojo.User">
+		update user
+	<trim suffix="where id=#{id}" suffixOverrides="," prefix="set">
+			<if test="phone != null">phone=#{phone},</if>
+			<if test="idcard != null">idcard=#{idcard},</if>
+			<if test="sex != null">sex=#{sex},</if>
+			<if test="email != null">email=#{email},</if>
+			<if test="address != null">address=#{address},</if>
+			<if test="status != null">status=#{status},</if>
+			<if test="status != null">status=#{status},</if>
+			<if test="birthday != null">birthday=#{birthday},</if>
+		</trim>
+	</update>
 </mapper>

@@ -425,9 +425,11 @@
 }
 
 .filter_custom {
-	
 	width: 240px;
 	text-align: right;
+	position: absolute;
+	right: 85px;
+	top: 7px
 	
 }
 
@@ -3159,7 +3161,7 @@ top
 		width: 170px
 	}
 	.filter_custom {
-		right: 250px
+		right: 90px
 	}
 	.en .search_item .input_f16 {
 		margin-left: 10px;

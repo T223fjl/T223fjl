@@ -2,6 +2,8 @@ package pojo;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class User {
 	private Integer id;
 	private String name;
@@ -13,6 +15,7 @@ public class User {
 	private  String address;
 	private  int status;
 	private  int delete;
+	 @DateTimeFormat(pattern="yyyy-MM-dd")
 	private  Date birthday;
 	public Integer getId() {
 		return id;
