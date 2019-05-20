@@ -11,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.github.pagehelper.PageInfo;
+
 import pojo.Dictionarydate;
 import pojo.Hotel;
 import pojo.Level;
@@ -51,18 +53,75 @@ public class DevController {
 
 	// 跳转前台二级页面
 	@RequestMapping("/toIndex2")
-	public String toIndex2(HttpSession session) {
+	public String toIndex2(String bigPrice ,String smallPrice ,String city ,
+			String star ,String type,String price ,HttpSession session) {
 		List<Level> types =levelService.queryLevelByType(1);
 		List<Level> citys = levelService.queryLevelByType(2);
-		List<Hotel> hotels=hotelService.queryHotel();
 		List<Dictionarydate> stars=dictionarydateService.queryDictionarydateByTypeCode("star");
 		List<Dictionarydate> prices=dictionarydateService.queryDictionarydateByTypeCode("price");
+		int page=1;
+		int size=5;
+		String sort=null;
+		String desc=null;
+		int level2=0;
+		if(city!=null&&!"".equals(city)){
+			level2=(Integer.valueOf(city));
+		}
+		int level1=0;
+		if(type!=null&&!"".equals(type)){
+			level1=(Integer.valueOf(type));
+		}
+		int ran=0;
+		if(star!=null&&!"".equals(star)){
+			ran=Integer.valueOf(star);
+		}
+		int small=0;
+		if(smallPrice!=null&&!"".equals(smallPrice)){
+			 small=(Integer.valueOf(smallPrice));
+		}
+		int big=0;
+		if(bigPrice!=null&&!"".equals(bigPrice)){
+			 big=(Integer.valueOf(bigPrice));
+		}
+		PageInfo<Hotel> hotels= hotelService.findHotelList(ran,level1,level2, big, small, sort, desc, page, size);
 		
 		session.setAttribute("stars", stars);
 		session.setAttribute("prices", prices);
 		session.setAttribute("types", types);
 		session.setAttribute("citys", citys);
 		session.setAttribute("hotels", hotels);
+
+		
+		Dictionarydate CurStar=null;
+		for (int i = 0; i < stars.size(); i++) {
+			if(stars.get(i).getDictCode()==ran){
+				CurStar=stars.get(i);
+			}
+		}
+		Dictionarydate CurPrice=null;
+		for (int i = 0; i < prices.size(); i++) {
+			if(price!=null&&!"".equals(price)){
+				if(prices.get(i).getDictCode()==(Integer.valueOf(price))){
+					CurPrice=prices.get(i);
+				}
+			}
+		}
+		Level CurCity=null;
+		for (int i = 0; i < citys.size(); i++) {
+			if(citys.get(i).getId()==level2){
+				CurCity=citys.get(i);
+			}
+		}
+		Level CurType=null;
+		for (int i = 0; i < types.size(); i++) {
+			if(types.get(i).getId()==level1){
+				CurType=types.get(i);
+			}
+		}
+		session.setAttribute("CurStar", CurStar);
+		session.setAttribute("CurPrice", CurPrice);
+		session.setAttribute("CurType", CurType);
+		session.setAttribute("CurCity", CurCity);
 		return "developer/index2";
 	}
 

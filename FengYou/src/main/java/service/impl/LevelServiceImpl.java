@@ -38,17 +38,6 @@ public class LevelServiceImpl implements LevelService {
 			level1s.get(j).setSonLevels(sonLevels);
 		}
 
-		for (int j = 0; j < level1s.size(); j++) {
-			for (int k = 0; k < level1s.get(j).getSonLevels().size(); k++) {
-				List<Level> sonLevels0 = new ArrayList<Level>();
-				for (int i = 0; i < levels.size(); i++) {
-					if (level1s.get(j).getSonLevels().get(k).getId() == levels.get(i).getParentId()) {
-						sonLevels0.add(levels.get(i));
-					}
-				}
-				level1s.get(j).getSonLevels().get(k).setSonLevels(sonLevels0);
-			}
-		}
 
 		return level1s;
 	}

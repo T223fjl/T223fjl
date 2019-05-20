@@ -3,6 +3,9 @@ package controller;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -46,8 +49,17 @@ public class Test {
 
     public static void main(String[] args) {
 
-        String cnStr = "北京";
-        System.out.println(getCnASCII(cnStr));
+       /* String cnStr = "北京";
+        System.out.println(getCnASCII(cnStr));*/
+    	
+    	/*  String url = "http://api.map.baidu.com/geocoder?address={0}&output=json&key=key";
+          HttpServletRequest request = (HttpServletRequest)request(string.Format(url, "广州"));
+          HttpServletResponse response = (HttpServletResponse)request.GetResponse();
+          var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+          JObject jo = (JObject)JsonConvert.DeserializeObject(responseString);
+          string lng = jo["result"]["location"]["lng"].ToString();
+          string lat = jo["result"]["location"]["lat"].ToString();
+          Response.Write(lng + "|" + lat);*/
     }
     /**
      * 得到 全拼

@@ -15,6 +15,12 @@
 		<log4j.version>1.2.17</log4j.version>
 	</properties>
 	<dependencies>
+		<!-- springboot 整合 pagehelper -->
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper-spring-boot-starter</artifactId>
+			<version>1.2.5</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.belerweb/pinyin4j -->
 		<dependency>
 			<groupId>com.belerweb</groupId>

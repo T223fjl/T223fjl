@@ -2,8 +2,12 @@ package service.impl;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 
 import dao.hotel.HotelDao;
 import pojo.Hotel;
@@ -14,8 +18,10 @@ public class HotelServiceImpl implements HotelService{
 	@Autowired
 	private HotelDao hotelDao ;
 	
-	public List<Hotel> queryHotel() {
-		List<Hotel> queryHotel=hotelDao.queryHotel();
+	public List<Hotel> queryHotel(@Param("hotelRating") int hotelRating,@Param("level1") int level1
+			,@Param("level2") int level2, @Param("bigPrice") int bigPrice,@Param("smallPrice") int smallPrice
+			,@Param("sort") String sort,@Param("desc") String desc	){
+		List<Hotel> queryHotel=hotelDao.queryHotel(hotelRating, level1, level2, bigPrice, smallPrice, sort, desc);
 		for (int i = 0; i < queryHotel.size(); i++) {
 			if(queryHotel.get(i).getHotelServe().equals("WiFi上网")){
 				queryHotel.get(i).setHotelServePy(PinYinUtil.getPinYinHeadChar("WiFi"));
@@ -24,5 +30,15 @@ public class HotelServiceImpl implements HotelService{
 		}
 		return queryHotel;
 	}
+	
+	 public PageInfo<Hotel> findHotelList(@Param("hotelRating") int hotelRating,@Param("level1") int level1
+				,@Param("level2") int level2, @Param("bigPrice") int bigPrice,@Param("smallPrice") int smallPrice
+				,@Param("sort") String sort,@Param("desc") String desc,int page, int size) {
+	       PageHelper.startPage(page,size);
+	       List<Hotel> users=queryHotel(hotelRating, level1, level2, bigPrice, smallPrice, sort, desc);
+	       PageInfo<Hotel> pageInfoUser=new PageInfo<Hotel>(users);
+	        return pageInfoUser;
+	    }
+
 	
 }

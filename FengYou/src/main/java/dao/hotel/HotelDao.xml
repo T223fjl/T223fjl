@@ -4,8 +4,30 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="dao.hotel.HotelDao">
-	
-	<select id="queryHotel" resultType="Hotel" >
-		SELECT * from `Hotel` 
+
+	<select id="queryHotel" resultType="Hotel">
+		SELECT * from hotel where 1=1
+		<if test="hotelRating!=0">
+			and hotelRating=#{hotelRating}
+		</if>
+		<if test="level1!=0">
+			and level1=#{level1}
+		</if>
+		<if test="level2!=0">
+			and level2=#{level2}
+		</if>
+		<if test="smallPrice!=0">
+			and hotelPrice <![CDATA[ > ]]> #{smallPrice}
+		</if>
+		<if test="bigPrice!=0">
+			and hotelPrice <![CDATA[ < ]]> #{bigPrice}
+		</if>
+		
+		<if test="sort!=null">
+			ORDER BY #{sort}
+			<if test="desc!=null">desc</if>
+		</if>
+
 	</select>
+
 </mapper>
