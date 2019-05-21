@@ -1,17 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="renderer" content="webkit">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-    <title>【北京唐拉雅秀酒店】地址:西长安街复兴门外大街19号 – 艺龙旅行网</title>
+    <title>【${hotel.hotelName }】– 风游旅行网</title>
     <link rel="icon"
           href="http://m.elongstatic.com/static/webapp/pc_static/pc_hotel/other/common/pic/favicon.ico?t=201411070740"
           type="image/x-icon"/>
     <meta name="keywords" content="北京唐拉雅秀酒店,北京唐拉雅秀酒店预订"/>
-    <meta name="description" content="北京唐拉雅秀酒店地处中央政务和金融商务区，紧邻金融街，可便捷前往天安门广场、西单商业中心。酒店位置优越，可将首都长安街壮观景致尽收眼底。酒店是海航酒店集团旗下品牌，拥有三百余间精致客房及套房，设计风格融合了东方的典雅与西方的别致，大气且低调奢华。酒店独有的记忆型床垫，让每一位宾客酣甜入梦。酒店设有总面积逾 1000平米的先进会议中心，包括一个大宴会厅和10间 多功能厅，均配备了先进的多媒体播放设备及系统，可满足不同宾客对会议及宴会需求。 酒店汇聚中西美食的餐厅和酒吧；精雕细琢的中餐粤菜及专业奉茶师的服务让您享受中式餐饮之珍品；开放式厨房的西餐厅，新鲜烹制中西式美食，提供早、中、晚自助餐，是宾客挥洒热情、品味驻足的好去处。温馨典雅的SPA和设备完善的健身中心，以及设于顶层、可鸟瞰西长安街全景的豪华商务会所，则为中外宾客提供华贵舒适的专属高端商旅体验。艺龙旅行网提供北京唐拉雅秀酒店预订服务，在线预订享受7折以下价格优惠，不收预订费，酒店前台付款，安全有保障。"/>
+    <meta name="description" content="北京唐拉雅秀酒店地处中央政务和金融商务区，紧邻金融街，可便捷前往天安门广场、西单商业中心。酒店位置优越，可将首都长安街壮观景致尽收眼底。酒店是海航酒店集团旗下品牌，拥有三百余间精致客房及套房，设计风格融合了东方的典雅与西方的别致，大气且低调奢华。酒店独有的记忆型床垫，让每一位宾客酣甜入梦。酒店设有总面积逾 1000平米的先进会议中心，包括一个大宴会厅和10间 多功能厅，均配备了先进的多媒体播放设备及系统，可满足不同宾客对会议及宴会需求。 酒店汇聚中西美食的餐厅和酒吧；精雕细琢的中餐粤菜及专业奉茶师的服务让您享受中式餐饮之珍品；开放式厨房的西餐厅，新鲜烹制中西式美食，提供早、中、晚自助餐，是宾客挥洒热情、品味驻足的好去处。温馨典雅的SPA和设备完善的健身中心，以及设于顶层、可鸟瞰西长安街全景的豪华商务会所，则为中外宾客提供华贵舒适的专属高端商旅体验。风游旅行网提供北京唐拉雅秀酒店预订服务，在线预订享受7折以下价格优惠，不收预订费，酒店前台付款，安全有保障。"/>
         <meta name="mobile-agent" content="format=html5;url=http://m.elong.com/hotel/50101525/">
 
 
@@ -30,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href='${pageContext.request.contextPath }/statics/css/img_box_layer.css' />
 </head>
 <body >
-              <!-- ===================== header 2019-04-29 start ===================== --> <div id="header" class="header" v='20190429' b='hotels' g='NaN' lg='f'> <div class="header_top response_wrap3 clearfix" style="width: 1200px;"> <div class="logo"> <a href="http://www.elong.com" title="艺龙旅行网">艺龙旅行网</a></div>  <div class="right mt5"> <div class="branch_menu left mr10"> <span><a href="http://imall.elong.com/" rel="nofollow">里程商城</a></span> <b></b> <span class='online-customer'><a target='_blank' href='http://my.elong.com/kf/index?g=31878' rel='nofollow'>在线客服</a></span> <b></b><span class=""><a target="_blank" href="http://my.elong.com/helpCenter/index" rel="nofollow">帮助中心</a></span> <b></b><span class='language' method="newSpanLang"> <a href="#?" method="eng">English</a><i class='com_icon04 left'></i><p><a href="http://hotel.elong.com/trans2cn/?target=http://hotel.elong.com" title="简体版" rel="nofollow">简体版</a> <a href="http://hotel.elong.com/trans2tw/?target=http://hotel.elong.com" rel="nofollow" title="繁體版">繁体版</a></p> </span> </div> <span class="one_panic one_panicxcx mr10 left"> <i class="com_iconxcx left"></i> <em>小程序</em> <em>体验更轻盈</em> <div class="only_xcx"> <i class="com_arrow_xcx"></i> </div> </span> <a class='one_panic mr10 left' href="http://promotion.elong.com/index/cn/2016/elong_app_down/index.html" rel="nofollow" target="_blank"><i class='com_icon01 left'></i><em>手机版</em><em method="newPromotion">专享五折起</em> <div class="only_phone" method="onlyPhoneDiv" style="display: none"> <i class="com_arrow_tl"></i> </div> </a> <span class="online_phone left"> <i class='com_icon02 left'></i> <em>7&#215;24 客服电话</em><b class='' method='newPhoneNo'><i class='com_icon03 right'></i>95711</b> <div class="on_phonnum" method="newPhoneDiv"> <i class="com_arrow_tl"></i> <ul> <!--当鼠标移入时显示--> <li><p>国内：95711</p></li> <li class="last"><p>港澳台及海外：86-551-6529-9777</p></li> </ul> </div> </span> </div> </div> <!--导航--> <div class="nav_box"> <div id="nav" class="response_wrap3" style="width: 1200px;"> <ul class="link" id="channelMenu"> <li sid="28632" ><a href="http://www.elong.com" title="艺龙旅行网" id="nav_home">首页</a></li> <li sid="28639"  class="on"><a title="酒店预订" href="http://hotel.elong.com/" id="nav_hotels">国内酒店</a></li> <li style="display:none;" sid="41493"><a href="http://tuan.elong.com/" id="A1" title="酒店团购">团购</a></li> <li sid="28642" ><a href="http://ihotel.elong.com/" id="nav_hotelsw" title="国际•港澳台酒店">国际•港澳台酒店<span class="icon_coupon"></span></a></li> <li style="display:none;" sid="" ><a href="http://jia.elong.com/" id="nav_apartment" title="短租公寓">短租公寓<span class="icon_apart" style="background: url(${pageContext.request.contextPath }/statics/images/icon2015-0.png) no-repeat; background-position: -307px 0;"></span></a> </li> <li style="display:none;" sid="52756"><a href="http://qiang.elong.com" title="限时抢">限时抢</a> <li sid="28640" ><a href="http://flight.elong.com/" title="机票预订">国内•国际机票<span style="left: 60px; background-position: -589px -29px; " class="icon_coupon"></span></a></li> <li sid="28640" ><a href="http://m.elong${pageContext.request.contextPath }/statics.com/${pageContext.request.contextPath }/statics/webapp/train/website/railway.html" title="火车票">火车票</a></li> <li sid="28640" ><a href="http://bus.elong.com/ly" title="汽车票">汽车票</a></li> <li><a href="http://trip.elong.com/" title="旅游指南">旅游指南</a></li> <li><a href="https://tmc.ly.com/" title="商旅" target='_blank'>商旅</a></li> </ul><div class="account" method="dvAccount"> <input type="hidden" id="hidden_memberid_user" value="" /> <input type="hidden" id="hidden_user_name" value="" />  <div class="log" id="user_display_login"> <span><a href="https://secure.elong.com/passport/login_cn.html" rel="nofollow" rel="nofollow">登录</a></span>|<span><a href="https://secure.elong.com/passport/register_cn.html?rnd=20190511084117" rel="nofollow" rel="nofollow">注册</a> </span> </div>  <!--弹出--> <div class="drop_box_log pt" style="display: none" id="div_user_center">  <div class="new_btnLogin"> <a href="https://secure.elong.com/passport/login_cn.html" rel="nofollow">登录</a> </div>  <ul class='clx'> <li class='icon_d1'><b></b><a href="http://my.elong.com/hotel/MyHotelOrderList_cn.html?rnd=20190511084117" rel="nofollow">酒店订单</a></li> <li class='icon_d2' style="display:none;" ><b></b><a href="http://my.elong.com/GrouponOrder_cn.html?rnd=20190511084117" rel="nofollow">团购订单</a></li> <li class='icon_d3'><a href="http://my.elong.com/Flight/FlightOrder_cn.html?rnd=20190511084117" rel="nofollow">机票订单</a></li> <li class='icon_d4'><a href="http://my.elong.com/train/orderlist?rnd=20190511084117" rel="nofollow">火车票订单</a></li> <li class='icon_d5'><b></b><a href="http://my.elong.com/CashCoupon_cn.html?flag=Cash&rnd=20190511084117" rel="nofollow">现金账户</a></li> <li class='icon_d6'><b></b><a href="http://my.elong.com/ly/lyOrderFill?rnd=20190511084117" rel="nofollow">汽车票订单</a></li> <li class='icon_d7'><b></b><a href="http://my.elong.com/hotel/hotelfavlist_cn.html?rnd=20190511084117" rel="nofollow">酒店收藏</a></li> <li class='icon_d8'><b style='display: none;' id='comment_notice'>9</b> <a id="n_comment_a" href="http://my.elong.com/Hotel/reviewedorderlist_cn.html?rnd=20190511084117" rel="nofollow">我的点评</a></li> <li class='icon_d9'><b></b><a href="http://my.elong.com/me_personalcenter_cn" rel="nofollow">个人设置</a></li> </ul>  </div> <!--弹出 end--> </div></div> </div> <style type="text/css"> .appWrap { background: url(${pageContext.request.contextPath }/statics/images/app-com.png) no-repeat 0 -483px } .appBox .close { background: url(${pageContext.request.contextPath }/statics/images/app-com.png) no-repeat -328px -182px; _background-image: url(http://www.elong${pageContext.request.contextPath }/statics.com/images/other/app-com-ie6.png); } .appBox .close:hover { background-position: -358px -182px; } .appBox .intro { width: 480px; height: 210px; background: url(${pageContext.request.contextPath }/statics/images/fx_btm.png) no-repeat 0 0px; font-size: 0; line-height: 0; overflow: hidden; position: absolute; top: 27px; left: 33px; } .appBox .way i { display: inline-block; width: 43px; height: 43px; margin-right: 5px; background: url(${pageContext.request.contextPath }/statics/images/app-com.png) no-repeat 0 -334px; _background-image: url(http://www.elong${pageContext.request.contextPath }/statics.com/images/other/app-com-ie6.png); vertical-align: middle; } .appBox .way .but { width: 170px; height: 30px; background: url(${pageContext.request.contextPath }/statics/images/app-com.png) no-repeat -181px -334px; _background-image: url(http://www.elong${pageContext.request.contextPath }/statics.com/images/other/app-com-ie6.png); border: 0; text-align: center; color: #fff; font: 16px "Microsoft Yahei", Simsun, sans-serif; cursor: pointer; } .appBox .way .but:hover { background-position: -181px -364px; } .appBox .way .success i { width: 20px; height: 16px; margin-right: 5px; background: url(${pageContext.request.contextPath }/statics/images/app-com.png) no-repeat -181px -394px; _background-image: url(http://www.elong${pageContext.request.contextPath }/statics.com/images/other/app-com-ie6.png); vertical-align: middle; } </style> <div class="clear"></div> </div> <!-- ===================== header end ===================== --> 
+              <!-- ===================== header 2019-04-29 start ===================== --> <div id="header" class="header" v='20190429' b='hotels' g='NaN' lg='f'> <div class="header_top response_wrap3 clearfix" style="width: 1200px;"> <div class="logo"> <a href="http://www.elong.com" title="风游旅行网">风游旅行网</a></div>  <div class="right mt5"> <div class="branch_menu left mr10"> <span><a href="http://imall.elong.com/" rel="nofollow">里程商城</a></span> <b></b> <span class='online-customer'><a target='_blank' href='http://my.elong.com/kf/index?g=31878' rel='nofollow'>在线客服</a></span> <b></b><span class=""><a target="_blank" href="http://my.elong.com/helpCenter/index" rel="nofollow">帮助中心</a></span> <b></b><span class='language' method="newSpanLang"> <a href="#?" method="eng">English</a><i class='com_icon04 left'></i><p><a href="http://hotel.elong.com/trans2cn/?target=http://hotel.elong.com" title="简体版" rel="nofollow">简体版</a> <a href="http://hotel.elong.com/trans2tw/?target=http://hotel.elong.com" rel="nofollow" title="繁體版">繁体版</a></p> </span> </div> <span class="one_panic one_panicxcx mr10 left"> <i class="com_iconxcx left"></i> <em>小程序</em> <em>体验更轻盈</em> <div class="only_xcx"> <i class="com_arrow_xcx"></i> </div> </span> <a class='one_panic mr10 left' href="http://promotion.elong.com/index/cn/2016/elong_app_down/index.html" rel="nofollow" target="_blank"><i class='com_icon01 left'></i><em>手机版</em><em method="newPromotion">专享五折起</em> <div class="only_phone" method="onlyPhoneDiv" style="display: none"> <i class="com_arrow_tl"></i> </div> </a> <span class="online_phone left"> <i class='com_icon02 left'></i> <em>7&#215;24 客服电话</em><b class='' method='newPhoneNo'><i class='com_icon03 right'></i>95711</b> <div class="on_phonnum" method="newPhoneDiv"> <i class="com_arrow_tl"></i> <ul> <!--当鼠标移入时显示--> <li><p>国内：95711</p></li> <li class="last"><p>港澳台及海外：86-551-6529-9777</p></li> </ul> </div> </span> </div> </div> <!--导航--> <div class="nav_box"> <div id="nav" class="response_wrap3" style="width: 1200px;"> <ul class="link" id="channelMenu"> <li sid="28632" ><a href="http://www.elong.com" title="风游旅行网" id="nav_home">首页</a></li> <li sid="28639"  class="on"><a title="酒店预订" href="http://hotel.elong.com/" id="nav_hotels">国内酒店</a></li> <li style="display:none;" sid="41493"><a href="http://tuan.elong.com/" id="A1" title="酒店团购">团购</a></li> <li sid="28642" ><a href="http://ihotel.elong.com/" id="nav_hotelsw" title="国际•港澳台酒店">国际•港澳台酒店<span class="icon_coupon"></span></a></li> <li style="display:none;" sid="" ><a href="http://jia.elong.com/" id="nav_apartment" title="短租公寓">短租公寓<span class="icon_apart" style="background: url(${pageContext.request.contextPath }/statics/images/icon2015-0.png) no-repeat; background-position: -307px 0;"></span></a> </li> <li style="display:none;" sid="52756"><a href="http://qiang.elong.com" title="限时抢">限时抢</a> <li sid="28640" ><a href="http://flight.elong.com/" title="机票预订">国内•国际机票<span style="left: 60px; background-position: -589px -29px; " class="icon_coupon"></span></a></li> <li sid="28640" ><a href="http://m.elong${pageContext.request.contextPath }/statics.com/${pageContext.request.contextPath }/statics/webapp/train/website/railway.html" title="火车票">火车票</a></li> <li sid="28640" ><a href="http://bus.elong.com/ly" title="汽车票">汽车票</a></li> <li><a href="http://trip.elong.com/" title="旅游指南">旅游指南</a></li> <li><a href="https://tmc.ly.com/" title="商旅" target='_blank'>商旅</a></li> </ul><div class="account" method="dvAccount"> <input type="hidden" id="hidden_memberid_user" value="" /> <input type="hidden" id="hidden_user_name" value="" />  <div class="log" id="user_display_login"> <span><a href="https://secure.elong.com/passport/login_cn.html" rel="nofollow" rel="nofollow">登录</a></span>|<span><a href="https://secure.elong.com/passport/register_cn.html?rnd=20190511084117" rel="nofollow" rel="nofollow">注册</a> </span> </div>  <!--弹出--> <div class="drop_box_log pt" style="display: none" id="div_user_center">  <div class="new_btnLogin"> <a href="https://secure.elong.com/passport/login_cn.html" rel="nofollow">登录</a> </div>  <ul class='clx'> <li class='icon_d1'><b></b><a href="http://my.elong.com/hotel/MyHotelOrderList_cn.html?rnd=20190511084117" rel="nofollow">酒店订单</a></li> <li class='icon_d2' style="display:none;" ><b></b><a href="http://my.elong.com/GrouponOrder_cn.html?rnd=20190511084117" rel="nofollow">团购订单</a></li> <li class='icon_d3'><a href="http://my.elong.com/Flight/FlightOrder_cn.html?rnd=20190511084117" rel="nofollow">机票订单</a></li> <li class='icon_d4'><a href="http://my.elong.com/train/orderlist?rnd=20190511084117" rel="nofollow">火车票订单</a></li> <li class='icon_d5'><b></b><a href="http://my.elong.com/CashCoupon_cn.html?flag=Cash&rnd=20190511084117" rel="nofollow">现金账户</a></li> <li class='icon_d6'><b></b><a href="http://my.elong.com/ly/lyOrderFill?rnd=20190511084117" rel="nofollow">汽车票订单</a></li> <li class='icon_d7'><b></b><a href="http://my.elong.com/hotel/hotelfavlist_cn.html?rnd=20190511084117" rel="nofollow">酒店收藏</a></li> <li class='icon_d8'><b style='display: none;' id='comment_notice'>9</b> <a id="n_comment_a" href="http://my.elong.com/Hotel/reviewedorderlist_cn.html?rnd=20190511084117" rel="nofollow">我的点评</a></li> <li class='icon_d9'><b></b><a href="http://my.elong.com/me_personalcenter_cn" rel="nofollow">个人设置</a></li> </ul>  </div> <!--弹出 end--> </div></div> </div> <style type="text/css"> .appWrap { background: url(${pageContext.request.contextPath }/statics/images/app-com.png) no-repeat 0 -483px } .appBox .close { background: url(${pageContext.request.contextPath }/statics/images/app-com.png) no-repeat -328px -182px; _background-image: url(http://www.elong${pageContext.request.contextPath }/statics.com/images/other/app-com-ie6.png); } .appBox .close:hover { background-position: -358px -182px; } .appBox .intro { width: 480px; height: 210px; background: url(${pageContext.request.contextPath }/statics/images/fx_btm.png) no-repeat 0 0px; font-size: 0; line-height: 0; overflow: hidden; position: absolute; top: 27px; left: 33px; } .appBox .way i { display: inline-block; width: 43px; height: 43px; margin-right: 5px; background: url(${pageContext.request.contextPath }/statics/images/app-com.png) no-repeat 0 -334px; _background-image: url(http://www.elong${pageContext.request.contextPath }/statics.com/images/other/app-com-ie6.png); vertical-align: middle; } .appBox .way .but { width: 170px; height: 30px; background: url(${pageContext.request.contextPath }/statics/images/app-com.png) no-repeat -181px -334px; _background-image: url(http://www.elong${pageContext.request.contextPath }/statics.com/images/other/app-com-ie6.png); border: 0; text-align: center; color: #fff; font: 16px "Microsoft Yahei", Simsun, sans-serif; cursor: pointer; } .appBox .way .but:hover { background-position: -181px -364px; } .appBox .way .success i { width: 20px; height: 16px; margin-right: 5px; background: url(${pageContext.request.contextPath }/statics/images/app-com.png) no-repeat -181px -394px; _background-image: url(http://www.elong${pageContext.request.contextPath }/statics.com/images/other/app-com-ie6.png); vertical-align: middle; } </style> <div class="clear"></div> </div> <!-- ===================== header end ===================== --> 
 
 <div class="cont_box response_wrap3">
 	<!--面包屑 start-->
@@ -45,10 +47,10 @@
 		    
 		    <span class="simsun">&gt;</span>
 		    <a title="北京酒店" href="/beijing/">
-北京酒店		    </a>
+${hotel }	    </a>
 		    <span class="simsun">&gt;</span>
 		   <a href="toDingDan"> <h1 class="breadcrumb" style="display:inline" id="lastbread">
-			北京唐拉雅秀酒店
+			${hotel.hotelName }
 		    </h1></a>
     	</div>
 	</div>
@@ -58,16 +60,16 @@
     <div class="cont_box response_wrap3 mvt18131" style='position:relative;'>
         <div class="hrela_ns_wrap clearfix">
             <div class="hdetail_main hrela_name">
-                <div class="t24 yahei" title="北京唐拉雅秀酒店">
-                    <h1>北京唐拉雅秀酒店</h1>
+                <div class="t24 yahei" title="${hotel.hotelName }">
+                    <h1>${hotel.hotelName }</h1>
 						<i data-handle="hotelGrade" class="icon_crown_b_new mr5"
-                           title="战略合作酒店，为艺龙会员提供优质服务及优惠房价"></i>
-		            			<b class="icon_stars icon_elevel5" title="艺龙用户评定为豪华型酒店"></b>
+                           title="战略合作酒店，为风游会员提供优质服务及优惠房价"></i>
+		            			<b class="icon_stars icon_elevel5" title="风游用户评定为豪华型酒店"></b>
                 </div>
                 <p class="clearfix">
 		        	<span class="mr5 left">
-		        			<a href="/beijing/center010167/">[金融街/复兴门]</a>
-                        西长安街复兴门外大街19号
+		        			<a href="/beijing/center010167/">[${fn:split(hotel.hotelAddress, ' ')[1]}]</a>
+                        ${fn:split(hotel.hotelAddress, ' ')[2]}
                     </span>
 		        		<span class="l1 left mt5" method="showMap" title=地图>
 		        			<i class="icon_land_map"></i>地图
@@ -86,12 +88,11 @@
 	              			<span data-showname="favStatus">收藏</span>
 	            		</span>
                 		<div class="h_comt_other">
-                                <span class="icon_faci_wifi" title="免费WIFI"></span>
-                                <span class="icon_faci_tcc" title="收费停车"></span>
-                                <span class="icon_faci_ct" title="餐厅"></span>
-                                <span class="icon_faci_jsf" title="健身房"></span>
-                                <span class="icon_faci_xljc" title="行李寄存"></span>
-                                <span class="icon_faci_yyc" title="游泳池"></span>
+                               <c:forEach var="service"
+									items="${fn:split(hotel.hotelServePy, ',')}" step="1"
+									varStatus="statu">
+									<span class="icon_faci_${service}"></span>
+							</c:forEach>
                         </div>
                 </div>
             </div>
@@ -127,20 +128,12 @@
                                             外景(3)
                                         </li>
 
-                                                <li>|</li>
-                                        <li class="cur " data-handle="image_interior">
-                                            内景设施(47)
-                                        </li>
 
                                                 <li>|</li>
                                         <li class="cur " data-handle="image_room">
                                             房间(14)
                                         </li>
-
-                                                <li>|</li>
-                                        <li class="cur " data-handle="image_others">
-                                            周边其它(2)
-                                        </li>
+                                
                             </ul>
                         </div>
                     </div>
@@ -166,1222 +159,14 @@
                                                                    data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/0000aDoU.jpg"
                                                                    data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/0000aDoU.jpg">
                                             </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Ft3cOLUmpG.jpg"
-                                                                   title="外观"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Ft3cOLUmpG.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Ft3cOLUmpG.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FrtB8E3x9C.jpg"
-                                                                   title="外观"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FrtB8E3x9C.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FrtB8E3x9C.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000bEne7.jpg"
-                                                                   title="大堂/接待台"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000bEne7.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000bEne7.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FXQalMl9ja.jpg"
-                                                                   title="客房"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FXQalMl9ja.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FXQalMl9ja.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FXQ8JLibJK.jpg"
-                                                                   title="客房"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FXQ8JLibJK.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FXQ8JLibJK.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FpNxwQBVhC.jpg"
-                                                                   title="客房"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FpNxwQBVhC.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FpNxwQBVhC.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FpNxjca5pe.jpg"
-                                                                   title="客房"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FpNxjca5pe.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FpNxjca5pe.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FpNxbzPyXS.jpg"
-                                                                   title="客房"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FpNxbzPyXS.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FpNxbzPyXS.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FpNwMbROI8.jpg"
-                                                                   title="客房"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FpNwMbROI8.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FpNwMbROI8.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FpNwrIc3Ty.jpg" src=""
-                                                                   title="客房"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FpNwrIc3Ty.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FpNwrIc3Ty.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000dAPX1.jpg" src=""
-                                                                   title="客房"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000dAPX1.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000dAPX1.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_0003GAbl.jpg" src=""
-                                                                   title="客房"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_0003GAbl.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_0003GAbl.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_0004Tb3B.jpg" src=""
-                                                                   title="客房"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_0004Tb3B.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_0004Tb3B.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_0004Tb3C.jpg" src=""
-                                                                   title="客房"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_0004Tb3C.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_0004Tb3C.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_0003vrSC.jpg" src=""
-                                                                   title="客房"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_0003vrSC.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_0003vrSC.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FXQbkJgVY4.jpg" src=""
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FXQbkJgVY4.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FXQbkJgVY4.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Ft3fcfWqA0.jpg" src=""
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Ft3fcfWqA0.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Ft3fcfWqA0.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Ft3eKyUQLK.jpg" src=""
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Ft3eKyUQLK.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Ft3eKyUQLK.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Ft3ejv3UUo.jpg" src=""
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Ft3ejv3UUo.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Ft3ejv3UUo.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Ft3dP4zOrC.jpg" src=""
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Ft3dP4zOrC.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Ft3dP4zOrC.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Ft3djTfTwc.jpg" src=""
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Ft3djTfTwc.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Ft3djTfTwc.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Ft3cGA5YIg.jpg" src=""
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Ft3cGA5YIg.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Ft3cGA5YIg.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Ft3c8ik1B6.jpg" src=""
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Ft3c8ik1B6.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Ft3c8ik1B6.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Ft3bFxrvBS.jpg" src=""
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Ft3bFxrvBS.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Ft3bFxrvBS.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Ft3aYR5dWo.jpg" src=""
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Ft3aYR5dWo.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Ft3aYR5dWo.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Ft39R6S0py.jpg" src=""
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Ft39R6S0py.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Ft39R6S0py.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Ft39JBDsdO.jpg" src=""
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Ft39JBDsdO.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Ft39JBDsdO.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Frty1sBwBi.jpg" src=""
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Frty1sBwBi.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Frty1sBwBi.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FrtxTjUJkA.jpg" src=""
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FrtxTjUJkA.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FrtxTjUJkA.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000e7FR9.jpg" src=""
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000e7FR9.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000e7FR9.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000e7FQB.jpg" src=""
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000e7FQB.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000e7FQB.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000bEndq.jpg" src=""
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000bEndq.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000bEndq.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FrtCStDLLa.jpg" src=""
-                                                                   title="会议室"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FrtCStDLLa.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FrtCStDLLa.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FrtCfNW62c.jpg" src=""
-                                                                   title="会议室"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FrtCfNW62c.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FrtCfNW62c.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FrtAZPDHLq.jpg" src=""
-                                                                   title="会议室"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FrtAZPDHLq.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FrtAZPDHLq.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FrtAvzn9YY.jpg" src=""
-                                                                   title="会议室"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FrtAvzn9YY.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FrtAvzn9YY.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FrtA34FMpq.jpg" src=""
-                                                                   title="会议室"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FrtA34FMpq.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FrtA34FMpq.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Frtxjt3XJm.jpg" src=""
-                                                                   title="会议室"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Frtxjt3XJm.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Frtxjt3XJm.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000e7FQ4.jpg" src=""
-                                                                   title="会议室"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000e7FQ4.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000e7FQ4.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000e7FOF.jpg" src=""
-                                                                   title="会议室"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000e7FOF.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000e7FOF.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FXQ8hHQiEo.jpg" src=""
-                                                                   title="休闲"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FXQ8hHQiEo.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FXQ8hHQiEo.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FrtBkliEus.jpg" src=""
-                                                                   title="休闲"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FrtBkliEus.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FrtBkliEus.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FrtzaNB9oA.jpg" src=""
-                                                                   title="休闲"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FrtzaNB9oA.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FrtzaNB9oA.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Frtz1oz4e4.jpg" src=""
-                                                                   title="休闲"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Frtz1oz4e4.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Frtz1oz4e4.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FrtyQ8R2vu.jpg" src=""
-                                                                   title="休闲"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FrtyQ8R2vu.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FrtyQ8R2vu.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FrtyjvPStG.jpg" src=""
-                                                                   title="休闲"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FrtyjvPStG.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FrtyjvPStG.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000bEnd6.jpg" src=""
-                                                                   title="休闲"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000bEnd6.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000bEnd6.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000dAPVj.jpg" src=""
-                                                                   title="休闲"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000dAPVj.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000dAPVj.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FrtD78fL7G.jpg" src=""
-                                                                   title="公共区域"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FrtD78fL7G.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FrtD78fL7G.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FrtCZYSjWU.jpg" src=""
-                                                                   title="公共区域"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FrtCZYSjWU.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FrtCZYSjWU.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000h9JMt.jpg" src=""
-                                                                   title="公共区域"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000h9JMt.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000h9JMt.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000bEnfY.jpg" src=""
-                                                                   title="公共区域"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000bEnfY.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000bEnfY.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000bEyQT.jpg" src=""
-                                                                   title="公共区域"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000bEyQT.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000bEyQT.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000bEnfn.jpg" src=""
-                                                                   title="公共区域"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000bEnfn.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000bEnfn.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000dAPV4.jpg" src=""
-                                                                   title="公共区域"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000dAPV4.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000dAPV4.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000dAPUS.jpg" src=""
-                                                                   title="公共区域"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000dAPUS.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000dAPUS.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_0004TdCj.jpg" src=""
-                                                                   title="公共区域"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_0004TdCj.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_0004TdCj.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Ft39YXXFCg.jpg" src=""
-                                                                   title="周边图片"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Ft39YXXFCg.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Ft39YXXFCg.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FrtBRCUs7u.jpg" src=""
-                                                                   title="周边图片"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FrtBRCUs7u.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FrtBRCUs7u.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FrtycDun6M.jpg" src=""
-                                                                   title="其他"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FrtycDun6M.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FrtycDun6M.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000fykhd.jpg" src=""
-                                                                   title="其他"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000fykhd.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000fykhd.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000dAPWl.jpg" src=""
-                                                                   title="其他"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000dAPWl.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000dAPWl.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000dAPWc.jpg" src=""
-                                                                   title="其他"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000dAPWc.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000dAPWc.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_0006IgjR.jpg" src=""
-                                                                   title="客房"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_0006IgjR.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_0006IgjR.jpg">
-                                            </li>
+                                           
                                     </ul>
-
-                                    <ul data-handle="container" data="image_exterior" class="hrela_spic_list"
-                                        style="width: 270px; margin-left: 0px;display: none;">
-                                            <li class="on">
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_0004Tb3A.jpg"
-                                                                   title="外观"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_0004Tb3A.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_0004Tb3A.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Ft3cOLUmpG.jpg"
-                                                                   title="外观"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Ft3cOLUmpG.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Ft3cOLUmpG.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FrtB8E3x9C.jpg"
-                                                                   title="外观"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FrtB8E3x9C.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FrtB8E3x9C.jpg">
-                                            </li>
-                                    </ul>
-
-                                    <ul data-handle="container" data="image_interior" class="hrela_spic_list"
-                                        style="width: 4230px; margin-left: 0px;display: none;">
-                                            <li class="on">
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000bEne7.jpg"
-                                                                   title="大堂/接待台"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000bEne7.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000bEne7.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FXQbkJgVY4.jpg"
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FXQbkJgVY4.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FXQbkJgVY4.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Ft3fcfWqA0.jpg"
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Ft3fcfWqA0.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Ft3fcfWqA0.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Ft3eKyUQLK.jpg"
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Ft3eKyUQLK.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Ft3eKyUQLK.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Ft3ejv3UUo.jpg"
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Ft3ejv3UUo.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Ft3ejv3UUo.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Ft3dP4zOrC.jpg"
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Ft3dP4zOrC.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Ft3dP4zOrC.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Ft3djTfTwc.jpg"
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Ft3djTfTwc.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Ft3djTfTwc.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Ft3cGA5YIg.jpg"
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Ft3cGA5YIg.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Ft3cGA5YIg.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Ft3c8ik1B6.jpg"
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Ft3c8ik1B6.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Ft3c8ik1B6.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Ft3bFxrvBS.jpg"
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Ft3bFxrvBS.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Ft3bFxrvBS.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Ft3aYR5dWo.jpg"
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Ft3aYR5dWo.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Ft3aYR5dWo.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Ft39R6S0py.jpg" src=""
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Ft39R6S0py.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Ft39R6S0py.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Ft39JBDsdO.jpg" src=""
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Ft39JBDsdO.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Ft39JBDsdO.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Frty1sBwBi.jpg" src=""
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Frty1sBwBi.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Frty1sBwBi.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FrtxTjUJkA.jpg" src=""
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FrtxTjUJkA.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FrtxTjUJkA.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000e7FR9.jpg" src=""
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000e7FR9.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000e7FR9.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000e7FQB.jpg" src=""
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000e7FQB.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000e7FQB.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000bEndq.jpg" src=""
-                                                                   title="餐厅"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000bEndq.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000bEndq.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FrtCStDLLa.jpg" src=""
-                                                                   title="会议室"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FrtCStDLLa.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FrtCStDLLa.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FrtCfNW62c.jpg" src=""
-                                                                   title="会议室"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FrtCfNW62c.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FrtCfNW62c.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FrtAZPDHLq.jpg" src=""
-                                                                   title="会议室"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FrtAZPDHLq.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FrtAZPDHLq.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FrtAvzn9YY.jpg" src=""
-                                                                   title="会议室"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FrtAvzn9YY.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FrtAvzn9YY.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FrtA34FMpq.jpg" src=""
-                                                                   title="会议室"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FrtA34FMpq.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FrtA34FMpq.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Frtxjt3XJm.jpg" src=""
-                                                                   title="会议室"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Frtxjt3XJm.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Frtxjt3XJm.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000e7FQ4.jpg" src=""
-                                                                   title="会议室"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000e7FQ4.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000e7FQ4.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000e7FOF.jpg" src=""
-                                                                   title="会议室"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000e7FOF.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000e7FOF.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FXQ8hHQiEo.jpg" src=""
-                                                                   title="休闲"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FXQ8hHQiEo.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FXQ8hHQiEo.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FrtBkliEus.jpg" src=""
-                                                                   title="休闲"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FrtBkliEus.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FrtBkliEus.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FrtzaNB9oA.jpg" src=""
-                                                                   title="休闲"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FrtzaNB9oA.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FrtzaNB9oA.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Frtz1oz4e4.jpg" src=""
-                                                                   title="休闲"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Frtz1oz4e4.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Frtz1oz4e4.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FrtyQ8R2vu.jpg" src=""
-                                                                   title="休闲"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FrtyQ8R2vu.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FrtyQ8R2vu.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FrtyjvPStG.jpg" src=""
-                                                                   title="休闲"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FrtyjvPStG.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FrtyjvPStG.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000bEnd6.jpg" src=""
-                                                                   title="休闲"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000bEnd6.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000bEnd6.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000dAPVj.jpg" src=""
-                                                                   title="休闲"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000dAPVj.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000dAPVj.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FrtD78fL7G.jpg" src=""
-                                                                   title="公共区域"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FrtD78fL7G.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FrtD78fL7G.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FrtCZYSjWU.jpg" src=""
-                                                                   title="公共区域"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FrtCZYSjWU.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FrtCZYSjWU.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000h9JMt.jpg" src=""
-                                                                   title="公共区域"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000h9JMt.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000h9JMt.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000bEnfY.jpg" src=""
-                                                                   title="公共区域"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000bEnfY.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000bEnfY.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000bEyQT.jpg" src=""
-                                                                   title="公共区域"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000bEyQT.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000bEyQT.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000bEnfn.jpg" src=""
-                                                                   title="公共区域"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000bEnfn.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000bEnfn.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000dAPV4.jpg" src=""
-                                                                   title="公共区域"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000dAPV4.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000dAPV4.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000dAPUS.jpg" src=""
-                                                                   title="公共区域"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000dAPUS.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000dAPUS.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_0004TdCj.jpg" src=""
-                                                                   title="公共区域"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_0004TdCj.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_0004TdCj.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FrtycDun6M.jpg" src=""
-                                                                   title="其他"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FrtycDun6M.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FrtycDun6M.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000fykhd.jpg" src=""
-                                                                   title="其他"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000fykhd.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000fykhd.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000dAPWl.jpg" src=""
-                                                                   title="其他"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000dAPWl.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000dAPWl.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000dAPWc.jpg" src=""
-                                                                   title="其他"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000dAPWc.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000dAPWc.jpg">
-                                            </li>
-                                    </ul>
-
-                                    <ul data-handle="container" data="image_room" class="hrela_spic_list"
-                                        style="width: 1260px; margin-left: 0px;display: none;">
-                                            <li class="on">
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/0000aDoU.jpg"
-                                                                   title="客房"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/0000aDoU.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/0000aDoU.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FXQalMl9ja.jpg"
-                                                                   title="客房"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FXQalMl9ja.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FXQalMl9ja.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FXQ8JLibJK.jpg"
-                                                                   title="客房"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FXQ8JLibJK.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FXQ8JLibJK.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FpNxwQBVhC.jpg"
-                                                                   title="客房"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FpNxwQBVhC.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FpNxwQBVhC.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FpNxjca5pe.jpg"
-                                                                   title="客房"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FpNxjca5pe.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FpNxjca5pe.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FpNxbzPyXS.jpg"
-                                                                   title="客房"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FpNxbzPyXS.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FpNxbzPyXS.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FpNwMbROI8.jpg"
-                                                                   title="客房"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FpNwMbROI8.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FpNwMbROI8.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FpNwrIc3Ty.jpg"
-                                                                   title="客房"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FpNwrIc3Ty.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FpNwrIc3Ty.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_000dAPX1.jpg"
-                                                                   title="客房"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_000dAPX1.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000dAPX1.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_0003GAbl.jpg"
-                                                                   title="客房"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_0003GAbl.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_0003GAbl.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_0004Tb3B.jpg"
-                                                                   title="客房"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_0004Tb3B.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_0004Tb3B.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_0004Tb3C.jpg" src=""
-                                                                   title="客房"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_0004Tb3C.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_0004Tb3C.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_0003vrSC.jpg" src=""
-                                                                   title="客房"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_0003vrSC.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_0003vrSC.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src2="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_0006IgjR.jpg" src=""
-                                                                   title="客房"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_0006IgjR.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_0006IgjR.jpg">
-                                            </li>
-                                    </ul>
-
-                                    <ul data-handle="container" data="image_others" class="hrela_spic_list"
-                                        style="width: 180px; margin-left: 0px;display: none;">
-                                            <li class="on">
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_Ft39YXXFCg.jpg"
-                                                                   title="周边图片"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_Ft39YXXFCg.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_Ft39YXXFCg.jpg">
-                                            </li>
-                                            <li>
-                                                <img   onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"  src="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel120_120/nw_FrtBRCUs7u.jpg"
-                                                                   title="周边图片"
-                                                                   width="80" height="80"
-                                                                   data-panorama="" data-isPanorama=""
-                                                                   data-midd="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel795_325/nw_FrtBRCUs7u.jpg"
-                                                                   data-big="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FrtBRCUs7u.jpg">
-                                            </li>
-                                    </ul>
-
-
                     </div>
                 </div>
 
             <!-- 侧栏 start -->
             <div class="hdetail_sider">
-                <!--点评  start-->
-	                    <div class="hrela_comt bbddd hrela_comt1 ">
-                            <div class="com_nmb">
-                                <span class="comt_nmb">4.5</span>
-                                <span class="comt_txt">棒极了</span>
-                            </div>
-                            <div class="hrela_comt_total">
-                                <a href='#review'>查看10031条点评<i></i></a>
-                            </div>
-					            <ul class="comt_btnlst" method="tagContainer">
-					            			<li class="comt_btn" data-mainid="-1"
-                                                data-subid="10012" method="filterCommentByTag">
-                                                出行方便<span>830</span>
-                                            </li>
-					            			<li class="comt_btn" data-mainid="-1"
-                                                data-subid="10079" method="filterCommentByTag">
-                                                交通便利<span>463</span>
-                                            </li>
-					            			<li class="comt_btn" data-mainid="-1"
-                                                data-subid="10080" method="filterCommentByTag">
-                                                地理位置好<span>579</span>
-                                            </li>
-					            			<li class="comt_btn" data-mainid="-1"
-                                                data-subid="10031" method="filterCommentByTag">
-                                                环境好<span>840</span>
-                                            </li>
-					            			<li class="comt_btn" data-mainid="-1"
-                                                data-subid="10028" method="filterCommentByTag">
-                                                性价比高<span>559</span>
-                                            </li>
-					            			<li class="comt_btn" data-mainid="-1"
-                                                data-subid="10039" method="filterCommentByTag">
-                                                服务态度好<span>426</span>
-                                            </li>
-					            			<li class="comt_btn" data-mainid="-1"
-                                                data-subid="10038" method="filterCommentByTag">
-                                                服务周到<span>340</span>
-                                            </li>
-					            			<li class="comt_btn" data-mainid="-1"
-                                                data-subid="10060" method="filterCommentByTag">
-                                                设施设备好<span>331</span>
-                                            </li>
-					            			<li class="comt_btn" data-mainid="-1"
-                                                data-subid="10153" method="filterCommentByTag">
-                                                早餐好<span>242</span>
-                                            </li>
-					            			<li class="comt_btn" data-mainid="-1"
-                                                data-subid="10061" method="filterCommentByTag">
-                                                设施齐全<span>215</span>
-                                            </li>
-					            			<li class="comt_btn" data-mainid="-1"
-                                                data-subid="10016" method="filterCommentByTag">
-                                                前台热情<span>174</span>
-                                            </li>
-					            			<li class="comt_btn" data-mainid="-1"
-                                                data-subid="10100" method="filterCommentByTag">
-                                                离地铁站近<span>138</span>
-                                            </li>
-					            			<li class="comt_btn" data-mainid="-1"
-                                                data-subid="10010" method="filterCommentByTag">
-                                                前台服务不错<span>124</span>
-                                            </li>
-					            			<li class="comt_btn" data-mainid="-1"
-                                                data-subid="10088" method="filterCommentByTag">
-                                                购物方便<span>77</span>
-                                            </li>
-					            			<li class="comt_btn" data-mainid="-1"
-                                                data-subid="10146" method="filterCommentByTag">
-                                                泳池好<span>68</span>
-                                            </li>
-					            			<li class="comt_btn" data-mainid="-1"
-                                                data-subid="10152" method="filterCommentByTag">
-                                                餐饮不错<span>59</span>
-                                            </li>
-					            			<li class="comt_btn" data-mainid="-1"
-                                                data-subid="10007" method="filterCommentByTag">
-                                                强烈推荐<span>50</span>
-                                            </li>
-					            			<li class="comt_btn" data-mainid="-1"
-                                                data-subid="10030" method="filterCommentByTag">
-                                                环境优雅<span>42</span>
-                                            </li>
-					            			<li class="comt_btn" data-mainid="-1"
-                                                data-subid="10018" method="filterCommentByTag">
-                                                床品舒适<span>37</span>
-                                            </li>
-					            			<li class="comt_btn" data-mainid="-1"
-                                                data-subid="10068" method="filterCommentByTag">
-                                                浴缸大<span>25</span>
-                                            </li>
-                                </ul>
-                        </div>
-			
-		            	<div class="hrela_comt hrela_comt2">
-                            <div class="hrela_comt_text">
-                                <ul class="hrela_comt_list" style="width: 300%;">
-                                        <li style="width:33.33%;">
-                                            <p>酒店设施很好、大堂有点小，但房间浴室好大！</p>
-                                        </li>
-                                        <li style="width:33.33%;">
-                                            <p>环境，位置俱佳，床，空间够大，推荐。</p>
-                                        </li>
-                                        <li style="width:33.33%;">
-                                            <p>房间很大，服务很好，设施很强大，价格可以接受，洗澡间超爱，好评。</p>
-                                        </li>
-                                </ul>
-                            </div>
-
-                            <div class="hrela_comt_per mb10" data-size="3">
-		                			<i class="icon_next_c20  right ml8"></i>
-		                			<i class="icon_prev_c20 icon_no_c20 right"></i>
-			                		<div class="comt_user" >
-						                <span class="user_img user_img_bgc3">
-                                                l
-                                        </span>
-                                        <span class="user_txt">
-						                    <span class="user_nm">leilei</span>
-						                    <span class="user_tm">2016-12-18</span>
-						                </span>
-                                    </div>
-			                		<div class="comt_user"  style="display:none" >
-						                <span class="user_img user_img_bgc4">
-                                                单
-                                        </span>
-                                        <span class="user_txt">
-						                    <span class="user_nm">单车</span>
-						                    <span class="user_tm">2015-10-28</span>
-						                </span>
-                                    </div>
-			                		<div class="comt_user"  style="display:none" >
-						                <span class="user_img user_img_bgc3">
-                                                徐
-                                        </span>
-                                        <span class="user_txt">
-						                    <span class="user_nm">徐卫华</span>
-						                    <span class="user_tm">2015-09-13</span>
-						                </span>
-                                    </div>
-                            </div>
-                        </div>
-
-                <!--点评  end-->
-
-                <!-- 地图入口 start -->
-                <div method="showMap" class="dsider_map mt15">
-                    <div class="map_link">
-                            查看周边
-                    </div>
-                    <img src="${pageContext.request.contextPath }/statics/picture/7df0b21b633f4ea5b5be0102125b18e3.gif" onerror="this.src='http://m.elong${pageContext.request.contextPath }/statics.com/${pageContext.request.contextPath }/statics/webapp/pc_${pageContext.request.contextPath }/statics/pc_hotel/other/hotels/pic/detailmap_no.png'" width="425" height="160"
-                         />
-                </div>
-                <!-- 地图入口 end -->
+                
 
             </div>
             <div class="clx"></div>
@@ -1389,22 +174,7 @@
         <!-- 图片end -->
 
 
-        <!-- soso街景start-->
-        <div id="sosoViewdiv"
-             style="width:100%;height:440px;position: absolute; top: 30px; left:0; z-index: 200; display: none;"
-             class="com_dialog">
-            <div class="com_dialog-titlebar">
-                <span class="com_dialog-title">街景视图</span>
-                <a href="javascript:void(0)" id="sosoViewMapClose" class="icon_close_sale"></a>
-            </div>
-            <div class="com_dialog-content com_widget-content" style='padding:0;'>
-                <div class="">
-                    <div id="sosoViewMap" class="">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- soso街景end -->
+        
 
     </div>
 </div>
@@ -1458,7 +228,7 @@
 
                         <div class="hdetail_sider right hdetail_sider_none"><i data-handle="hotelGrade" class="icon_crown_b_f mr5"></i><span class="vm">北京唐拉雅秀酒店</span>
 
-                			<b class="icon_stars icon_elevel5" title="艺龙用户评定为豪华型酒店"></b>
+                			<b class="icon_stars icon_elevel5" title="风游用户评定为豪华型酒店"></b>
                         </div>
                     </div>
                 </div>
@@ -1512,7 +282,664 @@
 
                 <!--快速筛选end-->
                 <div id="roomSetContainer"></div>
+<div id="roomSetContainer">
+                <div class="policy_item_best">
+                <div class="hdetail_type">
+                <div class="htype_list">
+                  <div class="policy_item">
+                    <div class="htype_item policy_item_wrapper policy_item_best" data-handle="rp" id="roomId0039" data-sroomid="0069" data-rpid="40142273" data-roomid="0069" data-shotelid="90983915" data-uniqueid="80101158:0069:40142273:4_0_5002_00%2300" data-mroomid="0039" data-rptype="4" data-mark="1" data-signtype="1" data-wight="0.8021455407142639" data-minproduct="false">
+                      <div class="htype_info clearfix" method="togRoom">
+                        <div class="htype_info_pic left">
+                          <img src="http://pavo.elongstatic.com/i/Hotel120_120/nw_FRgBCnOkX6.jpg" onerror="this.src='http://img.elongstatic.com/hotel/other/no_hap.jpg'">
+                        </div>
+          
+                        <div class="htype_info_pb right">
+                          <p class="cf55">
 
+                            <span class="htype_info_num">
+                            
+                                                <span class="t14 c555" method="AvgPriceCuXiao">
+                                                  ¥
+                                                  <span class="ht_pri_num">419</span>
+                                                </span>
+                                              
+                                                                                 
+                            </span>
+                            <span class="ht_retu_policy">
+                              
+                            </span>
+                          </p>
+                          
+                          <p class="detailPolicy "> 低价产品，实惠之选</p>
+                         
+                        </div>
+          
+                        <div class="ht_book_policy">
+                          <a class="on_line_pay_button" rel="nofollow" method="order" title="预订酒店时需提前在线支付房费">
+                  <p class="topStr">预订</p>
+                  <p class="bottomStr">在线付</p>
+                </a>
+                          
+                        </div>
+          
+                        <div class="htype_info_nt">
+                          <p class="htype_info_name">
+                            <span class="l37d">商务雅致大床房-无早<i class="special">︿</i></span>
+                            <label>同程艺龙</label>
+                          </p>
+                          <p class="htype_info_name">
+                             <span style="font-size:12px;color:#555;" title="标准价">标准价</span>
+                          </p>
+                          <p class="htype_info_ty">
+                          <span>房间18-25㎡</span>
+                          <span>|</span><span>大床1.8米</span>
+                          <span>|</span>
+                             <span>
+                               可住：
+                               <i class="icon_live_per"></i><i class="icon_live_per"></i>
+                                   </span>
+                              <span>|</span><span title="">楼层：2层-3层</span>
+                              <span>|</span><span title="">包含无线、宽带</span>
+                          </p>
+          
+                          <ul class="consure clearfix">
+                            <li method="cancelTip" canceltype="2">不可取消</li>
+                            <li class="noCancel " method="isJishi">立即确认</li>
+                          </ul>
+                          <ul class="redBag clearfix">
+                          
+                          
+                          
+                          
+                          
+                          
+                          
+                          </ul>
+                        </div>
+          
+          
+                      </div>
+          
+                      <div data-handle="roomTable" class="htype_info_list btddd none" style="display: block;">
+                        <ul>
+                          <li class="bookTip">
+                            <p class="bookTipLeft">预订须知</p>
+                            <div class="bookTipRight">
+                              <p class="">
+                                <label>特殊提醒</label>
+                                <span>本产品适用于持中国身份证的居民预订</span>
+                              </p>
+                              <p>
+                                <label>在线付</label><span>预订酒店时需提前在线支付房费</span>
+                                
+                              </p>
+                              <p>
+                                <label>不可取消</label>
+                                <span>订单一经确认成功，不可取消或变更；如未能如约入住，您的预付房费将不予退还。</span>
+                              </p>
+                              <p>
+                                <label>加床</label>
+                                <span>不可加床</span>
+                              </p>
+                              <p>
+                                <label>早餐</label>
+                                <span>无早</span>
+                              </p>
+                              <p class="none">
+                                <label>房型备注</label>
+                                <span></span>
+                              </p>
+                            </div>
+                          </li>
+                          <li class="bookTip ">
+                            <p class="bookTipLeft">预订专享</p>
+                            <div class="bookTipRight">
+                              <p class="none">
+                                <label class="vip"><i>返现</i></label>
+                                <span>会员登录预订并下单即可享受返现 <i class="money">¥0</i> </span>
+                              </p>
+                              <p class="none">
+                                <label class="vip"><i>促销</i></label>
+                                <span>此产品正在参加促销活动，预订享受活动价</span>
+                              </p>
+                              <p class="none">
+                                <label class="vip"><i>礼包</i></label>
+                                
+                                
+                              </p>
+                              <p class="">
+                                <label class="immeSure">立即确认</label>
+                                <span>订单提交后，酒店将在第一时间确认您的订单</span>
+                              </p>
+                            </div>
+                          </li>
+                          <li class="bookTip ">
+                              <ul class="ht_pic_list clearfix">
+                              <li method="ShowImage" class="">
+                                                      <img src="http://pavo.elongstatic.com/i/Hotel120_120/nw_FRgBCnOkX6.jpg" onerror="this.src='http://m.elongstatic.com/static/webapp/pc_static/pc_hotel/other/hotels/pic/no_pics_CN.gif'" bigimgurl="http://pavo.elongstatic.com/i/Hotel350_350/nw_FRgBCnOkX6.jpg" width="96" height="96">
+                                                    </li><li method="ShowImage" class="">
+                                                      <img src="http://pavo.elongstatic.com/i/Hotel120_120/nw_FRgBw6VSKI.jpg" onerror="this.src='http://m.elongstatic.com/static/webapp/pc_static/pc_hotel/other/hotels/pic/no_pics_CN.gif'" bigimgurl="http://pavo.elongstatic.com/i/Hotel350_350/nw_FRgBw6VSKI.jpg" width="96" height="96">
+                                                    </li><li method="ShowImage" class="">
+                                                      <img src="http://pavo.elongstatic.com/i/Hotel120_120/nw_FRgBj74Gty.jpg" onerror="this.src='http://m.elongstatic.com/static/webapp/pc_static/pc_hotel/other/hotels/pic/no_pics_CN.gif'" bigimgurl="http://pavo.elongstatic.com/i/Hotel350_350/nw_FRgBj74Gty.jpg" width="96" height="96">
+                                                    </li><li method="ShowImage" class="">
+                                                      <img src="http://pavo.elongstatic.com/i/Hotel120_120/nw_FRgBdfK7YY.jpg" onerror="this.src='http://m.elongstatic.com/static/webapp/pc_static/pc_hotel/other/hotels/pic/no_pics_CN.gif'" bigimgurl="http://pavo.elongstatic.com/i/Hotel350_350/nw_FRgBdfK7YY.jpg" width="96" height="96">
+                                                    </li><li method="ShowImage" class="">
+                                                      <img src="http://pavo.elongstatic.com/i/Hotel120_120/nw_000h41Qj.jpg" onerror="this.src='http://m.elongstatic.com/static/webapp/pc_static/pc_hotel/other/hotels/pic/no_pics_CN.gif'" bigimgurl="http://pavo.elongstatic.com/i/Hotel350_350/nw_000h41Qj.jpg" width="96" height="96">
+                                                    </li>
+                              <li class="picShowAll">
+                                  <p class="none">
+                                  展示
+                                     <i class=""></i>
+                                   </p>
+                                  </li>
+                                </ul>
+                          </li>
+                        </ul>
+                      </div>
+          
+                    </div>
+          
+                  </div>
+                </div>
+                </div>
+              </div><div class="hdetail_type">
+             	 <div class="htype_list">
+                <div class="htype_item   " data-handle="roomType" data-roomid="0039" id="roomId0039">
+                    <div class="htype_info clearfix " method="togRoom">
+                      <div class="htype_info_pic left">
+                        <img src="#" onerror="this.src='http://img.elongstatic.com/hotel/other/no_hap.jpg'">
+                      </div>
+                      
+                      <div class="htype_info_pb right">
+                        <p class="cf55">
+                          
+                          <span class="t14 c555">¥</span>
+                             <span class="htype_info_num">${house.hotelPrice }</span>
+                             <span class="t12">起</span>
+                        </p>
+                        <p class="htype_info_total mt5 ">
+                          共3个产品
+                          <i class="icon_triangle_8b"></i>
+                        </p>
+                      </div>
+
+                      <div class="htype_info_nt">
+                        <p class="htype_info_name roomtaglis">
+                          <span class="l37d">商务雅致大床房</span>
+                        <span class="roomtaglis">
+                        
+                         
+                         
+                          
+                         
+                         
+                         
+                        </span>
+                        </p>
+                        <p class="htype_info_ty">
+                          <span>房间18-25㎡</span>
+                          <span>|</span><span>大床1.8米</span>
+                          <span>|</span>
+                             <span>
+                               可住：
+                               <i class="icon_live_per"></i><i class="icon_live_per"></i>
+                             </span>
+                          <span>|</span><span title="">楼层：2层-3层</span>
+                          <span>|</span><span title="">包含无线、宽带</span>
+                        </p>
+                      </div>
+
+                    </div>
+                    <div class="newroomAB none">
+                      <div class="left" method="ShowImage">
+                       <img src="http://pavo.elongstatic.com/i/Hotel120_120/nw_FRgBCnOkX6.jpg" bigimgurl="http://pavo.elongstatic.com/i/Hotel350_350/nw_FRgBCnOkX6.jpg" onerror="this.src='http://img.elongstatic.com/hotel/other/no_hap.jpg'">
+                      </div>
+                      <div class="right">
+                       <p class="bedname">商务雅致大床房</p>
+                       <p>大床1.8米</p>
+                       <p class="more open" method="openFacbox" data-sroomid="0039">查看详情<span class="simsun">&gt;</span></p>
+                       <p class="more close none" method="closefacbox" data-sroomid="0039">收起详情<span class="simsun">&gt;</span></p>
+                       
+                      </div>
+                    </div>
+                    <div data-handle="roomTable" class="htype_info_list btddd none" style="display: none;">
+                      <table class="htype-table" cellspacing="0" cellpadding="0">
+                        <thead>
+                          <tr class="">
+                            <th class="ht_empty">&nbsp;</th>
+                            <th class="ht_name">产品名称</th>
+                            <th class="ht_supply">供应商</th>
+                            <th class="ht_brak">早餐</th>
+                            <th class="ht_rule">产品政策</th>
+                            <th class="ht_pri"><span class="night">日均价</span></th>
+                            
+                            <th class="ht_book"></th>
+                            <th class="ht_last"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+             
+                            <tr data-handle="rp" data-sroomid="0069" data-rpid="40142273" data-shotelid="90983915" data-uniqueid="80101158:0069:40142273:4_0_5002_00%2300" data-mroomid="0039" data-rptype="4" data-mark="1" data-signtype="1" data-wight="0.8021455407142639" class="" data-minproduct="true">
+                              <td class="ht_empty">&nbsp;</td>
+                              <td class="ht_name">
+                                <span title="标准价">标准价</span>
+                                <ul class="redBag clearfix">
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                </ul>
+                                
+                                
+                                
+                              </td>
+                              <td class="ht_supply" title="supplier:151330">
+                                同程艺龙
+                              </td>
+                              <td class="ht_brak">无早</td>
+                              <td class="ht_rule">
+                                <p class="ht_rule_free" method="cancelTip" canceltype="2">
+                                  <span>不可取消</span>
+                                </p>
+                                <p class="immsure" method="isJishi">
+                                <span>立即确认</span>
+                                </p>
+                              </td>
+                              <td class="ht_pri">
+                                
+                                    <span method="AvgPriceCuXiao" class="ht_pri_h cur">
+                                      ¥
+                                      <span class="ht_pri_num">419</span>
+                                    </span>
+                                   
+                             
+                                    
+                                    
+                                    <p class="detailPolicy ">低价实惠之选</p>
+                              </td>
+                              
+                             
+                              <td class="ht_book">
+                                <a class="on_line_pay_button" rel="nofollow" method="order" title="预订酒店时需提前在线支付房费">
+                  <p class="topStr">预订</p>
+                  <p class="bottomStr">在线付</p>
+                </a>
+                                
+                              </td>
+                              <td class="ht_last">&nbsp;</td>
+                            </tr>
+                            
+                            
+                                 
+                            <tr data-handle="rp" data-sroomid="0095" data-rpid="43640130" data-shotelid="90983915" data-uniqueid="80101158:0095:43640130:4_0_5002_00%2300" data-mroomid="0039" data-rptype="4" data-mark="1" data-signtype="2" data-wight="0.03097657486796379" class="" data-minproduct="false">
+                              <td class="ht_empty">&nbsp;</td>
+                              <td class="ht_name">
+                                <span title="标准价">标准价</span>
+                                <ul class="redBag clearfix">
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                </ul>
+                                
+                                
+                                
+                              </td>
+                              <td class="ht_supply" title="supplier:151330">
+                                代理
+                              </td>
+                              <td class="ht_brak">无早</td>
+                              <td class="ht_rule">
+                                <p class="ht_rule_free" method="cancelTip" canceltype="2">
+                                  <span>不可取消</span>
+                                </p>
+                                <p class="immsure" method="isJishi">
+                                <span></span>
+                                </p>
+                              </td>
+                              <td class="ht_pri">
+                                
+                                    <span method="AvgPriceCuXiao" class="ht_pri_h cur">
+                                      ¥
+                                      <span class="ht_pri_num">483.<span style="font-size: 15px;">50</span></span>
+                                    </span>
+                                   
+                             
+                                    
+                                    
+                                    
+                              </td>
+                              
+                             
+                              <td class="ht_book">
+                                <a class="on_line_pay_button" rel="nofollow" method="order" title="预订酒店时需提前在线支付房费">
+                  <p class="topStr">预订</p>
+                  <p class="bottomStr">在线付</p>
+                </a>
+                                
+                              </td>
+                              <td class="ht_last">&nbsp;</td>
+                            </tr>
+                            
+                            
+                                 
+                            <tr data-handle="rp" data-sroomid="0089" data-rpid="43613253" data-shotelid="90983915" data-uniqueid="80101158:0089:43613253:4_0_5002_00%2300" data-mroomid="0039" data-rptype="4" data-mark="1" data-signtype="2" data-wight="0.025728674605488777" class="" data-minproduct="false">
+                              <td class="ht_empty">&nbsp;</td>
+                              <td class="ht_name">
+                                <span title="标准价">标准价</span>
+                                <ul class="redBag clearfix">
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                </ul>
+                                
+                                
+                                
+                              </td>
+                              <td class="ht_supply" title="supplier:151330">
+                                代理
+                              </td>
+                              <td class="ht_brak">无早</td>
+                              <td class="ht_rule">
+                                <p class="ht_rule_free" method="cancelTip" canceltype="2">
+                                  <span>不可取消</span>
+                                </p>
+                                <p class="immsure" method="isJishi">
+                                <span></span>
+                                </p>
+                              </td>
+                              <td class="ht_pri">
+                                
+                                    <span method="AvgPriceCuXiao" class="ht_pri_h cur">
+                                      ¥
+                                      <span class="ht_pri_num">485</span>
+                                    </span>
+                                   
+                             
+                                    
+                                    
+                                    
+                              </td>
+                              
+                             
+                              <td class="ht_book">
+                                <a class="on_line_pay_button" rel="nofollow" method="order" title="预订酒店时需提前在线支付房费">
+                  <p class="topStr">预订</p>
+                  <p class="bottomStr">在线付</p>
+                </a>
+                                
+                              </td>
+                              <td class="ht_last">&nbsp;</td>
+                            </tr>
+                            
+                            <tr class="ht_tr_other">
+                                <td class="ht_empty">&nbsp;</td>
+                                <td colspan="9" class="ht_other">
+                                  
+                                  <ul class="ht_pic_list clearfix ">
+                                    <li method="ShowImage" class="">
+                                          <img src="http://pavo.elongstatic.com/i/Hotel120_120/nw_FRgBCnOkX6.jpg" onerror="this.src='http://m.elongstatic.com/static/webapp/pc_static/pc_hotel/other/hotels/pic/no_pics_CN.gif'" bigimgurl="http://pavo.elongstatic.com/i/Hotel350_350/nw_FRgBCnOkX6.jpg" width="96" height="96">
+                                        </li><li method="ShowImage" class="">
+                                          <img src="http://pavo.elongstatic.com/i/Hotel120_120/nw_FRgBw6VSKI.jpg" onerror="this.src='http://m.elongstatic.com/static/webapp/pc_static/pc_hotel/other/hotels/pic/no_pics_CN.gif'" bigimgurl="http://pavo.elongstatic.com/i/Hotel350_350/nw_FRgBw6VSKI.jpg" width="96" height="96">
+                                        </li><li method="ShowImage" class="">
+                                          <img src="http://pavo.elongstatic.com/i/Hotel120_120/nw_FRgBj74Gty.jpg" onerror="this.src='http://m.elongstatic.com/static/webapp/pc_static/pc_hotel/other/hotels/pic/no_pics_CN.gif'" bigimgurl="http://pavo.elongstatic.com/i/Hotel350_350/nw_FRgBj74Gty.jpg" width="96" height="96">
+                                        </li><li method="ShowImage" class="">
+                                          <img src="http://pavo.elongstatic.com/i/Hotel120_120/nw_FRgBdfK7YY.jpg" onerror="this.src='http://m.elongstatic.com/static/webapp/pc_static/pc_hotel/other/hotels/pic/no_pics_CN.gif'" bigimgurl="http://pavo.elongstatic.com/i/Hotel350_350/nw_FRgBdfK7YY.jpg" width="96" height="96">
+                                        </li><li method="ShowImage" class="">
+                                          <img src="http://pavo.elongstatic.com/i/Hotel120_120/nw_000h41Qj.jpg" onerror="this.src='http://m.elongstatic.com/static/webapp/pc_static/pc_hotel/other/hotels/pic/no_pics_CN.gif'" bigimgurl="http://pavo.elongstatic.com/i/Hotel350_350/nw_000h41Qj.jpg" width="96" height="96">
+                                        </li>
+                                  <li class="picShowAll">
+                                  <p class="none">
+                                  展示
+                                     <i class=""></i>
+                                   </p>
+                                  </li>
+                                  </ul>
+                                  
+                                  <p>
+                                    
+                                    
+                                    上网方式：全部房间包含无线、宽带
+                                  </p>
+                                </td>
+                              </tr>
+                                
+                        </tbody>
+                      </table>
+                    </div>
+
+                  </div><div class="htype_item   " data-handle="roomType" data-roomid="0042" id="roomId0042">
+                 
+				<div class="htype_info clearfix " method="togRoom">
+                      <div class="htype_info_pic left">
+                        <img src="http://pavo.elongstatic.com/i/Hotel120_120/nw_000h1tVN.jpg" onerror="this.src='http://img.elongstatic.com/hotel/other/no_hap.jpg'">
+                      </div>
+                      
+                      <div class="htype_info_pb right">
+                        <p class="cf55">
+                          
+                          <span class="t14 c555">¥</span>
+                             <span class="htype_info_num">449</span>
+                             <span class="t12">起</span>
+                        </p>
+                        <p class="htype_info_total mt5 ">
+                          共2个产品
+                          <i class="icon_triangle_8b"></i>
+                        </p>
+                      </div>
+
+                      <div class="htype_info_nt">
+                        <p class="htype_info_name roomtaglis">
+                          <span class="l37d">优享商旅双床房</span>
+                        <span class="roomtaglis">
+                        
+                         
+                         
+                          
+                         
+                         
+                         
+                        </span>
+                        </p>
+                        <p class="htype_info_ty">
+                          <span>房间22-28㎡</span>
+                          <span>|</span><span>双床1.2米</span>
+                          <span>|</span>
+                             <span>
+                               可住：
+                               <i class="icon_live_per"></i><i class="icon_live_per"></i>
+                             </span>
+                          <span>|</span><span title="">楼层：2层-3层</span>
+                          <span>|</span><span title="">包含无线、宽带</span>
+                        </p>
+                      </div>
+
+                    </div>
+                    <div class="newroomAB none">
+                      <div class="left" method="ShowImage">
+                       <img src="http://pavo.elongstatic.com/i/Hotel120_120/nw_000h1tVN.jpg" bigimgurl="http://pavo.elongstatic.com/i/Hotel350_350/nw_000h1tVN.jpg" onerror="this.src='http://img.elongstatic.com/hotel/other/no_hap.jpg'">
+                      </div>
+                      <div class="right">
+                       <p class="bedname">优享商旅双床房</p>
+                       <p>双床1.2米</p>
+                       <p class="more open" method="openFacbox" data-sroomid="0042">查看详情<span class="simsun">&gt;</span></p>
+                       <p class="more close none" method="closefacbox" data-sroomid="0042">收起详情<span class="simsun">&gt;</span></p>
+                       
+                      </div>
+                    </div>
+                    <div data-handle="roomTable" class="htype_info_list btddd none" style="display: none;">
+                      <table class="htype-table" cellspacing="0" cellpadding="0">
+                        <thead>
+                          <tr class="">
+                            <th class="ht_empty">&nbsp;</th>
+                            <th class="ht_name">产品名称</th>
+                            <th class="ht_supply">供应商</th>
+                            <th class="ht_brak">早餐</th>
+                            <th class="ht_rule">产品政策</th>
+                            <th class="ht_pri"><span class="night">日均价</span></th>
+                            
+                            <th class="ht_book"></th>
+                            <th class="ht_last"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+             
+                            <tr data-handle="rp" data-sroomid="0075" data-rpid="40170584" data-shotelid="90983915" data-uniqueid="80101158:0075:40170584:4_0_5002_00%2300" data-mroomid="0042" data-rptype="4" data-mark="1" data-signtype="1" data-wight="0.80262291431427" class="" data-minproduct="true">
+                              <td class="ht_empty">&nbsp;</td>
+                              <td class="ht_name">
+                                <span title="标准价">标准价</span>
+                                <ul class="redBag clearfix">
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                </ul>
+                                
+                                
+                                
+                              </td>
+                              <td class="ht_supply" title="supplier:151330">
+                                同程艺龙
+                              </td>
+                              <td class="ht_brak">无早</td>
+                              <td class="ht_rule">
+                                <p class="ht_rule_free" method="cancelTip" canceltype="2">
+                                  <span>不可取消</span>
+                                </p>
+                                <p class="immsure" method="isJishi">
+                                <span>立即确认</span>
+                                </p>
+                              </td>
+                              <td class="ht_pri">
+                                
+                                    <span method="AvgPriceCuXiao" class="ht_pri_h cur">
+                                      ¥
+                                      <span class="ht_pri_num">449</span>
+                                    </span>
+                                   
+                             
+                                    
+                                    
+                                    <p class="detailPolicy ">低价实惠之选</p>
+                              </td>
+                              
+                             
+                              <td class="ht_book">
+                                <a class="on_line_pay_button" rel="nofollow" method="order" title="预订酒店时需提前在线支付房费">
+                  <p class="topStr">预订</p>
+                  <p class="bottomStr">在线付</p>
+                </a>
+                                
+                              </td>
+                              <td class="ht_last">&nbsp;</td>
+                            </tr>
+                            
+                            
+                                 
+                            <tr data-handle="rp" data-sroomid="0099" data-rpid="43640138" data-shotelid="90983915" data-uniqueid="80101158:0099:43640138:4_0_5002_00%2300" data-mroomid="0042" data-rptype="4" data-mark="1" data-signtype="2" data-wight="0.022788243368268013" class="" data-minproduct="false">
+                              <td class="ht_empty">&nbsp;</td>
+                              <td class="ht_name">
+                                <span title="标准价">标准价</span>
+                                <ul class="redBag clearfix">
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                </ul>
+                                
+                                
+                                
+                              </td>
+                              <td class="ht_supply" title="supplier:151330">
+                                代理
+                              </td>
+                              <td class="ht_brak">无早</td>
+                              <td class="ht_rule">
+                                <p class="ht_rule_free" method="cancelTip" canceltype="2">
+                                  <span>不可取消</span>
+                                </p>
+                                <p class="immsure" method="isJishi">
+                                <span></span>
+                                </p>
+                              </td>
+                              <td class="ht_pri">
+                                
+                                    <span method="AvgPriceCuXiao" class="ht_pri_h cur">
+                                      ¥
+                                      <span class="ht_pri_num">534</span>
+                                    </span>
+                                   
+                             
+                                    
+                                    
+                                    
+                              </td>
+                              
+                             
+                              <td class="ht_book">
+                                <a class="on_line_pay_button" rel="nofollow" method="order" title="预订酒店时需提前在线支付房费">
+                  <p class="topStr">预订</p>
+                  <p class="bottomStr">在线付</p>
+                </a>
+                                
+                              </td>
+                              <td class="ht_last">&nbsp;</td>
+                            </tr>
+                            
+                            <tr class="ht_tr_other">
+                                <td class="ht_empty">&nbsp;</td>
+                                <td colspan="9" class="ht_other">
+                                  
+                                  <ul class="ht_pic_list clearfix ">
+                                    <li method="ShowImage" class="">
+                                          <img src="http://pavo.elongstatic.com/i/Hotel120_120/nw_000h1tVN.jpg" onerror="this.src='http://m.elongstatic.com/static/webapp/pc_static/pc_hotel/other/hotels/pic/no_pics_CN.gif'" bigimgurl="http://pavo.elongstatic.com/i/Hotel350_350/nw_000h1tVN.jpg" width="96" height="96">
+                                        </li><li method="ShowImage" class="">
+                                          <img src="http://pavo.elongstatic.com/i/Hotel120_120/nw_FRgCIcO1QQ.jpg" onerror="this.src='http://m.elongstatic.com/static/webapp/pc_static/pc_hotel/other/hotels/pic/no_pics_CN.gif'" bigimgurl="http://pavo.elongstatic.com/i/Hotel350_350/nw_FRgCIcO1QQ.jpg" width="96" height="96">
+                                        </li><li method="ShowImage" class="">
+                                          <img src="http://pavo.elongstatic.com/i/Hotel120_120/nw_000h41Q6.jpg" onerror="this.src='http://m.elongstatic.com/static/webapp/pc_static/pc_hotel/other/hotels/pic/no_pics_CN.gif'" bigimgurl="http://pavo.elongstatic.com/i/Hotel350_350/nw_000h41Q6.jpg" width="96" height="96">
+                                        </li>
+                                  <li class="picShowAll">
+                                  <p class="none">
+                                  展示
+                                     <i class=""></i>
+                                   </p>
+                                  </li>
+                                  </ul>
+                                  
+                                  <p>
+                                    
+                                    
+                                    上网方式：全部房间包含无线、宽带
+                                  </p>
+                                </td>
+                              </tr>
+                                
+                        </tbody>
+                      </table>
+                    </div>
+
+                  </div>
+                  
+                  
+              </div>
+            	</div>
+</div>
 <a name="locontent" id="locontent"></a>
 <div id="hotelContent" class="hdetail_view">
     <h2 class="hdetail_tit2">酒店信息</h2>
@@ -1539,7 +966,7 @@
                 <dt><i class="icon_view_s1"></i>酒店电话</dt>
                 <dd>
                  010-58576688
-	        	 	<span class="ml20">艺龙电话预订：95711</span>
+	        	 	<span class="ml20">风游电话预订：95711</span>
                 </dd>
             </dl>
                 <dl class="dview_info_item">
@@ -1793,7 +1220,7 @@
 <p><span class="loading_b vm mr10"></span>小艺正在努力为您加载中...</p>
 </div>
 <ul class="cmt_lst" method="commentList"></ul>
-<div class="tc yahei c999 mt20">点评内容知识产权归属艺龙网所有,未经许可,严禁转载</div>
+<div class="tc yahei c999 mt20">点评内容知识产权归属风游网所有,未经许可,严禁转载</div>
 <div class="paging1" id="comment_paging"></div>
 </div>
 <div class="cmt_bigpic" id="commentBigImgContainer" style="width: auto !important; display:none">
@@ -1822,7 +1249,7 @@
 	      	</div>
 	    <div class="dsider_service_us">
 	        <div class="service_us_tit">
-	          <h2>艺龙承诺</h2>
+	          <h2>风游承诺</h2>
 	        </div>
 	        <div class="service_infs">
 	          <ul class="clearfix">
@@ -2558,66 +1985,7 @@
                                                      onerror="this.src='http://m.elong${pageContext.request.contextPath }/statics.com/${pageContext.request.contextPath }/statics/webapp/pc_${pageContext.request.contextPath }/statics/pc_hotel/other/hotels/pic/no_pics_CN.gif'"
                                                      bigImgUrl="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FXQalMl9ja.jpg" width="80" height="80"/>
                                             </li>
-                                            <li method="showBigImg" isPanorama="" data-name="客房">
-                                                <img data-src="${pageContext.request.contextPath }/statics/picture/nw_fxq8jlibjk.jpg"
-                                                     onerror="this.src='http://m.elong${pageContext.request.contextPath }/statics.com/${pageContext.request.contextPath }/statics/webapp/pc_${pageContext.request.contextPath }/statics/pc_hotel/other/hotels/pic/no_pics_CN.gif'"
-                                                     bigImgUrl="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FXQ8JLibJK.jpg" width="80" height="80"/>
-                                            </li>
-                                            <li method="showBigImg" isPanorama="" data-name="客房">
-                                                <img data-src="${pageContext.request.contextPath }/statics/picture/nw_fpnxwqbvhc.jpg"
-                                                     onerror="this.src='http://m.elong${pageContext.request.contextPath }/statics.com/${pageContext.request.contextPath }/statics/webapp/pc_${pageContext.request.contextPath }/statics/pc_hotel/other/hotels/pic/no_pics_CN.gif'"
-                                                     bigImgUrl="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FpNxwQBVhC.jpg" width="80" height="80"/>
-                                            </li>
-                                            <li method="showBigImg" isPanorama="" data-name="客房">
-                                                <img data-src="${pageContext.request.contextPath }/statics/picture/nw_fpnxjca5pe.jpg"
-                                                     onerror="this.src='http://m.elong${pageContext.request.contextPath }/statics.com/${pageContext.request.contextPath }/statics/webapp/pc_${pageContext.request.contextPath }/statics/pc_hotel/other/hotels/pic/no_pics_CN.gif'"
-                                                     bigImgUrl="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FpNxjca5pe.jpg" width="80" height="80"/>
-                                            </li>
-                                            <li method="showBigImg" isPanorama="" data-name="客房">
-                                                <img data-src="${pageContext.request.contextPath }/statics/picture/nw_fpnxbzpyxs.jpg"
-                                                     onerror="this.src='http://m.elong${pageContext.request.contextPath }/statics.com/${pageContext.request.contextPath }/statics/webapp/pc_${pageContext.request.contextPath }/statics/pc_hotel/other/hotels/pic/no_pics_CN.gif'"
-                                                     bigImgUrl="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FpNxbzPyXS.jpg" width="80" height="80"/>
-                                            </li>
-                                            <li method="showBigImg" isPanorama="" data-name="客房">
-                                                <img data-src="${pageContext.request.contextPath }/statics/picture/nw_fpnwmbroi8.jpg"
-                                                     onerror="this.src='http://m.elong${pageContext.request.contextPath }/statics.com/${pageContext.request.contextPath }/statics/webapp/pc_${pageContext.request.contextPath }/statics/pc_hotel/other/hotels/pic/no_pics_CN.gif'"
-                                                     bigImgUrl="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FpNwMbROI8.jpg" width="80" height="80"/>
-                                            </li>
-                                            <li method="showBigImg" isPanorama="" data-name="客房">
-                                                <img data-src="${pageContext.request.contextPath }/statics/picture/nw_fpnwric3ty.jpg"
-                                                     onerror="this.src='http://m.elong${pageContext.request.contextPath }/statics.com/${pageContext.request.contextPath }/statics/webapp/pc_${pageContext.request.contextPath }/statics/pc_hotel/other/hotels/pic/no_pics_CN.gif'"
-                                                     bigImgUrl="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_FpNwrIc3Ty.jpg" width="80" height="80"/>
-                                            </li>
-                                            <li method="showBigImg" isPanorama="" data-name="客房">
-                                                <img data-src="${pageContext.request.contextPath }/statics/picture/nw_000dapx1.jpg"
-                                                     onerror="this.src='http://m.elong${pageContext.request.contextPath }/statics.com/${pageContext.request.contextPath }/statics/webapp/pc_${pageContext.request.contextPath }/statics/pc_hotel/other/hotels/pic/no_pics_CN.gif'"
-                                                     bigImgUrl="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_000dAPX1.jpg" width="80" height="80"/>
-                                            </li>
-                                            <li method="showBigImg" isPanorama="" data-name="客房">
-                                                <img data-src="${pageContext.request.contextPath }/statics/picture/nw_0003gabl.jpg"
-                                                     onerror="this.src='http://m.elong${pageContext.request.contextPath }/statics.com/${pageContext.request.contextPath }/statics/webapp/pc_${pageContext.request.contextPath }/statics/pc_hotel/other/hotels/pic/no_pics_CN.gif'"
-                                                     bigImgUrl="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_0003GAbl.jpg" width="80" height="80"/>
-                                            </li>
-                                            <li method="showBigImg" isPanorama="" data-name="客房">
-                                                <img data-src="${pageContext.request.contextPath }/statics/picture/nw_0004tb3b.jpg"
-                                                     onerror="this.src='http://m.elong${pageContext.request.contextPath }/statics.com/${pageContext.request.contextPath }/statics/webapp/pc_${pageContext.request.contextPath }/statics/pc_hotel/other/hotels/pic/no_pics_CN.gif'"
-                                                     bigImgUrl="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_0004Tb3B.jpg" width="80" height="80"/>
-                                            </li>
-                                            <li method="showBigImg" isPanorama="" data-name="客房">
-                                                <img data-src="${pageContext.request.contextPath }/statics/picture/nw_0004tb3c.jpg"
-                                                     onerror="this.src='http://m.elong${pageContext.request.contextPath }/statics.com/${pageContext.request.contextPath }/statics/webapp/pc_${pageContext.request.contextPath }/statics/pc_hotel/other/hotels/pic/no_pics_CN.gif'"
-                                                     bigImgUrl="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_0004Tb3C.jpg" width="80" height="80"/>
-                                            </li>
-                                            <li method="showBigImg" isPanorama="" data-name="客房">
-                                                <img data-src="${pageContext.request.contextPath }/statics/picture/nw_0003vrsc.jpg"
-                                                     onerror="this.src='http://m.elong${pageContext.request.contextPath }/statics.com/${pageContext.request.contextPath }/statics/webapp/pc_${pageContext.request.contextPath }/statics/pc_hotel/other/hotels/pic/no_pics_CN.gif'"
-                                                     bigImgUrl="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_0003vrSC.jpg" width="80" height="80"/>
-                                            </li>
-                                            <li method="showBigImg" isPanorama="" data-name="客房">
-                                                <img data-src="${pageContext.request.contextPath }/statics/picture/nw_0006igjr.jpg"
-                                                     onerror="this.src='http://m.elong${pageContext.request.contextPath }/statics.com/${pageContext.request.contextPath }/statics/webapp/pc_${pageContext.request.contextPath }/statics/pc_hotel/other/hotels/pic/no_pics_CN.gif'"
-                                                     bigImgUrl="//pavo.elong${pageContext.request.contextPath }/statics.com/i/Hotel870_470/nw_0006IgjR.jpg" width="80" height="80"/>
-                                            </li>
+                                          
                                     </ul>
                                     <ul data-handle="image_others" style="display:none;position:absolute;left:0px;"
                                         class="hrela_spic_list" id="layerimagegroup">
@@ -2692,93 +2060,31 @@
 </script>
 <div id="m_adsContainer" style="display: none"></div>
 
- <script type="text/javascript">var HotelDetailController={Resource:{"hoteldetail":{"script_CheckOutDate_error":"请输入有效的离店日期。","script_CheckOutDate_validator2":"入住日期必须早于离店日期。","specialoffers":"温馨提示","script_need_end":"天以上，请致电：{0}，我们会竭诚为您服务。","hidesomeproduct":"收起","script_if_end":"的酒店，请致电：{0}，我们会竭诚为您服务。","publicwifi":"公共区域提供WiFi","dragon":"战略合作酒店，为艺龙会员提供优质服务及优惠房价","script_CheckInDate_error":"请输入有效的入住日期。","script_CheckOutDate_validator":"离店日期必须晚于或者等于入住日期。","diamond":"精选合作酒店，为艺龙会员提供优质服务","script_need_head":"如果您需要在酒店入住","script_CheckInDate_validator":"入住日期必须晚于或者等于当天日期。","showmoreproduct":"查看更多产品报价","internet":"上网服务","script_if_head":"如果您需要预订","crown":"紧密合作酒店，为艺龙会员提供专属优惠房价"}},sosoId:"",svId:"",heading:"",zoom:"",stas:"",pitch:"",isLogin:false,memberLevel:0,detailRequest:{"aBTestVersion":"old","bookingChannel":1,"cardNo":192928,"checkInDate":"2019-05-11 00:00:00","checkOutDate":"2019-05-12 00:00:00","customerLevel":11,"hotelIDs":"50101525","isAfterCouponPrice":true,"isDebug":false,"isLogin":false,"isMobileOnly":false,"isNeed5Discount":false,"isTrace":false,"language":"cn","needDataFromCache":true,"needPromotion":true,"newABVersion":"Z","newVersion":false,"orderFromID":50,"payMethod":0,"productType":0,"promotionChannelCode":"0000","proxyID":"ZD","sellChannel":1,"settlementType":0,"updateOrder":false,"version":"G"},script_CheckInDate_validator:null,afterDays:180,inDays:30,webTel:"95711",language:"cn",cityId:"0101",googleLat:39.90807,googleLng:116.343188,baiduLat:39.91372316,baiduLng:116.3497983,cityNameEn:"Beijing",cityNameCn:"\u5317\u4EAC",hotelAddress:"\u897F\u957F\u5B89\u8857\u590D\u5174\u95E8\u5916\u5927\u885719\u53F7",hotelNameCn:"\u5317\u4EAC\u5510\u62C9\u96C5\u79C0\u9152\u5E97",hotelNameEn:"Tangla Hotel Beijing",hotelId:"50101525",starLevel:5,isTaiwan:false,isNeedOpenAPIBind:false,absoluteUri:"http:\/\/hotel.elong.com\/50101525\/",hasWifi:false,resourceMap:null,orderNo:0,cancelUrl:null,shareComment:null,sharebigImagUrl:null,antitoken:"259DD86E-951C-4014-94A3-FFF22695C699",version:"G",permotionVersion:"G",newABVersion:"Z",ABTestVersion:"old",FacilitateLoginImage:"https:\/\/img1.40017.cn\/cn\/h\/elong_pc\/201935_10.164f5\/bg1.png",DetailFacilitateLoginImageBtn:"https:\/\/img1.40017.cn\/cn\/h\/elong_pc\/201935_10.164f5\/detail_login_btn.png",DetailFacilitateLoginImageBtnOn:"https:\/\/img1.40017.cn\/cn\/h\/elong_pc\/201935_10.164f5\/detail_login_btn_on.png",DetailFacilitateLoginImageCollaps:"https:\/\/img1.40017.cn\/cn\/h\/elong_pc\/201935_10.164f5\/detail_login_collapse.png",DetailFacilitateLoginImageCollapseOn:"https:\/\/img1.40017.cn\/cn\/h\/elong_pc\/201935_10.164f5\/detail_login_collapse_on.png",isLogin:false,enabledYesterday:false,serverTime:"2019-05-11",serverTimeHour:"2019-05-11 08:41:17",webHotelTjObj:{"st":"1557535277724","pt":"pc-hotel-detail","idc":"idc1","pturl":"http:\/\/hotel.elong.com\/50101525\/","et":"show","cid":"1f209bf6-1fce-4b75-a1fe-05c73a1a8be5"},needElongRisk:true,needCtripRisk:true,showLoginOption:true,showCommentInfo:true,common${pageContext.request.contextPath }/staticsPath:"\/\/file.40017.cn\/js40017cnproduct\/cn\/h\/elong_pc\/common\/","staticJsPath:"http:\/\/m.elongstatic.com\/static\/webapp\/pc_${pageContext.request.contextPath }/statics\/pc_hotel\/2018\/09\/11\/views\/",hotel${pageContext.request.contextPath }/staticsCssPath:"http:\/\/m.elong${pageContext.request.contextPath }/statics.com\/${pageContext.request.contextPath }/statics\/webapp\/pc_${pageContext.request.contextPath }/statics\/pc_hotel\/2018\/09\/11\/css\/",hotel${pageContext.request.contextPath }/staticsJsPathTmapi:"\/\/file.40017.cn\/js40017cnproduct\/cn\/h\/elong_pc\/201957_14.10fe5\/",hotel${pageContext.request.contextPath }/staticsCssPathTmapi:"\/\/file.40017.cn\/css40017cnproduct\/cn\/h\/elong_pc\/201956_18.1d48c\/",appUrlVersion:"20190507162906",urlVersion:null,jsPath:"..\/..\/..\/web\/hotel\/views\/",basePath:"",curDate:"2019-05-11",getDetailCheckCode:function(detailRequest,callback,E, httpmethod,dataType,timeoute,enabledCache){ E.ajax.exec("/ajax/detail/getcode.html", {detailRequest:detailRequest}, callback, httpmethod, dataType,timeoute,enabledCache); },GetSurroundingHotels:function(cityId,cityNameEn,lat,lng,hotelId,starLevel,hotelName,callback,E, httpmethod,dataType,timeoute,enabledCache){ E.ajax.exec("/ajax/detail/getsurroundinghotels", {cityId:cityId,cityNameEn:cityNameEn,lat:lat,lng:lng,hotelId:hotelId,starLevel:starLevel,hotelName:hotelName}, callback, httpmethod, dataType,timeoute,enabledCache); },getRecommendHotelInfo:function(cityId,cityNameEn,lat,lng,hotelId,callback,E, httpmethod,dataType,timeoute,enabledCache){ E.ajax.exec("/ajax/detail/getrecommendhotel", {cityId:cityId,cityNameEn:cityNameEn,lat:lat,lng:lng,hotelId:hotelId}, callback, httpmethod, dataType,timeoute,enabledCache); },getRecommHotelReason:function(hoteldId,callback,E, httpmethod,dataType,timeoute,enabledCache){ E.ajax.exec("/ajax/detail/hotelreason", {hoteldId:hoteldId}, callback, httpmethod, dataType,timeoute,enabledCache); },getAmbitusInfoForImageBox:function(baiduDataRequest,callback,E, httpmethod,dataType,timeoute,enabledCache){ E.ajax.exec("/ajax/detail/getambitusinfoforimgbox", {baiduDataRequest:baiduDataRequest}, callback, httpmethod, dataType,timeoute,enabledCache); },getHotelMapInfo:function(request,callback,E, httpmethod,dataType,timeoute,enabledCache){ E.ajax.exec("/ajax/detail/getpositionjva", {request:request}, callback, httpmethod, dataType,timeoute,enabledCache); },getTrafficInfo:function(request,cityId,callback,E, httpmethod,dataType,timeoute,enabledCache){ E.ajax.exec("/ajax/detail/gettrafficjva", {request:request,cityId:cityId}, callback, httpmethod, dataType,timeoute,enabledCache); }};var pageController=HotelDetailController;</script> 
-<script type="text/javascript">
-    var hotelPageController = pageController;//兼容
-    var tj_jsStartTime = new Date().getTime();
-    var  customLabelValue="0";
-</script>
-    <script type="text/javascript" src="${pageContext.request.contextPath }/statics/js/tjmvt.js"></script>
-    <script type="text/javascript"
-            src="${pageContext.request.contextPath }/statics/js/fingerprint.pc.js"></script>
 
-<script type="text/JavaScript">
-    function CNNIC_change(eleId) {
-        var str = document.getElementById(eleId).href;
-        var str1 = str.substring(0, (str.length - 6));
-        str1 = [str1, CNNIC_RndNum(6)].join('');
-        document.getElementById(eleId).href = str1;
-        //window.open(str1);
-    }
 
-    function CNNIC_RndNum(k) {
-        var rnd = [""];
-        for (var i = k; i != 0; i--) {
-            rnd.push(Math.floor(Math.random() * 10));
-        }
-        return rnd.join('');
-    }
-</script>
 
-        <script type="text/javascript">; </script>
-        <script type="text/javascript"
-                src="${pageContext.request.contextPath }/statics/js/s_code.js"></script>
-        <script language="JavaScript">  var s_code = s.t();
-        if (s_code) document.write(s_code);</script>
-        <script type="text/javascript"></script>
-        <script type="text/javascript">var TJObject = {"scot":"2019-05-12","hid":"50101525","pt":"pc-hotel-detail","orderfrom":50,"cip":"218.76.145.99","pturl":"http://hotel.elong.com/50101525/","rfurl":"http://hotel.elong.com/50101525/","scit":"2019-05-11","sid":"259d47ef-8a00-4ed3-8ebb-a25c083b838d","biz":"pc_hotel","id":"312dbfe5-b8c5-45d9-9e5a-edf52d9f81fe","st":1557535277731,"bns":4,"idc":"idc1","mvt":"[{\"vid\":462,\"val\":\"0\",\"eid\":376},{\"vid\":186,\"val\":\"1\",\"eid\":197},{\"vid\":366,\"val\":\"0\",\"eid\":376}]","hcty":"北京","ct":2,"opens":1,"lg":"zh-CN","cid":"1f209bf6-1fce-4b75-a1fe-05c73a1a8be5"}</script>
-        <script type="text/javascript" src="${pageContext.request.contextPath }/statics/js/netextend.js"></script>
-        <script type="text/javascript">
-            if (TJObject && TJObject.pt) {
-                TJObject.et = "show";
-                TJObject.st = new Date().getTime();
-                tjMVT.setData(TJObject);
-            }
-            else if (hotelPageController && hotelPageController.webHotelTjObj) {
-                tjMVT.setData(hotelPageController.webHotelTjObj);
-            }
-
-        </script>
-
-<script>
-    var pageCommonPath = {
-        getcommentroomtype: '/ajax/comment/getcommentroomtype/',
-        getcheckcode: '/ajax/comment/getcheckcode.html',
-        getcommentbypage: '/ajax/comment/getcommentbypage/',
-        getRecommendHotelInfo:'/ajax/detail/getrecommendhotel',
-        getTrafficInfo:'/ajax/detail/gettrafficjva',
-        getDetailCheckCode:'/ajax/detail/getcode.html',
-        GetHotelRoomSetJva:'/ajax/tmapidetail/gethotelroomsetjva',
-        GetSurroundingHotels:'/ajax/detail/getsurroundinghotels',
-        getRecommHotelReason:'/ajax/detail/hotelreason',
-        getAmbitusInfoForImageBox:'/ajax/detail/getambitusinfoforimgbox',
-        getHotelMapInfo:'/ajax/detail/getpositionjva',
-        getSeen:'/ajax/tmapidata/seenhotel',
-        GetHotelRoomSetJvaJson: '/ajax/tmapidetail/gethotelroomsetjvajson',
-        checkbookablenew:'/ajax/tmapi/checkbookablenew',
-        getHotelImageListJSON:'/ajax/tmapidetail/gethotelimagesetjvajson'
-    }
-</script>
-<script type="text/javascript">
-    var _tcq = _tcq || [];
-    var _timediff = -1;
-    if (typeof _tcopentime != "undefined") {
-        _timediff = new Date().getTime() - _tcopentime;
-    }
-    _tcq.push(['_serialid', "0"]);
-    _tcq.push(['_vrcode', "10002-2001-0"]);
-    _tcq.push(['_refId', "0"]);
-    _tcq.push(['_userId', TJObject.ecrd || ""]);
-    _tcq.push(['_openTime', _timediff]);
-    _tcq.push(['_trackPageview', "国内酒店_终页"]);
-    _tcq.push(['_resId', 50101525 || ""]);
-    _tcq.push(['_qdid', "-9999" ]);
-    _tcq.push(['_flag',false]);
-    _tcq.push(['_innerrefid', "0"]);
-</script>
-  <script type='text/javascript' src="${pageContext.request.contextPath }/statics/js/vst.js" charset="utf-8"></script>
-<script data-main='//file.40017.cn/js40017cnproduct/cn/h/elong_pc/201957_14.10fe5/detail/hotel_detail.js?20190507162906' src='${pageContext.request.contextPath }/statics/js/require.js'></script>
-          <!-- ===================== footer 20190403 start ===================== --> <div class="clear"></div> <div class="footer" r="3"> <div class="footer_info"> <dl> <dt>加盟合作</dt> <dd> <a href="http://hotel.elong.com/union/join.html#?" title="酒店加盟" rel="nofollow">酒店加盟</a> </dd> <dd> <a href="http://open.elong.com/" title="机票酒店分销联盟" rel="nofollow">开放平台</a> </dd> <dd> <a href="http://promotion.elong.com/hotel/cn/elongagent/elongagent.html " title="旅游产品代理合作" rel="nofollow">代理合作</a> </dd> <dd> <a href="http://promotion.elong.com/web/adservice/adservice.html" title="在线广告服务" rel="nofollow">广告服务</a> </dd> <dd> <a href="http://ebooking.elong.com/ebkauth/login" title="艺龙商家中心" rel="nofollow">商家中心</a> </dd> </dl> <dl> <dt>关于艺龙</dt> <dd> <a href="http://hotel.elong.com/directory/" title="酒店大全">酒店大全</a> </dd><dd> <a href="http://ihotel.elong.com/sitemap/" title="国际酒店">国际酒店</a> </dd><dd> <a href="http://promotion.elong.com/web/insurance/index.html" title="旅行保险">旅行保险</a> </dd><dd> <a href="http://promotion.elong.com/index/cn/campus/index.html" title="校园招聘" rel="nofollow">校园招聘</a> </dd> <dd> <a href="https://d.elong.com/a/contact" title="联系艺龙旅行网" rel="nofollow">联系我们</a> </dd> </dl> <dl> <dt>艺龙APP下载</dt> <dd class="pt10"> <i class="cm_icon footer_info_app"></i> </dd> </dl> <dl> <dt>艺龙官方微信</dt> <dd class="pt10"> <i class="cm_icon footer_info_wx"></i> </dd> </dl> <dl> <dt>艺龙官方小程序</dt> <dd class="pt10"><i class="cm_icon footer_info_xcx"></i></dd> </dl> </div> <div class="clx"></div> <div class="footer_copy"> &#169; 2000 - 2019 北京艺龙信息技术有限公司, eLong, Inc or its affiliates. All Rights Reserved. <i class="cm_icon"></i> <a rel="nofollow" target="_blank" href="http://m.elong${pageContext.request.contextPath }/statics.com/pcheaderfooter/2018/06/files/headerfoot/img/ICP_20180015.pdf">ICP证:合B2-20180015</a> <br> <a rel="nofollow" target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502026059"> <i style=" background-image: url(${pageContext.request.contextPath }/statics/images/anbei.png); background-size: contain; background-position: 0; height: 20px; width: 20px;"></i> 京公网安备11010502026059号</a> <i class="cm_icon"></i> <a rel="nofollow" target="_blank" href="http://m.elong${pageContext.request.contextPath }/statics.com/pcheaderfooter/2018/06/files/headerfoot/img/company_105145723.pdf">经营执照</a> <i class="cm_icon"></i> <a rel="nofollow" target="_blank" href="http://m.elong${pageContext.request.contextPath }/statics.com/hotel/eltk/eltk.html">《艺龙旅行网服务条款》</a><i class="cm_icon"></i>违法和不良信息举报电话：95711-9<i class="cm_icon"></i><a rel="nofollow" href="mailto:wfjb@ly.com">举报邮箱：wfjb@ly.com</a></div> <div class="footer_safe"> <a class="cm_icon qua-1" href="https://trustsealinfo.websecurity.norton.com/splash?form_file=fdf/splash.fdf&dn=*.elong.com&lang=zh_CN" rel="nofollow" target="_blank" alt="SSL加密认证" title="SSL加密认证">SSL加密认证</a> <a title="艺龙网通过PCI认证" alt="艺龙网通过PCI认证" target="_blank" rel="nofollow" href="http://www.atsec.cn/cn/pci-attestation/Elong-PCIAttestation-atsec-PCI-DSS-C-01128.jpg" class="cm_icon qua-6">艺龙网通过PCI认证</a><a class="cm_icon qua-3" href="http://www.itrust.org.cn/Home/Index/satification_certificate/wm/MY2019042401.html" rel="nofollow" target="_blank" alt="信赖商业计划" title="信赖商业计划">信用评级</a> <a class="cm_icon qua-5" href="https://ss.knet.cn/verifyseal.dll?sn=e14021111010646180fggu000000&amp;ct=df&amp;a=1&amp;pa=500267" rel="nofollow" onclick="CNNIC_change('urlknet')" tabindex="-1" id="urlknet" target="_blank" title="可信用网站身份验证" alt="可信用网站身份验证">可信用网站身份验证</a> <a class="cm_icon qua-4" href="http://search.szfw.org/cert/l/CX20120918001652001722" rel="nofollow" target="_blank" title="诚信示范企业" alt="诚信示范企业">诚信示范企业</a> <a alt="品牌官网认证" title="品牌官网认证" target="_blank" rel="nofollow" href="http://si.trustutn.org/info?sn=912170105026585086807&amp;certType=1" class="cm_icon qua-7">品牌官网认证</a> </div> </div> <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/statics/css/styles.css"> <!-- ===================== footer end ===================== --> 
+          <!-- ===================== footer 20190403 start ===================== --> <div class="clear"></div> <div class="footer" r="3"> <div class="footer_info"> <dl> <dt>加盟合作</dt> <dd> <a href="#" title="酒店加盟" rel="nofollow">酒店加盟</a> </dd>
+           <dd> <a href="" title="机票酒店分销联盟" rel="nofollow">开放平台</a> </dd> <dd> <a href="# " title="旅游产品代理合作" rel="nofollow">代理合作</a> </dd>
+            <dd> <a href="" title="在线广告服务" rel="nofollow">广告服务</a> </dd> 
+            <dd> <a href="" title="风游商家中心" rel="nofollow">商家中心</a> </dd> </dl>
+             <dl> <dt>关于风游</dt> <dd> <a href="" title="酒店大全">酒店大全</a> </dd>
+             <dd> <a href="" title="国际酒店">国际酒店</a> </dd>
+             <dd> <a href="" title="旅行保险">旅行保险</a> </dd>
+             <dd> <a href="" title="校园招聘" rel="nofollow">校园招聘</a> </dd> 
+             <dd> <a href="" title="联系风游旅行网" rel="nofollow">联系我们</a> </dd> </dl> 
+             <dl> <dt>风游APP下载</dt> <dd class="pt10"> <i class="cm_icon footer_info_app"></i> </dd> </dl> 
+             <dl> <dt>风游官方微信</dt> <dd class="pt10"> <i class="cm_icon footer_info_wx"></i> </dd> </dl> 
+             <dl> <dt>风游官方小程序</dt> <dd class="pt10"><i class="cm_icon footer_info_xcx"></i></dd> </dl> </div>
+              <div class="clx"></div> <div class="footer_copy"> &#169; 2000 - 2019 北京风游信息技术有限公司, eLong, Inc or its affiliates. All Rights Reserved. <i class="cm_icon"></i>
+               <a rel="nofollow" target="_blank" href="http://m.elong${pageContext.request.contextPath }/statics.com/pcheaderfooter/2018/06/files/headerfoot/img/ICP_20180015.pdf">ICP证:合B2-20180015</a> <br> <a rel="nofollow" target="_blank" href="">
+                <i style=" background-image: url(${pageContext.request.contextPath }/statics/images/anbei.png); background-size: contain; background-position: 0; height: 20px; width: 20px;"></i> 京公网安备11010502026059号</a>
+                 <i class="cm_icon"></i> <a rel="nofollow" target="_blank" href="http://m.elong${pageContext.request.contextPath }/statics.com/pcheaderfooter/2018/06/files/headerfoot/img/company_105145723.pdf">经营执照</a> <i class="cm_icon"></i>
+                  <a rel="nofollow" target="_blank" href="http://m.elong${pageContext.request.contextPath }/statics.com/hotel/eltk/eltk.html">《风游旅行网服务条款》</a><i class="cm_icon"></i>违法和不良信息举报电话：95711-9<i class="cm_icon"></i><a rel="nofollow" href="mailto:wfjb@ly.com">举报邮箱：wfjb@ly.com</a></div>
+                   <div class="footer_safe"> <a class="cm_icon qua-1" href="https://trustsealinfo.websecurity.norton.com/splash?form_file=fdf/splash.fdf&dn=*.elong.com&lang=zh_CN" rel="nofollow" target="_blank" alt="SSL加密认证" title="SSL加密认证">SSL加密认证</a> 
+                   <a title="风游网通过PCI认证" alt="风游网通过PCI认证" target="_blank" rel="nofollow" href="http://www.atsec.cn/cn/pci-attestation/Elong-PCIAttestation-atsec-PCI-DSS-C-01128.jpg" class="cm_icon qua-6">风游网通过PCI认证</a><a class="cm_icon qua-3" href="#" rel="nofollow" target="_blank" alt="信赖商业计划" title="信赖商业计划">信用评级</a>
+                    <a class="cm_icon qua-5" href="#" rel="nofollow" onclick="" tabindex="-1" id="urlknet" target="_blank" title="可信用网站身份验证" alt="可信用网站身份验证">可信用网站身份验证</a> 
+                    <a class="cm_icon qua-4" href="" rel="nofollow" target="_blank" title="诚信示范企业" alt="诚信示范企业">诚信示范企业</a> <a alt="品牌官网认证" title="品牌官网认证" target="_blank" rel="nofollow" href="" class="cm_icon qua-7">品牌官网认证</a> </div> </div> 
+                    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/statics/css/styles.css"> <!-- ===================== footer end ===================== --> 
 <!-- 可信网站LOGO安装开始 -->
 
 </body>

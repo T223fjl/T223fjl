@@ -1,6 +1,7 @@
 package controller;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -62,8 +63,13 @@ public class DevController {
 		int page=1;
 		int size=1;
 		System.out.println("ddddddd:"+sort);
-		System.out.println("ddddddd:"+sort);
-		System.out.println("ddddddd:"+sort);
+		
+		if(sort==null||"".equals(sort)){
+			sort="hotelId";
+		}
+		if(desc==null||"".equals(desc)){
+			desc="asc";
+		}
 		if(curPage!=null&&!"".equals(curPage)){
 			page=(Integer.valueOf(curPage));
 		}
@@ -87,9 +93,15 @@ public class DevController {
 		if(bigPrice!=null&&!"".equals(bigPrice)){
 			 big=(Integer.valueOf(bigPrice));
 		}
-		PageInfo<Hotel> hotels= hotelService.findHotelList(xin,level1,level2, big, small, sort, desc, page, size);
-		int count=hotelService.queryHotel(xin, level1, level2, big, small, sort, desc).size();
+		int sum=0;
+		PageInfo<Hotel> hotels=null;
+		hotels= hotelService.findHotelList(xin,level1,level2, big, small, sort, desc, page, size);
+		sum=hotelService.queryHotel(xin, level1, level2, big, small, sort, desc).size();
+		int count=sum%size==0?sum/size:sum/size+1;
+		session.setAttribute("sort", sort);
+		session.setAttribute("desc", desc);
 		session.setAttribute("curPage", page);
+		session.setAttribute("sum", sum);
 		session.setAttribute("count", count);
 		session.setAttribute("stars", stars);
 		session.setAttribute("prices", prices);
@@ -130,6 +142,57 @@ public class DevController {
 		session.setAttribute("CurCity", CurCity);
 		return "developer/index2";
 	}
+	
+	// 跳转前台二级页面
+	@RequestMapping("/toIndexTwo")
+	public String toIndexTwo(String keywords ,String destination ,String curPage,String sort,String desc ,HttpSession session) {
+			List<Level> types =levelService.queryLevelByType(1);
+			List<Level> citys = levelService.queryLevelByType(2);
+			List<Dictionarydate> stars=dictionarydateService.queryDictionarydateByTypeCode("star");
+			List<Dictionarydate> prices=dictionarydateService.queryDictionarydateByTypeCode("price");
+			int page=1;
+			int size=5;
+			if(sort==null||"".equals(sort)){
+				sort="hotelId";
+			}
+			if(desc==null||"".equals(desc)){
+				desc="asc";
+			}
+			if(curPage!=null&&!"".equals(curPage)){
+				page=(Integer.valueOf(curPage));
+			}
+			Level CurCity=null;
+			int des=0;
+			if(destination!=null&&!"".equals(destination)){
+				for (int i = 0; i < citys.size(); i++) {
+					if(destination.equals(citys.get(i).getName())){
+						des=citys.get(i).getId();
+						CurCity=citys.get(i);
+					}
+				}
+			}
+			int sum=0;
+			PageInfo<Hotel> hotels=null;
+			hotels= hotelService.findHotelListByName(keywords, des, sort, desc, page, size);
+			sum=hotelService.queryHotelByName(keywords, des).size();
+			int count=sum%size==0?sum/size:sum/size+1;
+			
+			session.setAttribute("CurCity", CurCity);
+			session.setAttribute("sort", sort);
+			session.setAttribute("desc", desc);
+			session.setAttribute("curPage", page);
+			session.setAttribute("sum", sum);
+			session.setAttribute("count", count);
+			session.setAttribute("stars", stars);
+			session.setAttribute("prices", prices);
+			session.setAttribute("types", types);
+			session.setAttribute("citys", citys);
+			session.setAttribute("hotels", hotels);
+
+		
+			return "developer/index2";
+		}
+	
 
 	// 跳转前台三级页面
 	@RequestMapping("/toIndex3")

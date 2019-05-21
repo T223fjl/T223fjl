@@ -5,6 +5,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="dao.hotel.HotelDao">
 
+		
+
+	<select id="queryHotelByName" resultType="Hotel">
+	SELECT * FROM `hotel` WHERE  1=1
+	<if test="keywords!='' and keywords!=null ">
+			and CONCAT(IFNULL(`hotelName`,''),IFNULL(`hotelAddress`,'')) LIKE '%${keywords}%'
+	</if>
+	 
+	 <if test="destination!='' and destination!=null ">
+			and level2 = #{destination}
+	</if>
+	</select>
 	<select id="queryHotel" resultType="Hotel">
 		SELECT * from hotel where 1=1
 		<if test="hotelRating!=0">
@@ -23,11 +35,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			and hotelPrice <![CDATA[ < ]]> #{bigPrice}
 		</if>
 		
-		<if test="sort!=null">
+		<!-- <if test="sort!=null and sort!=''">
 			ORDER BY #{sort}
-			<if test="desc!=null">desc</if>
+			<if test="desc!=null and desc!=''">desc</if>
 		</if>
-
+ -->
 	</select>
 
 </mapper>

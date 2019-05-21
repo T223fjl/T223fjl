@@ -601,12 +601,12 @@
 	top: -2px
 }
 
-.sort_list .on, .sort_list .on:hover {
+/*  .sort_list .on, .sort_list .on:hover {
 	background-color: #49F;
 	color: #FFF;
 	top: -2px;
 	border-top: 2px solid #49f
-}
+} */
 
 .sort_list .no, .sort_list .no:hover {
 	background: transparent;

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -199,6 +200,13 @@
 	left: 33px;
 }
 
+.lisort{
+	background-color: #49F;
+	color: #FFF;
+	top: -2px;
+	border-top: 2px solid #49f;
+}
+
 .appBox .way i {
 	display: inline-block;
 	width: 43px;
@@ -255,42 +263,41 @@
 
 	<div class="cont_box response_wrap3" method="listPageContainer">
 		<div class="mt10 mb10"></div>
+		<form  id="form01" action="toIndexTwo" method="post">
 		<div method="searchBox" id="m_searchBox" data-id="mainSearchBox"
 			class="search_box mb5">
 
 			<div data-wrap="cityWrap" class="search_item search_termini">
-				<label> <span>目的地</span> <input data-bindid="city"
-					method="city" type="input" class="input_f16 input_termini"
-					value="北京" cityname="北京" citynameen="beijing" citynamecn="北京"
-					cityid="0101" />
+				<label> <span>目的地</span> <input 
+					 type="input" class="input_f16 input_termini"
+					value="${CurCity.name }" cityname="${CurCity.name }" citynameen="beijing" citynamecn="${CurCity.name }" name="destination"
+					cityid="${CurCity.id }" />
 				</label>
 			</div>
-			<div class="search_item search_date">
-				<label class="left br" data-wrap="checkInWrap"> <span>入住</span>
-					<input data-bindid="checkIn" method="checkIn" type="input"
-					value="2019-05-10" selectedValue="2019-05-10"
-					class="input_f16 input_date" /> <span class="weekDesc">今天</span> <span
-					class="icon_date_s"></span>
-				</label> <label class="left" data-wrap="checkOutWrap"> <span>离店</span>
-					<input data-bindid="checkOut" method="checkOut" type="input"
-					value="2019-05-11" selectedValue="2019-05-11"
-					class="input_f16 input_date" /> <span class="weekDesc">明天</span> <span
-					class="icon_date_e"></span>
+			
+			<div class="search_item search_keywords" >
+				<label> <span>关键词</span> <input 
+					 type="input" class="input_f16 input_termini" name="keywords"
+					placeholder="如位置\酒店名" />
 				</label>
 			</div>
-			<div class="search_item search_keywords" data-wrap="allInOneWrap">
-				<label> <span>关键词</span> <input data-bindid="allInOne"
-					method="allInOne" type="input" class="input_f16 input_termini"
-					placeholder="如位置\酒店名\品牌" />
-				</label>
-			</div>
-			<div class="btn_search_w1 right" data-bindid="search" method="search">
+			<div class="btn_search_w1 right" >
 				<span class="icon_search mr10"></span>搜索
 			</div>
+			</form>
 		</div>
 		
 		<script type="text/javascript"
 		src="${pageContext.request.contextPath }/statics/js/jquery1.8.3.min.js"></script>
+		
+		
+		<script type="text/javascript">
+			$(function () {
+				$(".btn_search_w1").click(function () {
+					$("#form01").submit();
+				})
+			})
+		</script>
 		
 		<div class="filter_box beee mb20 z10" id="filterZone"
 			method="filterZone">
@@ -421,7 +428,7 @@
 
 		<div class="mb10" id="conditionZone" method="conditionZone">
 			<div class="cont_total left">
-				<span class="t24 mr5" id="hotelCount">${count }</span>家酒店满足条件
+				<span class="t24 mr5" id="hotelCount">${sum }</span>家酒店满足条件
 			</div>
 			<div class="cond-list"></div>
 		</div>
@@ -457,17 +464,17 @@
 				<div class="h_sort bcde mb10" id="sortZone" method="sortZone">
 					<ul class="sort_list left">
 						<li  title="默认排序"
-							class="on" data-default="1">智能排序</li>
-						<li  data-sort="Level1"  title="综合排序">综合排序</li>
+							class="on" data-default="1"data-sort="hotelId" data-dirc="asc"  >智能排序</li>
+						<li  data-sort="Level1" data-dirc="asc"  title="综合排序">综合排序</li>
 
 						<li class="priceSort">
 							<p class="priceSortTitle">
 								<span>价格</span>
 							</p>
 							<div class="priceSortDiv">
-								<p data-sort="hotelPrice" data-dirc="0" title="点击按价格由低到高排序"
+								<p data-sort="hotelPrice" data-dirc="asc" title="点击按价格由低到高排序"
 									data-title="价格 低 → 高">价格 低 → 高</p>
-								<p data-sort="hotelPrice" data-dirc="2" title="点击按价格由高到低排序"
+								<p data-sort="hotelPrice" data-dirc="desc" title="点击按价格由高到低排序"
 									data-title="价格 高 → 低">价格 高 → 低</p>
 							</div>
 						</li>
@@ -476,9 +483,9 @@
 								<span>评分</span>
 							</p>
 							<div class="priceSortDiv">
-								<p data-sort="hotelRatings" data-dirc="0" title="点击按评分由低到高排序"
+								<p data-sort="hotelRatings" data-dirc="asc" title="点击按评分由低到高排序"
 									data-title="评分 低 → 高">评分 低 → 高</p>
-								<p data-sort="hotelRatings" data-dirc="2" title="点击按评分由高到低排序"
+								<p data-sort="hotelRatings" data-dirc="desc" title="点击按评分由高到低排序"
 									data-title="评分 高 → 低">评分 高 → 低</p>
 							</div>
 						</li>
@@ -519,6 +526,7 @@
 											big-src="${pageContext.request.contextPath }/${hotel.fileUrl }"
 											alt="${hotel.hotelName }" width="180" height="130" />
 										</a>
+										
 									</div>
 									<div class="h_info_text">
 										<!---------------->
@@ -552,17 +560,22 @@
 											<!-- <span class="block listTagItem">“出行方便”</span> -->
 											<!-- 收藏 -->
 											<div class="h_add_cc">
-												<span class="add_collect on"
-													data-hotelid="${hotel.hotelId }"> <c:forEach
-														items="${collections }" var="col">
-														<c:if test="${hotel.id==col.hotelById }">
-															<i class="icon_add_coll"></i>
+											<c:set var="on"></c:set>
+												<c:forEach	items="${collections }" var="col">
+													<c:if test="${hotel.id==col.hotelById }">
+													<c:set var="on" value="on"></c:set>
+														<span class="add_collect on"	data-hotelid="${hotel.hotelId }"> 
+															<i class="icon_add_coll" ></i>
 															<span data-showname="favStatus"> 已收藏 </span>
-														</c:if>
+														</span>
+													</c:if>
 													</c:forEach>
-
-												</span>
-
+													<c:if test="${on!='on' }">
+													<span class="add_collect "	data-hotelid="${hotel.hotelId }"> 
+															<i class="icon_add_coll" ></i>
+															<span data-showname="favStatus">收藏 </span>
+														</span>
+													</c:if>
 											</div>
 
 										</div>
@@ -573,7 +586,7 @@
 													title="${hotel.hotelName }"><span class="icon_nmb"> ${statu.count }</span><span
 													class="info_cn">${hotel.hotelName }</span></a> <i
 													class="icon_crown_new" title="战略合作酒店，为风游会员提供优质服务及优惠房价"></i>
-												<b class="icon_stars icon_elevel3" title="风游用户评定为豪华型酒店"></b>
+												<b class="icon_stars icon_star${hotel.hotelRating }" title="国家旅游局评定星级为${hotel.hotelRating }星级"></b>
 											</p>
 											<p class="h_info_b2">
 												${fn:split(hotel.hotelAddress, " ")[2]} <span
@@ -867,8 +880,8 @@
 			<input type="hidden" id="price" name="price"
 				value="${CurPrice.dictCode }">
 			<input type="hidden" id="curPage" name="curPage" value="${curPage }">
-			<input type="hidden" id="sort" name="sort" >
-			<input type="hidden" id=desc name="desc" >
+			<input type="hidden" id="sort" name="sort" value="${sort }" >
+			<input type="hidden" id=desc name="desc" value="${desc }" >
 		</form>
 	</div>
 	
@@ -1070,20 +1083,20 @@
 				$("#type").val("");
 			}
 			$("#form").submit();
+			
 		})
 	</script>
 	
 	<script type="text/javascript">
 		$(".sort_list li").click(function () {
 			// data-sort="hotelPrice" data-dirc="1"
-			alert($(this).attr("data-sort"))
 			$("#sort").val($(this).attr("data-sort"));
 			$("#desc").val($(this).attr("data-dirc"));
-			alert($("#sort").val())
 			$("#form").submit();
 		})
-	 $(".sort_list li div").click(function () {
+	 $(".sort_list li div p").click(function () {
 			// data-sort="hotelPrice" data-dirc="1"
+			
 			$("#sort").val($(this).attr("data-sort"));
 			$("#desc").val($(this).attr("data-dirc"));
 			$("#form").submit();
