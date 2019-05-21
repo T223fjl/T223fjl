@@ -36,7 +36,7 @@ public class HotelServiceImpl implements HotelService{
 				,@Param("sort") String sort,@Param("desc") String desc,int page, int size) {
 	       PageHelper.startPage(page,size);
 	       List<Hotel> users=queryHotel(hotelRating, level1, level2, bigPrice, smallPrice, sort, desc);
-	       PageInfo<Hotel> pageInfoUser=new PageInfo<Hotel>(users);
+	       PageInfo<Hotel> pageInfoUser=new PageInfo<>(users);
 	        return pageInfoUser;
 	    }
 

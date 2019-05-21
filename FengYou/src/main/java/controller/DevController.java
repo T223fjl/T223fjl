@@ -54,15 +54,19 @@ public class DevController {
 	// 跳转前台二级页面
 	@RequestMapping("/toIndex2")
 	public String toIndex2(String bigPrice ,String smallPrice ,String city ,
-			String star ,String type,String price ,HttpSession session) {
+			String star ,String type,String price,String curPage,String sort,String desc ,HttpSession session) {
 		List<Level> types =levelService.queryLevelByType(1);
 		List<Level> citys = levelService.queryLevelByType(2);
 		List<Dictionarydate> stars=dictionarydateService.queryDictionarydateByTypeCode("star");
 		List<Dictionarydate> prices=dictionarydateService.queryDictionarydateByTypeCode("price");
 		int page=1;
-		int size=5;
-		String sort=null;
-		String desc=null;
+		int size=1;
+		System.out.println("ddddddd:"+sort);
+		System.out.println("ddddddd:"+sort);
+		System.out.println("ddddddd:"+sort);
+		if(curPage!=null&&!"".equals(curPage)){
+			page=(Integer.valueOf(curPage));
+		}
 		int level2=0;
 		if(city!=null&&!"".equals(city)){
 			level2=(Integer.valueOf(city));
@@ -71,9 +75,9 @@ public class DevController {
 		if(type!=null&&!"".equals(type)){
 			level1=(Integer.valueOf(type));
 		}
-		int ran=0;
+		int xin=0;
 		if(star!=null&&!"".equals(star)){
-			ran=Integer.valueOf(star);
+			xin=Integer.valueOf(star);
 		}
 		int small=0;
 		if(smallPrice!=null&&!"".equals(smallPrice)){
@@ -83,8 +87,10 @@ public class DevController {
 		if(bigPrice!=null&&!"".equals(bigPrice)){
 			 big=(Integer.valueOf(bigPrice));
 		}
-		PageInfo<Hotel> hotels= hotelService.findHotelList(ran,level1,level2, big, small, sort, desc, page, size);
-		
+		PageInfo<Hotel> hotels= hotelService.findHotelList(xin,level1,level2, big, small, sort, desc, page, size);
+		int count=hotelService.queryHotel(xin, level1, level2, big, small, sort, desc).size();
+		session.setAttribute("curPage", page);
+		session.setAttribute("count", count);
 		session.setAttribute("stars", stars);
 		session.setAttribute("prices", prices);
 		session.setAttribute("types", types);
@@ -94,7 +100,7 @@ public class DevController {
 		
 		Dictionarydate CurStar=null;
 		for (int i = 0; i < stars.size(); i++) {
-			if(stars.get(i).getDictCode()==ran){
+			if(stars.get(i).getDictCode()==xin){
 				CurStar=stars.get(i);
 			}
 		}

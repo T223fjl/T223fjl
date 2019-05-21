@@ -18,9 +18,10 @@
 		<!-- springboot 整合 pagehelper -->
 		<dependency>
 			<groupId>com.github.pagehelper</groupId>
-			<artifactId>pagehelper-spring-boot-starter</artifactId>
-			<version>1.2.5</version>
+			<artifactId>pagehelper</artifactId>
+			<version>5.0.0</version>
 		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/com.belerweb/pinyin4j -->
 		<dependency>
 			<groupId>com.belerweb</groupId>
