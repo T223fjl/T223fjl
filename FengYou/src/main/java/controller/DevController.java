@@ -61,6 +61,7 @@ public class DevController {
 		}
 		Hotel hotel=hotelService.getHotelById(hid);
 		List<House> houseList=houseService.qeuryHouseByHotelId(hid);
+		
 		model.addAttribute("houseList", houseList);
 		model.addAttribute("hotel", hotel);
 		return "developer/index3";

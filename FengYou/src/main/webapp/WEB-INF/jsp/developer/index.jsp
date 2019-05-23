@@ -611,8 +611,7 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
 						<c:forEach items="${levels}" var="temp">
 							<li>
 								<div class="fj">
-									<span class="n_img"><span></span> <img
-										src="${pageContext.request.contextPath }/statics/images/${temp.name}" /></span>
+									<span class="n_img"><span></span> </span>
 									<span class="fl">${temp.name}</span>
 								</div>
 								<div class="zj">
@@ -621,11 +620,12 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
 											<div class="zj_l_c">
 												<h2>
 													<a
-														href="${ctx}/ProductServlet?action=queryProductList&level=2&category=${vo.id}">${vo.name}</a>
+														href="${pageContext.request.contextPath}/toIndex2?city=${vo.id}">${vo.name}
+														<img src="${pageContext.request.contextPath }/uploadFile/city/${vo.name}.png" /></a>
 												</h2>
 												<c:forEach items="${vo.sonLevels}" var="vo2">
 													<a
-														href="${ctx}/ProductServlet?action=queryProductList&level=3&category=${vo2.id}">${vo2.name}</a> |
+														href="${pageContext.request.contextPath}/toIndex3?hotelId=${vo2.id}">${vo2.name}</a> |
                                             </c:forEach>
 											</div>
 										</c:forEach>

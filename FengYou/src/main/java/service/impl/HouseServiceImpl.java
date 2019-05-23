@@ -20,7 +20,7 @@ public class HouseServiceImpl implements HouseService{
 		for (int i = 0; i < list.size(); i++) {
 			list.get(i).setHouseListByType(getHouseByType(list.get(i).getHouseType()));
 		}
-		return houseDao.qeuryHouseByHotelId(hotelId);
+		return list;
 	}
 
 

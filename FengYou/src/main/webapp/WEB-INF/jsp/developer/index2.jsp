@@ -18,7 +18,17 @@
 	content="查询到北京酒店可预订的共有13888家.北京唐拉雅秀酒店;北京大方饭店;北京海淀花园饭店;飘HOME连锁酒店(北京西客站店);北京华泰饭店;北京美第奇精选酒店;北京福建大厦;飘HOME连锁酒店(北京王府井步行街店);速8酒店(北京南沙窝桥302医院店);北京外国专家大厦;北京京伦饭店;北京丽景湾国际酒店;北京万寿庄宾馆;北京歌华开元大酒店;北京东航大酒店;北京长白山国际酒店;北京金枫酒店;瑞尔威连锁饭店(北京西客站店);北方朗悦酒店(北京金融街店);北京渔阳饭店." />
 <meta name="mobile-agent"
 	content="format=html5;url=http://m.elong.com/hotel/beijing/">
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Z60o25qSRChjRBuFMBO5T705Bbv53cbC"></script>
 
+	<style type="text/css">
+	
+	.slip{
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		height: 23px
+	}
+	</style>
 
 <link rel="stylesheet" rev="stylesheet"
 	href='${pageContext.request.contextPath }/statics/css/new2015.min.css'
@@ -374,7 +384,7 @@
 					<div class="filter_option">
 						<div data-type="type" data-id="-1"
 							class="filter_unlimited filter_unlimited_on">不限</div>
-						<ul class="filter_cb_list" method="themeList">
+						<ul class="filter_cb_list" >
 							<c:forEach var="type" items="${ types}" step="1"
 								varStatus="statu">
 								<li class="condition" data-type="type"
@@ -387,7 +397,7 @@
 							</c:forEach>
 
 						</ul>
-						<div class="icon_hl_more1 filter_more" method="showAllOps"
+						<div class="icon_hl_more1 filter_more" 
 							data-showAll="0"></div>
 					</div>
 				</div>
@@ -399,7 +409,7 @@
 					<span class="icon_filter_serv"></span>所在城市<i class="b-line"></i>
 				</div>
 				<div class="filter_option_box">
-					<div class="filter_option">
+					<div class="filter_option slip">
 						<div data-type="city" data-id="-1"
 							class="filter_unlimited filter_unlimited_on">不限</div>
 						<ul class="filter_cb_list" method="facilityList">
@@ -512,12 +522,12 @@
 
 						<c:forEach var="hotel" items="${ hotels.list}" step="1"
 							varStatus="statu">
-							<div class="h_item mvt_171218" id="hotel${ hotel.hotelId}"
+							<div class="h_item mvt_171218" id="hotel${ hotel.hotelId}" data-hotelAddress="${hotel.hotelAddress}"
 								method="hotelItem" data-hotelid="${hotel.hotelId}">
 								<div class="h_info">
 									<div class="h_info_pic"
 										data-mark="img_${ hotel.hotelId}_container" method="">
-										<a href="/${ hotel.hotelId}/" target="_blank"> <img
+										<a href="${pageContext.request.contextPath }/toIndex3?hotelId=${ hotel.hotelId}" target="_blank"> <img
 											class="bigImg" data-hotelid="${ hotel.hotelId}"
 											data-producttype="0" data-needdatacache="true"
 											data-mark="img_${ hotel.hotelId}"
@@ -533,7 +543,7 @@
 										<!---------------->
 										<div class="h_info_pri">
 											<p>
-												<a href="toIndex3" target="_blank"> <span class="c666">&yen</span>
+												<a href="${pageContext.request.contextPath }/toIndex3?hotelId=${ hotel.hotelId}" target="_blank"> <span class="c666">&yen</span>
 													<span class="h_pri_num ">${hotel.hotelPrice }</span> <span
 													class="cf55">起</span>
 												</a>
@@ -670,6 +680,8 @@
 								<span class="loading_b"></span>
 							</div>
 						</div>
+						
+						
 						<div class="m_collect" id="favorAndSeenContainer">
 							<div class="m_cctit">
 								<ul class="m_ccnav clearfix">
@@ -872,7 +884,7 @@
 	<!-- ===================== footer end ===================== -->
 	<!-- 可信网站LOGO安装开始 -->
 	<div style="display: none;">
-		<form id="form" action="toIndex2" method="get">
+		<form id="form" action="toIndex2" method="post">
 			<input type="hidden" id="bigPrice" name="bigPrice"value="${fn:split(CurPrice.info, '-')[1]}"> 
 			<input type="hidden" id="smallPrice" name="smallPrice" value="${fn:split(CurPrice.info, '-')[0]}"> 
 			<input type="hidden" id="city" name="city" value="${CurCity.id }">
@@ -887,11 +899,23 @@
 	</div>
 	
 	<script type="text/javascript">
+	var map = new BMap.Map("sidebarMap");
 		$(function() {
 			for (var i = 0; i < $(".bigImg").length; i++) {
 				$(".bigImg").eq(i).attr("src",
 						$(".bigImg").eq(i).attr("data-src"))
 			}
+			
+			// 百度地图API功能
+			
+			var point = new BMap.Point(116.331398,39.897445);
+			map.centerAndZoom(point,11);
+			map.enableScrollWheelZoom();    //启用滚轮放大缩小，默认禁用
+			map.enableContinuousZoom();    //启用地图惯性拖拽，默认禁用
+			map.addControl(new BMap.NavigationControl());  //添加默认缩放平移控件
+			map.addControl(new BMap.OverviewMapControl()); //添加默认缩略地图控件
+			map.addControl(new BMap.OverviewMapControl({ isOpen: true, anchor: BMAP_ANCHOR_BOTTOM_RIGHT }));   //右下角，打开
+			
 			var price = $("#price").val();
 			if (price != '' && price != null) {
 				var html = '<i>您已选择：</i><a title="清空条件" onclick="clearCondition()" href="javascript:void();">清空条件</a><span title="删除此条件" data-type="'
@@ -911,6 +935,7 @@
 			}
 
 			var city = $("#city").val();
+			
 			if (city != '' && city != null) {
 				var html = '<i>您已选择：</i><a title="清空条件" onclick="clearCondition()" href="javascript:void();">清空条件</a><span title="删除此条件" data-type="'
 						+ $("#curCity").attr("data-type")
@@ -941,6 +966,9 @@
 						}
 						$(".cond-list").html($(".cond-list").html() + html)
 					}
+				}
+				if($("#curCity").attr("data-name") != ""){
+					map.centerAndZoom($("#curCity").attr("data-name"),12);      // 用地址设置地图中心点
 				}
 			}
 			var star = $("#star").val();
@@ -1012,6 +1040,15 @@
 
 		})
 
+		
+		$(".h_item").mouseover(function () {
+			var city=$(this).attr("data-hotelAddress");
+			if(city != ""){
+				map.centerAndZoom(city,20);      // 用地址设置地图中心点
+			}
+		})
+		
+		
 		$(".condition").click(function() {
 
 			if ($(this).attr('data-type') == "price") {
@@ -1119,6 +1156,17 @@
 						}
 						$("#form").submit();
 					})
+					
+						$(".icon_hl_more1").toggle(
+						function () {
+							$(this).parent().addClass("slip")
+							
+						},
+						function () {
+							$(this).parent().removeClass("slip")
+							
+						}
+		)
 			</script>
 </body>
 </html>

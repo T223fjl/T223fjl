@@ -37,7 +37,7 @@ public class LevelServiceImpl implements LevelService {
 			}
 			level1s.get(j).setSonLevels(sonLevels);
 		}
-
+		
 
 		return level1s;
 	}
