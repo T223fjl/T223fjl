@@ -17,4 +17,7 @@ public interface UserService {
 
 	// 根据id修改会员信息
 	public int updateUser(User user);
+	
+	//注册验证手机是否存在
+	public User registerByPhone(String phone);
 }

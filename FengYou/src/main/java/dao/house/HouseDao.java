@@ -2,6 +2,7 @@ package dao.house;
 
 import java.util.List;
 
+import pojo.Hotel;
 import pojo.House;
 
 public interface HouseDao {
@@ -11,4 +12,6 @@ public interface HouseDao {
 	 * @return
 	 */
 	public List<House> qeuryHouseByHotelId(int hotelId);
+	
+	public List<House> getHouseByType(String hType);
 }

@@ -18,7 +18,7 @@ import util.PinYinUtil;
 public class HotelServiceImpl implements HotelService {
 	@Autowired
 	private HotelDao hotelDao;
-
+	
 	public List<Hotel> queryHotel(@Param("hotelRating") int hotelRating, @Param("level1") int level1,
 			@Param("level2") int level2, @Param("bigPrice") int bigPrice, @Param("smallPrice") int smallPrice,
 			@Param("sort") String sort, @Param("desc") String desc) {
@@ -31,6 +31,7 @@ public class HotelServiceImpl implements HotelService {
 		}
 		return queryHotel;
 	}
+	
 
 	public PageInfo<Hotel> findHotelList(@Param("hotelRating") int hotelRating, @Param("level1") int level1,
 			@Param("level2") int level2, @Param("bigPrice") int bigPrice, @Param("smallPrice") int smallPrice,
@@ -42,8 +43,8 @@ public class HotelServiceImpl implements HotelService {
 		PageInfo<Hotel> pageInfoUser = new PageInfo<>(users);
 		return pageInfoUser;
 	}
+	
 
-	@Override
 	public List<Hotel> queryHotelByName(String keywords, int destination) {
 		List<Hotel> queryHotel = hotelDao.queryHotelByName(keywords, destination);
 		for (int i = 0; i < queryHotel.size(); i++) {
@@ -54,8 +55,7 @@ public class HotelServiceImpl implements HotelService {
 		}
 		return queryHotel;
 	}
-
-	@Override
+	
 	public PageInfo<Hotel> findHotelListByName(String keywords, int destination, String sort, String desc, int page,
 			int size) {
 		String orderBy = sort + " " + desc;
@@ -63,6 +63,13 @@ public class HotelServiceImpl implements HotelService {
 		List<Hotel> users = queryHotelByName(keywords, destination);
 		PageInfo<Hotel> pageInfoUser = new PageInfo<>(users);
 		return pageInfoUser;
+	}
+	
+	
+	//通过id查询一个酒店
+	@Override
+	public Hotel getHotelById(int hid) {
+		return hotelDao.getHotelById(hid);
 	}
 
 }

@@ -5,6 +5,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="dao.hotel.HotelDao">
 
+	
+	
+	<select id="getHotelById" resultType="Hotel" parameterType="int"> 
+	SELECT * FROM `hotel` WHERE  hotelId=#{hotelId}
+	</select>
 		
 
 	<select id="queryHotelByName" resultType="Hotel">

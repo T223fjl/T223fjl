@@ -149,7 +149,7 @@
 
 		</div>
 
-		<div class="register_tip"><a href="register_cn.jsp" title="立即注册">立即注册<i></i></a></div>
+		<div class="register_tip"><a href="register.jsp" title="立即注册">立即注册<i></i></a></div>
 
 		<!--底部-->
 		<div class="footer">

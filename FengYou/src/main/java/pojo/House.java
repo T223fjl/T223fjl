@@ -1,6 +1,7 @@
 package pojo;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * 
@@ -17,7 +18,54 @@ public class House {
 	private String contentThree;// 食品饮品
 	private String contentFour;// 浴室
 	private String contentFive;// 室外景观
+	private int houseCountByType;// 每个类型的房间数量
 	private Date creationDate;
+	private String productName;
+	private String supplier;
+	private String productPolicy;
+	
+	private List<House> houseListByType;//每个类型的房间集合
+	
+	public List<House> getHouseListByType() {
+		return houseListByType;
+	}
+
+	public void setHouseListByType(List<House> houseListByType) {
+		this.houseListByType = houseListByType;
+	}
+
+	public String getProductName() {
+		return productName;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+	public String getSupplier() {
+		return supplier;
+	}
+
+	public void setSupplier(String supplier) {
+		this.supplier = supplier;
+	}
+
+	public String getProductPolicy() {
+		return productPolicy;
+	}
+
+	public void setProductPolicy(String productPolicy) {
+		this.productPolicy = productPolicy;
+	}
+
+	
+	public int getHouseCountByType() {
+		return houseCountByType;
+	}
+
+	public void setHouseCountByType(int houseCountByType) {
+		this.houseCountByType = houseCountByType;
+	}
 
 	public int getHouseId() {
 		return houseId;

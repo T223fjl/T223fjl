@@ -432,15 +432,16 @@
 			</div>
 			<div class="cond-list"></div>
 		</div>
-		<!--引导登陆start-->
-		<div class="list_login">
-			<!-- <img src="${pageContext.request.contextPath }/statics/picture/login_detail.png"/ method="userLogin"> -->
-			<!-- <p>去登录</p> -->
-			<img
-				src="${pageContext.request.contextPath }/statics/picture/bg1.png"
-				method="userLogin" />
-		</div>
-		<!--引导登陆end-->
+		<c:if test="${loginUser==null }">
+				<!--引导登陆start-->
+				<div class="list_login">
+					<!-- <img src="${pageContext.request.contextPath }/statics/picture/login_detail.png"/  method="userLogin"> -->
+					<!-- <p>去登录</p> -->
+					<a href="${pageContext.request.contextPath }/login.jsp"><img
+						src="${pageContext.request.contextPath }/statics/picture/bg1.png"/></a>
+				</div>
+				<!--引导登陆end-->
+				</c:if>
 		<div class="hlist_box">
 			<!--左侧内容 start-->
 			<div class="hlist_main left">

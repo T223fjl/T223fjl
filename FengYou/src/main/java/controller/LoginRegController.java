@@ -1,12 +1,12 @@
 package controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.annotation.Resource;
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -21,6 +21,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import pojo.Mycollection;
 import pojo.User;
 import service.UserService;
+import util.AliyunSMS;
+import util.ConvertJSONUtil;
 
 @Controller
 public class LoginRegController {
@@ -83,26 +85,120 @@ public class LoginRegController {
 		}
 	}
 
-	// 前台注册
-	@RequestMapping("/registration")
-	public void Registration(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// int userId = Integer.parseInt(request.getParameter("id"));
-		String phone = request.getParameter("phone");
-		String name = request.getParameter("name");
-		String email = request.getParameter("email");
-		String pwd = request.getParameter("pwd");
-		User user = new User();
-		user.setPhone(phone);
-		user.setName(name);
-		user.setEmail(email);
-		user.setPwd(pwd);
-		System.out.println("name:" + user.getName());
-		int s = userService.Registration(user);
-		if (s > 0) {
-			response.sendRedirect("/FengYou/login.jsp");
+	
+	/**
+	 * 手机获取验证码
+	 * 
+	 * @param mobileNo
+	 *  
+	 */
+	@RequestMapping("/find_Code")
+	public void find_Code(String mobileNo, HttpServletResponse response, HttpSession session,
+			HttpServletRequest request) {
+		System.out.println("手机:"+mobileNo);
+		System.out.println("进入手机获取验证码");
+		String code = AliyunSMS.Sms(mobileNo);
+		System.out.println("code" + code);
+		request.getSession().setAttribute("code", code);
+	}
+	
+	/**
+	 * 异步查询手机是否存在
+	 * @param phone
+	 * @param session
+	 * @param response
+	 */
+	@RequestMapping("/sale.json")
+	public void registerByPhone(String phone, HttpSession session,HttpServletResponse response){
+		System.out.println("phone"+phone);
+		PrintWriter out;
+		try {
+			out = response.getWriter();
+		User user =userService.registerByPhone(phone);
+		boolean ajax=false;
+		if(user!=null){
+				ajax=true;
+			}else{
+				ajax=false;
+			}
+			out.print(ajax);
+			out.flush();
+			out.close();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * 前台注册
+	 * 
+	 * @param user
+	 * @param captcha
+	 * @param response
+	 */
+	@RequestMapping("/register")
+	public void register(String userName,String password,String phone,String email, String captcha,String ValidateCode,String inputCode, HttpServletResponse response, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		System.out.println("进入....");
+		System.out.println("captcha=="+captcha);
+		System.out.println("ValidateCode=="+ValidateCode);
+		System.out.println("inputCode=="+inputCode);
+		System.out.println("userName=="+userName);
+		System.out.println("password=="+password);
+		System.out.println("phone=="+phone);
+		System.out.println("email=="+email);
+		
+		//验证码是否和输入框相等
+		if(!ValidateCode.equals(inputCode)){
+			ConvertJSONUtil.toText("existence", response);
+			return;
+		}
+		//手机验证码是否和输入框相等
+		String code=(String)session.getAttribute("code");
+		Integer sMs = Integer.valueOf(code);
+		System.out.println("session里面的验证码" + sMs);
+		if (!captcha.equals(sMs.toString())) {
+			ConvertJSONUtil.toText("error", response);
+		}else{
+			User user=new User();
+			user.setSex(1);
+			user.setStatus(2);
+			user.setPhone(phone);
+			user.setName(userName);
+			user.setEmail(email);
+			user.setPwd(password);
+			user.setBirthday(new Date());
+			int result = userService.Registration(user);
+			System.out.println("result="+result);
+			if (result > 0) {
+				session.setAttribute("user", user);
+				ConvertJSONUtil.toText("success", response);
+			}else{
+				ConvertJSONUtil.toText("failure", response);
+			}	
+		}
+	}
+	
+//	// 前台注册
+//	@RequestMapping("/registration")
+//	public void Registration(HttpServletRequest request, HttpServletResponse response)
+//			throws ServletException, IOException {
+//		// int userId = Integer.parseInt(request.getParameter("id"));
+//		String phone = request.getParameter("phone");
+//		String name = request.getParameter("name");
+//		String email = request.getParameter("email");
+//		String pwd = request.getParameter("pwd");
+//		User user = new User();
+//		user.setPhone(phone);
+//		user.setName(name);
+//		user.setEmail(email);
+//		user.setPwd(pwd);
+//		System.out.println("name:" + user.getName());
+//		int s = userService.Registration(user);
+//		if (s > 0) {
+//			response.sendRedirect("/FengYou/login.jsp");
+//		}
+//	}
 
 	// 用户注销
 	@RequestMapping(value = "/logout")

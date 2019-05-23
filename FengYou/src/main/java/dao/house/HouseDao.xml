@@ -6,8 +6,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="dao.house.HouseDao">
 
 		<select id="qeuryHouseByHotelId" resultType="House">
-			select * from house where hotelId=#{hotelId}
+			select *,count(0) as houseCountByType from house where hotelId=#{hotelId} GROUP BY houseType
 		</select>
-
+	
+		<select id="getHouseByType" resultType="House" parameterType="String"> 
+		SELECT * FROM `house` WHERE  houseType=#{houseType}
+		</select>
 
 </mapper>
