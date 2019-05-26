@@ -3,35 +3,20 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html  lang="zh">
 <head>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="renderer" content="webkit">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <title>【${hotel.hotelName }】– 风游旅行网</title>
 <script type="text/javascript"
-		src="${pageContext.request.contextPath }/statics/js/jquery1.8.3.min.js"></script>
+	src="${pageContext.request.contextPath }/statics/js/jquery1.8.3.min.js"></script>
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Z60o25qSRChjRBuFMBO5T705Bbv53cbC"></script>
-		
-<link rel="icon"
-	href="http://m.elongstatic.com/static/webapp/pc_static/pc_hotel/other/common/pic/favicon.ico?t=201411070740"
-	type="image/x-icon" />
-<meta name="keywords" content="北" />
-<meta name="description"
-	content="格优惠，不收预订费，酒店前台付款，安全有保障。" />
-<meta name="mobile-agent"
-	content="format=html5;url=http://m.elong.com/hotel/50101525/">
 
 
-	<style type="text/css">
-		.dd{
-			height: 50px
-		}
-	</style>
-
-<script type="text/javascript">
-	var tjObj_rt = new Date();
-</script>
+<style type="text/css">
+.dd {
+	height: 50px
+}
+</style>
 
 <link rel="stylesheet" rev="stylesheet"
 	href='${pageContext.request.contextPath }/statics/css/new2015.min.css'
@@ -61,7 +46,7 @@
 						href="http://my.elong.com/helpCenter/index" rel="nofollow">帮助中心</a></span>
 					<b></b><span class='language' method="newSpanLang"> <a
 						href="#?" method="eng">English</a><i class='com_icon04 left'></i>
-					<p>
+						<p>
 							<a
 								href="http://hotel.elong.com/trans2cn/?target=http://hotel.elong.com"
 								title="简体版" rel="nofollow">简体版</a> <a
@@ -145,32 +130,32 @@
 						</div>
 						<ul class='clx'>
 							<li class='icon_d1'><b></b><a
-								href="http://my.elong.com/hotel/MyHotelOrderList_cn.html?rnd=20190511084117"
+								href="#"
 								rel="nofollow">酒店订单</a></li>
 							<li class='icon_d2' style="display: none;"><b></b><a
-								href="http://my.elong.com/GrouponOrder_cn.html?rnd=20190511084117"
+								href="#"
 								rel="nofollow">团购订单</a></li>
 							<li class='icon_d3'><a
-								href="http://my.elong.com/Flight/FlightOrder_cn.html?rnd=20190511084117"
+								href="#"
 								rel="nofollow">机票订单</a></li>
 							<li class='icon_d4'><a
-								href="http://my.elong.com/train/orderlist?rnd=20190511084117"
+								href="#"
 								rel="nofollow">火车票订单</a></li>
 							<li class='icon_d5'><b></b><a
-								href="http://my.elong.com/CashCoupon_cn.html?flag=Cash&rnd=20190511084117"
+								href="#"
 								rel="nofollow">现金账户</a></li>
 							<li class='icon_d6'><b></b><a
-								href="http://my.elong.com/ly/lyOrderFill?rnd=20190511084117"
+								href="#
 								rel="nofollow">汽车票订单</a></li>
 							<li class='icon_d7'><b></b><a
-								href="http://my.elong.com/hotel/hotelfavlist_cn.html?rnd=20190511084117"
+								href="#"
 								rel="nofollow">酒店收藏</a></li>
 							<li class='icon_d8'><b style='display: none;'
 								id='comment_notice'>9</b> <a id="n_comment_a"
-								href="http://my.elong.com/Hotel/reviewedorderlist_cn.html?rnd=20190511084117"
+								href="#"
 								rel="nofollow">我的点评</a></li>
 							<li class='icon_d9'><b></b><a
-								href="http://my.elong.com/me_personalcenter_cn" rel="nofollow">个人设置</a></li>
+								href="#" rel="nofollow">个人设置</a></li>
 						</ul>
 					</div>
 					<!--弹出 end-->
@@ -188,8 +173,6 @@
 	background:
 		url(${pageContext.request.contextPath }/statics/images/app-com.png)
 		no-repeat -328px -182px;
-	_background-image:
-		url(http://www.elong${pageContext.request.contextPath }/statics.com/images/other/app-com-ie6.png);
 }
 
 .appBox .close:hover {
@@ -262,11 +245,13 @@
 		<!--面包屑 start-->
 		<div class="mt10 mb10">
 			<div class="link555 t12">
-				<p id="hotelAddress" style="display: none;" data-hotelAddress="${hotel.hotelAddress }"></p>
+				<p id="hotelAddress" style="display: none;"
+					data-hotelAddress="${hotel.hotelAddress }"></p>
 				<a title="首页" href="http://www.elong.com"> 首页 </a> <span
 					class="simsun">&gt;</span> <a title="酒店" href="/"> 酒店 </a> <span
 					class="simsun">&gt;</span> <a title="北京酒店" href="/beijing/">
-					${fn:split(hotel.hotelAddress, ' ')[0]} </a> <span class="simsun">&gt;</span> <a href="toDingDan">
+					${fn:split(hotel.hotelAddress, ' ')[0]} </a> <span class="simsun">&gt;</span>
+				<a href="toDingDan">
 					<h1 class="breadcrumb" style="display: inline" id="lastbread">
 						${hotel.hotelName }</h1>
 				</a>
@@ -283,7 +268,8 @@
 						<h1>${hotel.hotelName }</h1>
 						<i data-handle="hotelGrade" class="icon_crown_b_new mr5"
 							title="战略合作酒店，为风游会员提供优质服务及优惠房价"></i> <b
-							class="icon_stars icon_elevel5" title="风游用户评定为豪华型酒店"></b>
+							class="icon_stars icon_star${hotel.hotelRating }"
+							title="风游用户评定为豪华型酒店"></b>
 					</div>
 					<p class="clearfix">
 						<span class="mr5 left"> <a href="/beijing/center010167/">[${fn:split(hotel.hotelAddress, ' ')[1]}]</a>
@@ -332,19 +318,37 @@
 							<div id="headSosofullview" class="wcc"
 								style="position: absolute; display: none; width: 100%; height: 400px;"></div>
 						</div>
-						<!--价格-->
-						<div class="hrela_price_wrap" id="divHotelLowestProduct"></div>
-						
+
 					</div>
+					<div class="hrela_spic mt5">
+						<ul data-handle="container" data="image_all"
+							class="hrela_spic_list" style="width: 5940px; margin-left: 0px;">
+							
+							<c:forEach items="${ houseList}" var="house" >
+							<li class="on"><img
+								onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-pic-s.jpg'"
+								src="${pageContext.request.contextPath }/uploadFile/house/${ hotel.hotelId}_${ house.houseId}.jpg"
+								title="" width="80" height="80" >
+							</li>
+							</c:forEach>
+						</ul>
+
+
+
+
+
+
+					</div>
+
 				</div>
 
 				<!-- 侧栏 start -->
-				<div  id="hdetail_map">
-				00000
+				<div class="hdetail_sider">
+					<!-- 地图入口 start -->
+					<div id="hdetail_map" class="dsider_map "></div>
+					<!-- 地图入口 end -->
 				</div>
-				<div class="clx"  >
-				
-				</div>
+				<div class="clx"></div>
 			</div>
 			<!-- 图片end -->
 
@@ -356,20 +360,21 @@
 	<div class="cont_box response_wrap3 mvt18131">
 		<div class="hdetail_box">
 			<div class="hdetail_main left">
-			<c:if test="${loginUser==null }">
-				<!--引导登陆start-->
-				<div class="list_login">
-					<!-- <img src="${pageContext.request.contextPath }/statics/picture/login_detail.png"/  method="userLogin"> -->
-					<!-- <p>去登录</p> -->
-					<a href="${pageContext.request.contextPath }/login.jsp"><img
-						src="${pageContext.request.contextPath }/statics/picture/bg1.png"/></a>
-				</div>
-				<!--引导登陆end-->
+				<c:if test="${loginUser==null }">
+					<!--引导登陆start-->
+					<div class="list_login">
+						<!-- <img src="${pageContext.request.contextPath }/statics/picture/login_detail.png"/  method="userLogin"> -->
+						<!-- <p>去登录</p> -->
+						<a href="${pageContext.request.contextPath }/login.jsp"><img
+							src="${pageContext.request.contextPath }/statics/picture/bg1.png" /></a>
+					</div>
+					<!--引导登陆end-->
 				</c:if>
 				<div id="tabMenu" class="hdetail_subnav bbddd">
 					<ul class="subnav_list left">
 						<li method="roomTypes" class="on">房型</li>
-						<li  > <a href="#hotelContent" style="color: black;text-decoration: none; ">酒店信息</a> </li>
+						<li><a href="#hotelContent"
+							style="color: black; text-decoration: none;">酒店信息</a></li>
 						<!-- <li method="traffic">交通</li>
 						<li method="review">点评</li> -->
 					</ul>
@@ -378,53 +383,16 @@
 						<i class="icon_time24 mr5"></i>24小时内有人预订！
 					</div>
 				</div>
-				<div id="searchTabHandler" class="subnav_fixed none"
-					style="display: none;">
-					<div class="response_wrap3">
-						<div class="hdetail_main left">
-							<div class="hdetail_subnav">
-								<ul class="subnav_list left" data-handle="ulTabNav">
-									<li method="roomTypes" class="on">房型</li>
-									<li method="content">酒店信息</li>
-									<li method="traffic">交通</li>
-									<li method="review">点评</li>
-								</ul>
-
-								<div class="date_change right">
-									<div class="search_item search_date">
-										<label class="left br"><span>入住</span><input
-											handle="inDateFloat" type="input" value="2019-05-11"
-											selectedValue="2019-05-11" class="input_f16 input_date"><span
-											class="weekDesc">今天</span><span class="icon_date_s"></span></label> <label
-											class="left"><span>离店</span><input
-											handle="outDateFloat" type="input" value="2019-05-12"
-											selectedValue="2019-05-12" class="input_f16 input_date"><span
-											class="weekDesc">明天</span><span class="icon_date_e"></span></label>
-
-									</div>
-									<div class="btn_filter_sure left" handle="btnFloatSubmit">修改日期</div>
-								</div>
-							</div>
-						</div>
-
-
-
-
-						<div class="hdetail_sider right hdetail_sider_none">
-							<i data-handle="hotelGrade" class="icon_crown_b_f mr5"></i><span
-								class="vm">北京唐拉雅秀酒店</span> <b class="icon_stars icon_elevel5"
-								title="风游用户评定为豪华型酒店"></b>
-						</div>
-					</div>
-				</div>
+				
 				<div class="date_change mt15 mb15">
 					<div class="search_item search_date">
+					
 						<label class="left br"><span>入住</span><input type="input"
-							handle="inDate" value="2019-05-11" selectedValue="2019-05-11"
-							class="input_f16 input_date"><span class="weekDesc">今天</span><span
+							 data-min-date=today value=today
+							class="input_f16 input_date flatpickr"><span class="weekDesc">今天</span><span
 							class="icon_date_s"></span></label> <label class="left"><span>离店</span><input
-							type="input" handle="outDate" value="2019-05-12"
-							selectedValue="2019-05-12" class="input_f16 input_date"><span
+							type="input"   
+							 class="input_f16 input_date flatpickr"><span
 							class="weekDesc">明天</span><span class="icon_date_e"></span></label>
 
 					</div>
@@ -477,7 +445,7 @@
 						<div class="hdetail_type">
 							<div class="htype_list">
 								<div class="policy_item">
-								<!-- 	<div class="htype_item policy_item_wrapper policy_item_best"
+									<!-- 	<div class="htype_item policy_item_wrapper policy_item_best"
 										data-handle="rp" id="roomId0039" data-sroomid="0069"
 										data-rpid="40142273" data-roomid="0069"
 										data-shotelid="90983915"
@@ -641,7 +609,7 @@
 							<c:forEach var="htype_item" items="${houseList }">
 								<div class="htype_item   " data-handle="roomType"
 									data-roomid="0039" id="roomId0039">
-									<div class="htype_info clearfix " >
+									<div class="htype_info clearfix ">
 										<div class="htype_info_pic left">
 											<img
 												src="${pageContext.request.contextPath }/uploadFile/house/${hotel.hotelId }_${htype_item.houseId }.jpg "
@@ -655,7 +623,8 @@
 												<span class="t12">起</span>
 											</p>
 											<p class="htype_info_total mt5 ">
-												共${htype_item.houseCountByType }个产品 <i class="icon_triangle_8b"></i>
+												共${htype_item.houseCountByType }个产品 <i
+													class="icon_triangle_8b"></i>
 											</p>
 										</div>
 
@@ -666,15 +635,17 @@
 											</p>
 											<p class="htype_info_ty">
 												<span>房间${htype_item.contentOne }</span> <span>|</span> <span>
-													可住：${htype_item.contentFour } <i class="icon_live_per"></i><i
-													class="icon_live_per"></i>
+													可住：${htype_item.contentFour } 人
+													<c:forEach varStatus="statu" begin="1" end="${htype_item.contentFour }">
+														<i class="icon_live_per"></i>
+													</c:forEach>
 												</span> <span>|</span><span title="">楼层：${htype_item.contentThree }</span>
 												<span>|</span><span title="">包含${htype_item.contentTow }</span>
 											</p>
 										</div>
 
 									</div>
-								
+
 									<div data-handle="roomTable" class="htype_info_list btddd none"
 										style="display: none;">
 										<table class="htype-table" cellspacing="0" cellpadding="0">
@@ -691,47 +662,49 @@
 												</tr>
 											</thead>
 											<tbody>
-											<c:forEach items="${htype_item.houseListByType }" var="house">
-											<tr  	data-mroomid="${house.houseId }" data-type="${htype_item.houseType }" 
-													data-signtype="1" data-wight="0.8021455407142639" class=""
-													data-minproduct="true">
-													<td class="ht_empty">&nbsp;</td>
-													<td class="ht_name"><span title="标准价">${house.productName }</span>
-														<ul class="redBag clearfix">
-														</ul></td>
-													<td class="ht_supply" title="supplier:151330">
-														${house.supplier }</td>
-													<td class="ht_brak"><c:if
-															test="${house.isHavingBreakfast==0 }">
+												<c:forEach items="${htype_item.houseListByType }"
+													var="house">
+													<tr data-mroomid="${house.houseId }"
+														data-type="${htype_item.houseType }" data-signtype="1"
+														data-wight="0.8021455407142639" class=""
+														data-minproduct="true">
+														<td class="ht_empty">&nbsp;</td>
+														<td class="ht_name"><span title="标准价">${house.productName }</span>
+															<ul class="redBag clearfix">
+															</ul></td>
+														<td class="ht_supply" title="supplier:151330">
+															${house.supplier }</td>
+														<td class="ht_brak"><c:if
+																test="${house.isHavingBreakfast==0 }">
                               	无早
                               </c:if> <c:if
-															test="${house.isHavingBreakfast==1 }">
+																test="${house.isHavingBreakfast==1 }">
                               	单早
                               </c:if> <c:if
-															test="${house.isHavingBreakfast==2 }">
+																test="${house.isHavingBreakfast==2 }">
                               	双早
                               </c:if></td>
-													<td class="ht_rule">
-														<p class="ht_rule_free" method="cancelTip" canceltype="2">
-															<span>${house.productPolicy}</span>
-														</p> <!--  <p class="immsure" method="isJishi">
+														<td class="ht_rule">
+															<p class="ht_rule_free" method="cancelTip" canceltype="2">
+																<span>${house.productPolicy}</span>
+															</p> <!--  <p class="immsure" method="isJishi">
                                 <span>立即确认</span>
                                 </p> -->
-													</td>
-													<td class="ht_pri"><span method="AvgPriceCuXiao"
-														class="ht_pri_h cur"> ¥ <span class="ht_pri_num">${house.housePrice}</span>
-													</span>
-														<p class="detailPolicy ">低价实惠之选</p></td>
-													<td class="ht_book"><a class="on_line_pay_button"
-														rel="nofollow" method="order" title="预订酒店时需提前在线支付房费">
-															<!--  <p class="topStr">预订</p> -->
-															<p class="bottomStr">在线付</p>
-													</a></td>
-													<td class="ht_last">&nbsp;</td>
-												</tr>
-												
-											</c:forEach>
-												
+														</td>
+														<td class="ht_pri"><span method="AvgPriceCuXiao"
+															class="ht_pri_h cur"> ¥ <span class="ht_pri_num">${house.housePrice}</span>
+														</span>
+															<p class="detailPolicy ">低价实惠之选</p></td>
+														<td class="ht_book"><a class="on_line_pay_button"
+															rel="nofollow" title="预订酒店时需提前在线支付房费">
+																<!--  <p class="topStr">预订</p> -->
+																<p class="bottomStr">在线付</p>
+														</a></td>
+														<td class="ht_last">&nbsp;</td>
+													</tr>
+
+												</c:forEach>
+
 												<tr class="ht_tr_other">
 													<td class="ht_empty">&nbsp;</td>
 													<td colspan="9" class="ht_other">
@@ -752,11 +725,12 @@
 				<div id="hotelContent" class="hdetail_view">
 					<h2 class="hdetail_tit2">酒店信息</h2>
 					<ul class="dview_icon_list">
-						
-						<c:forEach var="hservice" items="${fn:split(hotel.hotelServe, ',')}" varStatus="statu">
-						<li><i class="icon_view_0${statu.count }"></i>
-							<p>${hservice }</p></li>
-						</c:forEach>					
+
+						<c:forEach var="hservice"
+							items="${fn:split(hotel.hotelServe, ',')}" varStatus="statu">
+							<li><i class="icon_view_0${statu.count }"></i>
+								<p>${hservice }</p></li>
+						</c:forEach>
 					</ul>
 					<div class="dview_info">
 						<dl class="dview_info_item">
@@ -764,7 +738,8 @@
 								<i class="icon_view_s1"></i>酒店电话
 							</dt>
 							<dd>
-								${hotel.hotelphone} <!-- <span class="ml20">风游电话预订：95711</span> -->
+								${hotel.hotelphone}
+								<!-- <span class="ml20">风游电话预订：95711</span> -->
 							</dd>
 						</dl>
 						<dl class="dview_info_item">
@@ -775,7 +750,7 @@
 								<p>入住时间:14点以后，离店时间:12点以前</p>
 							</dd>
 						</dl>
-						
+
 						<dl class="dview_info_item" id="netAndwifi" style="display: none">
 
 						</dl>
@@ -785,11 +760,13 @@
 							<dt>
 								<i class="icon_view_s6"></i>酒店设施
 							</dt>
-							<dd >
-								<i class="icon_hl_more1" ></i>
+							<dd>
+								<i class="icon_hl_more1"></i>
 								<p>
-									<c:forEach var="hservice" items="${fn:split(hotel.hotelServe, ',')}" varStatus="statu">
-							${hservice }、</c:forEach>健身房、商务中心、中餐厅、西餐厅、接机服务（收费）、邮政服务、婚宴服务、叫醒服务、洗衣服务、送餐服务、旅游服务、租车服务、专职行李员、行李寄存、专职门童、礼宾服务、24小时大堂经理、旅游票务专柜、信用卡结算服务、一次性账单结算服务、免费报纸(部分)、有电梯、前台保险柜、自助取款机、旅游交通图、茶室、安全消防系统、大堂吧、公共区域闭路电视监控系统、残障人客房、酒吧、大堂报纸、无烟楼层、无障碍通道、行政酒廊、24小时热水、宴会厅、220V电压插座、多功能厅、多媒体演示系统、行政楼层、多种规格电源插座、110V电压插座、遮光窗帘、手动窗帘、房内保险箱、书桌、床具：鸭绒被、电子秤、针线包、空调、房间内高速上网、客房WIFI覆盖免费、国内长途电话、国际长途电话、有线频道、液晶电视机、免费瓶装水、电热水壶、免费洗漱用品（6样以上）、独立淋浴间、吹风机、拖鞋、浴衣、浴室化妆放大镜、洗浴间电话、沙发(部分)、熨衣设备(部分)、咖啡壶/茶壶(部分)、迷你吧(部分)、小冰箱(部分)、浴缸(部分)、所有公共及私人场所严禁吸烟、智能马桶(部分)、卫星频道、桑拿浴室、美容美发室、SPA、足浴/足疗、按摩保健
+									<c:forEach var="hservice"
+										items="${fn:split(hotel.hotelServe, ',')}" varStatus="statu">
+							${hservice }、</c:forEach>
+									健身房、商务中心、中餐厅、西餐厅、接机服务（收费）、邮政服务、婚宴服务、叫醒服务、洗衣服务、送餐服务、旅游服务、租车服务、专职、无烟楼层、无障碍通道、行政酒廊、24小时热水、宴会厅、220V电压插座、多功能厅、多媒体演示系统、行政楼层、多种规格电源插座、110V电压插座、遮光窗帘、手动窗帘、房内保险箱、书桌、床具：鸭绒被、电子秤、针线包、空调、房间内高速上网、客房WIFI覆盖免费、国内长途电话、国际长途电话、有线频道、液晶电视机、免费瓶装水、电热水壶、免费洗漱用品（6样以上）、独立淋浴间、吹风机、拖鞋、浴衣、浴室化妆放大镜、洗浴间电话、沙发(部分)、熨衣设备(部分)、咖啡壶/茶壶(部分)、迷你吧(部分)、小冰箱(部分)、浴缸(部分)、所有公共及私人场所严禁吸烟、智能马桶(部分)、卫星频道、桑拿浴室、美容美发室、SPA、足浴/足疗、按摩保健
 								</p>
 							</dd>
 						</dl>
@@ -799,10 +776,8 @@
 								<i class="icon_view_s8"></i>酒店简介
 							</dt>
 							<dd>
-								<i class="icon_hl_more1" ></i>
-								<p>
-								${hotel.hotelIntro }
-								</p>
+								<i class="icon_hl_more1"></i>
+								<p>${hotel.hotelIntro }</p>
 							</dd>
 						</dl>
 
@@ -864,7 +839,7 @@
 		<div class="clx"></div>
 	</div>
 
-	
+
 	<div class="fix_tool" id="right-box-list">
 		<ul>
 			<li class="cate_01" data-rightblock="1"><a
@@ -905,7 +880,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<div id="m_contentend" style="z-index: 200;"></div>
 	<script type="text/javascript">
 		var tjObj_rt2 = new Date();
@@ -1010,37 +985,114 @@
 		href="${pageContext.request.contextPath }/statics/css/styles.css">
 	<!-- ===================== footer end ===================== -->
 	<!-- 可信网站LOGO安装开始 -->
-	<script type="text/javascript">
 		
-		$(function () {
+		
+		<form id="order" action="toOrder" style="display: none;" method="post">
+		<input type="text" id="hotelId" name="hotelId">
+		<input type="text" id="checkInDate" name="checkInDate">
+		<input type="text" id="checkOutDate" name="checkOutDate">
+		<input type="text" id="day" name="day">
+		</form>
+
+		
+	<script type="text/javascript">
+	Date.prototype.format = function(fmt) { 
+	     var o = { 
+	        "M+" : this.getMonth()+1,                 //月份 
+	        "d+" : this.getDate(),                    //日 
+	        "h+" : this.getHours(),                   //小时 
+	        "m+" : this.getMinutes(),                 //分 
+	        "s+" : this.getSeconds(),                 //秒 
+	        "q+" : Math.floor((this.getMonth()+3)/3), //季度 
+	        "S"  : this.getMilliseconds()             //毫秒 
+	    }; 
+	    if(/(y+)/.test(fmt)) {
+	            fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length)); 
+	    }
+	     for(var k in o) {
+	        if(new RegExp("("+ k +")").test(fmt)){
+	             fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+	         }
+	     }
+	    return fmt; 
+	}      
+	
+		$(function() {
+			var curDate = new Date();
+			var nextDate = new Date(curDate.getTime() + 24*60*60*1000);
+			var time1 = nextDate.format("yyyy-MM-dd");
+			$(".flatpickr").eq(1).val(time1)
+			$(".flatpickr").eq(1).attr("data-min-date",time1)
+			
 			//hdetail_sider
 			// 百度地图API功能
-			
+			$("#hdetail_map").show()
 
 			var map = new BMap.Map("hdetail_map");
+
+			map.centerAndZoom($("#hotelAddress").attr("data-hotelAddress"), 18);
+			 /*  // 定位当前位置
+			 var geolocation = new BMap.Geolocation();
+			    geolocation.getCurrentPosition(function(r){
+			        if(this.getStatus() == BMAP_STATUS_SUCCESS){
+			            var mk = new BMap.Marker(r.point);
+			            map.addOverlay(mk);
+			            map.panTo(r.point);
+			            //alert('您的位置：'+r.point.lng+','+r.point.lat);
+			        }
+			        else {
+			            alert('failed'+this.getStatus());
+			        }
+			    },{enableHighAccuracy: true}) */
+			$("#hdetail_map").show()
+		})
+		$(".bottomStr").click(function () {
+			var start=$(".flatpickr").eq(0).val();
+			var end=$(".flatpickr").eq(1).val();
+			var houseId =$(this).attr("data-mroomid");
+			//data-mroomid="${house.houseId }"
+			var date1 = new Date(start)
+			var date2 = new Date(end)
+			var s1 = date1.getTime(),s2 = date2.getTime();
+			if(s2 - s1>0){
+				var total = (s2 - s1)/1000;
+				var day = parseInt(total / (24*60*60));//计算整数天数
+				$("#day").val(day)
+				$("#checkInDate").val(start)
+				$("#checkOutDate").val(end)
+				$("#hotelId").val(houseId)
+				$("#order").submit();
+			}
 			
-			map.centerAndZoom($("#hotelAddress").attr("data-hotelAddress"),20);
+			
+			
 		})
 		
-		$(".htype_info").click(
-			function () {
-				$(this).siblings().slideToggle()
-				
-			}
-		)
-		$(".icon_hl_more1").toggle(
-			function () {
-				$(this).parent().addClass("on")
-				
-			},
-			function () {
-				$(this).parent().removeClass("on")
-				
-			}
-		)
-		
-		
+		$(".htype_info").click(function() {
+			$(this).siblings().slideToggle()
+
+		})
+		$(".icon_hl_more1").toggle(function() {
+			$(this).parent().addClass("on")
+
+		}, function() {
+			$(this).parent().removeClass("on")
+
+		})
 	</script>
+<script async>
+	function fp_ready() {
+		var calendars = document.getElementsByClassName("flatpickr")
+				.flatpickr();
+		// Date format
+		var fpInstance = new Flatpickr(document.createElement("input")), formatOutput = document
+				.getElementById("dateFormatOutput"), now = new Date();
+	}
+</script>
+<script  src="${pageContext.request.contextPath }/statics/dist/flatpickr.js"
+	onload="fp_ready()"></script>
+<link rel="stylesheet" id=cal_style type="text/css"
+	href="${pageContext.request.contextPath }/statics/dist/flatpickr.min.css">
 	
 </body>
 </html>

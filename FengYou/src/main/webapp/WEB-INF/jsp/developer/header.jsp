@@ -175,18 +175,18 @@
 	<header class="com-header"> <!-- 导航条开始 -->
 	<div class="header-bar">
 		<div class="header-content clearfix">
-			<div class="header-bar-position">
-				<div class="user-entry">
-					<a class="growth-entry user-importent">立即登录</a><a
-						class="extra-entry">注册</a>
-				</div>
-			</div>
 			<nav class="header-bar-nav">
 			<ul class="header-nav-first">
-				<li class="has-child"><a href="nofollow" href=""
-					target="_blank">请登录</a></li>
-				<li class="has-child"><a href="" target="_blank">快速注册</a></li>
-				<li class="has-child"><a href="UserInfo?id=${loginUser.id}" >会员中心</a></li>
+			<c:if test="${loginUser.name !=null }">
+			<li class="has-child"><a href="nofollow" href=""
+					target="_blank">您好：${loginUser.name }</a></li>
+					<li class="has-child"><a href="UserInfo?id=${loginUser.id}" >会员中心</a></li>
+				</c:if>
+				<c:if test="${loginUser.name==null }">
+				<li class="has-child"><a href="http://localhost:8080/FengYou/login.jsp" target="_blank">请登录</a></li>
+				<li class="has-child"><a href="http://localhost:8080/FengYou/register.jsp" target="_blank">快速注册</a></li>
+				<li class="has-child"><a href="http://localhost:8080/FengYou/login.jsp" >会员中心</a></li>
+				</c:if>	
 				<li class="has-child"><a href="" target="_blank">帮助中心</a></li>
 			</ul>
 			</nav>

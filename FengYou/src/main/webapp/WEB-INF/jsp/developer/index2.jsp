@@ -47,222 +47,101 @@
 </head>
 <body>
 	<!-- ===================== header 2019-04-29 start ===================== -->
-	<div id="header" class="header" v='20190429' b='hotels' g='NaN' lg='f'>
-		<div class="header_top response_wrap3 clearfix" style="width: 1200px;">
-			<div class="logo">
-				<a href="http://www.elong.com" title="风游旅行网">风游旅行网</a>
-			</div>
-			<div class="right mt5">
-				<div class="branch_menu left mr10">
-					<span><a href="http://imall.elong.com/" rel="nofollow">里程商城</a></span>
-					<b></b> <span class='online-customer'><a target='_blank'
-						href='http://my.elong.com/kf/index?g=31878' rel='nofollow'>在线客服</a></span>
-					<b></b><span class=""><a target="_blank"
-						href="http://my.elong.com/helpCenter/index" rel="nofollow">帮助中心</a></span>
-					<b></b><span class='language' method="newSpanLang"> <a
-						href="#?" method="eng">English</a><i class='com_icon04 left'></i>
-					<p>
-							<a
-								href="http://hotel.elong.com/trans2cn/?target=http://hotel.elong.com"
-								title="简体版" rel="nofollow">简体版</a> <a
-								href="http://hotel.elong.com/trans2tw/?target=http://hotel.elong.com"
-								rel="nofollow" title="繁體版">繁体版</a>
-						</p>
-					</span>
+	
+	<div id="header" class="header" v='20190429' b='myelong' g='1' lg='t'>
+		<link rel="stylesheet" type="text/css"
+			href="${pageContext.request.contextPath }/statics/css/header.css">
+			<header class="com-header"> <!-- 导航条开始 -->
+			<div class="header-bar">
+				<div class="header-content clearfix">
+					<nav class="header-bar-nav">
+					<ul class="header-nav-first">
+						<c:if test="${loginUser.name !=null }">
+							<li class="has-child"><a href="nofollow" href=""
+								target="_blank">您好：${loginUser.name }</a></li>
+							<li class="has-child"><a href="UserInfo?id=${loginUser.id}">会员中心</a></li>
+						</c:if>
+						<c:if test="${loginUser.name==null }">
+							<li class="has-child"><a
+								href="http://localhost:8080/FengYou/login.jsp" target="_blank">请登录</a></li>
+							<li class="has-child"><a href="" target="_blank">快速注册</a></li>
+							<li class="has-child"><a
+								href="http://localhost:8080/FengYou/login.jsp">会员中心</a></li>
+						</c:if>
+						<li class="has-child"><a href="" target="_blank">帮助中心</a></li>
+					</ul>
+					</nav>
 				</div>
-				<span class="one_panic one_panicxcx mr10 left"> <i
-					class="com_iconxcx left"></i> <em>小程序</em> <em>体验更轻盈</em>
-					<div class="only_xcx">
-						<i class="com_arrow_xcx"></i>
-					</div>
-				</span> <a class='one_panic mr10 left'
-					href="http://promotion.elong.com/index/cn/2016/elong_app_down/index.html"
-					rel="nofollow" target="_blank"><i class='com_icon01 left'></i><em>手机版</em><em
-					method="newPromotion">专享五折起</em>
-					<div class="only_phone" method="onlyPhoneDiv" style="display: none">
-						<i class="com_arrow_tl"></i>
-					</div> </a> <span class="online_phone left"> <i
-					class='com_icon02 left'></i> <em>7&#215;24 客服电话</em><b class=''
-					method='newPhoneNo'><i class='com_icon03 right'></i>95711</b>
-					<div class="on_phonnum" method="newPhoneDiv">
-						<i class="com_arrow_tl"></i>
-						<ul>
-							<!--当鼠标移入时显示-->
-							<li><p>国内：95711</p></li>
-							<li class="last"><p>港澳台及海外：86-551-6529-9777</p></li>
-						</ul>
-					</div>
-				</span>
 			</div>
-		</div>
-		<!--导航-->
-		<div class="nav_box">
-			<div id="nav" class="response_wrap3" style="width: 1200px;">
-				<ul class="link" id="channelMenu">
-					<li sid="28632"><a href="http://www.elong.com" title="风游旅行网"
-						id="nav_home">首页</a></li>
-					<li sid="28639" class="on"><a title="酒店预订"
-						href="http://hotel.elong.com/" id="nav_hotels">国内酒店</a></li>
-					<li style="display: none;" sid="41493"><a
-						href="http://tuan.elong.com/" id="A1" title="酒店团购">团购</a></li>
-					<li sid="28642"><a href="http://ihotel.elong.com/"
-						id="nav_hotelsw" title="国际•港澳台酒店">国际•港澳台酒店<span
-							class="icon_coupon"></span></a></li>
-					<li style="display: none;" sid=""><a
-						href="http://jia.elong.com/" id="nav_apartment" title="短租公寓">短租公寓<span
-							class="icon_apart"
-							style="background: url(${pageContext.request.contextPath }/statics/images/icon2015-0.png) no-repeat; background-position: -307px 0;"></span></a>
-					</li>
-					<li style="display: none;" sid="52756"><a
-						href="http://qiang.elong.com" title="限时抢">限时抢</a>
-					<li sid="28640"><a href="http://flight.elong.com/"
-						title="机票预订">国内•国际机票<span
-							style="left: 60px; background-position: -589px -29px;"
-							class="icon_coupon"></span></a></li>
-					<li sid="28640"><a
-						href="http://m.elongstatic.com/static/webapp/train/website/railway.html"
-						title="火车票">火车票</a></li>
-					<li sid="28640"><a href="http://bus.elong.com/ly" title="汽车票">汽车票</a></li>
-					<li><a href="http://trip.elong.com/" title="旅游指南">旅游指南</a></li>
-					<li><a href="https://tmc.ly.com/" title="商旅" target='_blank'>商旅</a></li>
-				</ul>
-				<div class="account" method="dvAccount">
-					<input type="hidden" id="hidden_memberid_user" value="" /> <input
-						type="hidden" id="hidden_user_name" value="" />
-					<div class="log" id="user_display_login">
-						<span><a
-							href="https://secure.elong.com/passport/login_cn.html"
-							rel="nofollow" rel="nofollow">登录</a></span>|<span><a
-							href="https://secure.elong.com/passport/register_cn.html?rnd=20190510164713"
-							rel="nofollow" rel="nofollow">注册</a> </span>
-					</div>
-					<!--弹出-->
-					<div class="drop_box_log pt" style="display: none"
-						id="div_user_center">
-						<div class="new_btnLogin">
-							<a href="https://secure.elong.com/passport/login_cn.html"
-								rel="nofollow">登录</a>
+			<!-- 导航条结束 --> </header>
+			<!--导航-->
+			<div class="nav_box" style="margin-top: 0px;">
+				<div id="nav" class="response_wrap3"
+					style="width: 1200px; margin-left: 170px;">
+					<ul class="link" id="channelMenu">
+						<li sid="28632"><a href="toIndex" title="风游旅行网" id="nav_home">首页</a></li>
+						<li sid="28639"><a title="酒店预订"
+							href="http://hotel.elong.com/" id="nav_hotels">国内酒店</a></li>
+						<li style="display: none;" sid="41493"><a
+							href="http://tuan.elong.com/" id="A1" title="酒店团购">团购</a></li>
+						<li sid="28642"><a href="http://ihotel.elong.com/"
+							id="nav_hotelsw" title="国际•港澳台酒店">国际•港澳台酒店<span
+								class="icon_coupon"></span></a></li>
+						<li style="display: none;" sid=""><a
+							href="http://jia.elong.com/" id="nav_apartment" title="短租公寓">短租公寓<span
+								class="icon_apart"
+								style="background: url(http://img.elongstatic.com/index/fixed/icon2015-0.png) no-repeat; background-position: -307px 0;"></span></a>
+						</li>
+						<li style="display: none;" sid="52756"><a
+							href="http://qiang.elong.com" title="限时抢">限时抢</a>
+							<li sid="28640"><a href="http://flight.elong.com/"
+								title="机票预订">国内•国际机票<span
+									style="left: 60px; background-position: -589px -29px;"
+									class="icon_coupon"></span></a></li>
+							<li sid="28640"><a
+								href="http://m.elongstatic.com/static/webapp/train/website/railway.html"
+								title="火车票">火车票</a></li>
+							<li sid="28640"><a href="http://bus.elong.com/ly"
+								title="汽车票">汽车票</a></li>
+							<li><a href="http://trip.elong.com/" title="旅游指南">旅游指南</a></li>
+							<li><a href="https://tmc.ly.com/" title="商旅" target='_blank'>商旅</a></li>
+					</ul>
+					<div class="account" method="dvAccount"
+						style="margin-right: 190px;">
+						<div class="log_on" id="user_display_div">
+							<span> <a id="n_user_name"
+								href="http://my.elong.com/index_cn.html?rnd=20190515101336"
+								title="">欢迎您：${loginUser.name}</a>
+							</span>
 						</div>
-						<ul class='clx'>
-							<li class='icon_d1'><b></b><a
-								href="http://my.elong.com/hotel/MyHotelOrderList_cn.html?rnd=20190510164713"
-								rel="nofollow">酒店订单</a></li>
-							<li class='icon_d2' style="display: none;"><b></b><a
-								href="http://my.elong.com/GrouponOrder_cn.html?rnd=20190510164713"
-								rel="nofollow">团购订单</a></li>
-							<li class='icon_d3'><a
-								href="http://my.elong.com/Flight/FlightOrder_cn.html?rnd=20190510164713"
-								rel="nofollow">机票订单</a></li>
-							<li class='icon_d4'><a
-								href="http://my.elong.com/train/orderlist?rnd=20190510164713"
-								rel="nofollow">火车票订单</a></li>
-							<li class='icon_d5'><b></b><a
-								href="http://my.elong.com/CashCoupon_cn.html?flag=Cash&rnd=20190510164713"
-								rel="nofollow">现金账户</a></li>
-							<li class='icon_d6'><b></b><a
-								href="http://my.elong.com/ly/lyOrderFill?rnd=20190510164713"
-								rel="nofollow">汽车票订单</a></li>
-							<li class='icon_d7'><b></b><a
-								href="http://my.elong.com/hotel/hotelfavlist_cn.html?rnd=20190510164713"
-								rel="nofollow">酒店收藏</a></li>
-							<li class='icon_d8'><b style='display: none;'
-								id='comment_notice'>9</b> <a id="n_comment_a"
-								href="http://my.elong.com/Hotel/reviewedorderlist_cn.html?rnd=20190510164713"
-								rel="nofollow">我的点评</a></li>
-							<li class='icon_d9'><b></b><a
-								href="http://my.elong.com/me_personalcenter_cn" rel="nofollow">个人设置</a></li>
-						</ul>
+						<!--弹出-->
+						<div class="drop_box_log pt" style="display: none"
+							id="div_user_center">
+							<ul class='clx'>
+								<li class='icon_d1'><b></b><a
+									href="http://my.elong.com/hotel/MyHotelOrderList_cn.html?rnd=20190515101336"
+									rel="nofollow">酒店订单</a></li>
+								<li class='icon_d7'><b></b><a
+									href="http://my.elong.com/hotel/hotelfavlist_cn.html?rnd=20190515101336"
+									rel="nofollow">酒店收藏</a></li>
+								<li class='icon_d8'><b style='display: none;'
+									id='comment_notice'>9</b> <a id="n_comment_a"
+									href="http://my.elong.com/Hotel/reviewedorderlist_cn.html?rnd=20190515101336"
+									rel="nofollow">我的点评</a></li>
+								<li class='icon_d9'><b></b><a
+									href="http://my.elong.com/me_personalcenter_cn" rel="nofollow">个人设置</a></li>
+							</ul>
+							<div class="quit_log">
+								<a href="http://my.elong.com/logout_cn.html" rel="nofollow">退出登录</a>
+							</div>
+						</div>
+						<!--弹出 end-->
 					</div>
-					<!--弹出 end-->
 				</div>
 			</div>
 		</div>
-		<style type="text/css">
-.appWrap {
-	background:
-		url(${pageContext.request.contextPath }/statics/images/app-com.png)
-		no-repeat 0 -483px
-}
-
-.appBox .close {
-	background:
-		url(${pageContext.request.contextPath }/statics/images/app-com.png)
-		no-repeat -328px -182px;
-	_background-image:
-		url(http://www.elongstatic.com/images/other/app-com-ie6.png);
-}
-
-.appBox .close:hover {
-	background-position: -358px -182px;
-}
-
-.appBox .intro {
-	width: 480px;
-	height: 210px;
-	background:
-		url(${pageContext.request.contextPath }/statics/images/fx_btm.png)
-		no-repeat 0 0px;
-	font-size: 0;
-	line-height: 0;
-	overflow: hidden;
-	position: absolute;
-	top: 27px;
-	left: 33px;
-}
-
-.lisort{
-	background-color: #49F;
-	color: #FFF;
-	top: -2px;
-	border-top: 2px solid #49f;
-}
-
-.appBox .way i {
-	display: inline-block;
-	width: 43px;
-	height: 43px;
-	margin-right: 5px;
-	background:
-		url(${pageContext.request.contextPath }/statics/images/app-com.png)
-		no-repeat 0 -334px;
-	_background-image:
-		url(http://www.elongstatic.com/images/other/app-com-ie6.png);
-	vertical-align: middle;
-}
-
-.appBox .way .but {
-	width: 170px;
-	height: 30px;
-	background:
-		url(${pageContext.request.contextPath }/statics/images/app-com.png)
-		no-repeat -181px -334px;
-	_background-image:
-		url(http://www.elongstatic.com/images/other/app-com-ie6.png);
-	border: 0;
-	text-align: center;
-	color: #fff;
-	font: 16px "Microsoft Yahei", Simsun, sans-serif;
-	cursor: pointer;
-}
-
-.appBox .way .but:hover {
-	background-position: -181px -364px;
-}
-
-.appBox .way .success i {
-	width: 20px;
-	height: 16px;
-	margin-right: 5px;
-	background:
-		url(${pageContext.request.contextPath }/statics/images/app-com.png)
-		no-repeat -181px -394px;
-	_background-image:
-		url(http://www.elongstatic.com/images/other/app-com-ie6.png);
-	vertical-align: middle;
-}
-</style>
-		<div class="clear"></div>
-	</div>
+	
+<%-- 	<%@ include file="header.jsp"%> --%>
 	<!-- ===================== header end ===================== -->
 	<!-- 新版图层start -->
 	<div id="newBox" class="newBox"></div>
@@ -325,10 +204,10 @@
 							class="filter_unlimited filter_unlimited_on">不限</div>
 						<div class="filter_custom">
 							<span class="mr5">自定义</span> <span class="mr5"><input
-								method="lowPrice" type="number" class="input_f12" /></span> <span
+								 type="number" class="input_f12" value="${fn:split(CurPrice.info, '-')[0]}"  /></span> <span
 								class="mr5 cddd">—</span> <span class="mr5"><input
-								method="highPrice" type="number" class="input_f12" /></span> <span
-								method="priceConfirm" data-id="999" class="btn_filter_sure">确定</span>
+								 type="number" class="input_f12" value="${fn:split(CurPrice.info, '-')[1]}" /></span> <span onclick="customizePrice()"
+								  class="btn_filter_sure">确定</span>
 						</div>
 						<ul class="filter_cb_list filter_cb_list1">
 							<c:forEach var="price" items="${ prices}" step="1"
@@ -885,7 +764,7 @@
 	<!-- 可信网站LOGO安装开始 -->
 	<div style="display: none;">
 		<form id="form" action="toIndex2" method="post">
-			<input type="hidden" id="bigPrice" name="bigPrice"value="${fn:split(CurPrice.info, '-')[1]}"> 
+			<input type="hidden" id="bigPrice" name="bigPrice" value="${fn:split(CurPrice.info, '-')[1]}"> 
 			<input type="hidden" id="smallPrice" name="smallPrice" value="${fn:split(CurPrice.info, '-')[0]}"> 
 			<input type="hidden" id="city" name="city" value="${CurCity.id }">
 			<input type="hidden" id="star" name="star" value="${CurStar.dictCode }">
@@ -917,26 +796,45 @@
 			map.addControl(new BMap.OverviewMapControl({ isOpen: true, anchor: BMAP_ANCHOR_BOTTOM_RIGHT }));   //右下角，打开
 			
 			var price = $("#price").val();
-			if (price != '' && price != null) {
-				var html = '<i>您已选择：</i><a title="清空条件" onclick="clearCondition()" href="javascript:void();">清空条件</a><span title="删除此条件" data-type="'
-						+ $("#curPrice").attr("data-type")
-						+ '" onclick="delCondition(this)" data-id="'
-						+ $("#curPrice").attr("data-id")
+			if (price != '' && price != null)  {
+				if(price!=0){
+					$("#curPrice").addClass("on")
+					var html = '<i>您已选择：</i><a title="清空条件" onclick="clearCondition()" href="javascript:void();">清空条件</a><span title="删除此条件" data-type="'
+							+ $("#curPrice").attr("data-type")
+							+ '" onclick="delCondition(this)" data-id="'
+							+ $("#curPrice").attr("data-id")
+							+ '"  data-high="'
+							+ $("#curPrice").attr("data-high")
+							+ '"   data-low="'
+							+ $("#curPrice").attr("data-low")
+							+ '"   >'
+							+ $("#curPrice").attr("data-name")
+							+ '<i class="icon_close_hl"></i></span>';
+					if ($(".cond-list").html() == '') {
+						$(".cond-list").html(html)
+					}
+				}else{
+					var d = '<i>您已选择：</i><a title="清空条件" onclick="clearCondition()" href="javascript:void();">清空条件</a><span title="删除此条件" data-type=price'
+						+ ' onclick="delCondition(this)" '
 						+ '"  data-high="'
-						+ $("#curPrice").attr("data-high")
+						+ $(".input_f12").eq(1).val()
 						+ '"   data-low="'
-						+ $("#curPrice").attr("data-low")
+						+ $(".input_f12").eq(0).val()
 						+ '"   >'
-						+ $("#curPrice").attr("data-name")
+						+ $(".input_f12").eq(0).val()+"-"+$(".input_f12").eq(1).val()
 						+ '<i class="icon_close_hl"></i></span>';
-				if ($(".cond-list").html() == '') {
-					$(".cond-list").html(html)
+					if ($(".cond-list").html() == '') {
+						$(".cond-list").html(d)
+					}
 				}
+				
+				
 			}
 
 			var city = $("#city").val();
 			
 			if (city != '' && city != null) {
+				$("#curCity").addClass("on")
 				var html = '<i>您已选择：</i><a title="清空条件" onclick="clearCondition()" href="javascript:void();">清空条件</a><span title="删除此条件" data-type="'
 						+ $("#curCity").attr("data-type")
 						+ '" onclick="delCondition(this)" data-id="'
@@ -973,6 +871,7 @@
 			}
 			var star = $("#star").val();
 			if (star != '' && star != null) {
+				$("#curStar").addClass("on")
 				var html = '<i>您已选择：</i><a title="清空条件" onclick="clearCondition()" href="javascript:void();">清空条件</a><span title="删除此条件" data-type="'
 						+ $("#curStar").attr("data-type")
 						+ '" onclick="delCondition(this)" data-id="'
@@ -1006,6 +905,7 @@
 			}
 			var type = $("#type").val();
 			if (type != '' && type != null) {
+				$("#curType").addClass("on")
 				var html = '<i>您已选择：</i><a title="清空条件" onclick="clearCondition()" href="javascript:void();">清空条件</a><span title="删除此条件" data-type="'
 						+ $("#curType").attr("data-type")
 						+ '" onclick="delCondition(this)" data-id="'
@@ -1049,6 +949,22 @@
 		})
 		
 		
+		//input_f12" /></span> <span onclick="customizePrice()"
+		
+		function customizePrice() {
+			var lowPrice=$(".input_f12").eq(0).val();
+			var highPrice=$(".input_f12").eq(1).val();
+			if(parseInt(lowPrice)>=parseInt(highPrice)||parseInt(lowPrice)<0||parseInt(highPrice)<=0){
+				alert("请输入正确的价格")
+			}else{
+				$("#smallPrice").val(lowPrice)
+				$("#bigPrice").val(highPrice);
+				$("#form").submit();
+				$("#price").val("");
+			}
+			
+		}
+		
 		$(".condition").click(function() {
 
 			if ($(this).attr('data-type') == "price") {
@@ -1076,9 +992,8 @@
 			$("#form").submit();
 		})
 		function delCondition(e) {
-			$(e).remove();
 			if ($(e).attr('data-type') == "price") {
-				var price = $(this).attr('data-name');
+				//var price = $(this).attr('data-name');
 				$("#price").val("");
 				$("#bigPrice").val("")
 				$("#smallPrice").val("")
@@ -1159,11 +1074,10 @@
 					
 						$(".icon_hl_more1").toggle(
 						function () {
-							$(this).parent().addClass("slip")
-							
+							$(this).parent().removeClass("slip")
 						},
 						function () {
-							$(this).parent().removeClass("slip")
+							$(this).parent().addClass("slip")
 							
 						}
 		)

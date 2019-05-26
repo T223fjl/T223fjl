@@ -28,6 +28,12 @@ public class HouseServiceImpl implements HouseService{
 	public List<House> getHouseByType(String hType) {
 		return houseDao.getHouseByType(hType);
 	}
+
+
+	@Override
+	public House qeuryHouseByHouseId(int houseId) {
+		return houseDao.qeuryHouseByHouseId(houseId);
+	}
 	
 	
 }

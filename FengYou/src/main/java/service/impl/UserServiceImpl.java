@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dao.user.UserDao;
+import pojo.Itrip;
 import pojo.Mycollection;
 import pojo.User;
 import service.UserService;
@@ -39,4 +40,16 @@ public class UserServiceImpl implements UserService {
 		return userDao.registerByPhone(phone);
 	}
 
+	public int updatePwd(User user) {
+		return userDao.updatePwd(user);
+	}
+	
+	public List<Itrip> queryBytrip(Integer id) throws Exception {
+		return userDao.queryBytrip(id);
+	}
+	
+	public int delete(int id) {
+		return userDao.delete(id);
+	}
+	
 }

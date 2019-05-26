@@ -44,4 +44,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="registerByPhone" resultType="pojo.User" parameterType="String">
 		SELECT * from user where phone=#{phone};
 	</select>
+	
+	<!-- 修改密码 -->
+	<update id="updatePwd"  parameterType="pojo.User">
+	update user set pwd=#{pwd} where id=#{id}
+	</update>
+	
+	<!-- 查询旅客信息 -->
+	<select id="queryBytrip" resultType="pojo.Itrip" >
+		SELECT * FROM itrip_user_link_user a
+		LEFT JOIN `user` b ON (a.userId=b.id)
+		WHERE b.id=#{id}
+	</select>
+	
+	<!-- 删除旅客信息 -->
+	<delete id="delete" parameterType="pojo.Itrip">
+	delete from itrip_user_link_user where id=#{id}
+	</delete>
+	
 </mapper>

@@ -40,7 +40,7 @@ public class LoginRegController {
 	// 前台登录
 	@RequestMapping("/dologin")
 	public String login(@RequestParam(required = false) String name, @RequestParam(required = false) String pwd,
-			HttpSession session) {
+			HttpSession session,HttpServletResponse response) {
 		User user = new User();
 		user.setName(name);
 		user.setPwd(pwd);
@@ -52,10 +52,15 @@ public class LoginRegController {
 			session.removeAttribute("error");
 			return "redirect:/toIndex";
 		} else {
-			session.setAttribute("error", "用户名或密码不正确");
-			return "login";
+			try {
+				PrintWriter out=response.getWriter();
+				session.setAttribute("error", "用户名或密码不正确");
+				out.print("<script type='text/javascript'>location='http://localhost:8080/FengYou/login.jsp'</script>");
+			} catch (Exception e) {
+				e.printStackTrace();
+			} 
 		}
-
+return null;
 	}
 
 	// 跳转后台登陆页面

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dao.level.LevelDao;
+import pojo.Hotel;
 import pojo.Level;
 import service.LevelService;
 
@@ -37,8 +38,15 @@ public class LevelServiceImpl implements LevelService {
 			}
 			level1s.get(j).setSonLevels(sonLevels);
 		}
-		
-
 		return level1s;
 	}
+	
+	public List<Level> queryByName(){
+		return levelDao.queryByName();
+	}
+	
+	public List<Hotel> query( String hotel){
+		return levelDao.query(hotel);
+	}
+	
 }

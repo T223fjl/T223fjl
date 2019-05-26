@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
+import pojo.Itrip;
 import pojo.Mycollection;
 import pojo.User;
 
@@ -23,4 +24,13 @@ public interface UserDao {
 	// 根据id修改会员信息
 	public int updateUser(User user);
 
+	//修改密码
+	public int updatePwd(User user);
+		
+	//查询旅客信息
+	public List<Itrip> queryBytrip(@Param(value = "id") Integer id)throws Exception;
+		
+	//删除旅客信息
+	public int delete(int id);
+	
 }

@@ -1,7 +1,12 @@
 package controller;
 
+import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,13 +19,16 @@ import com.github.pagehelper.PageInfo;
 import pojo.Dictionarydate;
 import pojo.Hotel;
 import pojo.House;
+import pojo.Itrip;
 import pojo.Level;
+import pojo.Order;
 import pojo.User;
 import service.DictionarydateService;
 import service.HotelService;
 import service.HouseService;
 import service.LevelService;
 import service.UserService;
+import util.ConvertJSONUtil;
 
 @Controller
 public class DevController {
@@ -36,6 +44,51 @@ public class DevController {
 	@Autowired
 	private HouseService houseService;
 
+	// 跳转前台订单查询页面
+	@RequestMapping("/toOrder")
+	public String order(String hotelId,String checkInDate,String checkOutDate, String day, Model model) {
+		int hid=1;
+		if(hotelId!=null&&!"".equals(hotelId)){
+			hid=Integer.valueOf(hotelId);
+		}
+//		SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd");
+//		Order order=new Order();
+//		order.setCheckInDate(java.sql.Date.valueOf(checkInDate));
+//		order.setCheckOutDate(java.sql.Date.valueOf(checkOutDate));
+		House house=houseService.qeuryHouseByHouseId(hid);
+		Hotel hotel =hotelService.getHotelById(house.getHotelId());
+		model.addAttribute("checkInDate", checkInDate);
+		model.addAttribute("checkOutDate", checkOutDate);
+		model.addAttribute("house", house);
+		model.addAttribute("hotel", hotel);
+		model.addAttribute("day", day);
+		return "developer/order";
+	}
+
+	
+	
+	// 跳转前台一级页面
+	@RequestMapping("/toFF")
+	public String test(HttpSession session) {
+
+		return "developer/ff";
+	}
+
+	// 跳转前台三级页面
+	@RequestMapping("/toIndex3")
+	public String toIndex3(String hotelId, Model model) {
+		int hid = 1;
+		if (hotelId != null && !"".equals(hotelId)) {
+			hid = (Integer.valueOf(hotelId));
+		}
+		Hotel hotel = hotelService.getHotelById(hid);
+		List<House> houseList = houseService.qeuryHouseByHotelId(hid);
+
+		model.addAttribute("houseList", houseList);
+		model.addAttribute("hotel", hotel);
+		return "developer/index3";
+	}
+
 	// 跳转前台一级页面
 	@RequestMapping("/NewFile")
 	public String NewFile(HttpSession session) {
@@ -48,23 +101,27 @@ public class DevController {
 	@RequestMapping("/toIndex")
 	public String toIndex(HttpSession session) {
 		List<Level> levels = levelService.queryLevel();
+		List<Level> level = levelService.queryByName();
+		// List<Hotel> hotel=null;
+		// for (int i = 0; i < level.size(); i++) {
+		// hotel=levelService.query(level.get(i).getName());
+		// }
+		List<Hotel> hotel = levelService.query(level.get(0).getName());
+		List<Hotel> hote2 = levelService.query(level.get(1).getName());
+		List<Hotel> hote3 = levelService.query(level.get(2).getName());
+		List<Hotel> hote4 = levelService.query(level.get(3).getName());
+		List<Hotel> hote5 = levelService.query(level.get(4).getName());
+		List<Hotel> hote6 = levelService.query(level.get(5).getName());
+		// System.out.println(hotel.get(0).getFileUrl());
 		session.setAttribute("levels", levels);
+		session.setAttribute("level", level);
+		session.setAttribute("hotel", hotel);
+		session.setAttribute("hote2", hote2);
+		session.setAttribute("hote3", hote3);
+		session.setAttribute("hote4", hote4);
+		session.setAttribute("hote5", hote5);
+		session.setAttribute("hote6", hote6);
 		return "developer/index";
-	}
-
-	// 跳转前台三级页面
-	@RequestMapping("/toIndex3")
-	public String toIndex3(String hotelId,Model model) {
-		int hid=1;
-		if (hotelId != null && !"".equals(hotelId)) {
-			hid = (Integer.valueOf(hotelId));
-		}
-		Hotel hotel=hotelService.getHotelById(hid);
-		List<House> houseList=houseService.qeuryHouseByHotelId(hid);
-		
-		model.addAttribute("houseList", houseList);
-		model.addAttribute("hotel", hotel);
-		return "developer/index3";
 	}
 
 	// 跳转前台二级页面
@@ -76,7 +133,7 @@ public class DevController {
 		List<Dictionarydate> stars = dictionarydateService.queryDictionarydateByTypeCode("star");
 		List<Dictionarydate> prices = dictionarydateService.queryDictionarydateByTypeCode("price");
 		int page = 1;
-		int size = 1;
+		int size = 5;
 		System.out.println("ddddddd:" + sort);
 
 		if (sort == null || "".equals(sort)) {
@@ -137,6 +194,10 @@ public class DevController {
 					CurPrice = prices.get(i);
 				}
 			}
+		}
+		if (price == null || "0".equals(price)) {
+			CurPrice = new Dictionarydate();
+			CurPrice.setInfo(smallPrice + "-" + bigPrice);
 		}
 		Level CurCity = null;
 		for (int i = 0; i < citys.size(); i++) {
@@ -213,7 +274,7 @@ public class DevController {
 		return "developer/dingdan";
 	}
 
-	// 跳转前台订单页面
+	// 跳转前台订单查询页面
 	@RequestMapping("/toHuiyuan")
 	public String toHuiyuan(Model model) {
 		return "developer/huiyuan";
@@ -224,6 +285,8 @@ public class DevController {
 	public String view(String id, Model model) throws NumberFormatException, Exception {
 		User user = userService.getUserInfo(Integer.valueOf(id));
 		System.out.println("id=" + id + "电话" + user.getPhone());
+		List<Itrip> trip = userService.queryBytrip(Integer.valueOf(id));
+		model.addAttribute("trip", trip);
 		model.addAttribute(user);
 		return "developer/userlist";
 	}
@@ -246,4 +309,60 @@ public class DevController {
 		}
 		return "developer/userlist";
 	}
+
+	/**
+	 * 查询密码
+	 */
+	@RequestMapping("/UserPwd")
+	public String viewPwd(String id, Model model) throws NumberFormatException, Exception {
+		User user = userService.getUserInfo(Integer.valueOf(id));
+		model.addAttribute(user);
+		return "developer/userPwd";
+	}
+
+	/**
+	 * 修改密码
+	 */
+	@RequestMapping("/modifyPwd")
+	public void modifyPwd(String id, String oldpassword, String password, String ValidateCode, String inputCode,
+			HttpServletResponse response, HttpServletRequest request) throws NumberFormatException, Exception {
+		System.out.println("进入修改密码....");
+		System.out.println("id==" + id);
+		System.out.println("ValidateCode==" + ValidateCode);
+		System.out.println("inputCode==" + inputCode);
+		System.out.println("password==" + password);
+		// 验证码是否和输入框相等
+		if (!ValidateCode.equals(inputCode)) {
+			ConvertJSONUtil.toText("existence", response);
+		} else {
+			User user = new User();
+			user.setId(Integer.valueOf(id));
+			user.setPwd(password);
+			int result = userService.updatePwd(user);
+			System.out.println("result=" + result);
+			if (result > 0) {
+				ConvertJSONUtil.toText("success", response);
+			} else {
+				ConvertJSONUtil.toText("failure", response);
+			}
+		}
+	}
+
+	/**
+	 * 删除旅客信息
+	 */
+	@RequestMapping("/delete")
+	public void delete(String id, Model model, HttpServletResponse response) throws NumberFormatException, Exception {
+		PrintWriter out = response.getWriter();
+		int result = 0;
+		result = userService.delete(Integer.valueOf(id));
+		String ajax = "no";
+		if (result > 0) {
+			ajax = "yes";
+		}
+		out.print(ajax);
+		out.flush();
+		out.close();
+	}
+
 }

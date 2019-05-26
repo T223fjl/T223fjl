@@ -23,7 +23,16 @@ public class House {
 	private String productName;
 	private String supplier;
 	private String productPolicy;
+	private String bedType;//床型
 	
+	public String getBedType() {
+		return bedType;
+	}
+
+	public void setBedType(String bedType) {
+		this.bedType = bedType;
+	}
+
 	private List<House> houseListByType;//每个类型的房间集合
 	
 	public List<House> getHouseListByType() {

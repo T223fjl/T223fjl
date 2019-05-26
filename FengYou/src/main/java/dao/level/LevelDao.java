@@ -2,6 +2,9 @@ package dao.level;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
+import pojo.Hotel;
 import pojo.Level;
 
 public interface LevelDao {
@@ -23,4 +26,8 @@ public interface LevelDao {
 	 * @return
 	 */
 	public List<Level> queryLevel();
+	
+	public List<Level> queryByName();
+	
+	public List<Hotel> query(@Param(value = "hotel") String hotel);
 }

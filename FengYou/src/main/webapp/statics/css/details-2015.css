@@ -1576,7 +1576,7 @@
 }
 
 .dsider_map {
-	height: 210px;
+	height: 410px;
 	position: relative;
 	cursor: pointer;
 	text-align: center;
@@ -3426,13 +3426,10 @@
 .mvt18131 .dsider_map {
 	width: 84%;
 	margin: 0 auto;
-	height: 160px
+	height: 410px
 }
 
-.mvt18131 .dsider_map a {
-	width: 100%;
-	display: block
-}
+
 
 .mvt18131 .map_link {
 	height: 24px;
