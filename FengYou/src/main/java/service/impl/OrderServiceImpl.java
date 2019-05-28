@@ -45,6 +45,11 @@ public class OrderServiceImpl implements OrderService{
 	public Order getOrderNew() {
 		return orderDao.getOrderNew();
 	}
+
+	@Override
+	public int updOrder(Order o) {
+		return orderDao.updOrder(o);
+	}
 	
 	 
 }

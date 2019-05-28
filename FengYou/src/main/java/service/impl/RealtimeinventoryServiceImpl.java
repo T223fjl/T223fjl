@@ -17,4 +17,19 @@ public class RealtimeinventoryServiceImpl implements RealtimeinventoryService{
 		return realtimeinventoryDao.queryRealtimeinventoryByHHid(r);
 	}
 
+	@Override
+	public int updRealtimeinventory(Realtimeinventory r) {
+		return realtimeinventoryDao.updRealtimeinventory(r);
+	}
+
+	@Override
+	public int addRealtimeinventory(Realtimeinventory r) {
+		return realtimeinventoryDao.addRealtimeinventory(r);
+	}
+
+	@Override
+	public Realtimeinventory queryRealtimeinventoryNew() {
+		return realtimeinventoryDao.queryRealtimeinventoryNew();
+	}
+
 }

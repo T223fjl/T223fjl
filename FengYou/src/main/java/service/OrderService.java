@@ -13,4 +13,5 @@ public interface OrderService {
 	public Intoinfo getIntoNew();
 	public Order getOrderNew();
 	public List<Order> queryOrderByDate(Order order);
+	public int updOrder(Order o);
 }

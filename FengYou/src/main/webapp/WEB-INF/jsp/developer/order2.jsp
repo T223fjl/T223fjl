@@ -10,13 +10,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="renderer" content="webkit">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-<title>国内酒店预订_价格查询_国际航班查询订购服务-elong.com 艺龙旅行网</title>
+<title>国内酒店预订_价格查询_国际航班查询订购服务-elong.com 风游旅行网</title>
 <link rel="icon"
 	href="http://m.elongstatic.com/static/webapp/pc_static/pc_hotel/other/common/pic/favicon.ico?t=201411070740"
 	type="image/x-icon" />
 <meta name="keywords" content="国内酒店, 国内酒店查询,国内酒店预订" />
 <meta name="description"
-	content="国内酒店预订:艺龙旅行网为您提供国内酒店查询、查询以及国际航班预订等服务,在艺龙旅行网您可以享受到最低折扣的特价机票,高品质的预订服务，为您查询、选择、预订国内酒店提供最方便和快捷的服务！" />
+	content="国内酒店预订:风游旅行网为您提供国内酒店查询、查询以及国际航班预订等服务,在风游旅行网您可以享受到最低折扣的特价机票,高品质的预订服务，为您查询、选择、预订国内酒店提供最方便和快捷的服务！" />
 
 <script type="text/javascript">
 			var tjObj_rt = new Date();
@@ -39,7 +39,7 @@
 				<a> 欢迎您, </a> | <a href="http://my.elong.com/logout_cn.html">退出</a>
 			</div>
 			<h1 class="logo">
-				<a title="艺龙旅行网" href="http://www.elong.com">艺龙旅行网</a>
+				<a title="风游旅行网" href="http://www.elong.com">风游旅行网</a>
 			</h1>
 
 		</div>
@@ -120,7 +120,7 @@
 								<div class="" style="margin-top: 10px;">
 									<img src="../img/lesson4/two/1.jpg"/>
 									<span>支付宝</span>
-									<a>下一步</a>
+									<a onclick="pay()">下一步</a>
 								</div>
 							</div>
 							<div class="tab-pane" id="a">
@@ -146,13 +146,25 @@
 							</div>
 						</div>
 					</div>
+					<form id="pay" style="display: none;" action="pay"  method="post" target="_blank">
+						<input id="WIDout_trade_no" name="WIDout_trade_no" value="${order.orderNo }" />
+						<input id="WIDsubject" name="WIDsubject"  value="${house.houseType }"/>
+						<input id="WIDtotal_amount" name="WIDtotal_amount" value="${order.payAmount }" />
+						<input id="WIDbody" name="WIDbody" />
+					</form>
 					<script type="text/javascript">
 						$('#myTab a').click(function(e) {
 							e.preventDefault();
 							$(this).tab('show');
 						})
+						
+						function pay() {
+							//alert($("#WIDout_trade_no").val())
+							$("#pay").submit();
+						}
 					</script>
-				
+					
+	
 			</div>
 		</div>
 
@@ -180,12 +192,12 @@
 						title="在线广告服务" rel="nofollow">广告服务</a>
 				</dd>
 				<dd>
-					<a href="http://ebooking.elong.com/ebkauth/login" title="艺龙商家中心"
+					<a href="http://ebooking.elong.com/ebkauth/login" title="风游商家中心"
 						rel="nofollow">商家中心</a>
 				</dd>
 			</dl>
 			<dl>
-				<dt>关于艺龙</dt>
+				<dt>关于风游</dt>
 				<dd>
 					<a href="http://hotel.elong.com/directory/" title="酒店大全">酒店大全</a>
 				</dd>
@@ -201,24 +213,24 @@
 						title="校园招聘" rel="nofollow">校园招聘</a>
 				</dd>
 				<dd>
-					<a href="https://d.elong.com/a/contact" title="联系艺龙旅行网"
+					<a href="https://d.elong.com/a/contact" title="联系风游旅行网"
 						rel="nofollow">联系我们</a>
 				</dd>
 			</dl>
 			<dl>
-				<dt>艺龙APP下载</dt>
+				<dt>风游APP下载</dt>
 				<dd class="pt10">
 					<i class="cm_icon footer_info_app"></i>
 				</dd>
 			</dl>
 			<dl>
-				<dt>艺龙官方微信</dt>
+				<dt>风游官方微信</dt>
 				<dd class="pt10">
 					<i class="cm_icon footer_info_wx"></i>
 				</dd>
 			</dl>
 			<dl>
-				<dt>同程艺龙小程序</dt>
+				<dt>同程风游小程序</dt>
 				<dd class="pt10">
 					<i class="cm_icon footer_info_xcx"></i>
 				</dd>
@@ -226,7 +238,7 @@
 		</div>
 		<div class="clx"></div>
 		<div class="footer_copy">
-			&#169; 2000 - 2019 北京艺龙信息技术有限公司, eLong, Inc or its affiliates. All
+			&#169; 2000 - 2019 北京风游信息技术有限公司, eLong, Inc or its affiliates. All
 			Rights Reserved. <i class="cm_icon"></i> <a rel="nofollow"
 				target="_blank"
 				href="http://m.elongstatic.com/pcheaderfooter/2018/06/files/headerfoot/img/ICP_20180015.pdf">ICP证:合B2-20180015</a>
@@ -238,7 +250,7 @@
 			</a> <i class="cm_icon"></i> <a rel="nofollow" target="_blank"
 				href="http://m.elongstatic.com/pcheaderfooter/2018/06/files/headerfoot/img/company_105145723.pdf">经营执照</a>
 			<i class="cm_icon"></i> <a rel="nofollow" target="_blank"
-				href="http://m.elongstatic.com/hotel/eltk/eltk.html">《艺龙旅行网服务条款》</a>
+				href="http://m.elongstatic.com/hotel/eltk/eltk.html">《风游旅行网服务条款》</a>
 			<i class="cm_icon"></i>违法和不良信息举报电话：95711-9<i class="cm_icon"></i><a
 				rel="nofollow" href="mailto:wfjb@ly.com">举报邮箱：wfjb@ly.com</a>
 		</div>
@@ -246,9 +258,9 @@
 			<a class="cm_icon qua-1"
 				href="https://trustsealinfo.websecurity.norton.com/splash?form_file=fdf/splash.fdf&dn=*.elong.com&lang=zh_CN"
 				rel="nofollow" target="_blank" alt="SSL加密认证" title="SSL加密认证">SSL加密认证</a>
-			<a title="艺龙网通过PCI认证" alt="艺龙网通过PCI认证" target="_blank" rel="nofollow"
+			<a title="风游网通过PCI认证" alt="风游网通过PCI认证" target="_blank" rel="nofollow"
 				href="http://www.atsec.cn/cn/pci-attestation/Elong-PCIAttestation-atsec-PCI-DSS-C-01128.jpg"
-				class="cm_icon qua-6">艺龙网通过PCI认证</a><a class="cm_icon qua-3"
+				class="cm_icon qua-6">风游网通过PCI认证</a><a class="cm_icon qua-3"
 				href="http://www.itrust.org.cn/Home/Index/satification_certificate/wm/MY2019042401.html"
 				rel="nofollow" target="_blank" alt="信赖商业计划" title="信赖商业计划">信用评级</a>
 			<a class="cm_icon qua-5"

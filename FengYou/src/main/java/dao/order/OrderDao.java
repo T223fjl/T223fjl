@@ -21,5 +21,17 @@ public interface OrderDao {
 	
 	public Order getOrderNew();
 	
+	/**
+	 * 查询不在预定期间的订单
+	 * @param order
+	 * @return
+	 */
 	public List<Order> queryOrderByDate(Order order);
+	
+	/**
+	 * 修改订单状态和订单库存恢复状态
+	 * @param o
+	 * @return
+	 */
+	public int updOrder(Order o);
 }

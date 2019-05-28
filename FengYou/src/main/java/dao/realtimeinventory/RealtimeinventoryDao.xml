@@ -6,6 +6,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="dao.realtimeinventory.RealtimeinventoryDao">
 	
 	
+	<select id="queryRealtimeinventoryNew">
+	select * from `realtimeinventory` order by id desc limit 1 
+	</select>
+	
+	<insert id="addRealtimeinventory">
+	INSERT INTO `test`.`realtimeinventory` ( `hotelId`, `houseId`, `recordDate`, `recordStopDate`, `store`) VALUES 
+	(#{hotelId}, #{houseId}, #{recordDate}, #{recordStopDate}, #{store});
+	
+	</insert>
+	
+	<update id="updRealtimeinventory">
+	UPDATE `test`.`realtimeinventory` SET  `hotelId`=#{hotelId}, `houseId`=#{houseId}, `recordDate`=#{recordDate}, `recordStopDate`=#{recordStopDate}, `store`=#{store} WHERE (`id`=#{id});
+	
+	</update>
+	
 	<select id="queryRealtimeinventoryByHHid" resultType="Realtimeinventory" parameterType="Realtimeinventory">
 		SELECT * FROM Realtimeinventory where 1=1
 		<if test="hotelId!=0">
