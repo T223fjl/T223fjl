@@ -988,7 +988,7 @@
 		
 		
 		<form id="order" action="toOrder" style="display: none;" method="post">
-		<input type="text" id="hotelId" name="hotelId">
+		<input type="text" id="houseId" name="houseId">
 		<input type="text" id="checkInDate" name="checkInDate">
 		<input type="text" id="checkOutDate" name="checkOutDate">
 		<input type="text" id="day" name="day">
@@ -1049,7 +1049,7 @@
 		$(".bottomStr").click(function () {
 			var start=$(".flatpickr").eq(0).val();
 			var end=$(".flatpickr").eq(1).val();
-			var houseId =$(this).attr("data-mroomid");
+			var houseId =$(this).parent().parent().parent().attr("data-mroomid");
 			//data-mroomid="${house.houseId }"
 			var date1 = new Date(start)
 			var date2 = new Date(end)
@@ -1060,7 +1060,7 @@
 				$("#day").val(day)
 				$("#checkInDate").val(start)
 				$("#checkOutDate").val(end)
-				$("#hotelId").val(houseId)
+				$("#houseId").val(houseId)
 				$("#order").submit();
 			}
 			

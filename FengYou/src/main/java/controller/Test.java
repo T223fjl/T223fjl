@@ -7,20 +7,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import dao.house.HouseDao;
 import net.sourceforge.pinyin4j.PinyinHelper;
 import net.sourceforge.pinyin4j.format.HanyuPinyinCaseType;
 import net.sourceforge.pinyin4j.format.HanyuPinyinOutputFormat;
 import net.sourceforge.pinyin4j.format.HanyuPinyinToneType;
 import net.sourceforge.pinyin4j.format.HanyuPinyinVCharType;
 import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
+import pojo.Order;
+import service.HouseService;
 import service.UserService;
+import service.impl.HouseServiceImpl;
 
 public class Test {
-/*	
+	
+	/*	
 	public static void main(String[] args) throws UnknownHostException {
 		  // 获取IP地址         
 		  String ip = InetAddress.getLocalHost().getHostAddress();   
@@ -49,6 +55,23 @@ public class Test {
 
     public static void main(String[] args) {
 
+    	ClassPathXmlApplicationContext c=new ClassPathXmlApplicationContext("applicationContext-MyBatis.xml");
+    	HouseDao hdao= (HouseDao)c.getBean("houseDao");
+    	HouseService h=(HouseService)c.getBean("houseService") ;
+    	Order order=new Order();
+    	String checkInDate="2019-5-25";
+    	String checkOutDate="2019-5-26";
+		order.setCheckInDate(java.sql.Date.valueOf(checkInDate));
+		order.setCheckOutDate(java.sql.Date.valueOf(checkOutDate));
+		order.setHouseId(1);
+    	//h.queryHouseByDate(order);
+    	
+    	
+    	
+    	
+    	
+    	
+    	
        /* String cnStr = "北京";
         System.out.println(getCnASCII(cnStr));*/
     	
@@ -60,6 +83,7 @@ public class Test {
           string lng = jo["result"]["location"]["lng"].ToString();
           string lat = jo["result"]["location"]["lat"].ToString();
           Response.Write(lng + "|" + lat);*/
+    	
     }
     /**
      * 得到 全拼

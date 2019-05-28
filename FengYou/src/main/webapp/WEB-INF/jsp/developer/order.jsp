@@ -17,9 +17,11 @@
 <meta name="keywords" content="国内酒店, 国内酒店查询,国内酒店预订" />
 <meta name="description"
 	content="国内酒店预订:风游旅行网为您提供国内酒店查询、查询以及国际航班预订等服务,在风游旅行网您可以享受到最低折扣的特价机票,高品质的预订服务，为您查询、选择、预订国内酒店提供最方便和快捷的服务！" />
-
 <script type="text/javascript"
 	src="${pageContext.request.contextPath }/statics/js/jquery1.8.3.min.js"></script>
+<script type="text/javascript"
+	src="http://api.map.baidu.com/api?v=2.0&ak=Z60o25qSRChjRBuFMBO5T705Bbv53cbC"></script>
+
 
 <link rel="stylesheet" rev="stylesheet"
 	href='${pageContext.request.contextPath }/statics/css/order/new2015.min.css'
@@ -104,12 +106,7 @@
 							<li class="w295"><span class="c999">其他：</span> <em
 								id="othernotes">${house.contentFive }</em></li>
 						</ul>
-						<div class="roominfo_arr">
-							<div class="amount-sum">
-								<a href="javascript:void(0)" id="hotelRoomInfoDiv">收起房型信息</a><i
-									id="hotelRoomInfoDivI" class="ui_icons ui-icon-less"></i>
-							</div>
-						</div>
+
 						<span id="hotelRoomInfoShowpmessage" message="展示房型信息"><span
 							id="hotelRoomInfoHidepmessage" message="收起房型信息"></span></span>
 					</div>
@@ -132,7 +129,7 @@
 						<dl class="date_modify clearfix">
 							<dt class="lh-20">入离日期</dt>
 							<dd>
-								<b>${checkInDate}</b> <span class="t12 c999"></span> 到 <b>${checkOutDate}</b>
+								<b >${checkInDate}</b> <span class="t12 c999"></span> 到 <b>${checkOutDate}</b>
 								<span class="t12 c999"></span> <em class="t12">共${day}晚</em>
 							</dd>
 						</dl>
@@ -140,10 +137,10 @@
 							<dt>房间数量</dt>
 							<dd>
 								<span class="num-stock"> <a href="javascript:void(0);"
-									class="btn-reduce" name="btnReduce" onclick="delIntoPerson()">-</a> <input type="text"
-									readonly="readonly" class="buy-num" value="1" id="rdoRoomNum1" />
-									<a href="javascript:void(0);" class="btn-add" name="btnAdd" onclick="addIntoPerson()">+</a>
-									间
+									class="btn-reduce" name="btnReduce" onclick="delIntoPerson()">-</a>
+									<input type="text" readonly="readonly" class="buy-num"
+									value="1" id="rdoRoomNum1" /> <a href="javascript:void(0);"
+									class="btn-add" name="btnAdd" onclick="addIntoPerson()">+</a> 间
 								</span>
 								<div id="numLimitError" style="display: none"></div>
 								<div id="tenUpError" style="display: none">
@@ -158,8 +155,8 @@
 							<dt class="total_modify_tit">房费总计</dt>
 							<dd class="total_modify_mn">
 								<span class="t18 cf55 bd_dotted" id="spOrderTotalPrice">&yen;${house.housePrice *day}</span>
-								<span class='t12 c999 pl5' id="dvCouponInfoSmall"></span>
-								<span id="price" style="display: none;">${house.housePrice *day}</span>
+								<span class='t12 c999 pl5' id="dvCouponInfoSmall"></span> <span
+									id="price" style="display: none;">${house.housePrice *day}</span>
 							</dd>
 						</dl>
 
@@ -276,7 +273,7 @@
 								<input class="input_txt w280" type="text" id="inContactEmail" />
 							</dd>
 						</dl>
-						
+
 					</div>
 					<div class="line-ds"></div>
 					<div class="redBugTip booking_sinf ">
@@ -590,22 +587,22 @@
 								</div>
 								<div class="price-sum">
 									<p>
-										<span class="txt t14 fw600" id="daliyPriceTotalText">在线支付j金额</span>
+										<span class="txt t14 fw600" id="daliyPriceTotalText">在线支付金额</span>
 										<span class="price t18 cf55 bd_dotted" id="daliyPriceTotal">&yen;${house.housePrice * day }</span>
 										<span class="baoxian" id="daliyPriceTotalInsurance">（含￥0保险）</span>
 									</p>
-								
+
 									<p id="daliyPriceOtherAboutTotalP" style="display: none;">
 										<span class="txt">约合：</span> <span class="price t16"
 											id="daliyPriceOtherAboutTotal"></span>
 									</p>
-								
+
 									<span id="dailyPriceDetailShowpmessage" message="显示明细"><span
 										id="dailyPriceDetailHidepmessage" message="收起明细"></span></span>
 								</div>
 							</div>
 						</div>
-												
+
 						<form id="submitForm"></form>
 						<div id="dvSubmitLoading" style="display: none;">
 							<div class="mt20 mb20 tc t14">
@@ -620,38 +617,110 @@
 		</div>
 	</div>
 
-
+	<form id="orderFrom" action="subOrder" method="post" style="display: none;">
+			<input id="realstore" name="realstore" value="${real.store }"> 
+			<input id="userNames" name="userNames"> 
+			<input id="checkInDate" name="checkInDate" value="${checkInDate }"> 
+			<input id="checkOutDate" name="checkOutDate" value="${checkOutDate }"> 
+			<input id="houseId" name="houseId" value="${house.houseId }">
+			<input id="place" name="place"> 
+			<input id="payAmount" name="payAmount"> 
+			<input id="houseCount" name="houseCount">
+			<input id="email" name="email">
+			<input id="phone" name="phone"> 
+			<input id="day" name="day" value="${day }"> 
+	</form>
+	<div id="allmap"></div>
 	<script type="text/javascript">
 		var intoPerson = '<dl class="clearfix user" ><dt>入住人<span class="cf55">*</span></dt><dd><input class="input_txt w280 mr5 c999 userName" type="text" data-id="0" data-handle="person" value="入住人姓名，每间房只需填一位" maxlength="20" data-seq="1">  <div class="usererror"></div>     <div style="display:none;z-index: 99;" class="loginWrap" data-handle="customerView"></div></dd></dl>';
+		// 定位当前位置
+		var map = new BMap.Map("allmap");
 		$(function() {
-			//id="dlRoomId0"
 			
 		})
-		
+		$("#btnSubmitOrder").click(
+				function() {
+					var userNames="";
+					for (var i = 0; i < $(".userName").size(); i++) {
+						var u = $(".userName").eq(i);
+						if(i!=$(".userName").size()-1){
+							userNames=userNames+u.val()+",";
+						}else{
+							userNames=userNames+u.val();
+						}
+					}
+					var price = $("#price").html()
+					$("#userNames").val(userNames);
+					$("#payAmount").val(parseFloat(price)* parseFloat($("#rdoRoomNum1").val()));
+					$("#houseCount").val(parseFloat($("#rdoRoomNum1").val()));
+					$("#email").val($("#inContactEmail").val());
+					$("#phone").val($("#inContactPhone").val());
+					var geolocation = new BMap.Geolocation();
+					geolocation.getCurrentPosition(
+							function(r) {
+								if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+									var mk = new BMap.Marker(r.point);
+									map.addOverlay(mk);
+									map.panTo(r.point);
+									var point = new BMap.Point(r.point.lng,
+											r.point.lat);
+									var gc = new BMap.Geocoder();
+									gc.getLocation(point, function(rs) {
+										var addComp = rs.addressComponents;
+										alert(addComp.province + ", "
+												+ addComp.city + ", "
+												+ addComp.district + ", "
+												+ addComp.street + ", "
+												+ addComp.streetNumber);
+										$("#place").val(addComp.city);
+										$("#orderFrom").submit();
+									});
+								} else {
+									alert('failed' + this.getStatus());
+								}
+							}, {
+								enableHighAccuracy : true
+							})
+				})
+
 		function addIntoPerson() {
+			var realstore =$("#realstore").val();
+			if(parseInt($("#rdoRoomNum1").val())==parseInt(realstore)){
+				alert("已达房间数量")
+				return;
+			}
 			$("#dlRoomId0").after(intoPerson)
-			$("#rdoRoomNum1").val(parseInt($("#rdoRoomNum1").val())+1)
-			var price=$("#price").html()
-			$("#spOrderTotalPrice").html("￥"+ parseFloat(price)*parseFloat($("#rdoRoomNum1").val())+".0")
-			$("#spCreditAmt").html("￥<span>"+parseFloat(price)*parseFloat($("#rdoRoomNum1").val())+".0"+"</span>")
-			$("#daliyPriceTotal").html("￥"+parseFloat(price)*parseFloat($("#rdoRoomNum1").val()))
+			$("#rdoRoomNum1").val(parseInt($("#rdoRoomNum1").val()) + 1)
+			var price = $("#price").html()
+			$("#spOrderTotalPrice").html(
+					"￥" + parseFloat(price)
+							* parseFloat($("#rdoRoomNum1").val()) + ".0")
+			$("#spCreditAmt").html(
+					"￥<span>" + parseFloat(price)
+							* parseFloat($("#rdoRoomNum1").val()) + ".0"
+							+ "</span>")
+			$("#daliyPriceTotal").html(
+					"￥" + parseFloat(price)
+							* parseFloat($("#rdoRoomNum1").val()))
 		}
 		function delIntoPerson() {
-			if(parseInt($("#rdoRoomNum1").val())>1){
-				$(".user").eq(parseInt($("#rdoRoomNum1").val())-1).remove()
-				$("#rdoRoomNum1").val(parseInt($("#rdoRoomNum1").val())-1)
-				var price=$("#price").html()
-				$("#spOrderTotalPrice").html("￥"+parseFloat(price)*parseFloat($("#rdoRoomNum1").val())+".0")
-				$("#spCreditAmt").html("￥<span>"+parseFloat(price)*parseFloat($("#rdoRoomNum1").val())+".0"+"</span>")
-				$("#daliyPriceTotal").html("￥"+parseFloat(price)*parseFloat($("#rdoRoomNum1").val()))
+			if (parseInt($("#rdoRoomNum1").val()) > 1) {
+				$(".user").eq(parseInt($("#rdoRoomNum1").val()) - 1).remove()
+				$("#rdoRoomNum1").val(parseInt($("#rdoRoomNum1").val()) - 1)
+				var price = $("#price").html()
+				$("#spOrderTotalPrice").html(
+						"￥" + parseFloat(price)
+								* parseFloat($("#rdoRoomNum1").val()) + ".0")
+				$("#spCreditAmt").html(
+						"￥<span>" + parseFloat(price)
+								* parseFloat($("#rdoRoomNum1").val()) + ".0"
+								+ "</span>")
+				$("#daliyPriceTotal").html(
+						"￥" + parseFloat(price)
+								* parseFloat($("#rdoRoomNum1").val()))
 			}
-			
+
 		}
-		
-		
-		
-	
-	
 	</script>
 
 

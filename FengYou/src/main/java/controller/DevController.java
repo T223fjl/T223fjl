@@ -22,11 +22,14 @@ import pojo.House;
 import pojo.Itrip;
 import pojo.Level;
 import pojo.Order;
+import pojo.Realtimeinventory;
 import pojo.User;
 import service.DictionarydateService;
 import service.HotelService;
 import service.HouseService;
 import service.LevelService;
+import service.OrderService;
+import service.RealtimeinventoryService;
 import service.UserService;
 import util.ConvertJSONUtil;
 
@@ -43,20 +46,46 @@ public class DevController {
 	private DictionarydateService dictionarydateService;
 	@Autowired
 	private HouseService houseService;
-
+	@Autowired
+	private OrderService orderService;
+	@Autowired
+	private RealtimeinventoryService realtimeinventoryService;
+	
 	// 跳转前台订单查询页面
 	@RequestMapping("/toOrder")
-	public String order(String hotelId,String checkInDate,String checkOutDate, String day, Model model) {
+	public String order(String houseId,String checkInDate,String checkOutDate, String day, Model model) {
 		int hid=1;
-		if(hotelId!=null&&!"".equals(hotelId)){
-			hid=Integer.valueOf(hotelId);
+		if(houseId!=null&&!"".equals(houseId)){
+			hid=Integer.valueOf(houseId);
 		}
-//		SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd");
-//		Order order=new Order();
-//		order.setCheckInDate(java.sql.Date.valueOf(checkInDate));
-//		order.setCheckOutDate(java.sql.Date.valueOf(checkOutDate));
+		House h=null;
 		House house=houseService.qeuryHouseByHouseId(hid);
 		Hotel hotel =hotelService.getHotelById(house.getHotelId());
+		if(checkInDate!=null&&checkOutDate!=null){
+			List<Order> olist=orderService.queryOrderByHouseId(hid);
+			if(olist!=null&&olist.size()!=0){
+				Order order=new Order();
+				order.setCheckInDate(java.sql.Date.valueOf(checkInDate));
+				order.setCheckOutDate(java.sql.Date.valueOf(checkOutDate));
+				order.setHouseId(hid);
+				olist=orderService.queryOrderByDate(order);
+				
+				for (int i = 0; i < olist.size(); i++) {
+					if(olist.get(i).getHouseCount()>0){
+						h=new House();
+					}
+				}
+				if(h==null){
+					return "redirect:/toIndex3?hotelId="+hotel.getHotelId();
+				}
+			}
+			
+		}
+		Realtimeinventory real=new Realtimeinventory();
+		real.setHotelId(hid);
+		real.setHouseId(hotel.getHotelId());
+		real=realtimeinventoryService.queryRealtimeinventoryByHHid(real);
+		model.addAttribute("real", real);
 		model.addAttribute("checkInDate", checkInDate);
 		model.addAttribute("checkOutDate", checkOutDate);
 		model.addAttribute("house", house);
@@ -195,7 +224,7 @@ public class DevController {
 				}
 			}
 		}
-		if (price == null || "0".equals(price)) {
+		if ("0".equals(price)) {
 			CurPrice = new Dictionarydate();
 			CurPrice.setInfo(smallPrice + "-" + bigPrice);
 		}

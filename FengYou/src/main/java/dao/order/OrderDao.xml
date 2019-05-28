@@ -6,5 +6,36 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="dao.order.OrderDao">
 	
 	
+	<select id="queryOrderByDate" resultType="Order" parameterType="Order">
+				<![CDATA[
+				SELECT * FROM  `order` o 
+				where o.houseId=#{houseId} and 
+				(o.checkOutDate<#{checkInDate} or o.checkInDate>#{checkOutDate})
+		]]>
+	</select>
 	
+	
+	<select id="getOrderNew" resultType="Order">
+	select * from `order` order by id desc limit 1 
+	</select>
+	
+	<select id="getIntoNew" resultType="Intoinfo" >
+	select * from `Intoinfo` order by id desc limit 1 
+	</select>
+	
+	<insert id="addIntoinfo" parameterType="Intoinfo">
+	INSERT INTO `test`.`intoinfo` (`userNames`, `phone`, `email`) VALUES ( #{userNames}, #{phone}, #{email});
+	</insert>
+	
+	<select id="queryOrderByHouseId" resultType="House">
+	select * from `order`
+		where houseId=#{houseId}
+	</select>
+
+ 	<insert id="addOrder" parameterType="Order" > 
+	INSERT INTO `test`.`order` ( `orderNo`, `hotelId`, `houseId`, `houseCount`, `checkInDate`, `checkOutDate`, `orderStatus`, `payAmount`, `payType`, `place`, `userId`, `intoInfoId`, `remarks`) VALUES 
+	( #{orderNo}, #{hotelId}, #{houseId}, #{houseCount}, 
+	#{checkInDate}, #{checkOutDate}, #{orderStatus}, #{payAmount},
+	 #{payType}, #{place}, #{userId}, #{intoInfoId}, #{remarks});
+	</insert> 
 </mapper>

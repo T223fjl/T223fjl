@@ -412,8 +412,8 @@
 											data-mark="img_${ hotel.hotelId}"
 											onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-f-pic.jpg'"
 											src="http://m.elongstatic.com/static/webapp/pc_static/common/pic/loading180_130.gif"
-											data-src="${pageContext.request.contextPath }/${hotel.fileUrl }"
-											big-src="${pageContext.request.contextPath }/${hotel.fileUrl }"
+											data-src="${pageContext.request.contextPath }${hotel.fileUrl }"
+											big-src="${pageContext.request.contextPath }${hotel.fileUrl }"
 											alt="${hotel.hotelName }" width="180" height="130" />
 										</a>
 										
@@ -798,6 +798,7 @@
 			var price = $("#price").val();
 			if (price != '' && price != null)  {
 				if(price!=0){
+					alert(price)
 					$("#curPrice").addClass("on")
 					var html = '<i>您已选择：</i><a title="清空条件" onclick="clearCondition()" href="javascript:void();">清空条件</a><span title="删除此条件" data-type="'
 							+ $("#curPrice").attr("data-type")
@@ -814,6 +815,7 @@
 						$(".cond-list").html(html)
 					}
 				}else{
+					alert(price)
 					var d = '<i>您已选择：</i><a title="清空条件" onclick="clearCondition()" href="javascript:void();">清空条件</a><span title="删除此条件" data-type=price'
 						+ ' onclick="delCondition(this)" '
 						+ '"  data-high="'

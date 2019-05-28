@@ -10,11 +10,11 @@ public class Order {
 	private int houseId;// 房间id
 	private int houseCount;// 预订房间数量
 	private Date checkInDate;// 入住日期
-	private Date checkOutDate;// 退房日期
+	private Date checkOutDate;// 退房日期checkOutDate
 	private int orderStatus;// 订单状态
-	private int payAmount;// 支付金额
+	private double payAmount;// 支付金额
 	private int payType;// 支付类型
-	private int place;// 出发地
+	private String place;// 出发地
 	private int userId;// 用户外键
 	private int intoInfoId;// 入住信息外键
 	private int remarks;// 订单库存恢复状态
@@ -83,11 +83,11 @@ public class Order {
 		this.orderStatus = orderStatus;
 	}
 
-	public int getPayAmount() {
+	public double getPayAmount() {
 		return payAmount;
 	}
 
-	public void setPayAmount(int payAmount) {
+	public void setPayAmount(double payAmount) {
 		this.payAmount = payAmount;
 	}
 
@@ -99,11 +99,11 @@ public class Order {
 		this.payType = payType;
 	}
 
-	public int getPlace() {
+	public String getPlace() {
 		return place;
 	}
 
-	public void setPlace(int place) {
+	public void setPlace(String place) {
 		this.place = place;
 	}
 
