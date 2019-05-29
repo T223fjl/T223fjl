@@ -798,7 +798,6 @@
 			var price = $("#price").val();
 			if (price != '' && price != null)  {
 				if(price!=0){
-					alert(price)
 					$("#curPrice").addClass("on")
 					var html = '<i>您已选择：</i><a title="清空条件" onclick="clearCondition()" href="javascript:void();">清空条件</a><span title="删除此条件" data-type="'
 							+ $("#curPrice").attr("data-type")

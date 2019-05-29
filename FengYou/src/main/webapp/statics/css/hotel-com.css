@@ -1240,7 +1240,7 @@
 	padding: 0 1%
 }
 
-.icon_faci_wifi, .icon_faci_tcc, .icon_faci_jj, .icon_faci_ct,
+.icon_faci_WiFisw, .icon_faci_tcc, .icon_faci_jj, .icon_faci_ct,
 	.icon_faci_jsf, .icon_faci_yyc, .icon_faci_hys, .icon_faci_xljc,
 	.mvt_171218 .icon_add_coll, .mvt_171218 .on .icon_add_coll, .icon_coll,
 	.on .icon_coll, .mvt18131 .hrela_comt_total i {
@@ -1253,13 +1253,13 @@
 	margin-right: 5px
 }
 
-.icon_faci_wifi, .icon_faci_tcc, .icon_faci_jj, .icon_faci_ct,
+.icon_faci_WiFisw, .icon_faci_tcc, .icon_faci_jj, .icon_faci_ct,
 	.icon_faci_yyc, .icon_faci_hys, .icon_faci_jsf, .icon_faci_xljc {
 	background-size: 110px 90px;
 	height: 16px
 }
 
-.icon_faci_wifi {
+.icon_faci_WiFisw {
 	background-position: 0 -48px
 }
 
