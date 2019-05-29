@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="dao.realtimeinventory.RealtimeinventoryDao">
 	
 	
-	<select id="queryRealtimeinventoryNew">
+	<select id="queryRealtimeinventoryNew" resultType="Realtimeinventory">
 	select * from `realtimeinventory` order by id desc limit 1 
 	</select>
 	

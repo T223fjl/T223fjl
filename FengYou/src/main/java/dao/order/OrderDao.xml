@@ -6,9 +6,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="dao.order.OrderDao">
 	
 	<update id="updOrder"  parameterType="Order">
-		UPDATE `test`.`order` SET    `orderStatus`=#{orderStatus},  
+		UPDATE `test`.`order` SET    `orderStatus`=#{orderStatus}  
 		<if test="remarks!=null and remarks!='' and remarks!=0" >
-		`remarks`=#{remarks}
+		, `remarks`=#{remarks}
 		</if>
 		 WHERE (`id`=#{id});
 	</update>
@@ -16,8 +16,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="queryOrderByDate" resultType="Order" parameterType="Order">
 				<![CDATA[
 				SELECT * FROM  `order` o 
-				where o.houseId=#{houseId} and 
-				(o.checkOutDate<#{checkInDate} or o.checkInDate>#{checkOutDate})
+				where o.houseId=#{houseId} and  
+				((o.checkInDate>=#{checkInDate} and o.checkInDate<=#{checkOutDate}) or
+				(o.checkOutDate<=#{checkOutDate} and o.checkOutDate>=#{checkInDate})  )
 		]]>
 	</select>
 	

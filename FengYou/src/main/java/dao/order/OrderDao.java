@@ -16,13 +16,16 @@ public interface OrderDao {
 	 * @return
 	 */
 	public int addIntoinfo(Intoinfo Intoinfo);
-	
+	/**
+	 * 得到最新的订单
+	 * @return
+	 */
 	public Intoinfo getIntoNew();
 	
 	public Order getOrderNew();
 	
 	/**
-	 * 查询不在预定期间的订单
+	 * 查询在预定期间的订单
 	 * @param order
 	 * @return
 	 */

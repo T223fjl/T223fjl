@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.PrintWriter;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -53,7 +54,7 @@ public class DevController {
 	
 	// 跳转前台订单查询页面
 	@RequestMapping("/toOrder")
-	public String order(String houseId,String checkInDate,String checkOutDate, String day, Model model) {
+	public String order(String houseId,String checkInDate,String checkOutDate, String day, Model model) throws ParseException {
 		int hid=1;
 		if(houseId!=null&&!"".equals(houseId)){
 			hid=Integer.valueOf(houseId);
@@ -61,30 +62,44 @@ public class DevController {
 		House h=null;
 		House house=houseService.qeuryHouseByHouseId(hid);
 		Hotel hotel =hotelService.getHotelById(house.getHotelId());
+		Realtimeinventory real=new Realtimeinventory();
+		real.setHotelId(hid);
+		real.setHouseId(hotel.getHotelId());
+		real=realtimeinventoryService.queryRealtimeinventoryByHHid(real);
 		if(checkInDate!=null&&checkOutDate!=null){
 			List<Order> olist=orderService.queryOrderByHouseId(hid);
 			if(olist!=null&&olist.size()!=0){
-				Order order=new Order();
-				order.setCheckInDate(java.sql.Date.valueOf(checkInDate));
-				order.setCheckOutDate(java.sql.Date.valueOf(checkOutDate));
-				order.setHouseId(hid);
-				olist=orderService.queryOrderByDate(order);
+//				Order order=new Order();
+//				order.setCheckInDate(java.sql.Date.valueOf(checkInDate));
+//				order.setCheckOutDate(java.sql.Date.valueOf(checkOutDate));
+//				order.setHouseId(hid);
+//				olist=orderService.queryOrderByDate(order);
+				SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 				
-				for (int i = 0; i < olist.size(); i++) {
-					if(olist.get(i).getHouseCount()>0){
-						h=new House();
+				if (real == null) {
+					real = new Realtimeinventory();
+					real.setStore(10);
+					real.setHotelId(hid);
+					real.setHouseId(hotel.getHotelId());
+					real.setRecordDate(format.parse(format.format(new java.util.Date())));
+					real.setRecordStopDate(
+							format.parse(format.format(getNextDate(real.getRecordDate(), Integer.valueOf(day)))));
+					int re = realtimeinventoryService.addRealtimeinventory(real);
+					if (re > 0) {
+						real = realtimeinventoryService.queryRealtimeinventoryNew();
 					}
 				}
+				if(0<real.getStore()){
+					h=new House();
+				}
+			
 				if(h==null){
 					return "redirect:/toIndex3?hotelId="+hotel.getHotelId();
 				}
 			}
 			
 		}
-		Realtimeinventory real=new Realtimeinventory();
-		real.setHotelId(hid);
-		real.setHouseId(hotel.getHotelId());
-		real=realtimeinventoryService.queryRealtimeinventoryByHHid(real);
+		
 		model.addAttribute("real", real);
 		model.addAttribute("checkInDate", checkInDate);
 		model.addAttribute("checkOutDate", checkOutDate);
@@ -392,6 +407,16 @@ public class DevController {
 		out.print(ajax);
 		out.flush();
 		out.close();
+	}
+	public Date getNextDate(java.util.Date date2, int day) {
+		long addTime = 1; // 以1为乘以的基数
+		addTime *= day; // 1天以后 （如果是30天以后，则这里是30）
+		addTime *= 24; // 1天24小时
+		addTime *= 60; // 1小时60分钟
+		addTime *= 60; // 1分钟60秒
+		addTime *= 1000; // 1秒=1000毫秒 //用毫秒数构造新的日期
+		Date date = new Date(date2.getTime() + addTime);
+		return date; // 返回结果
 	}
 
 }

@@ -237,7 +237,7 @@
 							</dt>
 							<dd>
 								<input class="input_txt w280 mr5 c999 userName" type="text"
-									data-id="0" data-handle="person" value="入住人姓名，每间房只需填一位"
+									data-id="0" data-handle="person" placeholder="入住人姓名，每间房只需填一位"
 									maxlength="20" data-seq="1">
 								<div class="usererror"></div>
 								<div style="display: none; z-index: 99;" class="loginWrap"
@@ -258,7 +258,7 @@
 									</select>
 								</div>
 								<input class="input_txt" style="width: 153px;" type="text"
-									id="inContactPhone" maxlength="11" placeholder='您将收到确认短信' />
+									id="inContactPhone" maxlength="11" placeholder='' />
 								<div class="phoneerror"></div>
 								<br />
 							</dd>

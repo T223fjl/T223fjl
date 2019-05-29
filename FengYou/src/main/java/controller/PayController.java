@@ -126,13 +126,13 @@ public class PayController {
 		}
 		PrintWriter out = response.getWriter();
 
-		Order o = new Order();
+		Order o =orderService.getOrderNew();
 		o.setOrderStatus(1);
 		int r = orderService.updOrder(o);
 		if (signVerified) {
 			return "order3";
 		} else {
-			return "toIndex";
+			return "redirect:/toIndex";
 		}
 	}
 
@@ -146,7 +146,7 @@ public class PayController {
 		model.addAttribute("hotel", hotel);
 		return "developer/order2";
 	}
-
+	//
 	@RequestMapping("/subOrder")
 	public String subOrder(String houseId, String checkInDate, String checkOutDate, String email, String phone,
 			String userNames, String place, String payAmount, String houseCount, String day, Model model,
@@ -200,6 +200,7 @@ public class PayController {
 					r = realtimeinventoryService.queryRealtimeinventoryByHHid(r);
 					if (r == null) {
 						r = new Realtimeinventory();
+						r.setStore(10);
 						r.setHotelId(o.getHotelId());
 						r.setHouseId(o.getHouseId());
 						r.setRecordDate(format.parse(format.format(new java.util.Date())));
