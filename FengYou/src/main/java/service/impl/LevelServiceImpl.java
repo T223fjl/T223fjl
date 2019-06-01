@@ -45,8 +45,5 @@ public class LevelServiceImpl implements LevelService {
 		return levelDao.queryByName();
 	}
 	
-	public List<Hotel> query( String hotel){
-		return levelDao.query(hotel);
-	}
 	
 }

@@ -20,9 +20,9 @@ public class HotelServiceImpl implements HotelService {
 	private HotelDao hotelDao;
 
 	public List<Hotel> queryHotel(@Param("hotelRating") int hotelRating, @Param("level1") int level1,
-			@Param("level2") int level2, @Param("bigPrice") int bigPrice, @Param("smallPrice") int smallPrice,
+			@Param("level2") int level2,@Param("level3") int level3, @Param("bigPrice") int bigPrice, @Param("smallPrice") int smallPrice,
 			@Param("sort") String sort, @Param("desc") String desc) {
-		List<Hotel> queryHotel = hotelDao.queryHotel(hotelRating, level1, level2, bigPrice, smallPrice, sort, desc);
+		List<Hotel> queryHotel = hotelDao.queryHotel(hotelRating, level1, level2,level3, bigPrice, smallPrice, sort, desc);
 		for (int i = 0; i < queryHotel.size(); i++) {
 			queryHotel.get(i).setHotelServePy(PinYinUtil.getPinYinHeadChar(queryHotel.get(i).getHotelServe()));
 		}
@@ -30,12 +30,12 @@ public class HotelServiceImpl implements HotelService {
 	}
 
 	public PageInfo<Hotel> findHotelList(@Param("hotelRating") int hotelRating, @Param("level1") int level1,
-			@Param("level2") int level2, @Param("bigPrice") int bigPrice, @Param("smallPrice") int smallPrice,
+			@Param("level2") int level2, @Param("level3") int level3,@Param("bigPrice") int bigPrice, @Param("smallPrice") int smallPrice,
 			@Param("sort") String sort, @Param("desc") String desc, int page, int size) {
 
 		String orderBy = sort + " " + desc;
 		PageHelper.startPage(page, size, orderBy);
-		List<Hotel> users = queryHotel(hotelRating, level1, level2, bigPrice, smallPrice, sort, desc);
+		List<Hotel> users = queryHotel(hotelRating, level1, level2,level3, bigPrice, smallPrice, sort, desc);
 		PageInfo<Hotel> pageInfoUser = new PageInfo<>(users);
 		return pageInfoUser;
 	}
@@ -61,6 +61,11 @@ public class HotelServiceImpl implements HotelService {
 	@Override
 	public Hotel getHotelById(int hid) {
 		return hotelDao.getHotelById(hid);
+	}
+	
+
+	public List<Hotel> query( String hotel){
+		return hotelDao.query(hotel);
 	}
 
 }

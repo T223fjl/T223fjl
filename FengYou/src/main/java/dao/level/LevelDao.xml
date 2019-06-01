@@ -22,8 +22,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 	SELECT * FROM `level` WHERE `name` LIKE "%市" ORDER BY RAND() LIMIT 4; -->
 	</select>
 	
-	<select id="query" resultType="Hotel">
-	SELECT * FROM hotel WHERE level2=(SELECT id FROM `level` WHERE `name`=#{hotel});
-	</select>
+	
 	
 </mapper>

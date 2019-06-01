@@ -2,6 +2,7 @@
 	pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt"%> 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -129,7 +130,10 @@
 						<dl class="date_modify clearfix">
 							<dt class="lh-20">入离日期</dt>
 							<dd>
-								<b >${checkInDate}</b> <span class="t12 c999"></span> 到 <b>${checkOutDate}</b>
+								<b ><fmt:formatDate pattern="yyyy-MM-dd" value="${checkInDate}"></fmt:formatDate>
+								</b> <span class="t12 c999"></span> 到 <b>
+								<fmt:formatDate pattern="yyyy-MM-dd" value="${checkOutDate}"></fmt:formatDate>
+								</b>
 								<span class="t12 c999"></span> <em class="t12">共${day}晚</em>
 							</dd>
 						</dl>
@@ -236,7 +240,7 @@
 								入住人<span class="cf55">*</span>
 							</dt>
 							<dd>
-								<input class="input_txt w280 mr5 c999 userName" type="text"
+								<input class="input_txt w280 mr5 c999 userName" type="text" 
 									data-id="0" data-handle="person" placeholder="入住人姓名，每间房只需填一位"
 									maxlength="20" data-seq="1">
 								<div class="usererror"></div>
@@ -250,7 +254,7 @@
 							</dt>
 							<dd class="clearfix">
 								<div class="b_nums w122 mr5">
-									<select name="" id="selPhoneInden" style="height: 25px;">
+									<select name="selPhoneInden" id="selPhoneInden" style="height: 25px;">
 										<option value="">中国大陆(+86)</option>
 										<option value="852">中国香港(+852)</option>
 										<option value="853">中国澳门(+853)</option>
@@ -270,7 +274,7 @@
 								Email<span class="cf55" style="display: none;" id="emailRequire">*</span>
 							</dt>
 							<dd>
-								<input class="input_txt w280" type="text" id="inContactEmail" />
+								<input class="input_txt w280"  type="email" id="inContactEmail" />
 							</dd>
 						</dl>
 
@@ -287,24 +291,7 @@
 								</p></li>
 						</ul>
 					</div>
-					<div class="cancel-risk" method="insuranceWrap"
-						style="display: none">
-						<span class="s_title yahei">保险</span>
-						<div>
-							<input type="checkbox" id="insuranceSwitch" /> <span>我已阅读并同意购买
-								<span class="info">《风游国内预付酒店取消险》 <span class="info-fc">
-										<b>份数限额：每订单只能投保一份，不得重复投保</b> <b>保险金额：预先支付未使用且无法退回的房费总额的90%（保险订单）</b>
-										<b>保险费：订单预付总房费的5%（四舍五入取整到分，保险金额不包含使用优惠券抵扣的金额，以实际支付的金额计算）</b>
-								</span>
-							</span>
-							</span><b class="cf55" id="insurancePrice">￥0</b> <a class="see-det"
-								href="http://promotion.elong.com/hotel/cn/2015/insurance/index.html"
-								target="_blank">查看详情</a>
-						</div>
-						<p class="tip">
-							<span></span>因故无法入住，在理赔范围可获最高90%赔偿
-						</p>
-					</div>
+					
 					<div class="line-ds" method="insuranceWrap" style="display: none"></div>
 					<div class="booking_sinf mb18" id="invoicePart"
 						method="invoicePart">
@@ -323,245 +310,7 @@
 								<SPAN style="WIDTH: 85%; DISPLAY: inline-block; FLOAT: left">发票由风游公司开具，发票金额为现金支付金额（扣除礼品卡金额，立减金额等）；发票将会在您离店后寄出，普通快递，5日送达（遇节假日顺延）</SPAN>
 							</P>
 						</DIV>
-						<!-- cms end -->
-						<p id="invoiceIdentifyTip" class="text_idt text_idt1 mt10"
-							style="display: none">
-							<i class="icon_cancel_no mr5"></i><span>国家税务总局要求，2017年7月1日起，企业发票需带有纳税人识别号或统一社会信用代码，否则无法报销。如暂时忘记可先行预订酒店，后续补开发票即可。</span>
-						</p>
-						<div method="invoiceContent" class="receipt_edit mt10"
-							style="display: none">
-							<p class="invoice_type clearfix">
-								<span class="" method="invoiceTypedian" style="display: block"><b></b>电子普票</span>
-								<span class="" method="invoiceTypezhi"><b></b>纸质普票</span> <span
-									class="" method="invoiceTypezhuan"><b></b>纸质专票</span>
-							</p>
-							<dl class="clearfix" method="expressWayDl">
-								<dt>
-									邮寄方式<span class='cf55'>*</span>
-								</dt>
-								<dd class="clearfix">
-									<label class="cf55 fw700 mr40"> <input
-										name="expressWay" checked="true" method="expressWay"
-										class="mr10" type="radio" />￥10
-									</label> <label class="mr40"> <input name="expressWay"
-										method="expressWay" type="radio" disabled="disabled"
-										class="mr10" data-id="2" />白金卡免费
-									</label> <span class="cbbb" id="expressWayExplain1"><i
-										class="mr10 icon_cancel_no"></i>提供￥10快递费用定额发票，随酒店发票一并寄出</span> <span
-										class="cbbb" id="expressWayExplain2" style="display: none"><i
-										class="mr10 icon_cancel_no"></i>积分抵扣不提供快递费用定额发票</span>
-								</dd>
-							</dl>
-							<dl class="clearfix" id="titleTypeWrap">
-								<dt>
-									抬头类型 <span class='cf55'>*</span>
-								</dt>
-								<dd>
-									<span class="pr5"> <select id="titleType"
-										name="titleType" style="height: 25px;">
-											<option selected="selected" value="2">公司</option>
-											<option value="1">个人</option>
-											<option value="3">机关单位</option>
-									</select>
-									</span>
-								</dd>
-							</dl>
-							<dl class="clearfix">
-								<dt>
-									发票内容 <span class='cf55'>*</span>
-								</dt>
-								<dd>
-									<span class="pr5"> <select id="chkInvoiceType"
-										name="chkInvoiceType" style="height: 25px;">
-											<option selected="selected" value="代订房费">代订房费</option>
-											<option value="代订住宿费">代订住宿费</option>
-									</select>
-									</span>
-								</dd>
-							</dl>
-							<dl class="check_txt clearfix">
-								<dt>
-									发票抬头 <span class='cf55'>*</span>
-								</dt>
-								<dd method="titleInfo"></dd>
-							</dl>
-							<dl class="clearfix" style="display: none"
-								method="addNewTitleWrap">
-								<dt>&nbsp;&nbsp;</dt>
-								<dd>
-									<a method='addNewTitle' class='t12' href='javascript:void(0);'>
-										+ 输入发票抬头</a>
-								</dd>
-							</dl>
-							<dl method="invoiceIdentify" style="display: none"
-								class="clearfix">
-								<dt>
-									纳税人识别号 <span class="cf55">*</span>
-								</dt>
-								<dd class="taxNum">
-									<input id="invoiceIdentifyValue" type="text"
-										class="input_txt w398"><b id="invoiceIdentifyExplain">?</b>
-								</dd>
-							</dl>
-							<div class="pop_invoice" id="identifyExplain"
-								style="display: none">
-								<div class="red_first mb10">
-									<span class="pop_number">1、</span>
-									<p class="invoice-list">国家税务总局要求，2017年7月1日起，企业发票需带有纳税人识别号或统一社会信用代码，否则无法报销。</p>
-								</div>
-								<div class="mb10">
-									<span class="pop_number">2、</span>
-									<p class="invoice-list">如果您现在不知道企业纳税人识别号或统一社会信用代码，为确保您可以入住，可先行预订，后续补开发票。</p>
-								</div>
-								<div>
-									<span class="pop_number">3、</span>
-									<p class="invoice-list">纳税人识别号或统一社会信用代码，请向贵公司税务/财务部门询问。</p>
-								</div>
-							</div>
-							<div method="noHisZhuan" style="display: none">
-								<dl class="clearfix">
-									<dt>
-										纳税人识别号<span class='cf55'>*</span>
-									</dt>
-									<dd>
-										<input id="txtNoTaxpayer" type="text"
-											class="input_txt w398 c999" maxlength="18"
-											placeholder="税务登记证上的编号" value="税务登记证上的编号">
-									</dd>
-								</dl>
-								<dl class="clearfix">
-									<dt>
-										注册地址<span class='cf55'>*</span>
-									</dt>
-									<dd>
-										<input id="txtRegisteredAddress" type="text"
-											class="input_txt w398 c999" maxlength="100"
-											placeholder="营业执照上的登记地址" value="营业执照上的登记地址">
-									</dd>
-								</dl>
-								<dl class="add_w clearfix">
-									<dt>
-										公司电话<span class='cf55'>*</span>
-									</dt>
-									<dd>
-										<input id="txtPhoneCompany" type="text"
-											class="input_txt w398 c999" maxlength="100"
-											placeholder="有效公司电话" value="有效公司电话">
-									</dd>
-								</dl>
-								<dl class="clearfix">
-									<dt>
-										开户银行<span class='cf55'>*</span>
-									</dt>
-									<dd>
-										<input id="txtDepositBank" type="text"
-											class="input_txt w398 c999" maxlength="100"
-											placeholder="请与开户许可证保持一致" value="请与开户许可证保持一致">
-									</dd>
-								</dl>
-								<dl class="check_txt clearfix">
-									<dt>
-										银行账户<span class='cf55'>*</span>
-									</dt>
-									<dd>
-										<input id="txtBankAccount" type="text"
-											class="input_txt w398 c999" maxlength="100"
-											placeholder="请与开户许可证保持一致" value="请与开户许可证保持一致">
-									</dd>
-								</dl>
-							</div>
-							<div class="mt15 invoice-notebox">
-								<input type="checkbox" method="invoiceRemark" /><span
-									class='pl5'>发票备注（勾选此项会在真实发票的备注栏中显示酒店预订信息）</span>
-								<div class="invoice-note" method="invoiceRemarkContent"
-									style="display: none">
-									<p>
-										<span>酒店名称：</span> <em>郴州仙居岭·京伦酒店</em>
-									</p>
-									<p>
-										<span>入住日期：</span> <em>2019-05-24</em> <span>离店日期：</span> <em>2019-05-26</em>
-									</p>
-									<p>
-										<span>房间数：</span> <em id="invoiceRemarkRoomNum">1间</em>
-									</p>
-								</div>
-							</div>
-							<div method="line" class="line" style="display: none"></div>
-							<dl class="check_txt clearfix" method="address">
-								<dt>
-									寄送地址 <span class='cf55'>*</span>
-								</dt>
-								<dd method="addressInfo"></dd>
-							</dl>
-							<dl class="clearfix check_txt" style="display: none"
-								method="addNewAddressWrap">
-								<dt>&nbsp;&nbsp;</dt>
-								<dd>
-									<a method='addNewAddress' class='t12'
-										href='javascript:void(0);'> + 输入新地址</a>
-								</dd>
-							</dl>
-							<div method="noHisAaddress" style="display: none">
-								<dl class="clearfix">
-									<dt>
-										收件人 <span class='cf55'>*</span>
-									</dt>
-									<dd>
-										<input id="txtNameInput" type="text" class="input_txt w398">
-									</dd>
-								</dl>
-								<dl class="clearfix">
-									<dt>
-										联系方式 <span class='cf55'>*</span>
-									</dt>
-									<dd>
-										<input id="txtPhoneInput" type="text" class="input_txt w398">
-									</dd>
-								</dl>
-								<dl class="add_w clearfix">
-									<dt>
-										寄送地区<span class='cf55'>*</span>
-									</dt>
-									<dd>
-										<span class="pr5"> <select id="province"
-											name="province" style="height: 25px;"></select>
-										</span> <span>省</span> <span class="pr5"> <select id="city"
-											name="city" style="height: 25px;"></select>
-										</span> <span>市</span> <span class="pr5"> <select id="area"
-											name="area" style="height: 25px;"></select>
-										</span> <span>县/区</span>
-									</dd>
-								</dl>
-								<dl class="clearfix">
-									<dt>
-										详细地址 <span class='cf55'>*</span>
-									</dt>
-									<dd>
-										<input id="txtStreetInput" type="text" class="input_txt w398">
-									</dd>
-								</dl>
-								<dl class="check_txt clearfix">
-									<dt>
-										邮编 <span class='cf55'>*</span>
-									</dt>
-									<dd>
-										<input id="txtPostCodeInput" type="text"
-											class="input_txt w398">
-									</dd>
-								</dl>
-							</div>
-							<div method="invoiceDianPhoneWrap" style="display: none">
-								<dl class="clearfix check_txt">
-									<dt>
-										收票人手机 <span class='cf55'>*</span>
-									</dt>
-									<dd>
-										<input id="invoiceDianPhoneInput" type="text"
-											class="input_txt w398">
-									</dd>
-								</dl>
-							</div>
-						</div>
+						
 					</div>
 					<div class="clboth booking_sinf booking_sinf2">
 						<span class='s_title yahei'> 预订须知 </span>
@@ -620,8 +369,8 @@
 	<form id="orderFrom" action="subOrder" method="post" style="display: none;">
 			<input id="realstore" name="realstore" value="${real.store }"> 
 			<input id="userNames" name="userNames"> 
-			<input id="checkInDate" name="checkInDate" value="${checkInDate }"> 
-			<input id="checkOutDate" name="checkOutDate" value="${checkOutDate }"> 
+			<input id="checkInDate" name="checkInDate" value="${checkIn}"> 
+			<input id="checkOutDate" name="checkOutDate" value="${checkOut }"> 
 			<input id="houseId" name="houseId" value="${house.houseId }">
 			<input id="place" name="place"> 
 			<input id="payAmount" name="payAmount"> 
@@ -632,17 +381,37 @@
 	</form>
 	<div id="allmap"></div>
 	<script type="text/javascript">
-		var intoPerson = '<dl class="clearfix user" ><dt>入住人<span class="cf55">*</span></dt><dd><input class="input_txt w280 mr5 c999 userName" type="text" data-id="0" data-handle="person" value="入住人姓名，每间房只需填一位" maxlength="20" data-seq="1">  <div class="usererror"></div>     <div style="display:none;z-index: 99;" class="loginWrap" data-handle="customerView"></div></dd></dl>';
+		var intoPerson = '<dl class="clearfix user" ><dt>入住人<span class="cf55">*</span></dt><dd><input class="input_txt w280 mr5 c999 userName" type="text" data-id="0"  data-handle="person" placeholder="入住人姓名，每间房只需填一位" maxlength="20" data-seq="1">  <div class="usererror"></div>     <div style="display:none;z-index: 99;" class="loginWrap" data-handle="customerView"></div></dd></dl>';
 		// 定位当前位置
 		var map = new BMap.Map("allmap");
 		$(function() {
 			
 		})
+		var TEL_REGEXP = /^1([38][0-9]|4[579]|5[0-3,5-9]|6[6]|7[0135678]|9[89])\d{8}$/;
+
+		function validateTel (tel){
+		      if(TEL_REGEXP.test(tel)){
+		        return true;
+		      }
+		      return false;
+		}
+		$("#inContactPhone").blur(function () {
+			if(!validateTel($("#inContactPhone").val())){
+				alert("请输入正确的手机号")
+				$("#inContactPhone").focus();
+			}
+		})
+		
+		
 		$("#btnSubmitOrder").click(
 				function() {
 					var userNames="";
 					for (var i = 0; i < $(".userName").size(); i++) {
 						var u = $(".userName").eq(i);
+						if(u.val()==null ||u.val()==''){
+							alert("姓名不能为空")
+							return;
+						}
 						if(i!=$(".userName").size()-1){
 							userNames=userNames+u.val()+",";
 						}else{
@@ -654,7 +423,7 @@
 					$("#payAmount").val(parseFloat(price)* parseFloat($("#rdoRoomNum1").val()));
 					$("#houseCount").val(parseFloat($("#rdoRoomNum1").val()));
 					$("#email").val($("#inContactEmail").val());
-					$("#phone").val($("#inContactPhone").val());
+					$("#phone").val($("#selPhoneInden").val()+$("#inContactPhone").val());
 					var geolocation = new BMap.Geolocation();
 					geolocation.getCurrentPosition(
 							function(r) {

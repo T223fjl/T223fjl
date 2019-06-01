@@ -15,6 +15,6 @@ public interface LevelService {
 	
 	public List<Level> queryByName();
 	
-	public List<Hotel> query( String hotel);
+	
 	
 }

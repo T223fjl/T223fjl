@@ -82,12 +82,7 @@
 						</ul>
 					</div>-->
 					<input type="text" placeholder="酒店所在省份" class="hr_search_input" id="hr_search_input" data-url="" />
-					<!--
-					<div class="hr_search_sokey">
-						<a title="香港" href="http://www.mangocity.com/lvyou/xianggang/"> 香港 </a>
-						<a title="泰国" href="http://www.mangocity.com/lvyou/taiguo/"> 泰国 </a>
-						<a title="三亚" href="http://www.mangocity.com/lvyou/sanya/"> 三亚 </a>
-					</div>-->
+				
 					<a id="hr_search_btn" class="hr_search_btn" href="javascript:void(0)">搜索</a>
 				</div>
 			</div>
@@ -153,9 +148,15 @@
 			</ul>
 			<!-- ===================== header end ===================== -->
 			<script type="text/javascript">
-				var _LANGUAGE = "";
-				var _JSPATH = "";
+					
+				
+			
+			
 			</script>
+			
+			<form style="display: none;" action="" method="post">
+				<input type="text" id="orderId" name="orderId" value="${order.id }" >
+			</form>
 			<div class="right_F">
 				<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 				<html xmlns="http://www.w3.org/1999/xhtml">
@@ -371,219 +372,7 @@
 					</script>
 					<div id="m_adsContainer" style="display: none"></div>
 
-					<script type="text/javascript">
-						var HotelController = {
-							cardNo: "240000000737318535",
-							sixMonthPageCount: 0,
-							twelveMonthPageCount: 0,
-							totalPageCount: 0,
-							isEn: false,
-							reserNo: 0,
-							couponMaxAccount: 0,
-							inDate: null,
-							expressWay: 0,
-							invoicePay: 0,
-							outDate: null,
-							today: null,
-							updateOrderHotelUrl: "http:\/\/hotel.elong.com\/updateOrder_0.html",
-							customerName: null,
-							infactCustomerList: null,
-							checkInCustomerList: null,
-							isHasNationality: false,
-							invoiceInfoViewModel: null,
-							orderCash: null,
-							isForeignOrder: false,
-							currentHost: "http:\/\/hotel.elong.com:80",
-							myHost: "http:\/\/hotel.elong.com:80",
-							currentLanguage: null,
-							payProviderId: 0,
-							isShowFeedBackBtn: false,
-							ReserNo: 0,
-							paymentFlowType: 0,
-							hotelOrderListUrl: null,
-							hotelOrderDetailUrl: null,
-							hotelUrl: null,
-							isLogin: true,
-							enabledYesterday: false,
-							serverTime: "2019-05-09",
-							serverTimeHour: "2019-05-09 16:56:40",
-							webHotelTjObj: null,
-							needElongRisk: true,
-							needCtripRisk: true,
-							showLoginOption: true,
-							showCommentInfo: true,
-							commonStaticPath: "\/\/file.40017.cn\/js40017cnproduct\/cn\/h\/elong_pc\/common\/",
-							hotelStaticJsPath: "http:\/\/m.elongstatic.com\/static\/webapp\/pc_static\/pc_hotel\/2018\/09\/11\/views\/",
-							hotelStaticCssPath: "http:\/\/m.elongstatic.com\/static\/webapp\/pc_static\/pc_hotel\/2018\/09\/11\/css\/",
-							hotelStaticJsPathTmapi: "\/\/file.40017.cn\/js40017cnproduct\/cn\/h\/elong_pc\/201957_14.10fe5\/",
-							hotelStaticCssPathTmapi: "\/\/file.40017.cn\/css40017cnproduct\/cn\/h\/elong_pc\/201956_18.1d48c\/",
-							appUrlVersion: "20190507162918",
-							urlVersion: null,
-							jsPath: "..\/..\/..\/web\/hotel\/views\/",
-							basePath: "",
-							curDate: "2019-05-09",
-							fastConfirm: function(orderNo, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/fastconfirm", {
-									orderNo: orderNo
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							getOrderProgress: function(orderNo, autograph, isfromDetail, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/getorderprogress", {
-									orderNo: orderNo,
-									autograph: autograph,
-									isfromDetail: isfromDetail
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							confirmHotelOrderCancel: function(ReserNo, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/confirmhotelordercancel", {
-									ReserNo: ReserNo
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							ajaxHotelOrderCancelSuccess: function(ReserNo, CancelReasonCode, CancelReason, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/ajaxhotelordercancelsuccess", {
-									ReserNo: ReserNo,
-									CancelReasonCode: CancelReasonCode,
-									CancelReason: CancelReason
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							pagedOrderList: function(pageIndex, pageSize, sign, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/pagedorderlist", {
-									pageIndex: pageIndex,
-									pageSize: pageSize,
-									sign: sign
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							cancelOrder: function(reserNo, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/cancelorder", {
-									reserNo: reserNo
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							collectCancelReason: function(reserNo, cancelReasonCode, cancelReason, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/colletcancelreason", {
-									reserNo: reserNo,
-									cancelReasonCode: cancelReasonCode,
-									cancelReason: cancelReason
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							buildUserCache: function(reserNo, userStartDate, userEndDate, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/buildusercache", {
-									reserNo: reserNo,
-									userStartDate: userStartDate,
-									userEndDate: userEndDate
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							getOrderOperation: function(reserNo, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/getorderoperation", {
-									reserNo: reserNo
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							getPaymentProviderId: function(reserNo, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/getpaymentproviderid", {
-									reserNo: reserNo
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							getGoToPayInfo: function(ReserNo, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/getgotopayinfo", {
-									ReserNo: ReserNo
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							getGoToPayInvoice: function(ReserNo, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/getgotopayinvoice", {
-									ReserNo: ReserNo
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							resendConfirmation: function(reserNo, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/resendconfirmation", {
-									reserNo: reserNo
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							changeCustomInfo: function(tel, email, name, reserNo, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/changecustominfo", {
-									tel: tel,
-									email: email,
-									name: name,
-									reserNo: reserNo
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							wordValidate: function(customName, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/wordvalidate", {
-									customName: customName
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							updateGuests: function(reserNo, model, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/updateguests", {
-									reserNo: reserNo,
-									model: model
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							getInvoiceHistory: function(iCount, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/getinvoicehistory", {
-									iCount: iCount
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							getInvoiceAddress: function(iCount, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/getinvoiceaddress", {
-									iCount: iCount
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							saveInvoiceInfo: function(invoiceInfoVM, opertionType, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/saveinvoiceinfo", {
-									invoiceInfoVM: invoiceInfoVM,
-									opertionType: opertionType
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							getInvoiceDeliveryInfo: function(reserNo, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/getinvoicedeliveryinfo", {
-									reserNo: reserNo
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							saveFeedbackInfo: function(feedbackInfo, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/savefeedbackinfo", {
-									feedbackInfo: feedbackInfo
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							hotelAgreed: function(orderNo, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/hotelagreed", {
-									orderNo: orderNo
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							feedBackMessage: function(orderNo, notes, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/feedbackmessage", {
-									orderNo: orderNo,
-									notes: notes
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							claimInsurance: function(orderNo, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/insuranceclaim", {
-									orderNo: orderNo
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							getApplyCashBackStatus: function(orderNo, isCanComment, isCanFeedBack, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/getapplycashbackstatus", {
-									orderNo: orderNo,
-									isCanComment: isCanComment,
-									isCanFeedBack: isCanFeedBack
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							applyCashBack: function(orderNo, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/applycashback", {
-									orderNo: orderNo
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							append: function(amount, reserNo, couponMax, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/append", {
-									amount: amount,
-									reserNo: reserNo,
-									couponMax: couponMax
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							}
-						};
-						var pageController = HotelController;
-					</script>
-					<script type="text/javascript">
-						var hotelPageController = pageController;
-						var tj_jsStartTime = new Date().getTime();
-					</script>
+				
 					<script data-main='${pageContext.request.contextPath }/statics/js/huiyuan/hotelorderlist.js' src='${pageContext.request.contextPath }/statics/js/huiyuan/require.js'></script>
 
 					<!-- 可信网站LOGO安装开始 -->
@@ -621,16 +410,7 @@
 		</script>
 		<div id="m_adsContainer" style="display: none"></div>
 
-		<script type="text/javascript">
-			var WebPartController = {
-				staticUrl: "http:\/\/www.elongstatic.com\/web\/bus",
-				urlVersion: "201401010800",
-				jsPath: "..\/..\/..\/passport\/js\/",
-				basePath: "",
-				curDate: "2019-05-09"
-			};
-			var pageController = WebPartController;
-		</script>
+		
 		<script type="text/javascript" src="${pageContext.request.contextPath }/statics/js/register_cn/require2.1.16.min.js" data-main="/js/webpart/webpart.js"></script>
 
 		<!-- ===================== footer 20190403 start ===================== -->

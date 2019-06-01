@@ -7,6 +7,9 @@ import pojo.Intoinfo;
 import pojo.Order;
 
 public interface OrderDao {
+	
+	public Order queryOrderById(int id);
+	
 	public List<Order> queryOrderByHouseId(int hid);
 	
 	public int addOrder(Order order);

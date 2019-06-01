@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -18,26 +19,23 @@
 	content="查询到北京酒店可预订的共有13888家.北京唐拉雅秀酒店;北京大方饭店;北京海淀花园饭店;飘HOME连锁酒店(北京西客站店);北京华泰饭店;北京美第奇精选酒店;北京福建大厦;飘HOME连锁酒店(北京王府井步行街店);速8酒店(北京南沙窝桥302医院店);北京外国专家大厦;北京京伦饭店;北京丽景湾国际酒店;北京万寿庄宾馆;北京歌华开元大酒店;北京东航大酒店;北京长白山国际酒店;北京金枫酒店;瑞尔威连锁饭店(北京西客站店);北方朗悦酒店(北京金融街店);北京渔阳饭店." />
 <meta name="mobile-agent"
 	content="format=html5;url=http://m.elong.com/hotel/beijing/">
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Z60o25qSRChjRBuFMBO5T705Bbv53cbC"></script>
+<script type="text/javascript"
+	src="http://api.map.baidu.com/api?v=2.0&ak=Z60o25qSRChjRBuFMBO5T705Bbv53cbC"></script>
 
-	<style type="text/css">
-	
-	.slip{
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		overflow: hidden;
-		height: 23px
-	}
-	</style>
-
+<style type="text/css">
+.slip {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	height: 23px
+}
+</style>
 <link rel="stylesheet" rev="stylesheet"
 	href='${pageContext.request.contextPath }/statics/css/new2015.min.css'
 	type="text/css" media="all" />
-
 <link rel="stylesheet" type="text/css"
 	href='${pageContext.request.contextPath }/statics/css/hotel-com.css'
 	media="all" />
-
 <link rel="stylesheet" type="text/css"
 	href='${pageContext.request.contextPath }/statics/css/list-2015.css' />
 <link rel="stylesheet" type="text/css"
@@ -47,101 +45,37 @@
 </head>
 <body>
 	<!-- ===================== header 2019-04-29 start ===================== -->
-	
+	<%@ include file="header.jsp"%>
 	<div id="header" class="header" v='20190429' b='myelong' g='1' lg='t'>
 		<link rel="stylesheet" type="text/css"
 			href="${pageContext.request.contextPath }/statics/css/header.css">
-			<header class="com-header"> <!-- 导航条开始 -->
-			<div class="header-bar">
-				<div class="header-content clearfix">
-					<nav class="header-bar-nav">
-					<ul class="header-nav-first">
-						<c:if test="${loginUser.name !=null }">
-							<li class="has-child"><a href="nofollow" href=""
-								target="_blank">您好：${loginUser.name }</a></li>
-							<li class="has-child"><a href="UserInfo?id=${loginUser.id}">会员中心</a></li>
-						</c:if>
-						<c:if test="${loginUser.name==null }">
-							<li class="has-child"><a
-								href="http://localhost:8080/FengYou/login.jsp" target="_blank">请登录</a></li>
-							<li class="has-child"><a href="" target="_blank">快速注册</a></li>
-							<li class="has-child"><a
-								href="http://localhost:8080/FengYou/login.jsp">会员中心</a></li>
-						</c:if>
-						<li class="has-child"><a href="" target="_blank">帮助中心</a></li>
-					</ul>
-					</nav>
-				</div>
-			</div>
-			<!-- 导航条结束 --> </header>
-			<!--导航-->
-			<div class="nav_box" style="margin-top: 0px;">
-				<div id="nav" class="response_wrap3"
-					style="width: 1200px; margin-left: 170px;">
-					<ul class="link" id="channelMenu">
-						<li sid="28632"><a href="toIndex" title="风游旅行网" id="nav_home">首页</a></li>
-						<li sid="28639"><a title="酒店预订"
-							href="http://hotel.elong.com/" id="nav_hotels">国内酒店</a></li>
-						<li style="display: none;" sid="41493"><a
-							href="http://tuan.elong.com/" id="A1" title="酒店团购">团购</a></li>
-						<li sid="28642"><a href="http://ihotel.elong.com/"
-							id="nav_hotelsw" title="国际•港澳台酒店">国际•港澳台酒店<span
-								class="icon_coupon"></span></a></li>
-						<li style="display: none;" sid=""><a
-							href="http://jia.elong.com/" id="nav_apartment" title="短租公寓">短租公寓<span
-								class="icon_apart"
-								style="background: url(http://img.elongstatic.com/index/fixed/icon2015-0.png) no-repeat; background-position: -307px 0;"></span></a>
-						</li>
-						<li style="display: none;" sid="52756"><a
-							href="http://qiang.elong.com" title="限时抢">限时抢</a>
-							<li sid="28640"><a href="http://flight.elong.com/"
-								title="机票预订">国内•国际机票<span
-									style="left: 60px; background-position: -589px -29px;"
-									class="icon_coupon"></span></a></li>
-							<li sid="28640"><a
-								href="http://m.elongstatic.com/static/webapp/train/website/railway.html"
-								title="火车票">火车票</a></li>
-							<li sid="28640"><a href="http://bus.elong.com/ly"
-								title="汽车票">汽车票</a></li>
-							<li><a href="http://trip.elong.com/" title="旅游指南">旅游指南</a></li>
-							<li><a href="https://tmc.ly.com/" title="商旅" target='_blank'>商旅</a></li>
-					</ul>
-					<div class="account" method="dvAccount"
-						style="margin-right: 190px;">
-						<div class="log_on" id="user_display_div">
-							<span> <a id="n_user_name"
-								href="http://my.elong.com/index_cn.html?rnd=20190515101336"
-								title="">欢迎您：${loginUser.name}</a>
-							</span>
-						</div>
-						<!--弹出-->
-						<div class="drop_box_log pt" style="display: none"
-							id="div_user_center">
-							<ul class='clx'>
-								<li class='icon_d1'><b></b><a
-									href="http://my.elong.com/hotel/MyHotelOrderList_cn.html?rnd=20190515101336"
-									rel="nofollow">酒店订单</a></li>
-								<li class='icon_d7'><b></b><a
-									href="http://my.elong.com/hotel/hotelfavlist_cn.html?rnd=20190515101336"
-									rel="nofollow">酒店收藏</a></li>
-								<li class='icon_d8'><b style='display: none;'
-									id='comment_notice'>9</b> <a id="n_comment_a"
-									href="http://my.elong.com/Hotel/reviewedorderlist_cn.html?rnd=20190515101336"
-									rel="nofollow">我的点评</a></li>
-								<li class='icon_d9'><b></b><a
-									href="http://my.elong.com/me_personalcenter_cn" rel="nofollow">个人设置</a></li>
-							</ul>
-							<div class="quit_log">
-								<a href="http://my.elong.com/logout_cn.html" rel="nofollow">退出登录</a>
-							</div>
-						</div>
-						<!--弹出 end-->
-					</div>
-				</div>
+		<!--导航-->
+		<div class="nav_box" style="margin-top: 0px;">
+			<div id="nav" class="response_wrap3"
+				style="width: 1200px; margin-left: 170px;">
+				<ul class="link" id="channelMenu">
+					<li><a href="toIndex" title="风游旅行网" id="nav_home">首页</a></li>
+					<li><a title="酒店预订" href="#" id="nav_hotels">国内酒店</a></li>
+					<li><a href="#" id="nav_hotelsw" title="国际•港澳台酒店">国际•港澳台酒店<span
+							class="icon_coupon"></span></a></li>
+					<li style="display: none;"><a href="#" id="nav_apartment"
+						title="短租公寓">短租公寓<span class="icon_apart"
+							style="background: url(http://img.elongstatic.com/index/fixed/icon2015-0.png) no-repeat; background-position: -307px 0;"></span></a>
+					</li>
+					<li style="display: none;"><a href="http://qiang.elong.com"
+						title="限时抢">限时抢</a>
+					<li><a href="" title="机票预订">国内•国际机票<span
+							style="left: 60px; background-position: -589px -29px;"
+							class="icon_coupon"></span></a></li>
+					<li><a href="#" title="火车票">火车票</a></li>
+					<li><a href="#" title="汽车票">汽车票</a></li>
+					<li><a href="#" title="旅游指南">旅游指南</a></li>
+					<li><a href="#" title="商旅" target='_blank'>商旅</a></li>
+				</ul>
+				<!-- 弹出 end -->
 			</div>
 		</div>
-	
-<%-- 	<%@ include file="header.jsp"%> --%>
+	</div>
 	<!-- ===================== header end ===================== -->
 	<!-- 新版图层start -->
 	<div id="newBox" class="newBox"></div>
@@ -152,437 +86,457 @@
 
 	<div class="cont_box response_wrap3" method="listPageContainer">
 		<div class="mt10 mb10"></div>
-		<form  id="form01" action="toIndexTwo" method="post">
-		<div method="searchBox" id="m_searchBox" data-id="mainSearchBox"
-			class="search_box mb5">
+		<form id="form01" action="toIndexTwo" method="post">
+			<div method="searchBox" id="m_searchBox" data-id="mainSearchBox"
+				class="search_box mb5">
 
-			<div data-wrap="cityWrap" class="search_item search_termini">
-				<label> <span>目的地</span> <input 
-					 type="input" class="input_f16 input_termini"
-					value="${CurCity.name }" cityname="${CurCity.name }" citynameen="beijing" citynamecn="${CurCity.name }" name="destination"
-					cityid="${CurCity.id }" />
-				</label>
-			</div>
-			
-			<div class="search_item search_keywords" >
-				<label> <span>关键词</span> <input 
-					 type="input" class="input_f16 input_termini" name="keywords"
-					placeholder="如位置\酒店名" />
-				</label>
-			</div>
-			<div class="btn_search_w1 right" >
-				<span class="icon_search mr10"></span>搜索
-			</div>
-			</form>
-		</div>
-		
-		<script type="text/javascript"
+				<div data-wrap="cityWrap" class="search_item search_termini">
+					<label> <span>目的地</span> <input type="input"
+						class="input_f16 input_termini" value="${CurCity.name }"
+						cityname="${CurCity.name }" citynameen="beijing"
+						citynamecn="${CurCity.name }" name="destination"
+						cityid="${CurCity.id }" />
+					</label>
+				</div>
+
+				<div class="search_item search_keywords">
+					<label> <span>关键词</span> <input type="input"
+						class="input_f16 input_termini" name="keywords"
+						placeholder="如位置\酒店名" />
+					</label>
+				</div>
+				<div class="btn_search_w1 right">
+					<span class="icon_search mr10"></span>搜索
+				</div>
+		</form>
+	</div>
+
+	<script type="text/javascript"
 		src="${pageContext.request.contextPath }/statics/js/jquery1.8.3.min.js"></script>
-		
-		
-		<script type="text/javascript">
-			$(function () {
-				$(".btn_search_w1").click(function () {
-					$("#form01").submit();
-				})
+
+
+	<script type="text/javascript">
+		$(function() {
+			$(".btn_search_w1").click(function() {
+				$("#form01").submit();
 			})
-		</script>
-		
-		<div class="filter_box beee mb20 z10" id="filterZone"
-			method="filterZone">
+		})
+	</script>
 
+	<div class="filter_box beee mb20 z10" id="filterZone"
+		method="filterZone">
 
-
-			<!-- price start -->
-			<div class="filter_item" method="priceFilterPart" data-multi="1">
-				<div class="filter_title">
-					<span class="icon_filter_pri"></span>价格区间<i class="b-line"></i>
-				</div>
-				<div class="filter_option_box">
-					<div class="filter_option">
-						<div data-type="price" data-id="-1" data-low="0" data-high="0"
-							class="filter_unlimited filter_unlimited_on">不限</div>
-						<div class="filter_custom">
-							<span class="mr5">自定义</span> <span class="mr5"><input
-								 type="number" class="input_f12" value="${fn:split(CurPrice.info, '-')[0]}"  /></span> <span
-								class="mr5 cddd">—</span> <span class="mr5"><input
-								 type="number" class="input_f12" value="${fn:split(CurPrice.info, '-')[1]}" /></span> <span onclick="customizePrice()"
-								  class="btn_filter_sure">确定</span>
-						</div>
-						<ul class="filter_cb_list filter_cb_list1">
-							<c:forEach var="price" items="${ prices}" step="1"
-								varStatus="statu">
-								<li data-type="price" class="condition"
-									data-id="${price.dictCode }"
-									data-low="${fn:split(price.info, '-')[0]}"
-									data-high="${fn:split(price.info, '-')[1]}"
-									data-name="${price.info}"
-									<c:if test="${CurPrice.dictCode==price.dictCode }"> id="curPrice" </c:if>>
-									<i class="icon_radio1"></i><span>${price.info}元</span><input
-									type="radio" />
-								</li>
-							</c:forEach>
-						</ul>
-					</div>
-				</div>
+		<!-- price start -->
+		<div class="filter_item" method="priceFilterPart" data-multi="1">
+			<div class="filter_title">
+				<span class="icon_filter_pri"></span>价格区间<i class="b-line"></i>
 			</div>
-			<!-- price end -->
-			<!-- star start -->
-			<div class="filter_item" method="starFilterPart" data-multi="1">
-				<div class="filter_title">
-					<span class="icon_filter_star"></span>星级<i class="b-line"></i>
-				</div>
-				<div class="filter_option_box">
-					<div class="filter_option">
-						<div data-type="star" data-id="-1"
-							class="filter_unlimited filter_unlimited_on">不限</div>
-						<ul class="filter_cb_list">
-							<c:forEach var="star" items="${stars}" step="1" varStatus="statu">
-								<li data-type="star" class="condition"
-									data-id="${star.dictCode }" data-name="${star.info }"
-									data-selected="0"
-									<c:if test="${CurStar.dictCode==star.dictCode }"> id="curStar" </c:if>>
-									<i class="icon_radio1"></i> <span>${star.info }</span><input
-									type="checkbox" />
-								</li>
-							</c:forEach>
-						</ul>
-
+			<div class="filter_option_box">
+				<div class="filter_option">
+					<div data-type="price" data-id="-1" data-low="0" data-high="0"
+						class="filter_unlimited filter_unlimited_on">不限</div>
+					<div class="filter_custom">
+						<span class="mr5">自定义</span> <span class="mr5"><input
+							type="number" class="input_f12"
+							value="${fn:split(CurPrice.info, '-')[0]}" /></span> <span
+							class="mr5 cddd">—</span> <span class="mr5"><input
+							type="number" class="input_f12"
+							value="${fn:split(CurPrice.info, '-')[1]}" /></span> <span
+							onclick="customizePrice()" class="btn_filter_sure">确定</span>
 					</div>
-				</div>
-			</div>
-			<!-- star end -->
-
-			<!--1010.人数 1011.设施 1015.主题 -->
-			<div class="filter_item " method="themeFilterPart" data-type="city"
-				data-typeId="1015" data-multi="1">
-				<div class="filter_title">
-					<span class="icon_filter_theme"></span>酒店类型<i class="b-line"></i>
-				</div>
-				<div class="filter_option_box">
-					<div class="filter_option">
-						<div data-type="type" data-id="-1"
-							class="filter_unlimited filter_unlimited_on">不限</div>
-						<ul class="filter_cb_list" >
-							<c:forEach var="type" items="${ types}" step="1"
-								varStatus="statu">
-								<li class="condition" data-type="type"
-									data-typeId="${type.type }" data-id="${type.id }"
-									data-name="${type.name }" data-selected="0"
-									<c:if test="${CurType.id==type.id }"> id="curType" </c:if>>
-									<i class="icon_radio1"></i> <span>${type.name }</span><input
-									type="checkbox" />
-								</li>
-							</c:forEach>
-
-						</ul>
-						<div class="icon_hl_more1 filter_more" 
-							data-showAll="0"></div>
-					</div>
-				</div>
-			</div>
-			<!--1010.人数 1011.设施 1015.主题 3.品牌 -->
-			<div class="filter_item " method="facilityFilterPart"
-				data-typeId="1011" data-multi="1">
-				<div class="filter_title">
-					<span class="icon_filter_serv"></span>所在城市<i class="b-line"></i>
-				</div>
-				<div class="filter_option_box">
-					<div class="filter_option slip">
-						<div data-type="city" data-id="-1"
-							class="filter_unlimited filter_unlimited_on">不限</div>
-						<ul class="filter_cb_list" method="facilityList">
-							<c:forEach var="city" items="${ citys}" step="1"
-								varStatus="statu">
-								<li method="facility" data-type="city" class="condition"
-									data-typeId="${city.type }" data-id="${city.id }"
-									data-name="${city.name }" data-selected="0"
-									<c:if test="${CurCity.id==city.id}"> id="curCity" </c:if>>
-									<i class="icon_radio1"></i> <span>${city.name }</span><input
-									type="checkbox" />
-								</li>
-							</c:forEach>
-
-
-						</ul>
-						<div class="icon_hl_more1 filter_more" method="showAllOps"
-							data-showAll="0"></div>
-					</div>
-				</div>
-			</div>
-			<!-- discount start -->
-
-			<!-- discount end -->
-		</div>
-
-		<div class="mb10" id="conditionZone" method="conditionZone">
-			<div class="cont_total left">
-				<span class="t24 mr5" id="hotelCount">${sum }</span>家酒店满足条件
-			</div>
-			<div class="cond-list"></div>
-		</div>
-		<c:if test="${loginUser==null }">
-				<!--引导登陆start-->
-				<div class="list_login">
-					<!-- <img src="${pageContext.request.contextPath }/statics/picture/login_detail.png"/  method="userLogin"> -->
-					<!-- <p>去登录</p> -->
-					<a href="${pageContext.request.contextPath }/login.jsp"><img
-						src="${pageContext.request.contextPath }/statics/picture/bg1.png"/></a>
-				</div>
-				<!--引导登陆end-->
-				</c:if>
-		<div class="hlist_box">
-			<!--左侧内容 start-->
-			<div class="hlist_main left">
-
-				<div class="h_booked_wrap mt10 mb10" id="bookingRateZone"
-					style="display: none">
-					<div class="bcde h_booked">
-						<div class="percentBox mr15">
-							<div id="percentBackground" class="percentBox_bg"></div>
-							<div id="bookPercent"></div>
-							<div class="pertxt">
-								<div method="percent" class="pertxt_num"></div>
-								<div class="pertxt_com">已订完</div>
-							</div>
-						</div>
-						<span class="t16 yahei c37d" method="bookingRateText"></span> <i
-							class="icon_close_bkd" method="close"></i>
-					</div>
-				</div>
-
-				<div class="h_sort bcde mb10" id="sortZone" method="sortZone">
-					<ul class="sort_list left">
-						<li  title="默认排序"
-							class="on" data-default="1"data-sort="hotelId" data-dirc="asc"  >智能排序</li>
-						<li  data-sort="Level1" data-dirc="asc"  title="综合排序">综合排序</li>
-
-						<li class="priceSort">
-							<p class="priceSortTitle">
-								<span>价格</span>
-							</p>
-							<div class="priceSortDiv">
-								<p data-sort="hotelPrice" data-dirc="asc" title="点击按价格由低到高排序"
-									data-title="价格 低 → 高">价格 低 → 高</p>
-								<p data-sort="hotelPrice" data-dirc="desc" title="点击按价格由高到低排序"
-									data-title="价格 高 → 低">价格 高 → 低</p>
-							</div>
-						</li>
-						<li class="priceSort">
-							<p class="priceSortTitle">
-								<span>评分</span>
-							</p>
-							<div class="priceSortDiv">
-								<p data-sort="hotelRatings" data-dirc="asc" title="点击按评分由低到高排序"
-									data-title="评分 低 → 高">评分 低 → 高</p>
-								<p data-sort="hotelRatings" data-dirc="desc" title="点击按评分由高到低排序"
-									data-title="评分 高 → 低">评分 高 → 低</p>
-							</div>
-						</li>
-					</ul>
-					<div class="sort_filter right">
-						<ul class="sort_fil_list" style="height: 38px; width: 252px">
-						</ul>
-						<ul class="sort_back_tit none">
-							<li method="couponPrice" data-selected="1" class="sort_back_l on"
-								data-default="1">返后价</li>
-							<li method="couponPrice" data-selected="" class="sort_back_r ">返前价</li>
-						</ul>
-					</div>
-				</div>
-
-
-				<div class="h_sale mb10" id="hotSaleContainer"
-					method="hotSaleContainer" style="display: none"></div>
-
-				<div id="hotelContainer">
-					<div class="h_list" method="hotelList">
-
-
-						<c:forEach var="hotel" items="${ hotels.list}" step="1"
+					<ul class="filter_cb_list filter_cb_list1">
+						<c:forEach var="price" items="${ prices}" step="1"
 							varStatus="statu">
-							<div class="h_item mvt_171218" id="hotel${ hotel.hotelId}" data-hotelAddress="${hotel.hotelAddress}"
-								method="hotelItem" data-hotelid="${hotel.hotelId}">
-								<div class="h_info">
-									<div class="h_info_pic"
-										data-mark="img_${ hotel.hotelId}_container" method="">
-										<a href="${pageContext.request.contextPath }/toIndex3?hotelId=${ hotel.hotelId}" target="_blank"> <img
-											class="bigImg" data-hotelid="${ hotel.hotelId}"
-											data-producttype="0" data-needdatacache="true"
-											data-mark="img_${ hotel.hotelId}"
-											onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-f-pic.jpg'"
-											src="http://m.elongstatic.com/static/webapp/pc_static/common/pic/loading180_130.gif"
-											data-src="${pageContext.request.contextPath }${hotel.fileUrl }"
-											big-src="${pageContext.request.contextPath }${hotel.fileUrl }"
-											alt="${hotel.hotelName }" width="180" height="130" />
-										</a>
-										
-									</div>
-									<div class="h_info_text">
-										<!---------------->
-										<div class="h_info_pri">
-											<p>
-												<a href="${pageContext.request.contextPath }/toIndex3?hotelId=${ hotel.hotelId}" target="_blank"> <span class="c666">&yen</span>
-													<span class="h_pri_num ">${hotel.hotelPrice }</span> <span
-													class="cf55">起</span>
-												</a>
-											</p>
-											<p class="intro_room" method="recommendRoom" title="热销房型推荐"
-												data-hotelid="${hotel.hotelId }" data-producttype="0"
-												data-needdatacache="true">
-												查看推荐房型<i></i>
-											</p>
-											<p class="mt5"></p>
-											<div class="to_detail">
-												<p class="lastt_book mt10"
-													id="recentOrder_${hotel.hotelId }"></p>
-												<a class="t14" href="toIndex3" target="_blank"> 查看详情 </a>
-											</div>
-										</div>
-										<!---------------->
-										<div class="h_info_comt">
-											<a href="/${hotel.hotelId }/#review" target="_blank"
-												class="h_comt_data"> <span method="review"
-												class="h_info_comt_bg"> <i class="t20 c37e">${hotel.hotelRatings }&nbsp;</i><i
-													class="t20">棒极了</i>
-											</span> <%-- <span class="c555 block mt5" data-score="${hotel.hotelRatings }">共<b>10025</b>条点评</span> --%>
-											</a>
-											<!-- <span class="block listTagItem">“出行方便”</span> -->
-											<!-- 收藏 -->
-											<div class="h_add_cc">
-											<c:set var="on"></c:set>
-												<c:forEach	items="${collections }" var="col">
-													<c:if test="${hotel.id==col.hotelById }">
-													<c:set var="on" value="on"></c:set>
-														<span class="add_collect on"	data-hotelid="${hotel.hotelId }"> 
-															<i class="icon_add_coll" ></i>
-															<span data-showname="favStatus"> 已收藏 </span>
-														</span>
-													</c:if>
-													</c:forEach>
-													<c:if test="${on!='on' }">
-													<span class="add_collect "	data-hotelid="${hotel.hotelId }"> 
-															<i class="icon_add_coll" ></i>
-															<span data-showname="favStatus">收藏 </span>
-														</span>
-													</c:if>
-											</div>
+							<li data-type="price" class="condition"
+								data-id="${price.dictCode }"
+								data-low="${fn:split(price.info, '-')[0]}"
+								data-high="${fn:split(price.info, '-')[1]}"
+								data-name="${price.info}"
+								<c:if test="${CurPrice.dictCode==price.dictCode }"> id="curPrice" </c:if>>
+								<i class="icon_radio1"></i><span>${price.info}元</span><input
+								type="radio" />
+							</li>
+						</c:forEach>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- price end -->
+		<!-- star start -->
+		<div class="filter_item" method="starFilterPart" data-multi="1">
+			<div class="filter_title">
+				<span class="icon_filter_star"></span>星级<i class="b-line"></i>
+			</div>
+			<div class="filter_option_box">
+				<div class="filter_option">
+					<div data-type="star" data-id="-1"
+						class="filter_unlimited filter_unlimited_on">不限</div>
+					<ul class="filter_cb_list">
+						<c:forEach var="star" items="${stars}" step="1" varStatus="statu">
+							<li data-type="star" class="condition"
+								data-id="${star.dictCode }" data-name="${star.info }"
+								data-selected="0"
+								<c:if test="${CurStar.dictCode==star.dictCode }"> id="curStar" </c:if>>
+								<i class="icon_radio1"></i> <span>${star.info }</span><input
+								type="checkbox" />
+							</li>
+						</c:forEach>
+					</ul>
 
-										</div>
-										<!---------------->
-										<div class="h_info_base">
-											<p class="h_info_b1">
-												<a href="toIndex3" target="_blank"
-													title="${hotel.hotelName }"><span class="icon_nmb"> ${statu.count }</span><span
-													class="info_cn">${hotel.hotelName }</span></a> <i
-													class="icon_crown_new" title="战略合作酒店，为风游会员提供优质服务及优惠房价"></i>
-												<b class="icon_stars icon_star${hotel.hotelRating }" title="国家旅游局评定星级为${hotel.hotelRating }星级"></b>
-											</p>
-											<p class="h_info_b2">
-												${fn:split(hotel.hotelAddress, " ")[2]} <span
-													class="info_b2_l"> <span class="l1"
-													title="${hotel.hotelName }地图" method="showMap"
-													data-lng="116.3497983" data-lat="39.91372316"
-													data-mapType="0" data-hotelid="${hotel.hotelId }"
-													data-hotelname="${hotel.hotelName }" data-hotelrank="1"
-													data-hoteladdress="${fn:split(hotel.hotelAddress, ' ')[2]} ">
-														<i class="icon_land_map"></i>地图
-												</span>
-												</span>
-											</p>
-											<div class="hotel_inf_sale clearfix mt5">
-												<p class="h_comt_other">
-													<c:forEach var="service"
-														items="${fn:split(hotel.hotelServePy, ',')}" step="1"
-														varStatus="statu">
+				</div>
+			</div>
+		</div>
+		<!-- star end -->
 
-														<span class="icon_faci_${service}" title="${service}"></span>
-													</c:forEach>
-
-
-												</p>
-											</div>
-										</div>
-										<!---------------->
-									</div>
-									<!--------------------------Map Start--------------------------------------->
-									<!-- 地图 start-->
-									<div id="h_map_wrap${hotel.hotelId }"
-										style="display: none; height: 410px;"></div>
-									<!-- 地图 end-->
-									<div id="soso_map_wrap${hotel.hotelId }" style="display: none"
-										class='mt10'></div>
-
-								</div>
-							</div>
-
+		<!--1010.人数 1011.设施 1015.主题 -->
+		<div class="filter_item " method="themeFilterPart" data-type="city"
+			data-typeId="1015" data-multi="1">
+			<div class="filter_title">
+				<span class="icon_filter_theme"></span>酒店类型<i class="b-line"></i>
+			</div>
+			<div class="filter_option_box">
+				<div class="filter_option">
+					<div data-type="type" data-id="-1"
+						class="filter_unlimited filter_unlimited_on">不限</div>
+					<ul class="filter_cb_list">
+						<c:forEach var="type" items="${ types}" step="1" varStatus="statu">
+							<li class="condition" data-type="type"
+								data-typeId="${type.type }" data-id="${type.id }"
+								data-name="${type.name }" data-selected="0"
+								<c:if test="${CurType.id==type.id }"> id="curType" </c:if>>
+								<i class="icon_radio1"></i> <span>${type.name }</span><input
+								type="checkbox" />
+							</li>
+						</c:forEach>
+					</ul>
+					<div class="icon_hl_more1 filter_more" data-showAll="0"></div>
+				</div>
+			</div>
+		</div>
+		<!--1010.人数 1011.设施 1015.主题 3.品牌 -->
+		<div class="filter_item " method="facilityFilterPart"
+			data-typeId="1011" data-multi="1">
+			<div class="filter_title">
+				<span class="icon_filter_serv"></span>所在省份<i class="b-line"></i>
+			</div>
+			<div class="filter_option_box">
+				<div class="filter_option slip">
+					<div data-type="city" data-id="-1"
+						class="filter_unlimited filter_unlimited_on">不限</div>
+					<ul class="filter_cb_list" method="facilityList">
+						<c:forEach var="city" items="${ citys}" step="1" varStatus="statu">
+							<li method="facility" data-type="city" class="condition"
+								data-typeId="${city.type }" data-id="${city.id }"
+								data-name="${city.name }" data-selected="0"
+								<c:if test="${CurCity.id==city.id}"> id="curCity" </c:if>>
+								<i class="icon_radio1"></i> <span>${city.name }</span><input
+								type="checkbox" />
+							</li>
 						</c:forEach>
 
 
-
-					</div>
-
-
+					</ul>
+					<div class="icon_hl_more1 filter_more" method="showAllOps"
+						data-showAll="0"></div>
 				</div>
-				<div id="pageContainer" class="paging1">
-					<input type="hidden" id="count" name="count" value="${count }"> 
-					<a  href="javascript:void(0)" class="page_back" 
-					 title="上一页">上一页</a>
-					<a  href="javascript:void(0)" title="第${curPage }页">第${curPage }页</a>
-					<a  href="javascript:void(0)" class="page_next" 
-					 title="下一页">下一页</a>
-				</div>
-		
-			
-		
 			</div>
-			<!-- 右侧内容 -->
-			<div id="rightSpanDiv">
-				<div class="hlist_sider right">
-					<div method="stayWhere" class="r_where mb10" style="display: none">
-						<i class="icon_where left"></i><i class="icon_sort_arrr4 right"></i>看看大家都住哪儿
+		</div>
+		
+		<div class="filter_item " method="facilityFilterPart"
+			data-typeId="1011" data-multi="1">
+			<div class="filter_title">
+				<span class="icon_filter_serv"></span>所在城市<i class="b-line"></i>
+			</div>
+			<div class="filter_option_box">
+				<div class="filter_option slip">
+					<div data-type="fully" data-id="-1"
+						class="filter_unlimited filter_unlimited_on">不限</div>
+					<ul class="filter_cb_list" method="facilityList">
+						<c:forEach var="fully" items="${fullys}" step="1" varStatus="statu" end="40">
+							<li method="facility" data-type="fully" class="condition"
+								data-typeId="${fully.type }" data-id="${fully.id }"
+								data-name="${fully.name }" data-selected="0"
+								<c:if test="${CurFully.id==fully.id}"> id="CurFully" </c:if>>
+								<i class="icon_radio1"></i> <span>${fully.name}</span><input
+								type="checkbox" />
+							</li>
+						</c:forEach>
+					</ul>
+					<div class="icon_hl_more1 filter_more" method="showAllOps"
+						data-showAll="0"></div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+	<div class="mb10" id="conditionZone" method="conditionZone">
+		<div class="cont_total left">
+			<span class="t24 mr5" id="hotelCount">${sum }</span>家酒店满足条件
+		</div>
+		<div class="cond-list"></div>
+	</div>
+	<c:if test="${loginUser==null }">
+		<!--引导登陆start-->
+		<div class="list_login">
+			<!-- <img src="${pageContext.request.contextPath }/statics/picture/login_detail.png"/  method="userLogin"> -->
+			<!-- <p>去登录</p> -->
+			<a href="${pageContext.request.contextPath }/login.jsp"><img
+				src="${pageContext.request.contextPath }/statics/picture/bg1.png" /></a>
+		</div>
+		<!--引导登陆end-->
+	</c:if>
+	<div class="hlist_box">
+		<!--左侧内容 start-->
+		<div class="hlist_main left">
+
+			<div class="h_booked_wrap mt10 mb10" id="bookingRateZone"
+				style="display: none">
+				<div class="bcde h_booked">
+					<div class="percentBox mr15">
+						<div id="percentBackground" class="percentBox_bg"></div>
+						<div id="bookPercent"></div>
+						<div class="pertxt">
+							<div method="percent" class="pertxt_num"></div>
+							<div class="pertxt_com">已订完</div>
+						</div>
 					</div>
-					<div id="floatRightDiv">
-						<div id="sidebarMap"
-							class="r_map bddd mb10 r_mapbox r_map_mvt1814">
-							<div class="map_tool bbddd">
-								<div method="bigMap" class="map_enter t14 left">
-									<b class="icon_seemap"></b> 查看大地图 <i
-										class="icon_sort_arrr3 ml5"></i>
+					<span class="t16 yahei c37d" method="bookingRateText"></span> <i
+						class="icon_close_bkd" method="close"></i>
+				</div>
+			</div>
+
+			<div class="h_sort bcde mb10" id="sortZone" method="sortZone">
+				<ul class="sort_list left">
+					<li title="默认排序" class="on" data-default="1" data-sort="hotelId"
+						data-dirc="asc">智能排序</li>
+					<li data-sort="Level1" data-dirc="asc" title="综合排序">综合排序</li>
+
+					<li class="priceSort">
+						<p class="priceSortTitle">
+							<span>价格</span>
+						</p>
+						<div class="priceSortDiv">
+							<p data-sort="hotelPrice" data-dirc="asc" title="点击按价格由低到高排序"
+								data-title="价格 低 → 高">价格 低 → 高</p>
+							<p data-sort="hotelPrice" data-dirc="desc" title="点击按价格由高到低排序"
+								data-title="价格 高 → 低">价格 高 → 低</p>
+						</div>
+					</li>
+					<li class="priceSort">
+						<p class="priceSortTitle">
+							<span>评分</span>
+						</p>
+						<div class="priceSortDiv">
+							<p data-sort="hotelRatings" data-dirc="asc" title="点击按评分由低到高排序"
+								data-title="评分 低 → 高">评分 低 → 高</p>
+							<p data-sort="hotelRatings" data-dirc="desc" title="点击按评分由高到低排序"
+								data-title="评分 高 → 低">评分 高 → 低</p>
+						</div>
+					</li>
+				</ul>
+				<div class="sort_filter right">
+					<ul class="sort_fil_list" style="height: 38px; width: 252px">
+					</ul>
+					<ul class="sort_back_tit none">
+						<li method="couponPrice" data-selected="1" class="sort_back_l on"
+							data-default="1">返后价</li>
+						<li method="couponPrice" data-selected="" class="sort_back_r ">返前价</li>
+					</ul>
+				</div>
+			</div>
+
+
+			<div class="h_sale mb10" id="hotSaleContainer"
+				method="hotSaleContainer" style="display: none"></div>
+
+			<div id="hotelContainer">
+				<div class="h_list" method="hotelList">
+
+
+					<c:forEach var="hotel" items="${ hotels.list}" step="1"
+						varStatus="statu">
+						<div class="h_item mvt_171218" id="hotel${ hotel.hotelId}"
+							data-hotelAddress="${hotel.hotelAddress}" method="hotelItem"
+							data-hotelid="${hotel.hotelId}">
+							<div class="h_info">
+								<div class="h_info_pic"
+									data-mark="img_${ hotel.hotelId}_container" method="">
+									<a
+										href="${pageContext.request.contextPath }/toIndex3?hotelId=${ hotel.hotelId}"
+										target="_blank"> <img class="bigImg"
+										data-hotelid="${ hotel.hotelId}" data-producttype="0"
+										data-needdatacache="true" data-mark="img_${ hotel.hotelId}"
+										onerror="this.src='${pageContext.request.contextPath }/statics/picture/no-f-pic.jpg'"
+										src="http://m.elongstatic.com/static/webapp/pc_static/common/pic/loading180_130.gif"
+										data-src="${pageContext.request.contextPath }${hotel.fileUrl }"
+										big-src="${pageContext.request.contextPath }${hotel.fileUrl }"
+										alt="${hotel.hotelName }" width="180" height="130" />
+									</a>
+
 								</div>
-								<div method="fixed" class="right mr15 on" data-selected="1"
-									data-enablefix="1">
-									<i class="icon_checkbox1"></i> 跟随浮动
+								<div class="h_info_text">
+									<!---------------->
+									<div class="h_info_pri">
+										<p>
+											<a
+												href="${pageContext.request.contextPath }/toIndex3?hotelId=${ hotel.hotelId}"
+												target="_blank"> <span class="c666">&yen</span> <span
+												class="h_pri_num ">${hotel.hotelPrice }</span> <span
+												class="cf55">起</span>
+											</a>
+										</p>
+										<p class="intro_room" method="recommendRoom" title="热销房型推荐"
+											data-hotelid="${hotel.hotelId }" data-producttype="0"
+											data-needdatacache="true">
+											查看推荐房型<i></i>
+										</p>
+										<p class="mt5"></p>
+										<div class="to_detail">
+											<p class="lastt_book mt10" id="recentOrder_${hotel.hotelId }"></p>
+											<a class="t14" href="toIndex3" target="_blank"> 查看详情 </a>
+										</div>
+									</div>
+									<!---------------->
+									<div class="h_info_comt">
+										<a href="/${hotel.hotelId }/#review" target="_blank"
+											class="h_comt_data"> <span method="review"
+											class="h_info_comt_bg"> <i class="t20 c37e">${hotel.hotelRatings }&nbsp;</i><i
+												class="t20">棒极了</i>
+										</span> <%-- <span class="c555 block mt5" data-score="${hotel.hotelRatings }">共<b>10025</b>条点评</span> --%>
+										</a>
+										<!-- <span class="block listTagItem">“出行方便”</span> -->
+										<!-- 收藏 -->
+										<div class="h_add_cc">
+											<c:set var="on"></c:set>
+											<c:forEach items="${collections }" var="col">
+												<c:if test="${hotel.id==col.hotelById }">
+													<c:set var="on" value="on"></c:set>
+													<span class="add_collect on"
+														data-hotelid="${hotel.hotelId }"> <i
+														class="icon_add_coll"></i> <span data-showname="favStatus">
+															已收藏 </span>
+													</span>
+												</c:if>
+											</c:forEach>
+											<c:if test="${on!='on' }">
+												<span class="add_collect " data-hotelid="${hotel.hotelId }">
+													<i class="icon_add_coll"></i> <span
+													data-showname="favStatus">收藏 </span>
+												</span>
+											</c:if>
+										</div>
+
+									</div>
+									<!---------------->
+									<div class="h_info_base">
+										<p class="h_info_b1">
+											<a href="toIndex3" target="_blank"
+												title="${hotel.hotelName }"><span class="icon_nmb">
+													${statu.count }</span><span class="info_cn">${hotel.hotelName }</span></a>
+											<i class="icon_crown_new" title="战略合作酒店，为风游会员提供优质服务及优惠房价"></i>
+											<b class="icon_stars icon_star${hotel.hotelRating }"
+												title="国家旅游局评定星级为${hotel.hotelRating }星级"></b>
+										</p>
+										<p class="h_info_b2">
+											${fn:split(hotel.hotelAddress, " ")[2]} <span
+												class="info_b2_l"> <span class="l1"
+												title="${hotel.hotelName }地图" method="showMap"
+												data-lng="116.3497983" data-lat="39.91372316"
+												data-mapType="0" data-hotelid="${hotel.hotelId }"
+												data-hotelname="${hotel.hotelName }" data-hotelrank="1"
+												data-hoteladdress="${fn:split(hotel.hotelAddress, ' ')[2]} ">
+													<i class="icon_land_map"></i>地图
+											</span>
+											</span>
+										</p>
+										<div class="hotel_inf_sale clearfix mt5">
+											<p class="h_comt_other">
+												<c:forEach var="service"
+													items="${fn:split(hotel.hotelServePy, ',')}" step="1"
+													varStatus="statu">
+													<span class="icon_faci_${service}" title="${service}"></span>
+												</c:forEach>
+											</p>
+										</div>
+									</div>
+									<!---------------->
 								</div>
-							</div>
-							<div id="rightMap" class="cc_loading">
-								<span class="loading_b"></span>
+								<!--------------------------Map Start--------------------------------------->
+								<!-- 地图 start-->
+								<div id="h_map_wrap${hotel.hotelId }"
+									style="display: none; height: 410px;"></div>
+								<!-- 地图 end-->
+								<div id="soso_map_wrap${hotel.hotelId }" style="display: none"
+									class='mt10'></div>
+
 							</div>
 						</div>
-						
-						
-						<div class="m_collect" id="favorAndSeenContainer">
-							<div class="m_cctit">
-								<ul class="m_ccnav clearfix">
-									<li class="pos" method="dataTab" data-name="seen"
-										data-status="0">历史浏览</li>
-									<li class="pos" method="dataTab" data-name="favor"
-										data-status="0">我的收藏</li>
-								</ul>
-								<span class="line" method="statusLine"></span>
+
+					</c:forEach>
+
+
+
+				</div>
+
+
+			</div>
+			<div id="pageContainer" class="paging1">
+				<input type="hidden" id="count" name="count" value="${count }">
+				<a href="javascript:void(0)" class="page_back" title="上一页">上一页</a> <a
+					href="javascript:void(0)" title="第${curPage }页">第${curPage }页</a> <a
+					href="javascript:void(0)" class="page_next" title="下一页">下一页</a>
+					共<a href="javascript:void(0)" >${count }</a>页
+			</div>
+
+
+
+		</div>
+		<!-- 右侧内容 -->
+		<div id="rightSpanDiv">
+			<div class="hlist_sider right">
+				<div method="stayWhere" class="r_where mb10" style="display: none">
+					<i class="icon_where left"></i><i class="icon_sort_arrr4 right"></i>看看大家都住哪儿
+				</div>
+				<div id="floatRightDiv">
+					<div id="sidebarMap" class="r_map bddd mb10 r_mapbox r_map_mvt1814">
+						<div class="map_tool bbddd">
+							<div method="bigMap" class="map_enter t14 left">
+								<b class="icon_seemap"></b> 查看大地图 <i class="icon_sort_arrr3 ml5"></i>
 							</div>
-							<div class="m_cclst" data-name="seen" style="display: none">
+							<div method="fixed" class="right mr15 on" data-selected="1"
+								data-enablefix="1">
+								<i class="icon_checkbox1"></i> 跟随浮动
 							</div>
-							<div class="m_cclst" data-name="favor" style="display: none">
-							</div>
+						</div>
+						<div id="rightMap" class="cc_loading">
+							<span class="loading_b"></span>
+						</div>
+					</div>
+
+
+					<div class="m_collect" id="favorAndSeenContainer">
+						<div class="m_cctit">
+							<ul class="m_ccnav clearfix">
+								<li class="pos" method="dataTab" data-name="seen"
+									data-status="0">历史浏览</li>
+								<li class="pos" method="dataTab" data-name="favor"
+									data-status="0">我的收藏</li>
+							</ul>
+							<span class="line" method="statusLine"></span>
+						</div>
+						<div class="m_cclst" data-name="seen" style="display: none">
+						</div>
+						<div class="m_cclst" data-name="favor" style="display: none">
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 
-		<div class="clx"></div>
-		<a name="mapstop" id="mapstop"></a>
+	<div class="clx"></div>
+	<a name="mapstop" id="mapstop"></a>
 	</div>
 	<div id="searchLoadingDiv" data-bindid="loadingContent"
 		style="display: none">
@@ -764,40 +718,46 @@
 	<!-- 可信网站LOGO安装开始 -->
 	<div style="display: none;">
 		<form id="form" action="toIndex2" method="post">
-			<input type="hidden" id="bigPrice" name="bigPrice" value="${fn:split(CurPrice.info, '-')[1]}"> 
-			<input type="hidden" id="smallPrice" name="smallPrice" value="${fn:split(CurPrice.info, '-')[0]}"> 
-			<input type="hidden" id="city" name="city" value="${CurCity.id }">
-			<input type="hidden" id="star" name="star" value="${CurStar.dictCode }">
-			<input type="hidden" id="type" name="type" value="${CurType.id }">
-			<input type="hidden" id="price" name="price"
-				value="${CurPrice.dictCode }">
-			<input type="hidden" id="curPage" name="curPage" value="${curPage }">
-			<input type="hidden" id="sort" name="sort" value="${sort }" >
-			<input type="hidden" id=desc name="desc" value="${desc }" >
+			<input type="hidden" id="bigPrice" name="bigPrice"
+				value="${fn:split(CurPrice.info, '-')[1]}"> <input
+				type="hidden" id="smallPrice" name="smallPrice"
+				value="${fn:split(CurPrice.info, '-')[0]}"> 
+				<input type="hidden" id="city" name="city" value="${CurCity.id }">
+				<input type="hidden" id="fully" name="fully" value="${CurFully.id }">
+			<input type="hidden" id="star" name="star"
+				value="${CurStar.dictCode }"> <input type="hidden" id="type"
+				name="type" value="${CurType.id }"> <input type="hidden"
+				id="price" name="price" value="${CurPrice.dictCode }"> <input
+				type="hidden" id="curPage" name="curPage" value="${curPage }">
+			<input type="hidden" id="sort" name="sort" value="${sort }">
+			<input type="hidden" id=desc name="desc" value="${desc }">
 		</form>
 	</div>
-	
+
 	<script type="text/javascript">
-	var map = new BMap.Map("sidebarMap");
+		var map = new BMap.Map("sidebarMap");
 		$(function() {
 			for (var i = 0; i < $(".bigImg").length; i++) {
 				$(".bigImg").eq(i).attr("src",
 						$(".bigImg").eq(i).attr("data-src"))
 			}
-			
+
 			// 百度地图API功能
-			
-			var point = new BMap.Point(116.331398,39.897445);
-			map.centerAndZoom(point,11);
-			map.enableScrollWheelZoom();    //启用滚轮放大缩小，默认禁用
-			map.enableContinuousZoom();    //启用地图惯性拖拽，默认禁用
-			map.addControl(new BMap.NavigationControl());  //添加默认缩放平移控件
+
+			var point = new BMap.Point(116.331398, 39.897445);
+			map.centerAndZoom(point, 11);
+			map.enableScrollWheelZoom(); //启用滚轮放大缩小，默认禁用
+			map.enableContinuousZoom(); //启用地图惯性拖拽，默认禁用
+			map.addControl(new BMap.NavigationControl()); //添加默认缩放平移控件
 			map.addControl(new BMap.OverviewMapControl()); //添加默认缩略地图控件
-			map.addControl(new BMap.OverviewMapControl({ isOpen: true, anchor: BMAP_ANCHOR_BOTTOM_RIGHT }));   //右下角，打开
-			
+			map.addControl(new BMap.OverviewMapControl({
+				isOpen : true,
+				anchor : BMAP_ANCHOR_BOTTOM_RIGHT
+			})); //右下角，打开
+
 			var price = $("#price").val();
-			if (price != '' && price != null)  {
-				if(price!=0){
+			if (price != '' && price != null) {
+				if (price != 0) {
 					$("#curPrice").addClass("on")
 					var html = '<i>您已选择：</i><a title="清空条件" onclick="clearCondition()" href="javascript:void();">清空条件</a><span title="删除此条件" data-type="'
 							+ $("#curPrice").attr("data-type")
@@ -813,27 +773,28 @@
 					if ($(".cond-list").html() == '') {
 						$(".cond-list").html(html)
 					}
-				}else{
+				} else {
 					alert(price)
 					var d = '<i>您已选择：</i><a title="清空条件" onclick="clearCondition()" href="javascript:void();">清空条件</a><span title="删除此条件" data-type=price'
-						+ ' onclick="delCondition(this)" '
-						+ '"  data-high="'
-						+ $(".input_f12").eq(1).val()
-						+ '"   data-low="'
-						+ $(".input_f12").eq(0).val()
-						+ '"   >'
-						+ $(".input_f12").eq(0).val()+"-"+$(".input_f12").eq(1).val()
-						+ '<i class="icon_close_hl"></i></span>';
+							+ ' onclick="delCondition(this)" '
+							+ '"  data-high="'
+							+ $(".input_f12").eq(1).val()
+							+ '"   data-low="'
+							+ $(".input_f12").eq(0).val()
+							+ '"   >'
+							+ $(".input_f12").eq(0).val()
+							+ "-"
+							+ $(".input_f12").eq(1).val()
+							+ '<i class="icon_close_hl"></i></span>';
 					if ($(".cond-list").html() == '') {
 						$(".cond-list").html(d)
 					}
 				}
-				
-				
+
 			}
 
 			var city = $("#city").val();
-			
+
 			if (city != '' && city != null) {
 				$("#curCity").addClass("on")
 				var html = '<i>您已选择：</i><a title="清空条件" onclick="clearCondition()" href="javascript:void();">清空条件</a><span title="删除此条件" data-type="'
@@ -866,8 +827,8 @@
 						$(".cond-list").html($(".cond-list").html() + html)
 					}
 				}
-				if($("#curCity").attr("data-name") != ""){
-					map.centerAndZoom($("#curCity").attr("data-name"),12);      // 用地址设置地图中心点
+				if ($("#curCity").attr("data-name") != "") {
+					map.centerAndZoom($("#curCity").attr("data-name"), 12); // 用地址设置地图中心点
 				}
 			}
 			var star = $("#star").val();
@@ -938,34 +899,69 @@
 					}
 				}
 			}
+			
+			var fully = $("#fully").val();
+			if (fully != '' && fully != null) {
+				$("#CurFully").addClass("on")
+				var html = '<i>您已选择：</i><a title="清空条件" onclick="clearCondition()" href="javascript:void();">清空条件</a><span title="删除此条件" data-type="'
+						+ $("#CurFully").attr("data-type")
+						+ '" onclick="delCondition(this)" data-id="'
+						+ $("#CurFully").attr("data-id")
+						+ '">'
+						+ $("#CurFully").attr("data-name")
+						+ '<i class="icon_close_hl"></i></span>';
+				if ($(".cond-list").html() == '') {
+					$(".cond-list").html(html)
+				} else {
+					html = '<span title="删除此条件" data-type="'
+							+ $("#CurFully").attr("data-type")
+							+ '" onclick="delCondition(this)" data-id="'
+							+ $("#CurFully").attr("data-id") + '">'
+							+ $("#CurFully").attr("data-name")
+							+ '<i class="icon_close_hl"></i></span>';
+
+					if ($("#CurFully").attr('data-type') == '') {
+						$(".cond-list").html($(".cond-list").html() + html)
+					} else {
+						for (var int = 0; int < $(".cond-list").find("span").length; int++) {
+							if ($("#CurFully").attr('data-type') == $(
+									".cond-list").find("span").eq(int).attr(
+									'data-type')) {
+								$(".cond-list").find("span").eq(int).remove();
+							}
+						}
+						$(".cond-list").html($(".cond-list").html() + html)
+					}
+				}
+			}
+			
 
 		})
 
-		
-		$(".h_item").mouseover(function () {
-			var city=$(this).attr("data-hotelAddress");
-			if(city != ""){
-				map.centerAndZoom(city,20);      // 用地址设置地图中心点
+		$(".h_item").mouseover(function() {
+			var city = $(this).attr("data-hotelAddress");
+			if (city != "") {
+				map.centerAndZoom(city, 20); // 用地址设置地图中心点
 			}
 		})
-		
-		
+
 		//input_f12" /></span> <span onclick="customizePrice()"
-		
+
 		function customizePrice() {
-			var lowPrice=$(".input_f12").eq(0).val();
-			var highPrice=$(".input_f12").eq(1).val();
-			if(parseInt(lowPrice)>=parseInt(highPrice)||parseInt(lowPrice)<0||parseInt(highPrice)<=0){
+			var lowPrice = $(".input_f12").eq(0).val();
+			var highPrice = $(".input_f12").eq(1).val();
+			if (parseInt(lowPrice) >= parseInt(highPrice)
+					|| parseInt(lowPrice) < 0 || parseInt(highPrice) <= 0) {
 				alert("请输入正确的价格")
-			}else{
+			} else {
 				$("#smallPrice").val(lowPrice)
 				$("#bigPrice").val(highPrice);
 				$("#form").submit();
 				$("#price").val("");
 			}
-			
+
 		}
-		
+
 		$(".condition").click(function() {
 
 			if ($(this).attr('data-type') == "price") {
@@ -973,10 +969,10 @@
 				$("#price").val($(this).attr('data-id'));
 				$("#bigPrice").val($(this).attr('data-high'))
 				$("#smallPrice").val($(this).attr('data-low'))
-				if(price=="3000"){
+				if (price == "3000") {
 					$("#smallPrice").val("3000")
 				}
-				if(price=="200"){
+				if (price == "200") {
 					$("#bigPrice").val("200")
 				}
 			}
@@ -986,6 +982,9 @@
 			}
 			if ($(this).attr('data-type') == "city") {
 				$("#city").val($(this).attr('data-id'));
+			}
+			if ($(this).attr('data-type') == "fully") {
+				$("#fully").val($(this).attr('data-id'));
 			}
 			if ($(this).attr('data-type') == "type") {
 				$("#type").val($(this).attr('data-id'));
@@ -1004,6 +1003,10 @@
 			}
 			if ($(e).attr('data-type') == "city") {
 				$("#city").val("");
+				$("#fully").val("");
+			}
+			if ($(e).attr('data-type') == "fully") {
+				$("#fully").val("");
 			}
 			if ($(e).attr('data-type') == "type") {
 				$("#type").val("");
@@ -1014,6 +1017,7 @@
 			$(".cond-list").html("")
 			$("#star").val("");
 			$("#city").val("");
+			$("#fully").val("");
 			$("#price").val("");
 			$("#bigPrice").val("");
 			$("#smallPrice").val("");
@@ -1033,55 +1037,54 @@
 			if ($(this).attr('data-type') == "city") {
 				$("#city").val("");
 			}
+			if ($(this).attr('data-type') == "fully") {
+				$("#fully").val("");
+			}
 			if ($(this).attr('data-type') == "type") {
 				$("#type").val("");
 			}
 			$("#form").submit();
-			
+
 		})
 	</script>
-	
+
 	<script type="text/javascript">
-		$(".sort_list li").click(function () {
+		$(".sort_list li").click(function() {
 			// data-sort="hotelPrice" data-dirc="1"
 			$("#sort").val($(this).attr("data-sort"));
 			$("#desc").val($(this).attr("data-dirc"));
 			$("#form").submit();
 		})
-	 $(".sort_list li div p").click(function () {
+		$(".sort_list li div p").click(function() {
 			// data-sort="hotelPrice" data-dirc="1"
-			
+
 			$("#sort").val($(this).attr("data-sort"));
 			$("#desc").val($(this).attr("data-dirc"));
 			$("#form").submit();
 		})
-	
 	</script>
-	
+
 	<script type="text/javascript">
-					//分页
-					$(".page_next").click (function() {
-						if(parseInt($("#count").val())>parseInt($("#curPage").val())){
-							$("#curPage").val(parseInt($("#curPage").val())+1);
-						}
-						$("#form").submit();
-					})
-					$(".page_back").click (function() {
-						if(1<parseInt($("#curPage").val())){
-							$("#curPage").val(parseInt($("#curPage").val())-1);
-						}
-						$("#form").submit();
-					})
-					
-						$(".icon_hl_more1").toggle(
-						function () {
-							$(this).parent().removeClass("slip")
-						},
-						function () {
-							$(this).parent().addClass("slip")
-							
-						}
-		)
-			</script>
+		//分页
+		$(".page_next").click(function() {
+			if (parseInt($("#count").val()) > parseInt($("#curPage").val())) {
+				$("#curPage").val(parseInt($("#curPage").val()) + 1);
+			}
+			$("#form").submit();
+		})
+		$(".page_back").click(function() {
+			if (1 < parseInt($("#curPage").val())) {
+				$("#curPage").val(parseInt($("#curPage").val()) - 1);
+			}
+			$("#form").submit();
+		})
+
+		$(".icon_hl_more1").toggle(function() {
+			$(this).parent().removeClass("slip")
+		}, function() {
+			$(this).parent().addClass("slip")
+
+		})
+	</script>
 </body>
 </html>

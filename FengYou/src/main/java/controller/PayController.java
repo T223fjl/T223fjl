@@ -53,6 +53,32 @@ public class PayController {
 
 		return "developer/Payzf";
 	}
+	
+	
+	@RequestMapping("/timeOu")
+	public String tui(String orderId,HttpServletResponse response, HttpServletRequest request) throws IOException {
+		if(orderId!=null&&!"".equals(orderId)){
+			Order o =orderService.queryOrderById(Integer.valueOf(orderId));
+			o.setOrderStatus(2);
+			int r = orderService.updOrder(o);
+			if(r>0){
+				
+			}
+		}
+		
+		return "redirect:/toIndex";
+	}
+	
+	@RequestMapping("/timeOut")
+	public String timeOut(String orderId,HttpServletResponse response, HttpServletRequest request) throws IOException {
+		if(orderId!=null&&!"".equals(orderId)){
+			Order o =orderService.queryOrderById(Integer.valueOf(orderId));
+			o.setOrderStatus(2);
+			int r = orderService.updOrder(o);
+		}
+		
+		return "redirect:/toIndex";
+	}
 
 	@RequestMapping("/pay")
 	public void pay(HttpServletResponse response, HttpServletRequest request) throws IOException {
@@ -130,7 +156,7 @@ public class PayController {
 		o.setOrderStatus(1);
 		int r = orderService.updOrder(o);
 		if (signVerified) {
-			return "order3";
+			return "redirect:/toIndex";
 		} else {
 			return "redirect:/toIndex";
 		}
@@ -157,15 +183,15 @@ public class PayController {
 		into.setUserNames(userNames);
 		int i = orderService.addIntoinfo(into);
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
+		System.out.println(checkInDate+checkOutDate);
 		if (i > 0 && userNames != null) {
 			Order order = new Order();
 			if (checkInDate != null && houseId != null && checkOutDate != null && email != null && phone != null
 					&& userNames != null && place != null && payAmount != null && houseCount != null) {
 				House house = houseService.qeuryHouseByHouseId(Integer.valueOf(houseId));
 				Hotel hotel = hotelService.getHotelById(house.getHotelId());
-				order.setCheckInDate(Date.valueOf(checkInDate));
-				order.setCheckOutDate(Date.valueOf(checkOutDate));
+				order.setCheckInDate(format.parse(format.format(format.parse(checkInDate))));
+				order.setCheckOutDate(format.parse(format.format(format.parse(checkOutDate))));
 				order.setHouseId(Integer.valueOf(houseId));
 				order.setHotelId(hotel.getHotelId());
 				order.setHouseCount(Integer.valueOf(houseCount));
@@ -216,7 +242,10 @@ public class PayController {
 							format.parse(format.format(getNextDate(r.getRecordDate(), Integer.valueOf(day)))));
 					r.setStore(r.getStore() - order.getHouseCount());
 					realtimeinventoryService.updRealtimeinventory(r);
-
+					int orderId=o.getId();
+					java.util.Date curDate=format.parse(format.format(new java.util.Date()));
+					model.addAttribute("orderId", orderId);
+					model.addAttribute("curDate", curDate);
 					return "developer/order2";
 				} else {
 

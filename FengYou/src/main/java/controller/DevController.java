@@ -63,9 +63,10 @@ public class DevController {
 		House house=houseService.qeuryHouseByHouseId(hid);
 		Hotel hotel =hotelService.getHotelById(house.getHotelId());
 		Realtimeinventory real=new Realtimeinventory();
-		real.setHotelId(hid);
-		real.setHouseId(hotel.getHotelId());
+		real.setHotelId(hotel.getHotelId());
+		real.setHouseId(hid);
 		real=realtimeinventoryService.queryRealtimeinventoryByHHid(real);
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		if(checkInDate!=null&&checkOutDate!=null){
 			List<Order> olist=orderService.queryOrderByHouseId(hid);
 			if(olist!=null&&olist.size()!=0){
@@ -74,13 +75,13 @@ public class DevController {
 //				order.setCheckOutDate(java.sql.Date.valueOf(checkOutDate));
 //				order.setHouseId(hid);
 //				olist=orderService.queryOrderByDate(order);
-				SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+				
 				
 				if (real == null) {
 					real = new Realtimeinventory();
 					real.setStore(10);
-					real.setHotelId(hid);
-					real.setHouseId(hotel.getHotelId());
+					real.setHotelId(hotel.getHotelId());
+					real.setHouseId(hid);
 					real.setRecordDate(format.parse(format.format(new java.util.Date())));
 					real.setRecordStopDate(
 							format.parse(format.format(getNextDate(real.getRecordDate(), Integer.valueOf(day)))));
@@ -90,37 +91,32 @@ public class DevController {
 					}
 				}
 				if(0<real.getStore()){
+					System.out.println(real.getStore());
 					h=new House();
 				}
 			
 				if(h==null){
-					return "redirect:/toIndex3?hotelId="+hotel.getHotelId();
+					return "redirect:/toIndex3?hotelId="+hotel.getHotelId()+"&error=10";
 				}
 			}
 			
 		}
 		
 		model.addAttribute("real", real);
-		model.addAttribute("checkInDate", checkInDate);
-		model.addAttribute("checkOutDate", checkOutDate);
+		model.addAttribute("checkInDate", format.parse(checkInDate));
+		model.addAttribute("checkOutDate", format.parse(checkOutDate));
+		model.addAttribute("checkIn", checkInDate);
+		model.addAttribute("checkOut", checkOutDate);
 		model.addAttribute("house", house);
 		model.addAttribute("hotel", hotel);
 		model.addAttribute("day", day);
 		return "developer/order";
 	}
 
-	
-	
-	// 跳转前台一级页面
-	@RequestMapping("/toFF")
-	public String test(HttpSession session) {
-
-		return "developer/ff";
-	}
 
 	// 跳转前台三级页面
 	@RequestMapping("/toIndex3")
-	public String toIndex3(String hotelId, Model model) {
+	public String toIndex3(String hotelId,String error, Model model) {
 		int hid = 1;
 		if (hotelId != null && !"".equals(hotelId)) {
 			hid = (Integer.valueOf(hotelId));
@@ -130,137 +126,163 @@ public class DevController {
 
 		model.addAttribute("houseList", houseList);
 		model.addAttribute("hotel", hotel);
+		if(error!=null&&!"".equals(error)){
+			model.addAttribute("error", error);
+		}
 		return "developer/index3";
 	}
 
-	// 跳转前台一级页面
-	@RequestMapping("/NewFile")
-	public String NewFile(HttpSession session) {
-		List<Level> levels = levelService.queryLevel();
-		session.setAttribute("levels", levels);
-		return "developer/NewFile";
-	}
 
 	// 跳转前台一级页面
 	@RequestMapping("/toIndex")
 	public String toIndex(HttpSession session) {
 		List<Level> levels = levelService.queryLevel();
+		//查询%市的城市
 		List<Level> level = levelService.queryByName();
-		// List<Hotel> hotel=null;
-		// for (int i = 0; i < level.size(); i++) {
-		// hotel=levelService.query(level.get(i).getName());
-		// }
-		List<Hotel> hotel = levelService.query(level.get(0).getName());
-		List<Hotel> hote2 = levelService.query(level.get(1).getName());
-		List<Hotel> hote3 = levelService.query(level.get(2).getName());
-		List<Hotel> hote4 = levelService.query(level.get(3).getName());
-		List<Hotel> hote5 = levelService.query(level.get(4).getName());
-		List<Hotel> hote6 = levelService.query(level.get(5).getName());
-		// System.out.println(hotel.get(0).getFileUrl());
+//		List<Hotel> hotel=null;
+//		for (int i = 0; i < level.size(); i++) {
+//			hotel=levelService.query(level.get(i).getName());
+//		}
+		//根据上面某市查询酒店
+		List<Hotel> hotel = hotelService.query(level.get(0).getName());
+		List<Hotel> hote2 = hotelService.query(level.get(1).getName());
+		List<Hotel> hote3 = hotelService.query(level.get(2).getName());
+		List<Hotel> hote4 = hotelService.query(level.get(3).getName());
+		List<Hotel> hote5 = hotelService.query(level.get(4).getName());
+		List<Hotel> hote6 = hotelService.query(level.get(5).getName());
+		
+		//星级
+		List<Dictionarydate> stars = dictionarydateService.queryDictionarydateByTypeCode("star");
+		//热门酒店
+		List<Hotel> hote=hotelService.queryHotel(0, 0, 0,0, 0, 0, null, null);
+		//热门城市
+		List<Level> Leve = levelService.queryLevelByType(3);
+				System.out.println(hotel.get(0).getFileUrl());
+		System.out.println(hotel.get(0).getHotelPrice());
+		session.setAttribute("hote", hote);
 		session.setAttribute("levels", levels);
 		session.setAttribute("level", level);
+		session.setAttribute("Leve", Leve);
 		session.setAttribute("hotel", hotel);
 		session.setAttribute("hote2", hote2);
 		session.setAttribute("hote3", hote3);
 		session.setAttribute("hote4", hote4);
 		session.setAttribute("hote5", hote5);
-		session.setAttribute("hote6", hote6);
+		session.setAttribute("stars", stars);
+//		session.setAttribute("hote6", hote6);
 		return "developer/index";
+
 	}
 
 	// 跳转前台二级页面
 	@RequestMapping("/toIndex2")
-	public String toIndex2(String bigPrice, String smallPrice, String city, String star, String type, String price,
-			String curPage, String sort, String desc, HttpSession session) {
-		List<Level> types = levelService.queryLevelByType(1);
-		List<Level> citys = levelService.queryLevelByType(2);
-		List<Dictionarydate> stars = dictionarydateService.queryDictionarydateByTypeCode("star");
-		List<Dictionarydate> prices = dictionarydateService.queryDictionarydateByTypeCode("price");
-		int page = 1;
-		int size = 5;
-		System.out.println("ddddddd:" + sort);
+	public String toIndex2(String bigPrice,String fully, String smallPrice, String city, String star, String type, String price,
+				String curPage, String sort, String desc, HttpSession session) {
+			List<Level> types = levelService.queryLevelByType(1);
+			List<Level> citys = levelService.queryLevelByType(2);
+			List<Level> fullys = levelService.queryLevelByType(3);
+			List<Dictionarydate> stars = dictionarydateService.queryDictionarydateByTypeCode("star");
+			List<Dictionarydate> prices = dictionarydateService.queryDictionarydateByTypeCode("price");
+			int page = 1;
+			int size = 5;
+			System.out.println("ddddddd:" + sort);
 
-		if (sort == null || "".equals(sort)) {
-			sort = "hotelId";
-		}
-		if (desc == null || "".equals(desc)) {
-			desc = "asc";
-		}
-		if (curPage != null && !"".equals(curPage)) {
-			page = (Integer.valueOf(curPage));
-		}
-		int level2 = 0;
-		if (city != null && !"".equals(city)) {
-			level2 = (Integer.valueOf(city));
-		}
-		int level1 = 0;
-		if (type != null && !"".equals(type)) {
-			level1 = (Integer.valueOf(type));
-		}
-		int xin = 0;
-		if (star != null && !"".equals(star)) {
-			xin = Integer.valueOf(star);
-		}
-		int small = 0;
-		if (smallPrice != null && !"".equals(smallPrice)) {
-			small = (Integer.valueOf(smallPrice));
-		}
-		int big = 0;
-		if (bigPrice != null && !"".equals(bigPrice)) {
-			big = (Integer.valueOf(bigPrice));
-		}
-		int sum = 0;
-		PageInfo<Hotel> hotels = null;
-		hotels = hotelService.findHotelList(xin, level1, level2, big, small, sort, desc, page, size);
-		sum = hotelService.queryHotel(xin, level1, level2, big, small, sort, desc).size();
-		int count = sum % size == 0 ? sum / size : sum / size + 1;
-		session.setAttribute("sort", sort);
-		session.setAttribute("desc", desc);
-		session.setAttribute("curPage", page);
-		session.setAttribute("sum", sum);
-		session.setAttribute("count", count);
-		session.setAttribute("stars", stars);
-		session.setAttribute("prices", prices);
-		session.setAttribute("types", types);
-		session.setAttribute("citys", citys);
-		session.setAttribute("hotels", hotels);
-
-		Dictionarydate CurStar = null;
-		for (int i = 0; i < stars.size(); i++) {
-			if (stars.get(i).getDictCode() == xin) {
-				CurStar = stars.get(i);
+			if (sort == null || "".equals(sort)) {
+				sort = "hotelId";
 			}
-		}
-		Dictionarydate CurPrice = null;
-		for (int i = 0; i < prices.size(); i++) {
-			if (price != null && !"".equals(price)) {
-				if (prices.get(i).getDictCode() == (Integer.valueOf(price))) {
-					CurPrice = prices.get(i);
+			if (desc == null || "".equals(desc)) {
+				desc = "asc";
+			}
+			if (curPage != null && !"".equals(curPage)) {
+				page = (Integer.valueOf(curPage));
+			}
+			int level2 = 0;
+			if (city != null && !"".equals(city)) {
+				fullys=levelService.queryLevelByPid(Integer.valueOf(city));
+				level2 = (Integer.valueOf(city));
+			}
+			int level1 = 0;
+			if (type != null && !"".equals(type)) {
+				level1 = (Integer.valueOf(type));
+			}
+			int level3 = 0;
+			if (fully != null && !"".equals(fully)) {
+				level3 = (Integer.valueOf(fully));
+			}
+			int xin = 0;
+			if (star != null && !"".equals(star)) {
+				xin = Integer.valueOf(star);
+			}
+			int small = 0;
+			if (smallPrice != null && !"".equals(smallPrice)) {
+				small = (Integer.valueOf(smallPrice));
+			}
+			int big = 0;
+			if (bigPrice != null && !"".equals(bigPrice)) {
+				big = (Integer.valueOf(bigPrice));
+			}
+			int sum = 0;
+			PageInfo<Hotel> hotels = null;
+			hotels = hotelService.findHotelList(xin, level1, level2,level3, big, small, sort, desc, page, size);
+			sum = hotelService.queryHotel(xin, level1, level2,level3, big, small, sort, desc).size();
+			int count = sum % size == 0 ? sum / size : sum / size + 1;
+			session.setAttribute("sort", sort);
+			session.setAttribute("desc", desc);
+			session.setAttribute("curPage", page);
+			session.setAttribute("sum", sum);
+			session.setAttribute("count", count);
+			session.setAttribute("stars", stars);
+			session.setAttribute("prices", prices);
+			session.setAttribute("types", types);
+			session.setAttribute("citys", citys);
+			session.setAttribute("fullys", fullys);
+			session.setAttribute("hotels", hotels);
+
+			Dictionarydate CurStar = null;
+			for (int i = 0; i < stars.size(); i++) {
+				if (stars.get(i).getDictCode() == xin) {
+					CurStar = stars.get(i);
 				}
 			}
-		}
-		if ("0".equals(price)) {
-			CurPrice = new Dictionarydate();
-			CurPrice.setInfo(smallPrice + "-" + bigPrice);
-		}
-		Level CurCity = null;
-		for (int i = 0; i < citys.size(); i++) {
-			if (citys.get(i).getId() == level2) {
-				CurCity = citys.get(i);
+			Dictionarydate CurPrice = null;
+			for (int i = 0; i < prices.size(); i++) {
+				if (price != null && !"".equals(price)) {
+					if (prices.get(i).getDictCode() == (Integer.valueOf(price))) {
+						CurPrice = prices.get(i);
+					}
+				}
 			}
-		}
-		Level CurType = null;
-		for (int i = 0; i < types.size(); i++) {
-			if (types.get(i).getId() == level1) {
-				CurType = types.get(i);
+			if ("0".equals(price)) {
+				CurPrice = new Dictionarydate();
+				CurPrice.setInfo(smallPrice + "-" + bigPrice);
 			}
+			Level CurCity = null;
+			for (int i = 0; i < citys.size(); i++) {
+				if (citys.get(i).getId() == level2) {
+					CurCity = citys.get(i);
+				}
+			}
+			Level CurType = null;
+			for (int i = 0; i < types.size(); i++) {
+				if (types.get(i).getId() == level1) {
+					CurType = types.get(i);
+				}
+			}
+			Level CurFully = null;
+			for (int i = 0; i < fullys.size(); i++) {
+				if (fullys.get(i).getId() == level3) {
+					CurFully = fullys.get(i);
+				}
+			}
+			
+			session.setAttribute("CurStar", CurStar);
+			session.setAttribute("CurPrice", CurPrice);
+			session.setAttribute("CurType", CurType);
+			session.setAttribute("CurCity", CurCity);
+			session.setAttribute("CurFully", CurFully);
+			return "developer/index2";
 		}
-		session.setAttribute("CurStar", CurStar);
-		session.setAttribute("CurPrice", CurPrice);
-		session.setAttribute("CurType", CurType);
-		session.setAttribute("CurCity", CurCity);
-		return "developer/index2";
-	}
+
 
 	// 跳转前台二级页面
 	@RequestMapping("/toIndexTwo")

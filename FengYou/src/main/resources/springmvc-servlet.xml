@@ -22,6 +22,8 @@
  <mvc:resources  location="/static/" mapping="/static/**"/>
  <mvc:resources  location="/statics/" mapping="/statics/**"/>
   <mvc:resources  location="/uploadFile/" mapping="/uploadFile/**"/>
+  <mvc:resources  location="wappay" mapping="/wappay/**"/>
+  
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/jsp/" />
 		<property name="suffix" value=".jsp" ></property>

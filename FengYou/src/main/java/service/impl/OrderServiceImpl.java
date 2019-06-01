@@ -16,6 +16,7 @@ public class OrderServiceImpl implements OrderService{
 	@Autowired
 	private OrderDao orderDao;
 
+	
 	@Override
 	public List<Order> queryOrderByHouseId(int hid) {
 		return orderDao.queryOrderByHouseId(hid);
@@ -49,6 +50,11 @@ public class OrderServiceImpl implements OrderService{
 	@Override
 	public int updOrder(Order o) {
 		return orderDao.updOrder(o);
+	}
+
+	@Override
+	public Order queryOrderById(int id) {
+		return orderDao.queryOrderById(id);
 	}
 	
 	 

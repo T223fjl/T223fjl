@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html  lang="zh">
 <head>
@@ -986,15 +987,21 @@
 	<!-- ===================== footer end ===================== -->
 	<!-- 可信网站LOGO安装开始 -->
 		
-		
+			
 		<form id="order" action="toOrder" style="display: none;" method="post">
 		<input type="text" id="houseId" name="houseId">
 		<input type="text" id="checkInDate" name="checkInDate">
 		<input type="text" id="checkOutDate" name="checkOutDate">
 		<input type="text" id="day" name="day">
+		<input type="hidden" id="error" value="${error }"	>	
 		</form>
 
-		
+		<script
+		src="${pageContext.request.contextPath }/statics/js/register/knockout-2.3.0.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath }/statics/js/register/knockout.validation.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath }/statics/js/register/account.min.js"></script>
 	<script type="text/javascript">
 	Date.prototype.format = function(fmt) { 
 	     var o = { 
@@ -1018,6 +1025,11 @@
 	}      
 	
 		$(function() {
+			var error=$("#error").val();
+			if(error!=null&&error!=''){
+				/* tipShow('房间数量不足,请重新选择！', function() {
+				}); */
+			}
 			var curDate = new Date();
 			var nextDate = new Date(curDate.getTime() + 24*60*60*1000);
 			var time1 = nextDate.format("yyyy-MM-dd");
@@ -1047,19 +1059,29 @@
 			$("#hdetail_map").show()
 		})
 		$(".bottomStr").click(function () {
+			var houseId=$(this).parent().parent().parent().attr("data-mroomid")
+			var curDate = new Date();
+			var nextDate = new Date(curDate.getTime() );
+			var time = new Date(nextDate.format("yyyy-MM-dd hh:mm:ss"));
+			var time1 = new Date(nextDate.format("yyyy-MM-dd"));
+			var cha=new Date(time.getTime()-time1.getTime());
+			
 			var start=$(".flatpickr").eq(0).val();
 			var end=$(".flatpickr").eq(1).val();
-			var houseId =$(this).parent().parent().parent().attr("data-mroomid");
-			//data-mroomid="${house.houseId }"
 			var date1 = new Date(start)
 			var date2 = new Date(end)
+			var st=new Date(date1.getTime()+cha.getTime());
+			var en=new Date(date2.getTime()+cha.getTime());
+			
 			var s1 = date1.getTime(),s2 = date2.getTime();
 			if(s2 - s1>0){
+				var s=st.format("yyyy-MM-dd hh:mm:ss");
+				var e=en.format("yyyy-MM-dd hh:mm:ss");
 				var total = (s2 - s1)/1000;
 				var day = parseInt(total / (24*60*60));//计算整数天数
 				$("#day").val(day)
-				$("#checkInDate").val(start)
-				$("#checkOutDate").val(end)
+				$("#checkInDate").val(s)
+				$("#checkOutDate").val(e)
 				$("#houseId").val(houseId)
 				$("#order").submit();
 			}

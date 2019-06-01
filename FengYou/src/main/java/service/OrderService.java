@@ -7,6 +7,7 @@ import pojo.Intoinfo;
 import pojo.Order;
 
 public interface OrderService {
+	public Order queryOrderById(int id);
 	public List<Order> queryOrderByHouseId(int hid);
 	public int addOrder(Order order);
 	public int addIntoinfo(Intoinfo Intoinfo);

@@ -29,5 +29,5 @@ public interface LevelDao {
 	
 	public List<Level> queryByName();
 	
-	public List<Hotel> query(@Param(value = "hotel") String hotel);
+	
 }

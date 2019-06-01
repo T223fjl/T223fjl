@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 
@@ -19,16 +19,21 @@
 	content="国内酒店预订:风游旅行网为您提供国内酒店查询、查询以及国际航班预订等服务,在风游旅行网您可以享受到最低折扣的特价机票,高品质的预订服务，为您查询、选择、预订国内酒店提供最方便和快捷的服务！" />
 
 <script type="text/javascript">
-			var tjObj_rt = new Date();
-		</script>
+	var tjObj_rt = new Date();
+</script>
 
 <link rel="stylesheet" rev="stylesheet"
 	href='${pageContext.request.contextPath }/statics/css/order/new2015.min.css'
 	type="text/css" media="all" />
-		<link rel="stylesheet" type="text/css" href='${pageContext.request.contextPath }/statics/css/order/order_edit_2016.css' />
-<link href="${pageContext.request.contextPath }/statics/css/bootstrap.css" rel="stylesheet" />
-		<script src="${pageContext.request.contextPath }/statics/js/userlist/jquery-1.12.4.js"></script>
-		<script src="${pageContext.request.contextPath }/statics/js/userlist/bootstrap.js"></script>
+<link rel="stylesheet" type="text/css"
+	href='${pageContext.request.contextPath }/statics/css/order/order_edit_2016.css' />
+<link
+	href="${pageContext.request.contextPath }/statics/css/bootstrap.css"
+	rel="stylesheet" />
+<script
+	src="${pageContext.request.contextPath }/statics/js/userlist/jquery-1.12.4.js"></script>
+<script
+	src="${pageContext.request.contextPath }/statics/js/userlist/bootstrap.js"></script>
 
 </head>
 
@@ -54,8 +59,8 @@
 	<div class="content_wrap">
 		<div class="w1000 clearfix">
 			<div style="background-color: #F6FAFC; height: 150px;">
-				<div class="ord_info" >
-					<div class="ord_info_l" style="margin: 15px;padding-top: 10px;">
+				<div class="ord_info">
+					<div class="ord_info_l" style="margin: 15px; padding-top: 10px;">
 						<div class="ord_title" style="font-size: 20px; font-family:"宋体";">
 							${hotel.hotelName }<span class="ord_num"
 								style="font-size: 12px; color: #C3C3C3; margin-left: 5px;">订单号：${order.orderNo }</span>
@@ -65,19 +70,20 @@
 								style="margin-left: 10px;">${day }晚</span><span
 								style="margin-left: 10px;">|</span><span
 								style="margin-left: 10px;">${order.houseCount }间（<c:if
-										test="${house.isHavingBreakfast==0 }">
+									test="${house.isHavingBreakfast==0 }">
                               	无早
                               </c:if> <c:if
-										test="${house.isHavingBreakfast==1 }">
+									test="${house.isHavingBreakfast==1 }">
                               	单早
                               </c:if> <c:if
-										test="${house.isHavingBreakfast==2 }">
+									test="${house.isHavingBreakfast==2 }">
                               	双早
-                              </c:if>）</span>
+                              </c:if>）
+							</span>
 						</div>
 						<div style="padding-top: 10px;">
 							<dl>
-								<dt  style="font-size: 18px;">取消说明</dt>
+								<dt style="font-size: 18px;">取消说明</dt>
 								<dl>
 									<dd>
 										<i></i>取消规则： 订单一经确认成功，不可取消或变更；如未能如约入住，您的预付房费将不予退还。
@@ -98,73 +104,222 @@
 						</p>
 						<p>手机扫码支付</p>
 					</div>
-					<div class="ord_info_m" style="float: right;position: relative;top:-70px;right: 150px;">
+					<div class="ord_info_m"
+						style="float: right; position: relative; top: -70px; right: 150px;">
 						<p class="" style="font-size: 20px;">
-							支付金额：<span class="ord_price" style="color: #FD964A"><dfn class="symbol" style="color: #000000">¥</dfn>${order.payAmount } </span>
+							支付金额：<span class="ord_price" style="color: #FD964A"><dfn
+									class="symbol" style="color: #000000">¥</dfn>${order.payAmount }
+							</span>
 						</p>
-						<div id="isOnTimeProduct" class="ss_tips_a" style="width:250px;left: -2px;top: 35px;">请在<span class="c49f">30分钟内</span>完成支付，过期自动取消。</div>						
+						<div id="isOnTimeProduct" class="ss_tips_a"
+							style="width: 350px; left: -2px; top: 35px;">
+							请在<span class="c49f">30分钟内</span>完成支付，过期或离开此页面自动取消。
+							<table border="0" style="display: inline-block;">
+								<tr>
+									<td>
+										 现在还有：<span id="mmm"></span>分
+									</td>
+									<td>
+										<span id="sss"></span>秒
+									</td>
+								</tr>
+							</table>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div style="border: 1px solid black;height: 300px;">
+			<div style="border: 1px solid black; height: 300px;">
 				<div class="container-fluid" style="border: 1px solid #ddd;">
-						<ul class="nav nav-tabs" id="myTab" style="font-size: 20px;">
-							<li class="active"><a href="#home" data-toggle="tab">支付宝</a></li>
-							<li><a href="#a" data-toggle="tab">微信</a></li>
-							<li><a href="#b" data-toggle="tab">银行卡</a></li>
-							<li><a href="#c" data-toggle="tab">网银支付</a></li>
-						</ul>
-			
-						<div id="myTabContent" class="tab-content">
-							<div class="tab-pane active now" id="home">
-								<div class="" style="margin-top: 10px;">
-									<img src="../img/lesson4/two/1.jpg"/>
-									<span>支付宝</span>
-									<a onclick="pay()">下一步</a>
-								</div>
+					<ul class="nav nav-tabs" id="myTab" style="font-size: 20px;">
+						<li class="active"><a href="#home" data-toggle="tab">支付宝</a></li>
+						<li><a href="#a" data-toggle="tab">微信</a></li>
+						<li><a href="#b" data-toggle="tab">银行卡</a></li>
+						<li><a href="#c" data-toggle="tab">网银支付</a></li>
+					</ul>
+
+					<div id="myTabContent" class="tab-content">
+						<div class="tab-pane active now" id="home">
+							<div class="" style="margin-top: 10px;">
+								<img src="../img/lesson4/two/1.jpg" /> <span>支付宝</span> <a
+									onclick="pay()">下一步</a>
 							</div>
-							<div class="tab-pane" id="a">
-								<div class="col-md-12" style="margin-top: 10px;">
-									<img src="../img/lesson4/two/2.jpg"/>
-									<span>微信</span>
-									<a>下一步</a>
-								</div>
+						</div>
+						<div class="tab-pane" id="a">
+							<div class="col-md-12" style="margin-top: 10px;">
+								<img src="../img/lesson4/two/2.jpg" /> <span>微信</span> <a>下一步</a>
 							</div>
-							<div class="tab-pane" id="b">
-								<div class="col-md-12" style="margin-top: 10px;">
-									<img src="../img/lesson4/two/3.jpg"/>
-									<span>银行卡</span>
-									<a>下一步</a>
-								</div>
+						</div>
+						<div class="tab-pane" id="b">
+							<div class="col-md-12" style="margin-top: 10px;">
+								<img src="../img/lesson4/two/3.jpg" /> <span>银行卡</span> <a>下一步</a>
 							</div>
-							<div class="tab-pane" id="c">
-								<div class="col-md-12" style="margin-top: 10px;">
-									<img src="../img/lesson4/two/4.jpg"/>
-									<span>网银支付</span>
-									<a>下一步</a>
-								</div>
+						</div>
+						<div class="tab-pane" id="c">
+							<div class="col-md-12" style="margin-top: 10px;">
+								<img src="../img/lesson4/two/4.jpg" /> <span>网银支付</span> <a>下一步</a>
 							</div>
 						</div>
 					</div>
-					<form id="pay" style="display: none;" action="pay"  method="post" target="_blank">
-						<input id="WIDout_trade_no" name="WIDout_trade_no" value="${order.orderNo }" />
-						<input id="WIDsubject" name="WIDsubject"  value="${house.houseType }"/>
-						<input id="WIDtotal_amount" name="WIDtotal_amount" value="${order.payAmount }" />
-						<input id="WIDbody" name="WIDbody" />
-					</form>
-					<script type="text/javascript">
-						$('#myTab a').click(function(e) {
-							e.preventDefault();
-							$(this).tab('show');
-						})
+				</div>
+				<form id="pay" style="display: none;" action="${pageContext.request.contextPath }/wappay/pay.jsp" method="post"
+					target="_blank">
+					<input id="WIDout_trade_no" name="WIDout_trade_no"
+						value="${order.orderNo }" /> <input id="WIDsubject"
+						name="WIDsubject" value="${house.houseType }" /> <input
+						id="WIDtotal_amount" name="WIDtotal_amount"
+						value="${order.payAmount }" /> <input id="WIDbody" name="WIDbody" />
+						<input type="hidden" name="orderId" id="orderId" value="${orderId }" />
+						<input type="hidden" id="curDate" name="curDate" value="${curDate }" />
+						<input id="end" disabled="disabled" name="end"   />
+				</form>
+				<script type="text/javascript">
+				Date.prototype.format = function(fmt) { 
+				     var o = { 
+				        "M+" : this.getMonth()+1,                 //月份 
+				        "d+" : this.getDate(),                    //日 
+				        "h+" : this.getHours(),                   //小时 
+				        "m+" : this.getMinutes(),                 //分 
+				        "s+" : this.getSeconds(),                 //秒 
+				        "q+" : Math.floor((this.getMonth()+3)/3), //季度 
+				        "S"  : this.getMilliseconds()             //毫秒 
+				    }; 
+				    if(/(y+)/.test(fmt)) {
+				            fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length)); 
+				    }
+				     for(var k in o) {
+				        if(new RegExp("("+ k +")").test(fmt)){
+				             fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+				         }
+				     }
+				    return fmt; 
+				}      
+				
+					$(function() {
+						var d=new Date($("#curDate").val());
+						var time=new Date(d.getTime()+1000*60*30);
+						//alert(time)
+						$("#end").val(time);
+						//alert($("#end").val())
 						
-						function pay() {
-							//alert($("#WIDout_trade_no").val())
-							$("#pay").submit();
-						}
-					</script>
-					
-	
+				        //参考：可以通过跨域方式获取其他服务器的当前时间作为服务器当前时间
+				        var oCity="北京"; //设置城市
+				        $.ajax({
+				            type:"GET", //默认是GET
+				            url:"http://api.map.baidu.com/telematics/v3/weather?location=" + oCity + "&output=json&ak=ohA7QHfg0BBrpiY4kyuIAAsD",
+				            dataType:"jsonp",
+				            success:function(data){
+				              //alert(data.date);
+				            },
+				            error:function(jqXHR){
+				              //alert("信息错误" + jqXHR.status);
+				            }
+				        })
+						
+					})
+					$('#myTab a').click(function(e) {
+						e.preventDefault();
+						$(this).tab('show');
+					})
+
+					function pay() {
+						//alert($("#WIDout_trade_no").val())
+						$("#pay").submit();
+					}
+				</script>
+ <script>
+    //时间为一位数时显示格式为："0X"
+    function checkTime(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
+
+    //显示浏览器现在的时间
+    function formatTime(timeVal) {
+        var datePara = new Date(timeVal);//定义日期对象
+        var yyyy = datePara.getFullYear();//通过日期对象的getFullYear()方法返回年
+        var MM = datePara.getMonth() + 1;//通过日期对象的getMonth()方法返回月
+        var dd = datePara.getDate();//通过日期对象的getDate()方法返回日
+        var hh = datePara.getHours();//通过日期对象的getHours方法返回时
+        var mm = datePara.getMinutes();//通过日期对象的getMinutes方法返回分
+        var ss = datePara.getSeconds();//通过日期对象的getSeconds方法返回秒
+        // 如果分钟或小时的值小于10，则在其值前加0，比如如果时间是下午3点20分9秒的话，则显示15：20：09
+        MM = checkTime(MM);
+        dd = checkTime(dd);
+        hh = checkTime(hh);
+        mm = checkTime(mm);
+        ss = checkTime(ss);
+
+        //用于保存星期（getDay()方法得到星期编号）
+        var day; 
+        if (datePara.getDay() == 0) day = "星期日 "
+        if (datePara.getDay() == 1) day = "星期一 "
+        if (datePara.getDay() == 2) day = "星期二 "
+        if (datePara.getDay() == 3) day = "星期三 "
+        if (datePara.getDay() == 4) day = "星期四 "
+        if (datePara.getDay() == 5) day = "星期五 "
+        if (datePara.getDay() == 6) day = "星期六 "
+
+        //document.getElementById('start').value = yyyy + "-" + MM + "-" + dd + " " + hh + ":" + mm + ":" + ss + " " + day;
+        //setTimeout('formatTime()', 1000);//每一秒中重新加载formatTime()方法
+        return yyyy + "-" + MM + "-" + dd + " " + hh + ":" + mm + ":" + ss; //+ " " + day;
+    }
+    
+    //服务器现在的时间（这里只是测试，就用浏览器时间代替）
+    var startTime = '';
+    //活动截止时间endTime（以服务器时间为标准，即给定的时间）
+    var end = '';
+    var endTime = '';
+    //活动截止时间（以浏览器时间为标准）
+    var browserEndTime = '';
+    //距离活动结束还剩余的时间（以浏览器为标准）
+    var plus = '';
+
+    //倒计时
+    function setTimer() {
+        if (!plus) {
+            //服务器现在的时间（这里只是测试，就用浏览器时间代替）
+            startTime = new Date();
+            $("#start").val(formatTime(startTime));
+            //活动截止时间endTime（预先给定的值）
+            end = document.getElementById("end").value;
+            endTime = new Date(end);
+            //活动截止时间与当前时间的时间差
+            plus = endTime - startTime;
+        }
+        else {
+            //距离活动结束还剩余的时间，第二次以后就不需要再计算，直接自减即可
+            plus -= 1000;
+            //更新当前时间(getTime()获取时间转化成毫秒后的数值)
+            startTime = new Date(startTime.getTime() + 1000);
+            $("#start").val(formatTime(startTime));
+        }
+
+        var day = parseInt(plus / 1000 / 60 / 60 / 24);
+        var hour = parseInt(plus / 1000 / 60 / 60) - day * 24;
+        var minute = parseInt(plus / 1000 / 60) - parseInt(plus / 1000 / 60 / 60) * 60;
+        var second = parseInt(plus / 1000) - parseInt(plus / 1000 / 60) * 60;
+
+        // 如果分钟或小时的值小于10，则在其值前加0，比如如果时间是下午3点20分9秒的话，则显示15：20：09            
+        day = checkTime(day);
+        hour = checkTime(hour);
+        minute = checkTime(minute);
+        second = checkTime(second);
+		$("#sss").html(second)
+		$("#mmm").html(minute)
+        //document.getElementById("p").innerHTML = "距离活动截止，还剩" + day + "天" + hour + "时" + minute + "分" + second + "秒";
+
+        if (plus <= 1) {
+            clearInterval(id);
+        }
+    }
+    
+    
+    //每秒循环一次，刷新活动截止时间与当前时间的时间差
+    var id = setInterval(setTimer, 1000);
+    </script>
+
 			</div>
 		</div>
 

@@ -26,7 +26,7 @@
 		<div class="loginbox">
 
 			<div class="pic">
-				<a href="#首页" target="_blank">
+				<a href="#" target="_blank">
 					<img src="${pageContext.request.contextPath }/statics/images/login/login_banner1.jpg" width="620" height="350" alt="常住30天" /></a>
 			</div>
 			<!-- 扫码登录 -->

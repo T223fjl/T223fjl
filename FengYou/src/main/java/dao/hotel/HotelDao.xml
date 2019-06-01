@@ -33,6 +33,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<if test="level2!=0">
 			and level2=#{level2}
 		</if>
+		<if test="level3!=0">
+			and level3=#{level3}
+		</if>
 		<if test="smallPrice!=0">
 			and hotelPrice <![CDATA[ > ]]> #{smallPrice}
 		</if>
@@ -45,6 +48,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			<if test="desc!=null and desc!=''">desc</if>
 		</if>
  -->
+	</select>
+
+<select id="query" resultType="Hotel">
+	SELECT * FROM hotel WHERE level2=(SELECT id FROM `level` WHERE `name`=#{hotel});
 	</select>
 
 </mapper>
