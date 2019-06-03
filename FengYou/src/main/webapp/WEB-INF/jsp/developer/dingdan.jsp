@@ -526,7 +526,7 @@
 										<li class="info_price trace_cancel">
 											<h2>
 												<span class="icon_trace"></span>
-
+										<span <c:if test="${order.orderStatus==0}"> id='timeout'</c:if> > 
 												<c:if test="${order.orderStatus==0}">
 													待支付<input type="hidden" id="orderId" value="${order.id }" />
 													<table border="0" style="display: inline-block;">
@@ -546,7 +546,7 @@
 												<c:if test="${order.orderStatus==3}">
                              								 已经取消
                              								</c:if>
-
+</span>
 												<p class="t_w"></p>
 											</h2>
 											<a class="check" data="559640308"
@@ -1189,7 +1189,7 @@
 		$("#mmm").html(minute);
 		if(second==0&&minute==0){
 			$.get("TimeOut","orderId="+$("#orderId").val(),function(data){
-				
+				$('#timeout').html("已超时");
 			});
 		}
         //document.getElementById("p").innerHTML = "距离活动截止，还剩" + day + "天" + hour + "时" + minute + "分" + second + "秒";
