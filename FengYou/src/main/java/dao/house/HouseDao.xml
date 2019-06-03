@@ -5,19 +5,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="dao.house.HouseDao">
 
-
-
+	<!-- 通过房间id查询房间 -->
 	<select id="qeuryHouseByHouseId" resultType="House">
 		select * from house
 		where houseId=#{houseId}
 	</select>
 
+	<!-- 通过酒店id查询房间并通过类型分组 -->
 	<select id="qeuryHouseByHotelId" resultType="House">
 		select *,count(0) as
 		houseCountByType from house where hotelId=#{hotelId}
 		GROUP BY houseType
 	</select>
 
+	<!-- 通过房间类型查询房间 -->
 	<select id="getHouseByType" resultType="House" parameterType="String">
 		SELECT * FROM `house` WHERE houseType=#{houseType}
 	</select>

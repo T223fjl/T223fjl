@@ -19,7 +19,7 @@ public class Hotel {
 	private int level2;          //二级分类地址
 	private int level3;         //三级分类地址
 	private String fileUrl;     //酒店图片
-	private int hotelphone;		
+	private String hotelphone;	//电话
 	private String hotelServe;//服务
 	private String hotelServePy;//服务拼音
 	public String getHotelServePy() {
@@ -28,10 +28,10 @@ public class Hotel {
 	public void setHotelServePy(String hotelServePy) {
 		this.hotelServePy = hotelServePy;
 	}
-	public int getHotelphone() {
+	public String getHotelphone() {
 		return hotelphone;
 	}
-	public void setHotelphone(int hotelphone) {
+	public void setHotelphone(String hotelphone) {
 		this.hotelphone = hotelphone;
 	}
 	

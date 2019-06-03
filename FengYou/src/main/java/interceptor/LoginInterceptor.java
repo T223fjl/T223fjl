@@ -23,20 +23,18 @@ public class LoginInterceptor implements HandlerInterceptor{
 		String url = request.getRequestURL().toString();
 		System.out.println("url->"+url);
 		int index = url.lastIndexOf('/');
-		System.out.println("的点点滴滴:"+url.substring(index+1, url.length()));
+		System.out.println("����ķ����ǣ�"+url.substring(index+1, url.length()));
 		String action = url.substring(index+1, url.length());
-		Object str =  request.getSession().getAttribute("loginUser");  
+		Object str =  request.getSession().getAttribute("userSession");  
+		Object dev =  request.getSession().getAttribute("devUserSession");  
         System.out.println("str=========>"+str);  
         System.out.println(action.substring(action.indexOf('.')+1));
-		if(action.equals("dologin")||str!=null||action.equals("login")
-				||action.equals("register")||action.equals("sale.json")||
-				action.equals("toIndex3")||action.equals("toIndex")||
-				action.equals("toIndex2")||action.equals("logout")||
-				action.equals("toIndexTwo")||action.equals("logout")||
+		if(action.equals("dologin")||str!=null||dev!=null||action.equals("login")
+				||action.equals("login")||action.equals("checkCode")||action.equals("logout")||
 				"json".equals(action.substring(action.indexOf('.')+1))){
 			return true;  
 		}
-		response.sendRedirect("http://localhost:8080/FengYou/403.jsp");
+		response.sendRedirect("http://localhost:8080/appinfodb/403.jsp");
 		return false;
 	}
 

@@ -90,7 +90,7 @@
 			<div method="searchBox" id="m_searchBox" data-id="mainSearchBox"
 				class="search_box mb5">
 
-				<div data-wrap="cityWrap" class="search_item search_termini">
+				<div data-wrap="cityWrap" class="search_item search_termini" style="margin-left: 100px;">
 					<label> <span>目的地</span> <input type="input"
 						class="input_f16 input_termini" value="${CurCity.name }"
 						cityname="${CurCity.name }" citynameen="beijing"
@@ -99,7 +99,7 @@
 					</label>
 				</div>
 
-				<div class="search_item search_keywords">
+				<div class="search_item search_keywords"  style="margin-left: 100px;">
 					<label> <span>关键词</span> <input type="input"
 						class="input_f16 input_termini" name="keywords"
 						placeholder="如位置\酒店名" />
@@ -352,8 +352,6 @@
 
 			<div id="hotelContainer">
 				<div class="h_list" method="hotelList">
-
-
 					<c:forEach var="hotel" items="${ hotels.list}" step="1"
 						varStatus="statu">
 						<div class="h_item mvt_171218" id="hotel${ hotel.hotelId}"
@@ -431,7 +429,7 @@
 									<!---------------->
 									<div class="h_info_base">
 										<p class="h_info_b1">
-											<a href="toIndex3" target="_blank"
+											<a href="toIndex3?hotelId=${hotel.hotelId }" target="_blank"
 												title="${hotel.hotelName }"><span class="icon_nmb">
 													${statu.count }</span><span class="info_cn">${hotel.hotelName }</span></a>
 											<i class="icon_crown_new" title="战略合作酒店，为风游会员提供优质服务及优惠房价"></i>
@@ -486,7 +484,6 @@
 				<a href="javascript:void(0)" class="page_back" title="上一页">上一页</a> <a
 					href="javascript:void(0)" title="第${curPage }页">第${curPage }页</a> <a
 					href="javascript:void(0)" class="page_next" title="下一页">下一页</a>
-					共<a href="javascript:void(0)" >${count }</a>页
 			</div>
 
 

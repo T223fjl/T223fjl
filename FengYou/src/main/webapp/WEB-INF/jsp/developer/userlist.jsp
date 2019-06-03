@@ -7,17 +7,25 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <title>个人中心</title>
-<link rel="icon" href="http://www.elongstatic.com/common/pic/favicon.ico?t=201411070740" type="image/x-icon">
+<link rel="icon"
+	href="http://www.elongstatic.com/common/pic/favicon.ico?t=201411070740"
+	type="image/x-icon">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 		<script type="text/javascript">
 			var tjObj_rt = new Date();
 		</script>
-		<script type="text/javascript" src="${pageContext.request.contextPath }/statics/js/userlist/savior.js"></script>
-	<link rel="stylesheet" type="text/css" href='${pageContext.request.contextPath }/statics/css/userlist/MyElong_common_2014.css'>
-	<link rel="stylesheet" type="text/css" href='${pageContext.request.contextPath }/statics/css/userlist/MyElong2014_information.css'>
-	<link href="${pageContext.request.contextPath }/statics/css/bootstrap.css" rel="stylesheet" />
-	<script type="text/javascript" src="${pageContext.request.contextPath}/statics/js/userlist/jquery-1.8.3.js"></script>
-						<script type="text/javascript">
+		<script type="text/javascript"
+			src="${pageContext.request.contextPath }/statics/js/userlist/savior.js"></script>
+		<link rel="stylesheet" type="text/css"
+			href='${pageContext.request.contextPath }/statics/css/userlist/MyElong_common_2014.css'>
+			<link rel="stylesheet" type="text/css"
+				href='${pageContext.request.contextPath }/statics/css/userlist/MyElong2014_information.css'>
+				<link
+					href="${pageContext.request.contextPath }/statics/css/bootstrap.css"
+					rel="stylesheet" />
+				<script type="text/javascript"
+					src="${pageContext.request.contextPath}/statics/js/userlist/jquery-1.8.3.js"></script>
+				<script type="text/javascript">
 								$(function() {
 									$("#input1ID").click(function() {
 										
@@ -59,23 +67,23 @@
 							    	  }
 							      }
 		</script>
-		
-		<style type="">
-		.input-text {
-    	border: 1px solid #a1a1a1;
-   		 border-radius: 2px;
-   		 -webkit-border-radius: 2px; 
-     	-moz-border-radius: 2px; 
-    	 box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-    	 -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2); 
-     	-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-  		padding: 2px 4px; 
-/*   font-size: 14px; */
+
+				<style type="">
+.input-text {
+	border: 1px solid #a1a1a1;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+	padding: 2px 4px;
+	/*   font-size: 14px; */
 }
 /* 		th{ */
 /* 		width: 10%; */
 /* 		} */
-		</style>
+</style>
 </head>
 <body>
 	<!-- ===================== headerstart ===================== -->
@@ -145,33 +153,12 @@
 								title="">欢迎您：${loginUser.name}</a>
 							</span>
 						</div>
-						<!--弹出-->
-						<div class="drop_box_log pt" style="display: none"
-							id="div_user_center">
-							<ul class='clx'>
-								<li class='icon_d1'><b></b><a
-									href="http://my.elong.com/hotel/MyHotelOrderList_cn.html?rnd=20190515101336"
-									rel="nofollow">酒店订单</a></li>
-								<li class='icon_d7'><b></b><a
-									href="http://my.elong.com/hotel/hotelfavlist_cn.html?rnd=20190515101336"
-									rel="nofollow">酒店收藏</a></li>
-								<li class='icon_d8'><b style='display: none;'
-									id='comment_notice'>9</b> <a id="n_comment_a"
-									href="http://my.elong.com/Hotel/reviewedorderlist_cn.html?rnd=20190515101336"
-									rel="nofollow">我的点评</a></li>
-								<li class='icon_d9'><b></b><a
-									href="http://my.elong.com/me_personalcenter_cn" rel="nofollow">个人设置</a></li>
-							</ul>
-							<div class="quit_log">
-								<a href="http://my.elong.com/logout_cn.html" rel="nofollow">退出登录</a>
-							</div>
-						</div>
-						<!--弹出 end-->
 					</div>
 				</div>
 			</div>
-		</div>
-	<div style="height:100px;background-image: url('${pageContext.request.contextPath }/statics/images/userlist/user_bg.png');">
+	</div>
+	<div
+		style="height:100px;background-image: url('${pageContext.request.contextPath }/statics/images/userlist/user_bg.png');">
 		<div style="width: 320px; margin-left: 200px; padding-top: 8px;">
 			<div style="width: 90px; float: left;">
 				<img
@@ -198,40 +185,35 @@
 			$("#hfPhone").text(lphone);
 		})
 	</script>
-	
+
 	<div class="content" style="margin-top: 0px;">
 		<!-- ===================== header start ===================== -->
-		<ul class="myElongNav" >
-			<li class="title">
-				<a href="#"><span class="icon i05"></span>我的风游</a>
+		<ul class="myElongNav">
+			<li class="title"><a href="#"><span class="icon i05"></span>我的风游</a>
 			</li>
-			<li class="title">
-				<a><span class="icon i01"></span>订单管理</a>
-			</li>
-			<li><a href="#">酒店订单</a></li>
+			<li class="title"><a><span class="icon i01"></span>订单管理</a></li>
+			<li><a href="toOrderDetails?userId=${user.id}">酒店订单</a></li>
 			<li><a href="#">国际&#183;港澳台订单</a></li>
 			<li><a href="#">出境wifi订单</a></li>
-			<li class="title">
-				<a><span class="icon i06"></span>我的记录</a>
-			</li>
+			<li class="title"><a><span class="icon i06"></span>我的记录</a></li>
 			<li><a href="#">酒店收藏</a></li>
-			<li class="title">
-				<a><span class="icon i02"></span>账户管理</a>
-			</li>
+			<li class="title"><a><span class="icon i02"></span>账户管理</a></li>
 			<li><a href="#">现金账户</a></li>
 			<li><a href="#">里程</a></li>
 			<li><a href="">国际&#183;港澳台优惠券</a></li>
 			<li><a href="#">礼品卡/红包充值</a></li>
-			<li class="title">
-				<a><span class="icon i03"></span>个人设置</a>
-			</li>
+			<li class="title"><a><span class="icon i03"></span>个人设置</a></li>
 			<li><a href="#">个人资料</a></li>
 			<li><a href="UserPwd?id=${user.id}">密码修改</a></li>
 		</ul>
 		<!-- ===================== header end ===================== -->
-		<link href="${pageContext.request.contextPath }/statics/css/bootstrap.css" rel="stylesheet" />
-		<script src="${pageContext.request.contextPath }/statics/js/userlist/jquery-1.12.4.js"></script>
-		<script src="${pageContext.request.contextPath }/statics/js/userlist/bootstrap.js"></script>
+		<link
+			href="${pageContext.request.contextPath }/statics/css/bootstrap.css"
+			rel="stylesheet" />
+		<script
+			src="${pageContext.request.contextPath }/statics/js/userlist/jquery-1.12.4.js"></script>
+		<script
+			src="${pageContext.request.contextPath }/statics/js/userlist/bootstrap.js"></script>
 		<div class="rightMain">
 			<form action="modifyUser" method="post" enctype="multipart/form-data">
 				<div class="container-fluid" style="margin-top: 20px;">
@@ -240,7 +222,7 @@
 						<li><a href="#b" data-toggle="tab">常用旅客信息</a></li>
 						<div class="accountOff" id="accountOff"
 							style="margin-left: 720px; margin-top: 10px; font-size: 14px;">
-							<a href="logouts">账户注销</a>
+							<a href="logout">账户注销</a>
 						</div>
 					</ul>
 					<div id="myTabContent" class="tab-content">
@@ -252,10 +234,12 @@
 									<div class="mod_user_inf_mt clx">
 										<dl>
 											<dd class="avatar_name">
-												<img src="${pageContext.request.contextPath }/statics/images/userlist/userImage.jpg"
+												<img
+													src="${pageContext.request.contextPath }/statics/images/userlist/userImage.jpg"
 													alt="" width="40%" height="40%" />
 												<c:if test="${user.status==0}">
-													<a href="void;" style="margin-right: 20px; margin-left: 30px">超级管理员</a>
+													<a href="void;"
+														style="margin-right: 20px; margin-left: 30px">超级管理员</a>
 												</c:if>
 												<c:if test="${user.status==1}">
 													<a href="void;">管理员</a>
@@ -267,10 +251,10 @@
 												<p style="display: none;">用户名4-20字节，数字，字母，下划线</p>
 											</dd>
 											<dd class="ass_card">
-												<span id="idcard1">身份证：${user.idcard}
-												</span>
-												<span id="idcard2" style="display: none;">身份证：
-												<input type="text" value="${user.idcard}" name="idcard" id="inputDis" class="input-text" />
+												<span id="idcard1">身份证：${user.idcard} </span> <span
+													id="idcard2" style="display: none;">身份证： <input
+													type="text" value="${user.idcard}" name="idcard"
+													id="inputDis" class="input-text" />
 												</span>
 											</dd>
 										</dl>
@@ -280,67 +264,70 @@
 											<dt>基本信息</dt>
 											<dd>
 												<ul>
-													<li style="padding-left:23px;">
-														<span >性别：</span> 
-														<span>
+													<li style="padding-left: 23px;"><span>性别：</span> <span>
 															<c:if test="${user.sex==1}">
-																<input type="radio" id="sex" value="1" name="sex" checked="checked" /> 男&nbsp;&nbsp;&nbsp; 
-	                            							    <input type="radio" id="sex1" value="2" name="sex" id="sex" /> 女 
+																<input type="radio" id="sex" value="1" name="sex"
+																	checked="checked" /> 男&nbsp;&nbsp;&nbsp; 
+	                            							    <input type="radio" id="sex1"
+																	value="2" name="sex" id="sex" /> 女 
 	                            							</c:if>
-														</span> 
-														<span> 
-															<c:if test="${user.sex==2}">
+													</span> <span> <c:if test="${user.sex==2}">
 																<input type="radio" id="sex" value="1" name="sex" /> 男&nbsp;&nbsp;&nbsp; 
-	                            								<input type="radio" id="sex1" value="2" name="sex" checked="checked" /> 女 
+	                            								<input type="radio" id="sex1"
+																	value="2" name="sex" checked="checked" /> 女 
 	                         								</c:if>
-														</span>
-													</li>
-													
-													<li>
-													 <span id="email1" style="padding-left:23px;">邮箱：${user.email} </span> 
-													  <span id="email2" style="display: none;padding-left:23px;">邮箱：
-													  <input type="text" name="email" class="input_info" value="${user.email}" style="width: 150px" id="email"/>
-													 </span> 
-													</li>
-													
-													<li>
-													 <span id="phone1" style="padding-left:23px;">电话：${user.phone}</span> 
-													  <span id="phone2" style="display: none;padding-left:23px;">电话：
-													 <input type="text" name="phone" class="input_info" value="${user.phone}" style="width: 150px" id="phonee"/>
-													 </span> 
-													</li>
-													<li>
-													
-													<span id="address1">所在地址：${user.address} </span> 
-													  <span id="address2" style="display: none;">所在地址：
-													<input type="text" name="address" class="input_info" value="${user.address}" style="width: 150px" id="address"/>
-													 </span> 
-													</li>
-													
-													<li>
-													<span id="birthday1">出生日期：<fmt:formatDate value="${user.birthday}" pattern="yyyy-MM-dd" /> </span> 
-													<input type="hidden" name="id" value="${user.id}" />
-													  <span id="birthday2" style="display: none;">出生日期：
-													<input type="text" name="birthday" class="input_info" value="<fmt:formatDate value="${user.birthday}" pattern="yyyy-MM-dd" />" style="width: 150px" id="birthday"/>
-													 </span> 
-													</li>
-													
-													<li class="checkbox" style="display: none;padding-left:23px;">
-														<span class="promotion_ipt">
-														<input type="checkbox" checked="checked" id="recPromotionMsg" class="w20 mr5" value="0" />同意接受风游发送的短信促销信息
-														</span>
-													</li>
-													
-													<li class="checkbox"  style="display: none;padding-left:23px;">
-														<span class="promotion_ipt">
-														<input type="checkbox" checked="checked" id="recPromotionEmail" class="w20 mr5" value="0" />同意接受风游发送的邮件促销信
-														</span>
-													</li>
-													
+													</span></li>
+
+													<li><span id="email1" style="padding-left: 23px;">邮箱：${user.email}
+													</span> <span id="email2"
+														style="display: none; padding-left: 23px;">邮箱： <input
+															type="text" name="email" class="input_info"
+															value="${user.email}" style="width: 150px" id="email" />
+													</span></li>
+
+													<li><span id="phone1" style="padding-left: 23px;">电话：${user.phone}</span>
+														<span id="phone2"
+														style="display: none; padding-left: 23px;">电话： <input
+															type="text" name="phone" class="input_info"
+															value="${user.phone}" style="width: 150px" id="phonee" />
+													</span></li>
+													<li><span id="address1">所在地址：${user.address} </span> <span
+														id="address2" style="display: none;">所在地址： <input
+															type="text" name="address" class="input_info"
+															value="${user.address}" style="width: 150px" id="address" />
+													</span></li>
+
+													<li><span id="birthday1">出生日期：<fmt:formatDate
+																value="${user.birthday}" pattern="yyyy-MM-dd" />
+													</span> <input type="hidden" name="id" value="${user.id}" /> <span
+														id="birthday2" style="display: none;">出生日期： <input
+															type="text" name="birthday" class="input_info"
+															value="<fmt:formatDate value="${user.birthday}" pattern="yyyy-MM-dd" />"
+															style="width: 150px" id="birthday" />
+													</span></li>
+
+													<li class="checkbox"
+														style="display: none; padding-left: 23px;"><span
+														class="promotion_ipt"> <input type="checkbox"
+															checked="checked" id="recPromotionMsg" class="w20 mr5"
+															value="0" />同意接受风游发送的短信促销信息
+													</span></li>
+
+													<li class="checkbox"
+														style="display: none; padding-left: 23px;"><span
+														class="promotion_ipt"> <input type="checkbox"
+															checked="checked" id="recPromotionEmail" class="w20 mr5"
+															value="0" />同意接受风游发送的邮件促销信
+													</span></li>
+
 													<li class="clearfix">
 														<div class="sub_btn">
-															<input type="button" style="background-color: blue; color: white;" id="input1ID" value="编辑" class="btn" /> 
-															<input type="submit" class="btn" value="保存修改" style="display: none; color: #FFFFFF; background: blue;" id="update" />
+															<input type="button"
+																style="background-color: blue; color: white;"
+																id="input1ID" value="编辑" class="btn" /> <input
+																type="submit" class="btn" value="保存修改"
+																style="display: none; color: #FFFFFF; background: blue;"
+																id="update" />
 														</div>
 													</li>
 												</ul>
@@ -355,48 +342,57 @@
 						</div>
 						<div class="tab-pane" id="b">
 							<!-- 旅客信息 -->
-							<div style="width: 800px;margin-top: 20px;">
-							<table >
-							 <tr style="font-size: 18px;background-color: #F3F9FF" >
-								<th style="width: 10%;text-align: center;border:1px solid #ddd;padding: 5px;">姓名</th>
-								<th style="width:10%;text-align: center;border:1px solid #ddd;">电话</th>
-								<th style="width: 10%;text-align: center;border:1px solid #ddd;">证件类型</th>
-								<th style="width: 10%;text-align: center;border:1px solid #ddd;">证件号码</th>
-								<th style="width: 10%;text-align: center;border:1px solid #ddd;">操作</th>
-							 </tr>
-							 
-							 	<c:forEach var="trip" items="${trip}" varStatus="status">
-											<tr  <c:if test="${status.index%2==1}">style="background-color: #F3F9FF;"</c:if> id="${trip.id}" align="center">
-												<td style="border:1px solid #ddd;padding: 5px;font-size: 14px;">${trip.linkUserName}</td>
-												<td style="border:1px solid #ddd;">${trip.linkPhone}</td>
-												<c:if test="${trip.linkIdCardType==0}">
-													<td style="border:1px solid #ddd;">身份证</td>
-												</c:if>
-												<c:if test="${trip.linkIdCardType==1}">
-													<td style="border:1px solid #ddd;">护照</td>
-												</c:if>
-												<c:if test="${trip.linkIdCardType==2 }">
-												<td style="border:1px solid #ddd;">学生证</td>
-												</c:if>
-												<c:if test="${trip.linkIdCardType==3 }">
-												<td style="border:1px solid #ddd;">军人证</td>
-												</c:if>
-												<c:if test="${trip.linkIdCardType==4 }">
-												<td style="border:1px solid #ddd;">驾驶证</td>
-												</c:if>
-												<c:if test="${trip.linkIdCardType==5 }">
-												<td style="border:1px solid #ddd;">旅行证</td>
-												</c:if>
-												<td style="border:1px solid #ddd;">${trip.linkIdCard}</td>
-												<td style="border:1px solid #ddd;"><a style="text-decoration: none;" onclick="del(${trip.id})" >删除</a></td>
-											</tr>
-							</c:forEach>
-							 
-							</table>
+							<div style="width: 800px; margin-top: 20px;">
+								<table>
+									<tr style="font-size: 18px; background-color: #F3F9FF">
+										<th
+											style="width: 10%; text-align: center; border: 1px solid #ddd; padding: 5px;">姓名</th>
+										<th
+											style="width: 10%; text-align: center; border: 1px solid #ddd;">电话</th>
+										<th
+											style="width: 10%; text-align: center; border: 1px solid #ddd;">证件类型</th>
+										<th
+											style="width: 10%; text-align: center; border: 1px solid #ddd;">证件号码</th>
+										<th
+											style="width: 10%; text-align: center; border: 1px solid #ddd;">操作</th>
+									</tr>
+
+									<c:forEach var="trip" items="${trip}" varStatus="status">
+										<tr
+											<c:if test="${status.index%2==1}">style="background-color: #F3F9FF;"</c:if>
+											id="${trip.id}" align="center">
+											<td
+												style="border: 1px solid #ddd; padding: 5px; font-size: 14px;">${trip.linkUserName}</td>
+											<td style="border: 1px solid #ddd;">${trip.linkPhone}</td>
+											<c:if test="${trip.linkIdCardType==0}">
+												<td style="border: 1px solid #ddd;">身份证</td>
+											</c:if>
+											<c:if test="${trip.linkIdCardType==1}">
+												<td style="border: 1px solid #ddd;">护照</td>
+											</c:if>
+											<c:if test="${trip.linkIdCardType==2 }">
+												<td style="border: 1px solid #ddd;">学生证</td>
+											</c:if>
+											<c:if test="${trip.linkIdCardType==3 }">
+												<td style="border: 1px solid #ddd;">军人证</td>
+											</c:if>
+											<c:if test="${trip.linkIdCardType==4 }">
+												<td style="border: 1px solid #ddd;">驾驶证</td>
+											</c:if>
+											<c:if test="${trip.linkIdCardType==5 }">
+												<td style="border: 1px solid #ddd;">旅行证</td>
+											</c:if>
+											<td style="border: 1px solid #ddd;">${trip.linkIdCard}</td>
+											<td style="border: 1px solid #ddd;"><a
+												style="text-decoration: none;" onclick="del(${trip.id})">删除</a></td>
+										</tr>
+									</c:forEach>
+
+								</table>
 							</div>
 						</div>
 					</div>
-				
+
 				</div>
 			</form>
 			<script type="text/javascript">
@@ -413,8 +409,7 @@
 			<dl>
 				<dt>加盟合作</dt>
 				<dd>
-					<a href="#" title="酒店加盟"
-						rel="nofollow">酒店加盟</a>
+					<a href="#" title="酒店加盟" rel="nofollow">酒店加盟</a>
 				</dd>
 				<dd>
 					<a href="http://open.elong.com/" title="机票酒店分销联盟" rel="nofollow">开放平台</a>
@@ -512,7 +507,8 @@
 				class="cm_icon qua-7">品牌官网认证</a>
 		</div>
 	</div>
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/statics/css/userlist/styles.css">
+	<link rel="stylesheet" type="text/css"
+		href="${pageContext.request.contextPath }/statics/css/userlist/styles.css">
 		<!-- ===================== footer end ===================== -->
 </body>
 </html>

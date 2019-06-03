@@ -14,6 +14,11 @@ public class DictionarydateServiceImpl implements DictionarydateService{
 	@Autowired
 	private DictionarydateDao dictionarydateDao;
 	
+	/**
+	 * 通过typecode查询
+	 * @param typeCode
+	 * @return
+	 */
 	public List<Dictionarydate> queryDictionarydateByTypeCode(String typeCode) {
 		return dictionarydateDao.queryDictionarydateByTypeCode(typeCode);
 	}

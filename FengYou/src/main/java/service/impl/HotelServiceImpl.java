@@ -16,9 +16,13 @@ import util.PinYinUtil;
 
 @Service
 public class HotelServiceImpl implements HotelService {
+	
 	@Autowired
 	private HotelDao hotelDao;
 
+	/***
+	 * 多条件查询酒店信息
+	 */
 	public List<Hotel> queryHotel(@Param("hotelRating") int hotelRating, @Param("level1") int level1,
 			@Param("level2") int level2,@Param("level3") int level3, @Param("bigPrice") int bigPrice, @Param("smallPrice") int smallPrice,
 			@Param("sort") String sort, @Param("desc") String desc) {
@@ -29,10 +33,12 @@ public class HotelServiceImpl implements HotelService {
 		return queryHotel;
 	}
 
+	/**
+	 * 分页
+	 */
 	public PageInfo<Hotel> findHotelList(@Param("hotelRating") int hotelRating, @Param("level1") int level1,
-			@Param("level2") int level2, @Param("level3") int level3,@Param("bigPrice") int bigPrice, @Param("smallPrice") int smallPrice,
+			@Param("level2") int level2,@Param("level3") int level3, @Param("bigPrice") int bigPrice, @Param("smallPrice") int smallPrice,
 			@Param("sort") String sort, @Param("desc") String desc, int page, int size) {
-
 		String orderBy = sort + " " + desc;
 		PageHelper.startPage(page, size, orderBy);
 		List<Hotel> users = queryHotel(hotelRating, level1, level2,level3, bigPrice, smallPrice, sort, desc);
@@ -40,6 +46,9 @@ public class HotelServiceImpl implements HotelService {
 		return pageInfoUser;
 	}
 
+	/**
+	 * 通过酒店名字和地址的关键字和目的地来搜索酒店
+	 */
 	public List<Hotel> queryHotelByName(String keywords, int destination) {
 		List<Hotel> queryHotel = hotelDao.queryHotelByName(keywords, destination);
 		for (int i = 0; i < queryHotel.size(); i++) {
@@ -48,6 +57,9 @@ public class HotelServiceImpl implements HotelService {
 		return queryHotel;
 	}
 
+	/**
+	 * 分页
+	 */
 	public PageInfo<Hotel> findHotelListByName(String keywords, int destination, String sort, String desc, int page,
 			int size) {
 		String orderBy = sort + " " + desc;
@@ -57,15 +69,32 @@ public class HotelServiceImpl implements HotelService {
 		return pageInfoUser;
 	}
 
-	// 通过id查询一个酒店
+	/**
+	 * 通过id查询一个酒店
+	 */
 	@Override
 	public Hotel getHotelById(int hid) {
-		return hotelDao.getHotelById(hid);
+		Hotel hotel=hotelDao.getHotelById(hid);
+		System.out.println("sss"+hotel.getHotelServe());
+		hotel.setHotelServePy(PinYinUtil.getPinYinHeadChar(hotel.getHotelServe()));
+		return hotel;
 	}
-	
 
-	public List<Hotel> query( String hotel){
+	/**
+	 * 根据城市表的名称查询酒店
+	 */
+	@Override
+	public List<Hotel> query(String hotel) {
 		return hotelDao.query(hotel);
 	}
 
+	/**
+	 * 根据订单id查询酒店信息
+	 * @param OrderId
+	 * @return
+	 */
+	public Hotel queryHotelByOrderId(int OrderId){
+		return hotelDao.queryHotelByOrderId(OrderId);
+	}
+	
 }

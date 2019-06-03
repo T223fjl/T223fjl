@@ -5,9 +5,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="dao.dictionarydate.DictionarydateDao">
 	
-
-	
+	<!-- 通过typecode查询 -->
 	<select id="queryDictionarydateByTypeCode" resultType="Dictionarydate" >
 		SELECT * from `Dictionarydate`  where TypeCode=#{TypeCode}
 	</select>
+	
 </mapper>

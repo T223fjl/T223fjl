@@ -161,7 +161,7 @@
 						</div>
 					</div>
 				</div>
-				<form id="pay" style="display: none;" action="${pageContext.request.contextPath }/wappay/pay.jsp" method="post"
+				<form id="pay" style="display: none;" action="pay" method="post"
 					target="_blank">
 					<input id="WIDout_trade_no" name="WIDout_trade_no"
 						value="${order.orderNo }" /> <input id="WIDsubject"
@@ -170,7 +170,7 @@
 						value="${order.payAmount }" /> <input id="WIDbody" name="WIDbody" />
 						<input type="hidden" name="orderId" id="orderId" value="${orderId }" />
 						<input type="hidden" id="curDate" name="curDate" value="${curDate }" />
-						<input id="end" disabled="disabled" name="end"   />
+						<input id="end" disabled="disabled" name="end" value="${end }"  />
 				</form>
 				<script type="text/javascript">
 				Date.prototype.format = function(fmt) { 
@@ -195,11 +195,7 @@
 				}      
 				
 					$(function() {
-						var d=new Date($("#curDate").val());
-						var time=new Date(d.getTime()+1000*60*30);
-						//alert(time)
-						$("#end").val(time);
-						//alert($("#end").val())
+					
 						
 				        //参考：可以通过跨域方式获取其他服务器的当前时间作为服务器当前时间
 				        var oCity="北京"; //设置城市

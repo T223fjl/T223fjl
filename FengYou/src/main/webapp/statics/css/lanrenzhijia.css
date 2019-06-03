@@ -1,0 +1,262 @@
+.menu1 {
+	width: 210px;
+/* 	position: fixed!important; */
+	_position: absolute;
+	overflow: visible;
+	display: block;
+	z-index: 10000;
+	border-bottom: 1px solid #ccc;
+	font-family: 'Microsoft YaHei,瀹嬩綋';
+	_position: absolute;
+	_left: expression(eval(document.documentElement.scrollLeft));
+	_top: expression(eval(document.documentElement.scrollTop));
+	zoom: 1;
+	-left: 243px;
+	top: 93px;
+	box-shadow: 4px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.menu1 .title {
+	position: relative;
+	font-weight: bold;
+	font-family: Microsoft YaHei;
+	font-size: 13px;
+/* 	color: #fff; */
+	height: 30px;
+	line-height: 30px;
+	padding-left: 15px;
+	padding-right: 8px
+}
+
+.top {
+	width: 100%;
+	height: 93px;
+	background: #B20000;
+}
+
+.main {
+	width: 930px;
+	background: #FFF;
+	height: 2600px;
+	margin: 0 0 0 238px;
+	padding-left: 10px;
+}
+
+.menu1 .items {
+	width: 210px;
+	overflow: hidden;
+	position: relative;
+	z-index: 6;
+}
+
+.top .middle {
+	width: 1168px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.top .middle .logo {
+	padding-top: 50px;
+}
+
+.wrap {
+	width: 1178px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.menu1 .items ul {
+	list-style: none
+}
+
+a img {
+	border: none;
+}
+
+.menu1 .items ul li {
+	display: block;
+	position: relative;
+	padding-left: 10px;
+	background: #fff;
+	line-height: 30px;
+	cursor: pointer;
+	float: left;
+	width: 100%;
+}
+
+.menu1 .items h3 {
+	padding-left: 30px;
+	font-weight: bold;
+	font-family: Microsoft YaHei;
+	font-size: 12px
+}
+
+.menu1 .items ul li.alt {
+	background: #f1f1f1
+}
+
+.menu1 .items ul li.curr {
+	background: #6c5143;
+	color: #fff;
+	cursor: pointer;
+	border-top: 1px solid #6c5143;
+	border-bottom: 1px solid #6c5143
+}
+
+.menu1 .items ul li p {
+	line-height: 20px;
+	font-size: 12px;
+	display: block
+}
+
+.menu1 .items ul li a {
+	font-size:12px;
+	color: #888;
+	text-decoration: none;
+	padding: 0 2px;
+	line-height: 25px;
+	height: 25px;
+	font-family: 'Microsoft YaHei,瀹嬩綋';
+}
+
+/* .menu1 .items ul li:hover { */
+/* /* 	border-bottom:#e02d02; */ */
+/* /* 	border-left:#e02d02; */ */
+/* /* 	border-top:#e02d02; */ */
+/* 	background: #77BBEE; */
+/* 	color: #FFF */
+/* } */
+
+.menu1 .items ul li:hover a {
+	color: #FFF
+}
+
+.menu1 .items ul li p a:hover {
+	color: #e02d02;
+	text-decoration: none;
+	font-family: 'Microsoft YaHei,瀹嬩綋';
+}
+
+.menu1 .items ul li.curr p a {
+	color: #fff
+}
+
+.menu1 .box {
+	width: 510px;
+	height:220px;
+	background: repeat-y url('../images/bg_line_t.jpg') #fff;
+	position: absolute;
+	overflow: visible;
+/* 	min-width: 500px; */
+/* 	min-height: 500px; */
+/* 	_width: 755px; */
+/* 	_height: 500px; */
+/* 	border-left: 1px solid #dfdfdf; */
+	border-top: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	display: none;
+	left: 210px;
+	top: 30px;
+	opacity:0.9;
+	z-index: 4;
+}
+
+.menu1 .menuIcon {
+	position: absolute;
+	display: block;
+	width: 5px;
+	height: 9px;
+	top: 40%;
+	right: 10px;
+	background-position: -7px -480px;
+	overflow: hidden
+}
+
+.menu1 .btn_group {
+	position: absolute;
+	display: block;
+	width: 45px;
+	height: 21px;
+	top: 4px;
+	right: 10px;
+	background-position: -0px -492px;
+	overflow: hidden
+}
+
+.menu1 .btn_group.bleft {
+	background-position: -0px -492px
+}
+
+.menu1 .btn_group.bright {
+	background-position: -0px -518px;
+}
+
+.menu1 .btn_group .bleft {
+	margin: 1px 0 1px 1px;
+	float: left;
+	display: block;
+	height: 19px;
+	width: 21px;
+	cursor: pointer
+}
+
+.menu1 .btn_group .bright {
+	margin: 1px 1px 1px 0;
+	float: right;
+	display: block;
+	height: 19px;
+	width: 21px;
+	cursor: pointer
+}
+
+.menu1 .btn_group.bleft .bright {
+	cursor: default
+}
+
+.menu1 .btn_group.bright .bleft {
+	cursor: default
+}
+
+.menu1 .btn_group {
+	background-position: 0 -492px;
+	display: block;
+	height: 21px;
+	overflow: hidden;
+	position: absolute;
+	right: 10px;
+	top: 4px;
+	width: 45px;
+}
+
+.menu1 .box .hide {
+/* 	position:relative; */
+/* 	right:32px; */
+	width: 510px;
+	height:220px;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2), 1px -3px 5px rgba(0, 0, 0, 0.2);
+	display: none;
+}
+
+
+.menu1 .items h3,
+.menu1 .menuIcon,
+.menu1 .btn_group {
+	background:url(../../statics/images/index/icon.png) no-repeat;
+}
+
+.menu1 .list-item0 h3 {
+	background-position: 0 0
+}
+
+.menu1 .items ul li .scroll {
+	-webkit-transform: perspective(700px) translateY(0px) translateZ(-21px) rotateX(-90deg);
+	-moz-transform: perspective(700px) translateY(0px) translateZ(-21px) rotateX(-90deg);
+	-ms-transform: perspective(700px) translateY(0px) translateZ(-21px) rotateX(-90deg);
+	-o-transform: perspective(700px) translateY(0px) translateZ(-21px) rotateX(-90deg);
+	box-shadow: 0 2px 2px #AAAAAA;
+	height: 0px;
+}
+
+
+/* 浠ｇ爜鏁寸悊锛氭噿浜轰箣瀹� www.lanrenzhijia.com */

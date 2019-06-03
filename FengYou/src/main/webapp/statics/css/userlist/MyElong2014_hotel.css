@@ -1,0 +1,452 @@
+﻿@charset "UTF-8";
+/* CSS Document */
+body {background:#e8eff6;}
+.content {width:1000px;margin:20px auto 10px;min-height:920px;height:auto !important;_height:920px;}
+
+/*icon*/
+
+.iconFan {height:13px;border:1px solid #ffb027;display:inline-block;background:url(../pic/icon2014.png) no-repeat 0px -14px;color:#ff8800;font-size:11px;text-align:right;padding-left:15px;padding-right:2px;line-height:13px;margin-top:-2px;*margin-top:1px;vertical-align:middle;}
+
+/*日期样式*/
+.font_wryh {font-family:Microsoft YaHei,  Arial, sans-serif;}
+.font_s {font-family:"宋体", simsun, arial, sans-serif;}
+.my_list{padding:6px 17px 15px 15px;margin-top:0px;background-color:#fff;border:1px solid #d9e5f1;min-height: 900px;_height:900px;}
+.my_list .my_list_title, .my_history .title, .my_vip .title {font-size:16px;color:#555;}
+.my_list_detail .date {width:105px;border-top:4px solid #e1e1e1;font-family:"宋体", simsun, arial, sans-serif;*display:inline;}
+.my_list_detail{margin:0 auto;position: relative;}
+.my_list_detail .date .month {color:#999;font-size:12px;}
+.my_list_detail .date .day {padding-top:4px;padding-left:5px;}
+.my_list_detail .date .day h1 {font-size:30px;color:#555;height:30px;line-height:30px;}
+.my_list_detail .date .day h1.zh_font {font-size:30px;height:30px;line-height:30px;}
+.my_list_detail .date .day p {line-height:26px;color:#999;}
+.my_list_detail .date .day span.icon {display:block;width:23px;height:18px;background-image:url("../pic/test_weather_icon.png");}
+.my_list_detail .date .day span.icon_weather{display:block;}
+
+
+
+.detail_nmdt{background: #f7f7f7;height: 30px;line-height: 30px;position: relative;}
+.detail_nmdt span{padding: 0 20px 0 10px;color: #999;}
+.detail_nmdt span b{font-weight: normal;}
+.date_week{font:14px/50px Microsoft YaHei;color: #555;padding:0 7px 0 0;height: 34px;overflow: hidden;width: 30px;}
+.ht_days{padding:0 7px 0 0;}
+/*信息样式*/
+.my_list_detail {margin-top:-1px;width:797px;}
+.last {background:transparent url("../pic/last_border.png") no-repeat left bottom;}
+.detail_box {/* border-top:1px solid #e1e1e1;*/ border-left:1px solid #e1e1e1;}
+.detail_one {cursor:pointer;width:680px;margin-left:-1px;*position:static;border-top:1px solid #e1e1e1;border-right:1px solid #fff;border-left:1px solid #e1e1e1;border-bottom:1px solid #fff;z-index:1;}
+.last .detail_one {border-bottom:1px solid #e1e1e1;}
+.detail_info {width:100%;float:left;padding-bottom:5px;}
+.detail_info ul li {float:left;*display:inline;padding-top:12px;}
+.detail_info .info_icon {width:70px;padding:10px;height:70px;}
+.detail_info .info_icon .icon_type {display:block;width:26px;height:26px;background:url("../pic/icon2014.png") no-repeat;}
+.detail_info .info_icon span.type1 {background-position:-135px -171px;}
+.detail_info .info_icon span.type2 {background-position:-108px -171px;}
+.detail_info .info_icon span.type3 {background-position:-81px -171px;}
+.detail_info .info_icon span.type4 {background-position:-54px -171px;}
+.detail_info .info_icon span.type5 {background-position:-27px -170px;}
+.detail_info .info_icon span.type6 {background-position:0px -170px;}
+.detail_info .info_txt {width:290px;padding-top:9px;min-height:87px;}
+.detail_info .info_txt h1 {height:20px;line-height:20px;}
+.detail_info .info_txt h1 a {font-size:16px;color:#555;display:block;height:20px;line-height:20px;width:270px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.detail_info .info_txt h1 a:hover {color:#f60;}
+.detail_info .info_txt span.plane_arr {vertical-align:middle;*vertical-align:baseline;background:url("../pic/icon2014.png") no-repeat -70px -137px;margin:0 8px;position:relative;padding:0 15px;*background-position:-70px -133px;_background-position:-63px -133px;}
+.detail_info .info_txt p {color:#999;width:300px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;line-height:18px;margin-top:8px;}
+.detail_info .info_txt_tel{height:15px;margin-top:0px !important;}
+.detail_info .info_txt_tel span{display:none;_display:block;}
+.detail_info:hover .info_txt_tel span{display:block;}
+.detail_info .info_price {font-size:14px;color:#555555;width:110px;padding-right:30px;_padding-right:20px;font-family:Microsoft YaHei, Arial, sans-serif;}
+.detail_info .info_price p.tishi2 {font-size:12px;color:#f60;margin-top:0px;position:relative;}
+.detail_info .info_price p.t_w {font-size:12px;color:#999999;margin-top:0px;}
+.detail_info .info_price a {font-size:12px;display:none;_display:block;}
+.detail_info .info_price a.check .icon{display:inline-block;width:10px;height:10px;background:url(../pic/myelong_com_2014.png) no-repeat 2px 5px;*vertical-align:middle;}
+.detail_info .info_price a.check:hover .icon{background-position:-32px 5px;}
+.detail_info .info_price a.on {color:#f60;display:block;}
+.detail_info .info_price a.on .icon{background-position:-21px 5px;}
+.detail_info .info_price a.on:hover .icon{background-position:-21px 5px;}
+
+.detail_info .info_trace {text-align:center;padding-left:0px;padding-right:0px;width:160px;height:82px;}
+.detail_info .info_trace h2 {font-size:14px;color:#555;}
+.detail_info .info_trace p {color:#777;}
+.detail_info .info_trace a {margin-left:4px;margin-bottom:4px;float:left;width:54px;text-align:center;}
+.detail_info .info_trace a span{float:left;}
+.detail_info .info_trace a .mod_btn{}
+.detail_info .info_trace a .icon{display:inline-block;width:7px;height:6px;overflow:hidden;background:url("../pic/icon2014.png") no-repeat -65px -280px;margin:7px -4px 0 1px;float:right;}
+.detail_info .info_trace a:hover .icon{background-position:-71px -280px;}
+.detail_info .info_trace a.check_on .icon{background-position:-71px -283px;}
+
+
+/*.detail_info .info_trace a.print_inf{margin:0 0 0 82px;}*/
+
+/*进度查询按钮显示*/
+.detail_one:hover .detail_info .info_price a.check{display:block;}
+
+
+
+/*.detail_info .info_trace a {position:absolute;bottom:10px;left:35%;color:#999;display:none;*//*_display:block;*//*}*/
+.detail_info .info_price span.icon_trace {display:inline-block;width:16px;height:20px;background:url("../pic/icon2014.png") no-repeat;vertical-align:middle;margin-right:5px;}
+.detail_info .trace_waiting {}
+.detail_info .trace_waiting span.icon_trace {background-position:0px -282px;}
+.detail_info .trace_done {}
+.detail_info .trace_done span.icon_trace {background-position:-18px -282px;}
+.detail_info .trace_cancel {}
+.detail_info .trace_cancel span.icon_trace {background-position:-108px -282px;}
+.detail_info .trace_refuse {}
+.detail_info .trace_refuse span.icon_trace {background-position:-36px -283px;}
+.detail_one .detail_ems {padding:20px 0 10px 50px;border-top:1px dashed #dddddd;position:relative;}
+.detail_one .detail_ems ul{clear:both;}
+.detail_one .detail_ems ul li:first-child {}
+.detail_one .ems_close {width:11px;height:11px;display:block;position:absolute;right:10px;top:10px;background:url(../pic/myelong_com_2014.png) no-repeat 0px -12px;}
+.detail_one .ems_close:hover {background:url(../pic/myelong_com_2014.png) no-repeat -21px -12px;}
+.detail_one:hover {border:1px solid #fa7e38;z-index:2;position:relative;}
+.detail_one .order_detail {clear:both;padding-top:10px;}
+.detail_ems .progressBar {}
+.detail_ems .progressBar .progressBar_txt {}
+.detail_ems .progressBar .progressBar_txt li {float:left;width:133px;text-align:center;color:#777;position: relative;}
+.detail_ems .progressBar .progressBar_txt li.first {width:70px;text-align:left;}
+
+
+.detail_ems .progressBar .progressBar_txt li a{position: absolute;background:url(../pic/mye_probar.png) no-repeat -2px -108px;width:14px;height: 14px;left:50%;top:20px;margin-left:-6px;}
+.detail_ems .progressBar .progressBar_txt li a:hover{background:url(../pic/mye_probar.png) no-repeat -44px -108px;}
+
+
+
+.detail_ems .progressBar .bar_off {background:url("../pic/mye_probar.png") no-repeat right -22px;clear:both;height:10px;}
+.detail_ems .progressBar .bar_on {overflow:hidden;height:10px;}
+.detail_ems .progressBar .bar_on div {background:url("../pic/mye_probar.png") no-repeat right 0;height:10px;}
+.detail_ems .step1 {width:6px;}
+.detail_ems .step2 {width:137px;}
+.detail_ems .step3 {width:268px;}
+.detail_ems .step4 {width:399px;}
+.detail_ems .step5 {width:620px;}
+.detail_ems .over1, .detail_ems .over1 .step1, .detail_ems .over1 .bar_on div {width:93px;}
+.detail_ems .over2, .detail_ems .over2 .step2, .detail_ems .over2 .bar_on div {width:224px;}
+.detail_ems .over3, .detail_ems .over3 .step3, .detail_ems .over3 .bar_on div {width:355px;}
+.detail_ems .over4, .detail_ems .over4 .step4, .detail_ems .over4 .bar_on div {width:486px;}
+.detail_ems .over5, .detail_ems .over5 .step5, .detail_ems .over5 .bar_on div {width:617px;}
+.order_detail {padding-top:10px;}
+.order_detail li {width:100%;float:left;margin-bottom:5px;*margin-bottom:0;}
+.order_detail li label {width:115px;line-height:24px;float:left;color:#777777;}
+.order_detail li p {color:#777777;width:500px;float:left;line-height:24px;}
+.order_detail li p a {margin-left:5px;}
+.order_detail li:first-child p {color:#ff8800;*margin-top:2px;}
+.order_detail li:first-child label {color:#ff8800;}
+
+
+/*select*/
+.MEselBox {float:left;position:relative;z-index:2;margin-top:10px;margin-right:10px;}
+.MEsel {border:1px solid #c7cdd4;height:20px;background:#fff url(../pic/icon2014.png) no-repeat right -284px;cursor:pointer;line-height:20px;padding-left:5px;font-size:12px;color:#555;width:90px;}
+.MEsel:hover {background:#fff url(../pic/icon2014.png) no-repeat right -307px;}
+.MEselBox ul {background:#fff;border:1px solid #c7cdd4;border-top:0px;position:absolute;left:0px;top:22px;width:95px;padding-top:5px;}
+.MEselBox ul li {cursor:pointer;line-height:27px;padding-left:5px;font-size:12px;color:#555;}
+.MEselBox ul li:hover {background:#DDD;}
+
+/*右侧内容*/
+.rightMain .orderMtop{height:50px;margin-bottom:2px;}
+
+.rightMain .orderMtop p {float:left;}
+.rightMain .orderMtop .orderMinfo {color:#999;margin-top:12px;float:left;/* margin-left:10px;*/ }
+.rightMain .orderMtop a.xfqBut {float:right;width:180px;height:50px;background:url(../pic/icon2014.png) no-repeat 0px -54px;display:inline-block;}
+
+/*取消订单样式*/
+.rightMain .cancel {background-color:#eff5fd;}
+.rightMain .cancel .oper {border-left:1px dashed #dde9f4;}
+
+/*返现说明*/
+.couponIntroBox {width:710px;_width:720px;background-color:#fff;margin:0 auto;}
+.couponIntroBox li {float:left;margin:5px;width:345px;height:195px;overflow:hidden;}
+
+/*列表页反馈提示床20140108*/
+.icon_gift {width:14px;height:14px;display:inline-block;background:url(../pic/icon2013.png) no-repeat -55px -27px;margin-right:5px;vertical-align:-2px;}
+.icon_alert {width:14px;height:14px;display:inline-block;background:url(../pic/icon2013.png) no-repeat 0px -27px;margin-right:1px;vertical-align:-2px;*vertical-align:middle;}
+/*反馈表单*/
+.form_ul {padding-left:82px;padding-bottom:10px;}
+.form_ul li {height:28px;margin-bottom:7px;text-align:left;}
+.form_ul li label {font-size:12px;display:inline-block;width:80px;text-align:right;height:26px;line-height:26px;}
+.form_ul li input.text {font-size:12px;width:145px;padding-left:5px;height:26px;line-height:26px;border:1px solid #dddddd;vertical-align:middle;}
+.form_ul li input.gray {color:#999;}
+.form_ul li div.warning {display:inline;color:#fd0000;font-size:12px;}
+.form_ul li div.none {visibility:hidden;}
+.form_ul li input.submitBtn {padding:6px 23px;*padding:1px 16px;color:#fff;font-size:16px;background-color:#2c73c0;border:none;vertical-align:middle;font-weight:normal;font-family:Microsoft YaHei, "黑体", Arial, Helvetica, sans-serif;margin-right:10px;}
+.form_ul li a.cancel {font-family:Microsoft YaHei, "黑体", Arial, Helvetica, sans-serif;font-size:16px;color:#2c73c0;line-height:30px;vertical-align:middle;text-decoration:none;background-color:transparent;}
+/*反馈成功*/
+.fk_success {text-align:center;padding-top:70px;}
+.fk_success h1 {font-size:24px;color:#555;padding-bottom:25px;font-family:Microsoft YaHei, "黑体", Arial, Helvetica, sans-serif;}
+.fk_success p {color:#777;}
+.icon_smile {display:inline-block;width:64px;height:60px;background:url("../pic/fk_success.png") no-repeat;vertical-align:middle;}
+/*loading*/
+.icon_loading {width:100%;height:100%;background:#fff url("../../common/pic/app-bg.png") repeat;position:absolute;z-index:10;left:0;top:0;}
+.icon_loading div {position:absolute;left:50%;top:50%;width:40px;height:40px;margin-left:-20px;margin-top:-20px;background:url("../pic/card_loading.gif") no-repeat left top;}
+/*反馈容器*/
+.fk_Box {width:470px;height:270px;background-color:#fff;position:relative;}
+.fk_Box form h1 {text-align:center;padding:26px 0;font-size:14px;font-family:Microsoft YaHei, "黑体", Arial, Helvetica, sans-serif;margin-left:22px;}
+.el_footer {border-top:1px solid #e0dfdf;}
+
+/*酒店订单列表弹层*/
+/*.com_way .z_tl {border-top:#98cff5 solid 1px;border-right:#98cff5 solid 1px;border-left:none;background:#f1faff;float:right;}
+.com_way .bk_1 {border-bottom:#f1faff solid 3px;border-left:#f1faff solid 3px;border-right:#f1faff solid 3px;background-color:#f1faff;padding:5px;}
+.com_way .bk {border-bottom:#98cff5 solid 1px;border-left:#98cff5 solid 1px;border-right:#98cff5 solid 1px;background:#f1faff;}
+.com_way .bk_1 a {color:#555;text-decoration:none;}
+.com_way .bk_1 a:hover {color:#3d99dd;}
+.com_way .bj_tl {background:url(../pic/list_arr.png) no-repeat 0 top;float:left;}*/
+
+.error_con{padding:20px 0}
+.error_icon{background:url(../pic/icon2013.png) no-repeat 0px -166px;margin-top:6px;margin-left:50px;width:18px;height:18px;float:left;display:block;_display:inline-block;}
+.error_txt{padding-left:76px;line-height:32px;width:200px;text-align:left;*padding-left:20px;*float:left;}
+.sucess_con{padding:50px 0;text-align:center;}
+.sucess_con .sucess_icon{margin-left:-20px;}
+.sucess_icon{width:38px;height:35px;background:url(../pic/icon2014.png) no-repeat 0px -329px;display:inline-block;vertical-align:middle;}
+.sucess_txt{font:24px Microsoft YaHei;margin-bottom:10px;}
+.reply_con{padding:20px 0;}
+.reply_con p{text-align:center;}
+.reply_con .error_icon{float:none;margin:0px;margin-left:-11px;display:inline-block;vertical-align:-4px;_vertical-align:0px;}
+.submit_input{width:100px;text-align:center;padding:7px 0;color: #fff;font-size: 16px;background-color: #2c73c0;border: none;vertical-align: middle;font-weight: normal;font-family: Microsoft YaHei, "黑体", Arial, Helvetica, sans-serif;margin-right: 10px;}
+.reply_con a{color:#2C73BF;text-decoration:none;}
+.reply_con a:hover{color:#F60;}
+.reply_con textarea{width:370px;height:130px;font-size:12px;padding-top:7px;padding-left: 7px;color: #BBBBBB;overflow:auto;resize: none;border:1px solid #BBBBBB;}
+.reply_con textarea:focus{color:#333;}
+.reply_con .tip{color:#555;}
+
+/*酒店待点评*/
+.commentlist{padding:0;}
+.commentlist .my_list_detail .date{width:101px;}
+.commentlist .detail_one{width:687px;border-top:1px solid #fff;border-left:1px solid #f0f0f0;border-bottom:1px solid #e1e1e1;}
+.commentlist .detail_one:hover{border:1px solid #fa7e38;z-index:2;position:relative;}
+.commentlist .detail_info .info_trace a{float:none;margin:0 auto;}
+.commentlist .detail_info .info_trace .tip{color:#F60;}
+.commentlist .detail_info .info_trace .tip span{width:23px;height:25px;display:inline-block;background:url(../pic/icon2014.png?20140703) no-repeat -46px -335px;display:inline-block;margin-right:3px;vertical-align:-4px;}
+.commentlist .comgift{width:800px;height:60px;margin:0 auto 20px;background-color:#F8F8F8;}
+.commentlist .comgift p{font:16px Microsoft YaHei, Arial, sans-serif;color:#555;line-height:60px;}
+.commentlist .comgift p .icon{width:33px;height:32px;float:left;background:url(../pic/icon2014.png?20140703) no-repeat -77px -330px;margin:10px 50px;}
+.commentlist .comgift p a{font:12px Sunsum;}
+.rightMain .cl_no_result {width: 440px;height:582px;margin: 140px auto;text-align:center;}
+.rightMain .cl_no_result span{display:inline-block;background:url(../pic/icon_hotel2014.png) no-repeat;}
+.rightMain .cl_no_result .i1{width:104px;height:93px;}
+.rightMain .cl_no_result .i2{width:219px;height:106px;background-position:-112px 0;}
+.rightMain .cl_no_result .i3{width:291px;height:90px;background-position:-340px -8px;}
+.rightMain .cl_no_result .i4{width:220px;height:89px;background-position:0px -106px;}
+.rightMain .cl_no_result .i5{width:104px;height:92px;background-position:-220px -103px;}
+.rightMain .cl_no_result h2{font:16px Microsoft YaHei, Arial, sans-serif;color:#555;}
+.rightMain .cl_no_result p{color:#999;}
+/*酒店已点评*/
+.hotelcomlist{width:800px;margin:20px auto 0;}
+.hotelcomlist li{margin-bottom:15px;position:relative;}
+.hotelcomlist .left{width:140px;margin-top:3px;}
+.hotelcomlist .left .pic{width:115px;height:80px;overflow:hidden;}
+.hotelcomlist .left .pic img{width:115px;height:80px;}
+.hotelcomlist .left .pic img:hover{opacity:0.9;}
+.hotelcomlist .left .hotelname{color:#555;margin-top:5px;}
+.hotelcomlist .left .date{color:#999;}
+.hotelcomlist .right{width:635px;min-height:110px;border-bottom:1px solid #E0E0E0;position:relative;padding-bottom:15px;padding-right:5px;}
+.hotelcomlist .right .good,.hotelcomlist .right .bad{width:15px;height:17px;display:block;position:absolute;left:-26px;top:2px;background:url(../pic/icon2014.png) no-repeat;}
+.hotelcomlist .right .good{background-position:-262px -338px;}
+.hotelcomlist .right .bad{background-position:-285px -342px;}
+.hotelcomlist .right a.ems_close{ position: absolute;right:0;top:-8px;display:block; height: 11px; width: 11px;background:url(../pic/myelong_com_2014.png) no-repeat 0 -12px;}
+.hotelcomlist .right a.ems_close:hover{background-position: -21px -12px;}
+.hotelcomlist .right .picaudit,.hotelcomlist .right .comaudit,.hotelcomlist .right .audit,.hotelcomlist .right .auditfail{width:80px;height:45px;display:block;position:absolute;right:0;top:0;background:url(../pic/icon2014.png) no-repeat;text-indent:-9999px;z-index:9;}
+.hotelcomlist .right .picaudit{background-position:0 -430px;}
+.hotelcomlist .right .comaudit{background-position:-80px -430px;}
+.hotelcomlist .right .audit{background-position:-160px -430px;}
+.hotelcomlist .right .auditfail{background-position:-81px -484px;}
+.hotelcomlist .right .comtext{color:#555;padding-right:35px;word-break:break-all;}
+.hotelcomlist .right .comtext:after{clear:both;content:".";display:block;height:0;visibility:hidden;}
+.hotelcomlist .right .comtext .quality{width:47px;height:42px;display:inline-block;margin-right:-45px;background:url(../pic/icon2014.png) no-repeat -118px -329px;_margin-right:-36px;position:absolute;right:35px;z-index:8;}
+.hotelcomlist .right .comtext a{white-space:nowrap;margin-left:10px;}
+.hotelcomlist .right .comtext .sh{_display:none;}
+.hotelcomlist .right .comtext .sh i{width:12px;height:6px;display:inline-block;background:url(../pic/icon2014.png) no-repeat;vertical-align:middle;margin-left:3px;overflow:hidden;}
+.hotelcomlist .right .comtext .show i{background-position: -223px -348px;}
+.hotelcomlist .right .comtext .show:hover i{background-position: -223px -362px;}
+.hotelcomlist .right .comtext .hide i{background-position: -210px -348px;}
+.hotelcomlist .right .comtext .hide:hover i{background-position: -210px -362px;}
+.hotelcomlist .right .thumbnail{margin-top:10px;}
+.hotelcomlist .right .thumbnail span{width:60px;height:60px;float:left;margin:0 5px 5px 0;display:inline-block;position:relative;cursor:pointer;}
+.hotelcomlist .right .thumbnail span i{width:60px;height:60px;display:inline-block;position:absolute;left:0;top:0;background:url(../pic/icon2014.png) no-repeat 0 -476px;text-indent:-9999px;z-index:2;cursor:default;_background-color:#666;}
+.z10{z-index:100;}
+.hotelcomlist .right .thumbnail span img{width:60px;height:60px;float:left;z-index:1;}
+.hotelcomlist .right .thumbnail span img:hover{opacity:0.9;}
+.ho_thum_boxt{position:relative;z-index:10;}
+.ho_thum_boxt .boxpic{border:2px solid #ccc;padding:3px;background:#fff;-moz-box-shadow:2px 2px 6px #aaa;-webkit-box-shadow:2px 2px 6px #aaa;box-shadow:2px 2px 6px #aaa;position:relative;}
+.ho_thum_boxt .pic-load{border:2px solid #ccc;padding:3px;background:#fff;-moz-box-shadow:2px 2px 6px #aaa;-webkit-box-shadow:2px 2px 6px #aaa;box-shadow:2px 2px 6px #aaa;width:350px;height:233px;background:#fff url(../pic/card_loading.gif) no-repeat center center;}
+.ho_thum_boxt .boxpic img{width:auto !important;height:auto !important;float:none !important;}
+.hotelcomlist .right .infor{color:#999;margin-top:10px;clear:both;overflow:hidden;}
+.hotelcomlist .right .infor span{float:left;margin-right:5px;}
+.hotelcomlist .right .infor .reply{float:right;margin-right:30px;}
+.hotelcomlist .right .infor .reply a i{width:14px;height:13px;display:inline-block;background:url(../pic/icon2014.png) no-repeat -241px -344px;margin-right:5px;vertical-align:middle;*vertical-align:-1px;}
+.hotelcomlist .right .infor .mobile{width:9px;height:14px;display:inline-block;background:url(../pic/icon2014.png) no-repeat -174px -343px;margin-right:3px;vertical-align:-2px;*vertical-align:0px;}
+.hotelcomlist .right .replytext{border-top:1px solid #E2E2E2;padding:12px 20px;margin-top:10px;background-color:#F8F8F8;clear:both;color:#555;*display:inline-block;position:relative;word-break:break-all;}
+.hotelcomlist .right .replytext .cor{width:18px;height:10px;display:block;position:absolute;right:76px;top:-9px;background:url(../pic/icon2014.png) no-repeat -186px -343px;}
+
+
+/* 酒店已点评---删除的单条点评区域背景蒙灰*/
+
+.hotelcomlist li.del{position:relative;}
+.hotelcomlist li div.delBox {display: none;}
+.hotelcomlist li.del div.delBox {display: block;left: 0;position: absolute; text-align: center;top: 0;width: 800px;z-index: 5;}
+.hotelcomlist li.del div.delBox .box {background-color: #fff;margin:0 auto;padding: 10px;position: relative;width: 230px;z-index: 4; box-shadow:2px 2px 6px 0 rgba(0, 0, 0, 0.2);top:50%;left:50%;}
+.hotelcomlist li.del div.delBox p { line-height: 23px;text-align: left; }
+.hotelcomlist  li.del div.delBox p a.cancel {background-color: #fff;color: #f80;display: inline;opacity: 1;}
+.hotelcomlist  li.del div.delBox p a.cancel:hover{text-decoration: underline;}
+.ml48{margin-left: 48px;}
+.hotelcomlist li div.delBox .mask { background-color: #f5f4f4;display: none;height:100%; left: 0;opacity: 0.8;filter:Alpha(opacity=80);_display:none; position: absolute;top: 0; width:100%;z-index: 2;}
+.hotelcomlist li.del div.delBox .mask { background: #f5f4f4;display: block;}
+
+
+/*我的问答-我的回答*/
+.hotelcomqa .right{min-height:92px;}
+.hotelcomlist .right .question,.hotelcomlist .right .answer,.rqa-text span,.rqa-time span i,.rqa-abox .cor,.rqa-abox-q,.rqa-abox dl dt,.rqa-abox dl dt i{background:url(../pic/icon2014.png) no-repeat;}
+.hotelcomlist .right .question,.hotelcomlist .right .answer{width:20px;height:16px;display:block;position:absolute;left:-26px;top:2px;}
+.hotelcomlist .right .question{background-position:0 -378px;}
+.hotelcomlist .right .answer{background-position:-32px -378px;}
+.hotelcomlist .rqa{word-break:break-all;}
+.hotelcomlist .rqa h3{font:14px/20px Microsoft YaHei;color:#37D;margin:-1px 0 6px;}
+.rqa-text{font:14px/20px Microsoft YaHei;color:#555;margin-bottom:6px;}
+.rqa-text span{width:11px;height:11px;display:inline-block;*vertical-align:5px;_vertical-align:-4px;}
+.rqa-text .qu1{background-position:-128px -381px;margin-right:6px;}
+.rqa-text .qu2{background-position:-145px -381px;margin-left:6px;}
+.rqa-time{padding-left:17px;color:#999;}
+.rqa-time span{color:#99B5DB}
+.rqa-time span i,.rqa-abox dl dt i{width:10px;height:11px;display:inline-block;background-position:-65px -380px;vertical-align:-1px;margin-right:3px;*vertical-align:2px;_vertical-align:-2px;}
+.rqa-abox{border-top:1px dashed #E6E6E6;padding-top:8px;margin-top:5px;position:relative;}
+.rqa-abox .cor{width:10px;height:6px;display:block;background-position:-109px -383px;position:absolute;top:-1px;left:25px;}
+.rqa-abox p{padding-left:17px;}
+.rqa-abox .c555{margin-bottom: 6px;}
+.rqa-abox-q{width:16px;height:16px;float:left;background-position:-86px -378px;margin:2px 0 0 -19px;_margin:1px 0 0 -17px;}
+/*我的问答-我的提问*/
+.rqa-text-wait,.rqa-text-new{display:inline-block;font-weight:normal;margin-left:6px;font:12px Simsun;padding:2px 5px;color:#FFF;border-radius:3px;}
+.rqa-text-wait{background-color:#4F89D4;}
+.rqa-text-new{background-color:#F60;}
+.rqa-abox dl{margin-top:10px;}
+.rqa-abox dl dt{float:left;width:42px;height:21px;padding-top:21px;background-position:-169px -380px;text-align:center;color:#36C;}
+.rqa-abox dl dd{margin-left:52px;}
+.rqa-abox dl dd p{padding:0;}
+
+
+
+/*顶部tab 选项卡修改
+.xfqBtn{background:url(../pic/my_common.png) no-repeat -20px -97px;padding:0 0 0 20px;margin:10px 0 0 0;}
+
+.detail_nmdt a{background:url(../pic/del_icon.png) no-repeat 0 0px;width:16px;height: 20px;display:block;margin:5px 10px 0 0;}
+.detail_nmdt a:hover{background:url(../pic/del_icon.png) no-repeat 0 -34px;}*/
+
+
+
+/*确认删除弹层*/
+.item_dialog{position: absolute;width: 440px;background-color: #fff;border: 3px solid #777;border-color: rgba(0,0,0,0.4);z-index: 1;}
+.pop_comment_succ{width:817px;position:absolute;left:0;top:500px;background:#fff;overflow: hidden;}
+.pop_comment_succ dl{width:220px;overflow:hidden;margin:15px auto 0;}
+.pop_comment_succ dl dt{width:60px;float:left;height:70px;margin:0 10px 0 0;}
+.pop_comment_succ dl dd{width:140px;float:left;padding:5px 0 0;}
+.pop_comment_succ dd h4{font-size:18px;color:#093;font-family:Microsoft Yahei,simsun;margin-bottom: 12px;}
+.pop_comment_succ dd p{font-size:14px;color:#999;margin:5px 0;}
+
+.pop_comment_succ dd p a{font-size:14px;color:#36c;}
+
+.pop_comment_fail{width:360px;height:215px;}
+.pop_comment_fail dl dt{background:url(../pic/my_account.png) no-repeat 0px -420px;}
+.pop_comment_fail dd h4{color: #555;line-height: 50px;}
+
+
+
+
+
+.pop_comment_succ .close{width:17px;height:17px;display:inline-block;background:url(../pic/my_common.png) no-repeat 0px -188px;position:absolute;right:10px;top:10px;cursor:pointer;}
+.pop_comment_succ .close:hover{background-position:-23px -188px;}
+
+
+.notice_del{width: 200px;margin:0 auto;}
+.notice_del p{line-height: 26px;font-size: 12px;color:#555;}
+
+.notice_del h5{padding:10px 0;overflow: hidden;}
+.notice_del a{border-radius: 2px;height: 30px;line-height: 30px;width:80px;text-align: center;text-decoration: none;float: left;margin:0 15px 0 0;font:16px/30px Microsoft Yahei;}
+.notice_del a.sure_btn{ background: #37d; color: #fff;}
+.notice_del a.sure_btn:hover{ background-color: #1a4888; color: #fff;}
+.notice_del a.cancel_btn{border:1px solid #cde;color: #36c;}
+.notice_del a.cancel_btn:hover{background: #1a4888;color: #fff;border: none;}
+.canordpop_f{height:200px;}.canordpop_f .canordpop_suc{width:100%;padding-top:40px;}.canordpop_f .canordpop_suc_pri{margin-top:20px;}
+.canordpop_fail_pri{font:20px Microsoft YaHei;text-align:center;}
+.canordpop_fail_pri i{background:url(../pic/my_account.png) no-repeat 0 -420px;width:60px;height:70px;display:inline-block;margin:0 10px 0 0;vertical-align:middle;}
+/****取消浮层****/
+.canordpop_info_poli .icon,.canordpop_cha_icon,.canordpop_rea_icon,.canordpop_suc_title i{background:url(../pic/icon2014.png) no-repeat;}
+.canordpop{height:395px;color:#555;}
+.canordpop_info{height:125px;background-color:#FCF8E0;border-bottom:1px solid #F4E9CE;}
+.canordpop_info_pri{width:210px;height:120px;padding-top:5px;border-right:1px dashed #EFE0BB;text-align:center;}
+.canordpop_info_pri .c999{font-family:Microsoft YaHei;}
+.canordpop_info_pri .cf60{font-size:30px;}
+.canordpop_info_poli{width:320px;height:118px;margin-left:25px;padding-top:7px;position:relative;}
+.canordpop_info_poli p{position:relative;z-index:1;}
+.canordpop_info_poli .icon{width:125px;height:94px;display:block;position:absolute;background-position:-184px -551px;bottom:0;right:0px;z-index:0;}
+.canordpop_change{margin:0px 28px;padding:14px 2px;border-bottom:1px dashed #E4E4E4;}
+.canordpop_cha_icon{width:36px;height:33px;float:left;background-position:-82px -554px;margin-right:15px;}
+.canordpop_change p{float:left;margin:6px 10px 0 0;}
+.canordpop_cha_btn{float:left;font:16px/1 Microsoft YaHei;padding:8px 10px;color:#37D;background-color:#FFF;border:1px solid #D3E8F7;cursor:pointer;*padding-bottom:5px;}
+.canordpop_cha_btn:hover{border:1px solid #37D;}
+.canordpop_reason{margin:0px 28px;padding:14px 2px;}
+.canordpop_rea_icon{width:36px;height:33px;display:inline-block;background-position:-127px -554px;vertical-align:middle;margin-right:15px;}
+.canordpop_reason ul{padding-left:50px;overflow:hidden;}
+.canordpop_reason ul li{width:210px;height:31px;line-height:30px;padding-right:10px;float:left;overflow:hidden;cursor:pointer;}
+.canordpop_reason ul li input{vertical-align:-2px;margin-right:5px;}
+.canordpop_rea_text{width:150px;height:24px;border:1px solid #D9D9D9;margin:0 0 0 5px;}
+.canordpop_rea_btn{text-align:center;}
+.canordpop_rea_btn input{width:105px;height:32px;color:#fff;font:16px/2 Microsoft YaHei;background-color: #2c73c0;border:0;cursor:pointer;}
+.canordpop_suc{width:430px;margin:0 auto;padding-top:60px;}
+.canordpop_suc a{text-decoration:none;}
+.canordpop_suc a:hover{color:#F60;}
+.canordpop_suc_title{font:20px Microsoft YaHei; color:#093;text-align:center;}
+.canordpop_suc_title i{width:40px;height:40px;display:inline-block;background-position:-30px -550px;vertical-align:middle;margin-right:10px;}
+.canordpop_suc_pri{margin:40px 0;line-height:30px;}
+.canordpop_suc_pri span{font-family:Microsoft YaHei;}
+.canordpop_f{ height:200px;}
+.canordpop_f .canordpop_suc{ width:100%;padding-top:40px;}
+.canordpop_f .canordpop_suc_pri{ margin-top:20px;}
+.canordpop_fail_pri{font:20px Microsoft YaHei;text-align: center;}
+.canordpop_fail_pri i{background: url(../pic/my_account.png) no-repeat 0px -420px;width:60px;height:70px; display:inline-block;margin:0 10px 0 0; vertical-align:middle;}
+
+
+/*申请提现弹层
+
+.apply_mention .form_ul{padding:20px;}
+.apply_mention h4{padding:20px 40px;}
+
+.icon_apply_me{background: url(../pic/icon_detail.png) no-repeat 0px -246px;width:35px;height:30px; display:inline-block;vertical-align: middle;margin:0 5px 0 0;}
+*/
+
+/*goto mobile*/
+.goto_mobile{position: relative;width: 20px;height: 20px;margin:4px 5px 0 0;}
+.goto_mobile .litt_ew{display: block;width: 20px;height: 20px;background:url(../pic/icon_detail.png) no-repeat 0 -338px;padding: 0;cursor: pointer;}
+
+
+.goto_mobile .big_ersw{width:210px;padding:10px;height: 100px;position: absolute;border:1px solid #ccc;top:-5px;left:-205px;background: #fff;display:none;}
+.goto_mobile .big_ersw .litt_ew{position: absolute;display: block;top:5px;left:205px;}
+.goto_mobile .big_ersw img{float: left;}
+
+.goto_mobile .big_ersw .er_if{margin:20px 0 0 0;width:100px;float: left;padding:0 0 0 10px;}
+.goto_mobile .big_ersw p{line-height: 24px;font-size: 12px;color: #555;}
+
+
+
+.once_show{width:100px;position: absolute;top: -46px;right:-100px;background:url(../pic/icon_detail.png) no-repeat 0 -375px;width: 100px;height: 130px;}
+.once_show .close{width:11px;height:11px;display:block;position:absolute;right:-10px;top:0px;background:url(../pic/icon_detail.png) no-repeat -1px -521px;display:block;overflow: hidden;padding:0;cursor: pointer;}
+.once_show .close:hover{background:url(../pic/icon_detail.png) no-repeat -22px -521px;}
+
+/* 删除订单浮层  */
+.pop-order-del{ height: 140px;width: 342px;border:1px solid #c5c5c5;box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.2);z-index: 100;}
+.pop-order-del .order_del{ padding:20px 0 0 29px;}
+.order_del p {color: #666;font-size: 12px;line-height: 24px;}
+.order_del h5 {overflow: hidden;padding: 10px 0;}
+.order_del a {border-radius: 2px;float: left;font: 16px/30px Microsoft Yahei;height: 30px;margin: 0 30px 0 0;padding:0 15px;text-align: center;text-decoration: none;width: 80px;background: #37d;color: #fff;}
+.order_del a:hover{background: #1a4888;}
+/*20160901 天加已转让{手机查看}*/
+.iconFanH{
+	vertical-align: middle;
+	display: inline-block;
+	border: 1px solid #bbb;
+	height: 12px;
+	line-height: 12px;
+}
+.iconFanH .gray{
+	color: #fff;
+	font-size: 12px;
+	display: inline-block;
+	width: 13px;
+	font-style: normal;
+	background: #bbbbbb;
+}

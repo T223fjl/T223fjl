@@ -180,6 +180,8 @@
 			<c:if test="${loginUser.name !=null }">
 			<li class="has-child"><a href="nofollow" href=""
 					target="_blank">您好：${loginUser.name }</a></li>
+					
+				<li class="has-child"><a href="logout" target="_blank">注       销</a></li>
 					<li class="has-child"><a href="UserInfo?id=${loginUser.id}" >会员中心</a></li>
 				</c:if>
 				<c:if test="${loginUser.name==null }">

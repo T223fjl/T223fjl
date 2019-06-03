@@ -30,6 +30,7 @@
 	href="${pageContext.request.contextPath }/statics/css/flight.css" />
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath }/statics/css/common_index.css" />
+
 <style type="text/css">
 .menu_bg {
 	height: 40px;
@@ -83,7 +84,7 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
 	/*     background-color: #3FC4FC; */
 	position: absolute;
 	left: 75px;
-	top: 0;
+	top:0;
 }
 
 .nav_t {
@@ -99,207 +100,17 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
 .leftNav {
 	width: 211px;
 	height: 400px;
-	background-color: #2064C8;
-	position: absolute;
+	/* 	background-color: #2064C8; */
+	/* 	background-color:#C4DFF4; */
+	/*      */ position : absolute;
 	left: 0;
 	top: 51px;
 	z-index: 900;
+	position: absolute;
 }
 
 .none {
 	display: none;
-}
-
-.leftNav ul li {
-	height: 40px;
-	line-height: 40px;
-	background: url(../images/n_arrow.gif) no-repeat 195px center;
-	color: #FFF;
-	font-size: 14px;
-	margin-left: 1px;
-	cursor: pointer;
-	position: relative;
-}
-
-.leftNav ul li .n_img {
-	width: 20px;
-	height: 21px;
-	overflow: hidden;
-	text-align: center;
-	float: left;
-	display: inline;
-	margin-left: 10px;
-	margin-right: 10px;
-	margin-top: 10px;
-}
-
-.leftNav ul li .n_img span {
-	height: 100%;
-	vertical-align: middle;
-	display: inline-block;
-}
-
-.leftNav ul li .n_img img {
-	vertical-align: middle;
-}
-
-/*.leftNav ul li a{ color:#6e6e6e; }
-.leftNav ul li a:hover{ color:#e02d02; }*/
-.leftNav ul li ul {
-	width: 220px;
-	min-height: 70px;
-	overflow: hidden;
-	background: url(../images/nav_bg.png) repeat center top;
-	position: absolute;
-	left: 196px;
-	top: 0px;
-	border: 1px solid #d4d2d2;
-	border-left: 0px;
-	z-index: 900;
-	display: none;
-}
-
-.leftNav ul li ul li {
-	width: 195px;
-	height: auto;
-	line-height: 25px;
-	overflow: hidden;
-	font-size: 12px;
-	font-weight: normal;
-	background: none;
-	margin: 10px auto;
-	padding: 0px 0px 5px 0px;
-	border-bottom: 1px dashed #d1d0d1;
-}
-
-.leftNav ul li ul li a {
-	color: #989797;
-	margin: 0px 10px;
-}
-
-.leftNav ul li ul li a:hover {
-	color: #e02d02;
-}
-
-.leftNav ul li ul li .n_t {
-	width: 50px;
-	height: 20px;
-	line-height: 20px;
-	overflow: hidden;
-	text-align: center;
-	font-weight: bold;
-	float: left;
-}
-
-.leftNav ul li ul li .n_c {
-	width: 142px;
-	overflow: hidden;
-	float: left;
-}
-
-.leftNav ul li ul li .n_c a {
-	width: 60px;
-	height: 20px;
-	line-height: 20px;
-	overflow: hidden;
-	float: left;
-	display: inline-block;
-	margin: 0px 0px 0px 10px;
-}
-
-.leftNav ul li .fj {
-	width: 210px;
-	height: 40px;
-	line-height: 40px;
-	display: block;
-	overflow: hidden;
-	position: absolute;
-	left: 0;
-	top: 0;
-	z-index: 901;
-}
-
-.leftNav ul li .fj.nuw {
-	/* border:1px solid black; */
-	width: 212px;
-	text-decoration: none;
-	height: 40px;
-	margin-left: -2px;
-	line-height: 40px;
-	background-color: #FFF;
-	color: #ff4e00;
-	z-index: 800px;
-}
-
-.leftNav .zj {
-	/* 	border:1px solid black; */
-	width: 700px;
-	height: 411px;
-	overflow: hidden;
-	background-color: #FFF;
-	position: absolute;
-	left: 210px;
-	top: 0;
-	display: none;
-	/*     opacity:0.6; */
-}
-
-.leftNav .zj .zj_l {
-	/* border:1px solid black; */
-	width: 685px;
-	height: 385px;
-	overflow: hidden;
-	float: left;
-	display: inline;
-	margin-left: 20px;
-	margin-top: 15px;
-}
-
-.leftNav .zj .zj_l_c {
-	width: 280px;
-	height: 108px;
-	line-height: 25px;
-	overflow: hidden;
-	color: #dbdbdb;
-	float: left;
-	display: inline;
-	margin-right: 50px;
-	margin-bottom: 25px;
-}
-
-.leftNav .zj .zj_l_c h2 {
-	height: 25px;
-	line-height: 25px;
-	color: #3e3e3e;
-	font-size: 14px;
-	font-weight: bold;
-	margin-bottom: 5px;
-	margin-left: 10px;
-}
-
-.leftNav .zj .zj_l_c a {
-	line-height: 22px;
-	font-size: 12px;
-	font-family: "宋体";
-	padding: 0 10px;
-	margin: 0;
-}
-
-.leftNav .zj .zj_r {
-	width: 236px;
-	height: 402px;
-	overflow: hidden;
-	float: right;
-	display: inline;
-	margin-right: 10px;
-	margin-top: 5px;
-}
-
-.leftNav .zj .zj_r img {
-	width: 236px;
-	height: 200px;
-	display: block;
-	margin-bottom: 1px;
 }
 
 .i_bg {
@@ -308,9 +119,9 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
 	overflow: hidden;
 }
 
-.bg_color {
-	background-color: #f6f6f6;
-}
+/* .bg_color { */
+/* 	background-color: #f6f6f6; */
+/* } */
 
 .content {
 	width: 1200px;
@@ -517,24 +328,6 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
 	background: url(../images/b_h.png) no-repeat center top;
 }
 
-/*.ban_bg{
-	width:850px; height:430px; overflow:hidden; background-color:#FFF; float:left; -webkit-box-shadow:0 0 5px #e0e0e0; -moz-box-shadow:0 0 5px #e0e0e0; box-shadow:0 0 5px #e0e0e0;  
-}
-.banner{
-	width:850px; height:430px; overflow:hidden; position:relative;
-}
-.banner .a_bigImg{ position:absolute; left:0px; top:0px; display:none; width:850px; height:430px; overflow:hidden; }
-.banner .a_bigImg .name{
-	width:850px; height:80px; line-height:80px; overflow:hidden; background:url(../images/b_name.png) repeat-x center top; color:#333333; font-size:20px; text-align:center; position:absolute; left:0; bottom:40px;
-}
-.banner .ul_change_a2{ position:absolute; left:10px; bottom:15px; overflow:hidden; text-align:center; }
-.banner .ul_change_a2 li{
-	width:10px; height:10px; line-height:10px; overflow:hidden; float:left; display:inline-block; margin:0px 4px; cursor:pointer;
-}
-.banner .ul_change_a2 span{ 
-	width:10px; height:10px; line-height:10px; overflow:hidden; float:left; text-align:center; background:url(../images/b.png) no-repeat center top;
-}
-.banner .ul_change_a2 span.on { background:url(../images/b_h.png) no-repeat center top; }*/
 .inews {
 	width: 225px;
 	height: 400px;
@@ -583,16 +376,137 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
 	color: #3e3e3e;
 	margin-right: 10px;
 }
+
+.level{
+/* 	background-color:#28C0AC; */
+background-color: #2676E3;
+}
+
+.level:nth-of-child(1) {
+	height: 200px;
+}
+
+.level:nth-of-child(2) {
+	height: 100px;
+}
+
+.level:nth-of-child(3) {
+	height: 150px;
+}
+
+.level:hover{
+/* background-color:  #52CCBC !important; */
+background-color:#77BBEE !important; 
+}
+
+   .level a:hover {
+	color: #e02d02 !important; 
+	}
+
+
+.three{
+color: #fff !important;
+font-size: 14px;
+}
+
+.temp {
+	background-color: #2064C8;
+	font-size: 18px;
+	display: block;
+	width: 211px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	color: #fff;
+}
+
+.gp_nav_sub{
+	display: none; 
+	width: 550px;
+	position: absolute;
+	font-size: 14px;
+	top:80px;
+	left: 285px;
+	z-index: 99999;
+	color:#fff;
+	background-color:#77BBEE;
+}
+
+#two img{
+	width: 70%;
+	height:20%;
+	display: block;
+	cursor: pointer;
+	opacity: 0.4;
+	padding: 10px;
+	background:white;
+}
+#two img:nth-of-type(1){
+	margin-top: 13px;
+}
+#two{
+	width: 200px;
+	position: relative;
+	top:75px;
+	right:300px;
+	z-index: 100;
+	padding-top: 1px;
+	}
+	
+.menu1 .box .hide .gp_nav_sublist1 li{
+	
+	padding: 2px 50px 2px 15px;
+	font: normal normal 12px SimSun;
+	line-height: 22px;
+	font-family: "宋体";
+}
+
+.menu1 .box .hide .gp_nav_sublist1 li:nth-of-type(3){
+/* position:relative; */
+width:130px;
+height:120px;
+}
+
+.menu1 .box .hide .gp_nav_sublist1 li:nth-of-type(4){
+float:right;
+position:relative;
+top:-125px;
+right:30px;
+width:200px;
+height:120px;
+}
+
+.menu1 .box .hide .gp_nav_sublist1 li a{
+	color: #888;
+	
+}
+
+.menu1 .box .hide .gp_nav_sublist1 li a:hover{
+	color: #e02d02;
+}
+
+.menu1 .box .hide .gp_nav_sublist1 li strong{
+	font-weight: bold;
+	font-family: Microsoft YaHei;
+/* 	font-size: 12px */
+}
+
+.color{
+border-top: 1px solid #ccc;
+border-left: 1px solid #ccc;
+border-bottom: 1px solid #ccc;
+}
+
 </style>
 
 <script type="text/javascript"
 	src="${pageContext.request.contextPath }/statics/js/jquery-1.11.1.min_044d0927.js"></script>
 <script type="text/javascript"
 	src="${pageContext.request.contextPath }/statics/js/jquery.bxslider_e88acd1b.js"></script>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath }/statics/js/jquery-1.8.2.min.js"></script>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath }/statics/js/menu.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath }/statics/css/lanrenzhijia.css" /> 
+<%-- <script type="text/javascript" src="${pageContext.request.contextPath }/statics/js/jQuery.js"></script> --%>
+<script type="text/javascript" src="${pageContext.request.contextPath }/statics/js/jquery1.8.3.min.js"></script> 
+<script type="text/javascript" src="${pageContext.request.contextPath }/statics/js/jquery.tmailsider.js"></script>
 </head>
 <body>
 	<!--Begin Header Begin-->
@@ -600,105 +514,175 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
 	<!--End Header End-->
 	<!--Begin Menu Begin-->
 
-	<div id="header" class="header" v='20190429' b='hotels' g='NaN' lg='f'>
-		<!--导航  -->
+	<div id="header" class="header">
 		<div class="menu">
 			<!--Begin 商品分类详情 Begin-->
 			<div class="nav">
 				<div class="nav_t" style="background: #2064C8;">&nbsp;旅游目的地导航</div>
 				<div class="leftNav">
-					<ul>
-						<c:forEach items="${levels}" var="temp">
-							<li>
-								<div class="fj">
-									<span class="n_img"><span></span> </span>
-									<span class="fl">${temp.name}</span>
-								</div>
-								<div class="zj">
-									<div class="zj_l">
-										<c:forEach items="${temp.sonLevels}" var="vo">
-											<div class="zj_l_c">
-												<h2>
-													<a
-														href="${pageContext.request.contextPath}/toIndex2?city=${vo.id}">${vo.name}
-														<img src="${pageContext.request.contextPath }/uploadFile/city/${vo.name}.png" /></a>
-												</h2>
-												<c:forEach items="${vo.sonLevels}" var="vo2">
-													<a
-														href="${pageContext.request.contextPath}/toIndex3?hotelId=${vo2.id}">${vo2.name}</a> |
-                                            </c:forEach>
-											</div>
+					<div id="menu" class="menu1">
+						<h1 class="title">
+							<a style="color: #fff;margin-left: 30px;">城市酒店分类</a> <s class="btn_group bright"> <a class="bleft"
+								title="扩展视图"></a> <a class="bright" title="精简视图"></a>
+							</s>
+						</h1>
+						<div class="items">
+							<ul>
+								 <c:forEach items="${levels}" var="temp">				    
+						            <li class="list-item0">
+						                <h3>${temp.name}</h3>
+										<p style="width: 180px;margin-left: 7px;">
+										 <c:forEach items="${temp.sonLevels}" var="vo" end="28" varStatus="item">
+											<a href="${pageContext.request.contextPath}/toIndex2?city=${vo.id}">${vo.name}</a>
+						               	</c:forEach>
+										</p>
+						            </li>
+						         </c:forEach>
+							</ul>
+						</div>
+						<div class="box">
+							<div class="hide">
+								<ul class="gp_nav_sublist1">
+									<li>
+									<br/>
+									<strong style="font-size: 16px;">星级酒店：</strong>
+									<c:forEach items="${stars}" var="stars">
+									<a href="${pageContext.request.contextPath}/toIndex2?star=${stars.dictCode}" title="" target="_blank">${stars.info}</a><span></span> 
+									</c:forEach>
+									</li>
+									<li><strong style="font-size: 16px;">特色主题：</strong> 
+										<a href="" title="" target="_blank">园林酒店</a><span></span> 
+										<a href="" title="" target="_blank">情侣酒店</a><span></span> 
+										<a href="" title="" target="_blank">设计师酒店</a><span></span> 
+										<a href="" title="" target="_blank">青年旅社</a><span></span> 
+										<a href="" title="" target="_blank">特色客栈</a><span></span>
+										<a href="" title="" target="_blank">海岛酒店</a><span></span>
+									</li>
+									<li><strong style="font-size: 16px;">热门目的地:</strong><br/>
+										<p style="width:200px;">
+										<c:forEach items="${Leve}" var="Leve" end="20">
+										 <a href="#">${Leve.name}</a>
 										</c:forEach>
-									</div>
-								</div>
-							</li>
-						</c:forEach>
-					</ul>
+<%-- 										<c:forEach items="${levels}" var="temp"> --%>
+<%-- 											<c:forEach items="${temp.sonLevels}" var="vo" begin="1" end="5"> --%>
+<%-- 												<c:forEach items="${vo.sonLevels}" var="vo2" begin="1" end="10"> --%>
+<%-- 	                                                <a href="">${vo2.name}</a> --%>
+<%-- 	                                            </c:forEach> --%>
+<%-- 											</c:forEach> --%>
+<%-- 										</c:forEach> --%>
+										</p>
+									</li>
+									<li>
+										<strong style="font-size:16px;">热门酒店：</strong> <br/>
+										<p style="width:260px;">
+										<c:forEach items="${hote}" var="hote" end="8" varStatus="status">
+										<a href="${pageContext.request.contextPath}/toIndex3?hotelId=${hote.hotelId}" target="_blank">${hote.hotelName}</a><span></span> 
+										<c:if test="${status.count%2==0}">
+										<br/>
+										</c:if>
+										</c:forEach>
+										</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<script type="text/javascript">
+					$(function(){
+						$('#menu').sliders();		
+					})
+					</script>
 				</div>
 			</div>
-
+			<!--商品分类详情 end-->
+		
+			<!--导航 Begin-->
 			<div class="nav_box">
 				<div id="nav" class="response_wrap3"
 					style="width: 900px; margin-left: 310px;">
 					<ul class="link" id="channelMenu">
-						<li sid="28632"><a
+						<li><a
 							href="http://localhost:8080/FengYou/toIndex" title="艺龙旅行网"
 							id="nav_home">首页</a></li>
-						<li sid="28639" class="on"><a title="酒店预订"
+						<li class="on"><a title="酒店预订"
 							href="http://localhost:8080/FengYou/jiudian" id="nav_hotels">国内酒店</a></li>
-						<li style="display: none;" sid="41493"><a href="#" id="A1"
+						<li style="display: none;"><a href="#" id="A1"
 							title="酒店团购">团购</a></li>
-						<li style="display: none;" sid=""><a href="#"
+						<li style="display: none;"><a href="#"
 							id="nav_apartment" title="短租公寓">短租公寓<span class="icon_apart"
 								style="background: url(http://img.elongstatic.com/index/fixed/icon2015-0.png) no-repeat; background-position: -307px 0;"></span></a>
 						</li>
-						<li style="display: none;" sid="52756"><a href="#"
-							title="限时抢">限时抢</a>
-						<li sid="28640"><a href="#" title="机票预订">国内•国际机票<span
+						<li style="display: none;"><a href="#"
+							title="限时抢">限时抢</a> <li><a href="#" title="机票预订">国内•国际机票<span
 								style="left: 60px; background-position: -589px -29px;"
 								class="icon_coupon"></span></a></li>
-						<li sid="28640"><a href="#" title="火车票">火车票</a></li>
-						<li sid="28640"><a href=# title="汽车票">汽车票</a></li>
+						<li><a href="#" title="火车票">火车票</a></li>
+						<li><a href=# title="汽车票">汽车票</a></li>
 						<li><a href="#" title="旅游指南">旅游指南</a></li>
 						<li><a href="#" title="商旅" target='_blank'>商旅</a></li>
 					</ul>
 				</div>
 			</div>
-
+			<!--导航 end -->
+			
+			<!--轮播图、资讯 Begin-->
 			<div class="i_bg bg_color" style="margin: 0 auto; width: 80%">
 				<div class="i_ban_bg">
-					<!-- Begin Banner Begin -->
+					<!-- 轮播图开始  -->
 					<div class="banner">
-						<div class="top_slide_wrap">
-							<ul class="slide_box bxslider">
-								<li><img
+						<div id="con1">
+							<div id="one">
+								<img
 									src="${pageContext.request.contextPath }/statics/images/index/1.jpg"
-									width="740" height="401" /></li>
-								<li><img
+									width="740" height="401" /> <img
 									src="${pageContext.request.contextPath }/statics/images/index/2.jpg"
-									width="740" height="401" /></li>
-								<li><img
+									width="740" height="401" /> <img
 									src="${pageContext.request.contextPath }/statics/images/index/3.png"
-									width="740" height="401" /></li>
-							</ul>
-							<div class="op_btns clearfix">
-								<a href="#" class="op_btn op_prev"><span></span></a> <a href="#"
-									class="op_btn op_next"><span></span></a>
+									width="740" height="401" />
 							</div>
+							<div id="two" style="position: absolute;">
+								<img
+									src="${pageContext.request.contextPath }/statics/images/index/1.jpg" />
+								<img
+									src="${pageContext.request.contextPath }/statics/images/index/2.jpg" />
+								<img
+									src="${pageContext.request.contextPath }/statics/images/index/3.png" />
+							</div>
+							<script>
+							var index=0;
+								$(function(){
+									var a=window.setInterval(animate,3000);
+									$("#two img").hover(function(){
+										clearInterval(a);
+										index=$(this).index();
+										$("#one img").fadeOut();
+										$("#two img").css("opacity","0.4");
+										$(this).css("opacity","1");
+									$("#one img").eq(index).fadeIn();
+									},function()
+									{
+										$("#two img").css("opacity","0.4");
+										$(this).css("opacity","1");
+										a=window.setInterval(animate,3000);
+									})
+								})
+								function animate()
+								{
+									index++;
+									if(index==3)
+									{
+										index=0;
+									}
+									$("#two img").css("opacity","0.4");
+									$("#two img").eq(index).css("opacity","1");		
+									$("#one img").fadeOut();
+									$("#one img").eq(index).fadeIn();
+								}
+						</script>
 						</div>
 					</div>
-					<script type="text/javascript"
-						src="${pageContext.request.contextPath }/statics/js/jquery1.8.3.min.js"></script>
-					<script type="text/javascript">
-            var jq2 = jQuery.noConflict();
-            (function () {
-                $(".bxslider").bxSlider({
-                    auto: true,
-                    prevSelector: jq2(".top_slide_wrap .op_prev")[0], nextSelector: jq2(".top_slide_wrap .op_next")[0]
-                });
-            })();
-        </script>
-					<!-- 				End Banner End -->
+					<!-- 轮播图结束  -->
+					<!-- 资讯开始  -->
 					<div class="inews">
 						<div class="news_t">
 							<span class="fr"><a
@@ -713,27 +697,20 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
 							<li><span>[ 签证 ]</span> <a href="#">签证丨嫌弃中国护照不好用？老外办中国签证都快哭了</a></li>
 							<li><span>[ 活动 ]</span> <a href="#">活动 | 2019深圳长隆正在行动中</a></li>
 						</ul>
-
 						<div class="charge_t">
-						<marquee behavior=="slide" direction="left" >海量玩法边走边订</marquee>
-<!-- 							<marquee behavior="alternate"></marquee> -->
+							<marquee behavior=="slide" direction="left">海量玩法边走边订 </marquee>
+							<!-- 							<marquee behavior="alternate"></marquee> -->
 							<div class="ch_t_icon"></div>
 						</div>
-						<form>
-							<table border="0" style="width: 205px;" cellspacing="0"
-								cellpadding="0">
-								<img
-									src="${pageContext.request.contextPath }/statics/images/index/p1.jpg" />
-								</li>
-							</table>
-						</form>
+							<img src="${pageContext.request.contextPath }/statics/images/index/p1.jpg" />
 					</div>
+					<!-- 资讯结束  -->
 				</div>
 			</div>
-
-			<div class="clear"></div>
+			<!--轮播图、资讯 end-->
 		</div>
-
+</div>
+	
 		<!--Begin Menu End-->
 
 		<div class="fold mt20 mb20" style="margin-top: 450px;">
@@ -817,338 +794,109 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
 				<!--国内-->
 				<div class=domestic>
 					<h3 class=clearfix>
-						<em class="more right"><a href="">更多<b>&gt;&gt;</b></a></em>
+						<em class="more right"><a href="${pageContext.request.contextPath}/toIndex2">更多<b>&gt;&gt;</b></a></em>
 						<a class="pr20 left" href="">
 						<i class="ei_icon icon06 left pr5"></i>国内</a>
-							<c:forEach  items="${level}" var="list">
+							<c:forEach  items="${level}" var="list" end='5'>
 								<span>${list.name}</span> 
 							</c:forEach>
 					</h3>
-					<ul class=tab_theme>
+				<ul class=tab_theme>
 					<c:forEach items="${hotel}" var="hotel">
 					<li>
-						<a href="" target=_blank>
+						<a href="${pageContext.request.contextPath}/toIndex3?hotelId=${hotel.hotelId}" target=_blank>
 							<div class=pic_add>
 								<img alt="${hotel.hotelName}" data-src="${pageContext.request.contextPath }/${hotel.fileUrl}">
 								</div>
 								<div class=city_name>${hotel.hotelName}</div>
 							</a>
 							<div class=scale_tour>
-								<p>春意撩人 登高踏青赏春色</p>
+								<p style="padding-top: 5px;">￥<span style="display: inline-block;font-size:24px;color: #FF7200;">${hotel.hotelPrice}</span></p>
 							</div>
 						</li>
 					</c:forEach>
 					</ul>				
-					
-					<ul style="display: none" class=tab_theme>
-						<li><a
-							href="http://hotel.elong.com/search/list_cn_1101.html?keywords=天目湖温泉"
-							target=_blank>
-								<div class=pic_add>
-									<img alt=江苏天目湖
-										data-src="${pageContext.request.contextPath }/statics/picture/hbtl-tianmuhu.jpg">
+				<ul style="display: none" class=tab_theme>
+					<c:forEach items="${hote2}" var="hote2">
+					<li>
+						<a href="${pageContext.request.contextPath}/toIndex3?hotelId=${hote2.hotelId}" target=_blank>
+							<div class=pic_add>
+								<img alt="${hote2.hotelName}" data-src="${pageContext.request.contextPath }/${hote2.fileUrl}">
 								</div>
-								<div class=city_name>江苏天目湖</div>
-						</a>
-							<div class=mask_num>
-								<p>
-									<span>380</span>家酒店特卖
-								</p>
-							</div>
+								<div class=city_name>${hote2.hotelName}</div>
+							</a>
 							<div class=scale_tour>
-								<span style="display: none" class=right><b>?</b><em>380</em>起</span>
-								<p>古树错落 帝王温泉</p>
+								<p style="padding-top: 5px;">￥<span style="display: inline-block;font-size:24px;color: #FF7200;">${hote2.hotelPrice}</span></p>
 							</div>
-						<li><a href="http://hotel.elong.com/weihai/" target=_blank>
-								<div class=pic_add>
-									<img alt=威海天沐威海温泉
-										data-src="${pageContext.request.contextPath }/statics/picture/hbtl-tianmuweihai.jpg">
-								</div>
-								<div class=city_name>威海天沐威海温泉</div>
-						</a>
-							<div class=mask_num>
-								<p>
-									<span>380</span>家酒店特卖
-								</p>
-							</div>
-							<div class=scale_tour>
-								<span class=right><b>?</b><em>380</em>起</span>
-								<p>森林温泉 草本养生</p>
-							</div>
-						<li><a
-							href="http://hotel.elong.com/search/list_cn_2011.html?keywords=%E4%B8%AD%E5%B1%B1%E6%B8%A9%E6%B3%89"
-							target=_blank>
-								<div class=pic_add>
-									<img alt=广东中山温泉
-										data-src="${pageContext.request.contextPath }/statics/picture/hbtl-zhongshan.jpg">
-								</div>
-								<div class=city_name>广东中山温泉</div>
-						</a>
-							<div class=mask_num>
-								<p>
-									<span>380</span>家酒店特卖
-								</p>
-							</div>
-							<div class=scale_tour>
-								<span class=right><b>?</b><em>380</em>起</span>
-								<p>毗邻港澳 商务养生</p>
-							</div>
-						<li><a href="http://hotel.elong.com/dalian/" target=_blank>
-								<div class=pic_add>
-									<img alt=辽宁大连安波温泉
-										data-src="${pageContext.request.contextPath }/statics/picture/hbtl-anbo.jpg">
-								</div>
-								<div class=city_name>辽宁大连安波温泉</div>
-						</a>
-							<div class=mask_num>
-								<p>
-									<span>380</span>家酒店特卖
-								</p>
-							</div>
-							<div class=scale_tour>
-								<span class=right><b>?</b><em>380</em>起</span>
-								<p>延年益寿 名誉中外</p>
-							</div></li>
+						</li>
+					</c:forEach>
 					</ul>
-				
 				<ul style="display: none" class=tab_theme>
 						<c:forEach items="${hote3}" var="hote3">
 					<li>
-						<a href="" target=_blank>
+						<a href="${pageContext.request.contextPath}/toIndex3?hotelId=${hote3.hotelId}" target=_blank>
 							<div class=pic_add>
 								<img alt="${hote3.hotelName}" data-src="${pageContext.request.contextPath }/${hote3.fileUrl}">
 								</div>
 								<div class=city_name>${hote3.hotelName}</div>
 							</a>
-							
 							<div class=scale_tour>
-								<p>春意撩人 登高踏青赏春色</p>
+								<p style="padding-top: 5px;">￥<span style="display: inline-block;font-size:24px;color: #FF7200;">${hote3.hotelPrice}</span></p>
 							</div>
 						</li>
 					</c:forEach>
 					</ul>
-					
-					
-					<ul style="display: none" class=tab_theme>
-						<li><a href="http://hotel.elong.com/xilingol_league/"
-							target=_blank>
-								<div class=pic_add>
-									<img alt=锡林郭勒
-										data-src="${pageContext.request.contextPath }/statics/picture/cysh-xlgl.jpg">
+				<ul style="display: none" class=tab_theme>
+					<c:forEach items="${hote4}" var="hote4">
+					<li>
+						<a href="${pageContext.request.contextPath}/toIndex3?hotelId=${hote4.hotelId}" target=_blank>
+							<div class=pic_add>
+								<img alt="${hote4.hotelName}" data-src="${pageContext.request.contextPath }/${hote4.fileUrl}">
 								</div>
-								<div class=city_name>锡林郭勒</div>
-						</a>
-							<div class=mask_num>
-								<p>
-									<span>380</span>家酒店特卖
-								</p>
-							</div>
+								<div class=city_name>${hote4.hotelName}</div>
+							</a>
 							<div class=scale_tour>
-								<span style="display: none" class=right><b>?</b><em>380</em>起</span>
-								<p>草原 牧民 小马驹</p>
+								<p style="padding-top: 5px;">￥<span style="display: inline-block;font-size:24px;color: #FF7200;">${hote4.hotelPrice}</span></p>
 							</div>
-						<li><a href="http://hotel.elong.com/bashang/" target=_blank>
-								<div class=pic_add>
-									<img alt=坝上
-										data-src="${pageContext.request.contextPath }/statics/picture/cysh-bs.jpg">
-								</div>
-								<div class=city_name>坝上</div>
-						</a>
-							<div class=mask_num>
-								<p>
-									<span>380</span>家酒店特卖
-								</p>
-							</div>
-							<div class=scale_tour>
-								<span class=right><b>?</b><em>380</em>起</span>
-								<p>帝都最近的草原</p>
-							</div>
-						<li><a href="http://hotel.elong.com/ruoergai/" target=_blank>
-								<div class=pic_add>
-									<img alt=若尔盖
-										data-src="${pageContext.request.contextPath }/statics/picture/cysh-reg.jpg">
-								</div>
-								<div class=city_name>若尔盖</div>
-						</a>
-							<div class=mask_num>
-								<p>
-									<span>380</span>家酒店特卖
-								</p>
-							</div>
-							<div class=scale_tour>
-								<span class=right><b>?</b><em>380</em>起</span>
-								<p>高原上的绿洲</p>
-							</div>
-						<li><a href="http://hotel.elong.com/qilianxian/"
-							target=_blank>
-								<div class=pic_add>
-									<img alt=祁连山
-										data-src="${pageContext.request.contextPath }/statics/picture/cysh-qls.jpg">
-								</div>
-								<div class=city_name>祁连山</div>
-						</a>
-							<div class=mask_num>
-								<p>
-									<span>380</span>家酒店特卖
-								</p>
-							</div>
-							<div class=scale_tour>
-								<span class=right><b>?</b><em>380</em>起</span>
-								<p>风景如画 醉美祁连山</p>
-							</div></li>
+						</li>
+					</c:forEach>
 					</ul>
-					<ul style="display: none" class=tab_theme>
-						<li><a
-							href="http://hotel.elong.com/xitang/?aioIndex=-1&amp;aioVal=%E8%BE%93%E5%85%A5%20%E4%BD%8D%E7%BD%AE%20%E9%85%92%E5%BA%97%E5%90%8D%20%E6%88%96%E5%93%81%E7%89%8C"
-							target=_blank>
-								<div class=pic_add>
-									<img alt=西塘
-										data-src="${pageContext.request.contextPath }/statics/picture/termini_t3_xt.jpg">
+				<ul style="display: none" class=tab_theme>
+					<c:forEach items="${hote5}" var="hote5">
+					<li>
+						<a href="${pageContext.request.contextPath}/toIndex3?hotelId=${hote5.hotelId}" target=_blank>
+							<div class=pic_add>
+								<img alt="${hote5.hotelName}" data-src="${pageContext.request.contextPath }/${hote5.fileUrl}">
 								</div>
-								<div class=city_name>西塘</div>
-						</a>
-							<div class=mask_num>
-								<p>
-									<span>380</span>家酒店特卖
-								</p>
-							</div>
+								<div class=city_name>${hote5.hotelName}</div>
+							</a>
 							<div class=scale_tour>
-								<span class=right><b>?</b><em>380</em>起</span>
-								<p>烟雨长廊 景色好似宣纸画</p>
+								<p style="padding-top: 5px;">￥<span style="display: inline-block;font-size:24px;color: #FF7200;">${hote5.hotelPrice}</span></p>
 							</div>
-						<li><a
-							href="http://hotel.elong.com/tengchong/?aioIndex=-1&amp;aioVal=%E8%BE%93%E5%85%A5%20%E4%BD%8D%E7%BD%AE%20%E9%85%92%E5%BA%97%E5%90%8D%20%E6%88%96%E5%93%81%E7%89%8C"
-							target=_blank>
-								<div class=pic_add>
-									<img alt=和顺
-										data-src="${pageContext.request.contextPath }/statics/picture/termini_t3_hs.jpg">
+						</li>
+					</c:forEach>
+				</ul>
+				<ul style="display: none" class=tab_theme>
+					<c:forEach items="${hote6}" var="hote4">
+					<li>
+						<a href="${pageContext.request.contextPath}/toIndex3?hotelId=${hote6.hotelId}" target=_blank>
+							<div class=pic_add>
+								<img alt="${hote6.hotelName}" data-src="${pageContext.request.contextPath }/${hote6.fileUrl}">
 								</div>
-								<div class=city_name>和顺</div>
-						</a>
-							<div class=mask_num>
-								<p>
-									<span>380</span>家酒店特卖
-								</p>
-							</div>
+								<div class=city_name>${hote6.hotelName}</div>
+							</a>
 							<div class=scale_tour>
-								<span class=right><b>?</b><em>380</em>起</span>
-								<p>古风犹存 如诗如画</p>
+								<p style="padding-top: 5px;">￥<span style="display: inline-block;font-size:24px;color: #FF7200;">${hote6.hotelPrice}</span></p>
 							</div>
-						<li><a
-							href="http://hotel.elong.com/wuzhen/?aioIndex=-1&amp;aioVal=%E8%BE%93%E5%85%A5%20%E4%BD%8D%E7%BD%AE%20%E9%85%92%E5%BA%97%E5%90%8D%20%E6%88%96%E5%93%81%E7%89%8C"
-							target=_blank>
-								<div class=pic_add>
-									<img alt=乌镇
-										data-src="${pageContext.request.contextPath }/statics/picture/termini_t3_wz.jpg">
-								</div>
-								<div class=city_name>乌镇</div>
-						</a>
-							<div class=mask_num>
-								<p>
-									<span>380</span>家酒店特卖
-								</p>
-							</div>
-							<div class=scale_tour>
-								<span class=right><b>?</b><em>380</em>起</span>
-								<p>推窗见水 小桥人家</p>
-							</div>
-						<li><a
-							href="http://hotel.elong.com/pingyao/?aioIndex=-1&amp;aioVal=%E8%BE%93%E5%85%A5%20%E4%BD%8D%E7%BD%AE%20%E9%85%92%E5%BA%97%E5%90%8D%20%E6%88%96%E5%93%81%E7%89%8C"
-							target=_blank>
-								<div class=pic_add>
-									<img alt=平遥
-										data-src="${pageContext.request.contextPath }/statics/picture/termini_t3_py.jpg">
-								</div>
-								<div class=city_name>平遥</div>
-						</a>
-							<div class=mask_num>
-								<p>
-									<span>380</span>家酒店特卖
-								</p>
-							</div>
-							<div class=scale_tour>
-								<span class=right><b>?</b><em>380</em>起</span>
-								<p>晋商遗风 古城探幽</p>
-							</div></li>
-					</ul>
-					<ul style="display: none" class=tab_theme>
-						<li><a href="http://hotel.elong.com/hongkong" target=_blank>
-								<div class=pic_add>
-									<img alt=香港
-										data-src="${pageContext.request.contextPath }/statics/picture/termini_t4_xg.jpg">
-								</div>
-								<div class=city_name>香港</div>
-						</a>
-							<div class=mask_num>
-								<p>
-									<span>380</span>家酒店特卖
-								</p>
-							</div>
-							<div class=scale_tour>
-								<span class=right><b>?</b><em>380</em>起</span>
-								<p>只有想不到，没有找不到</p>
-							</div>
-						<li><a
-							href="http://hotel.elong.com/chengdu/?aioIndex=-1&amp;aioVal=%E8%BE%93%E5%85%A5%20%E4%BD%8D%E7%BD%AE%20%E9%85%92%E5%BA%97%E5%90%8D%20%E6%88%96%E5%93%81%E7%89%8C"
-							target=_blank>
-								<div class=pic_add>
-									<img alt=成都
-										data-src="${pageContext.request.contextPath }/statics/picture/termini_t4_cd.jpg">
-								</div>
-								<div class=city_name>成都</div>
-						</a>
-							<div class=mask_num>
-								<p>
-									<span>380</span>家酒店特卖
-								</p>
-							</div>
-							<div class=scale_tour>
-								<span class=right><b>?</b><em>380</em>起</span>
-								<p>不只有火锅，吃是头等事</p>
-							</div>
-						<li><a
-							href="http://hotel.elong.com/yangzhou/?aioIndex=-1&amp;aioVal=%E8%BE%93%E5%85%A5%20%E4%BD%8D%E7%BD%AE%20%E9%85%92%E5%BA%97%E5%90%8D%20%E6%88%96%E5%93%81%E7%89%8C"
-							target=_blank>
-								<div class=pic_add>
-									<img alt=扬州
-										data-src="${pageContext.request.contextPath }/statics/picture/termini_t4_yz.jpg">
-								</div>
-								<div class=city_name>扬州</div>
-						</a>
-							<div class=mask_num>
-								<p>
-									<span>380</span>家酒店特卖
-								</p>
-							</div>
-							<div class=scale_tour>
-								<span class=right><b>?</b><em>380</em>起</span>
-								<p>吴侬软语 淮味养人</p>
-							</div>
-						<li><a
-							href="http://hotel.elong.com/changsha/?aioIndex=-1&amp;aioVal=%E8%BE%93%E5%85%A5%20%E4%BD%8D%E7%BD%AE%20%E9%85%92%E5%BA%97%E5%90%8D%20%E6%88%96%E5%93%81%E7%89%8C"
-							target=_blank>
-								<div class=pic_add>
-									<img alt=长沙
-										data-src="${pageContext.request.contextPath }/statics/picture/termini_t4_cs.jpg">
-								</div>
-								<div class=city_name>长沙</div>
-						</a>
-							<div class=mask_num>
-								<p>
-									<span>380</span>家酒店特卖
-								</p>
-							</div>
-							<div class=scale_tour>
-								<span class=right><b>?</b><em>380</em>起</span>
-								<p>美食怕不辣，湘味最十足</p>
-							</div></li>
-					</ul>
+						</li>
+					</c:forEach>	
+				</ul>
 				</div>
 				<!--国内-->
-				<!--国际-->
+				<!--国外-->
 				<div class="domestic mt20">
 					<h3 class=clearfix>
-						<em class="more right"><a href="http://ihotel.elong.com/">更多<b>&gt;&gt;</b></a></em>
+						<em class="more right"><a href="${pageContext.request.contextPath}/toIndex2">更多<b>&gt;&gt;</b></a></em>
 						<a class="pr20 left" href="http://ihotel.elong.com/"><i
 							class="ei_icon icon062 left pr5"></i>海外</a> <span class=on>文艺清新</span>
 						<span>面朝大海</span> <span>别样建筑</span> <span>浪漫主义</span> <span>魅力都市</span>
@@ -1536,7 +1284,6 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
 					</div>
 				</div>
 				<!--火车票-->
-				<!---->
 			</div>
 		</div>
 		<!--discount end-->
@@ -1605,24 +1352,14 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
 						<li><i class="ei_icon icon015"></i><span>7×24小时服务</span></li>
 					</ul>
 				</div>
-				<!--
-<div class="booking_email clearfix">
-<div class="service_agreement right">
-<a href="http://promotion.elong.com/index/agreement/index.html" target="_blank">风游服务协议</a>
-</div>
-<div class="ei_icon icon016 left"></div>
-<div class="input_email"> <span>亲，留下您的邮箱，会有惊喜呦~</span> <em><input type="text" value="请输入您的E-mail" id="email"></em> <b><input type="button" value="立即订阅" id="btnSubEmail"></b> </div>
-</div>
--->
+		
 			</div>
 		</div>
 		<!--why us-->
 		<div id="m_contentend" style="z-index: 200;"></div>
 		<script type="text/javascript">
 			var tjObj_rt2 = new Date();
-		</script>
-		<div id="m_adsContainer" style="display: none"></div>
-
+		</script>	
 		<!-- 园林酒店的动态js start-->
 		<script type="text/javascript">
 			var IndexController = {
@@ -1694,105 +1431,9 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
 			var pageController = IndexController;
 		</script>
 		<!-- 园林酒店的动态js end-->
-
-		<script type="text/javascript">
-			var hotelPageController = pageController; //兼容
-			var tj_jsStartTime = new Date().getTime();
-			var customLabelValue = "0";
-		</script>
-
-		<script type="text/javascript">
-			document.getElementsByClassName('weekDesc')[0].innerHTML = pageController.vm.checkInDateDes;
-			document.getElementsByClassName('weekDesc')[1].innerHTML = pageController.vm.checkOutDateDes;
-		</script>
-
-		<script type="text/javascript"
-			src="${pageContext.request.contextPath }/statics/js/tjmvt.js"></script>
-		<script type="text/javascript"
-			src="${pageContext.request.contextPath }/statics/js/axdbanner.js"></script>
-		<script type="text/javascript">
-			new window.AdBanner({
-				container: document.getElementById('pcAdv'),
-				cityId: 0,
-				keyWords: '风游',
-				positionId: 'eexwwtxxw5w9b',
-				animateType: 'fade'
-			});
-		</script>
-		<script type="text/javascript"
-			src="${pageContext.request.contextPath }/statics/js/tjmvt.js"></script>
-		<script type="text/javascript"
-			src="${pageContext.request.contextPath }/statics/js/fingerprint.pc.js"></script>
-
-		<script type="text/JavaScript">function CNNIC_change(eleId) { var str = document.getElementById(eleId).href; var str1 = str.substring(0, (str.length - 6)); str1 = [str1, CNNIC_RndNum(6)].join(''); document.getElementById(eleId).href = str1; //window.open(str1); } function CNNIC_RndNum(k)
-			{ var rnd = [""]; for (var i = k; i != 0; i--) { rnd.push(Math.floor(Math.random() * 10)); } return rnd.join(''); }
-		</script>
-
-		<script type="text/javascript">
-			var trackingOBJ = {
-				"oOrderFromId": "50",
-				"oCityId": "0101",
-				"oPageName": "ElongIndexPage",
-				"oClientGuid": "9e9588cb-d1a0-4cba-8577-58f0155b90a9",
-				"oServerTime": "2019-05-08 10:22:05"
-			};
-		</script>
-
-		<script type="text/javascript"
-			src="${pageContext.request.contextPath }/statics/js/s_code.js"></script>
-		<script language="JavaScript">
-			var s_code = s.t();
-			if (s_code) document.write(s_code);
-		</script>
-		<script type="text/javascript">
-			var tjObj = {
-				"channel": "home",
-				"orderfrom": "50",
-				"pagetype": "ElongIndexPage"
-			}
-		</script>
-		<script type="text/javascript">
-			var TJObject = {
-				"pt": "pc-elong-homepage",
-				"orderfrom": 50,
-				"cip": "223.104.130.29",
-				"pturl": "http://localhost:8080/FengYou/toIndex",
-				"rfurl": "http://localhost:8080/FengYou/toIndex",
-				"sid": "62280926-7f8b-4b89-8b34-7840ee13e7e4",
-				"biz": "pc_hotel",
-				"id": "804deff9-a0fa-49e0-aa13-6c6f99ff8b3c",
-				"st": 1557282125117,
-				"bns": 4,
-				"idc": "idc1",
-				"mvt": "[{\"vid\":462,\"val\":\"0\",\"eid\":376},{\"vid\":186,\"val\":\"1\",\"eid\":197},{\"vid\":366,\"val\":\"0\",\"eid\":376}]",
-				"ct": 2,
-				"opens": 1,
-				"lg": "zh-CN",
-				"cid": "9e9588cb-d1a0-4cba-8577-58f0155b90a9"
-			}
-		</script>
-		<script type="text/javascript"
-			src="${pageContext.request.contextPath }/statics/js/netextend.js"></script>
-		<script type="text/javascript">
-			if (TJObject && TJObject.pt) {
-				TJObject.et = "show";
-				TJObject.st = new Date().getTime();
-				tjMVT.setData(TJObject);
-			} else if (hotelPageController && hotelPageController.webHotelTjObj) {
-				tjMVT.setData(hotelPageController.webHotelTjObj);
-			}
-		</script>
-
-		<script type='text/javascript'
-			src="${pageContext.request.contextPath }/statics/js/vst.js"
-			charset="utf-8"></script>
-		<script
-			data-main='//file.40017.cn/js40017cnproduct/cn/h/elong_pc/201957_14.10fe5/elong_index/elong_index_cn.js?20190507162910'
+		<script data-main='${pageContext.request.contextPath }/statics/js/elong_index_cn.js'
 			src='${pageContext.request.contextPath }/statics/js/require.js'></script>
-
-		<script>
-			require(['${pageContext.request.contextPath }/statics/js/common_index.js'], function() {})
-		</script>
+		
 		<!-- ===================== footer 20190403 start ===================== -->
 		<div class="clear"></div>
 		<div class="footer" r="3">

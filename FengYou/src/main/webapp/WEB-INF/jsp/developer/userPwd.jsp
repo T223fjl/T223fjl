@@ -300,7 +300,7 @@ padding-left: 50px;
 				<ul class="nav nav-tabs" id="myTab">
 					<li class="active"><a href="#home" data-toggle="tab">密码修改</a></li>
 					<div class="accountOff" id="accountOff" style="margin-left: 720px; margin-top: 10px; font-size: 14px;">
-						<a href="logouts">账户注销</a>
+						<a href="logout">账户注销</a>
 					</div>
 				</ul>
 				<div id="myTabContent" class="tab-content">

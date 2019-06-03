@@ -48,41 +48,19 @@ public class PayController {
 	@Autowired
 	private RealtimeinventoryService realtimeinventoryService;
 
+	
 	@RequestMapping("/fff")
 	public String f(HttpServletResponse response, HttpServletRequest request) throws IOException {
 
 		return "developer/Payzf";
 	}
-	
-	
-	@RequestMapping("/timeOu")
-	public String tui(String orderId,HttpServletResponse response, HttpServletRequest request) throws IOException {
-		if(orderId!=null&&!"".equals(orderId)){
-			Order o =orderService.queryOrderById(Integer.valueOf(orderId));
-			o.setOrderStatus(2);
-			int r = orderService.updOrder(o);
-			if(r>0){
-				
-			}
-		}
-		
-		return "redirect:/toIndex";
-	}
-	
-	@RequestMapping("/timeOut")
-	public String timeOut(String orderId,HttpServletResponse response, HttpServletRequest request) throws IOException {
-		if(orderId!=null&&!"".equals(orderId)){
-			Order o =orderService.queryOrderById(Integer.valueOf(orderId));
-			o.setOrderStatus(2);
-			int r = orderService.updOrder(o);
-		}
-		
-		return "redirect:/toIndex";
-	}
 
+	//支付
 	@RequestMapping("/pay")
 	public void pay(HttpServletResponse response, HttpServletRequest request) throws IOException {
-
+		Order o =orderService.getOrderNew();
+		o.setOrderStatus(1);
+		int r = orderService.updOrder(o);
 		response.setContentType("text/html;charset=utf-8");
 		request.setCharacterEncoding("utf-8");
 		// 获得初始化的AlipayClient
@@ -122,6 +100,7 @@ public class PayController {
 		out.flush();
 	}
 
+	//支付成功后返回
 	@RequestMapping("/returnurl")
 	public String returnurl(HttpServletResponse response, HttpServletRequest request) throws IOException {
 		response.setContentType("text/html;charset=utf-8");
@@ -147,7 +126,6 @@ public class PayController {
 			signVerified = AlipaySignature.rsaCheckV1(params, AlipayConfig.ALIPAY_PUBLIC_KEY, AlipayConfig.CHARSET,
 					"RSA2");
 		} catch (AlipayApiException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		PrintWriter out = response.getWriter();
@@ -156,23 +134,30 @@ public class PayController {
 		o.setOrderStatus(1);
 		int r = orderService.updOrder(o);
 		if (signVerified) {
-			return "redirect:/toIndex";
+			return "order3";
 		} else {
 			return "redirect:/toIndex";
 		}
 	}
 
+	//支付失败后，进入支付页面
 	@RequestMapping("/toPayPage")
-	public String subOrder(Model model) {
+	public String subOrder(Model model,HttpSession session) throws ParseException {
 		Order o = orderService.getOrderNew();
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		House house = houseService.qeuryHouseByHouseId(o.getHouseId());
 		Hotel hotel = hotelService.getHotelById(o.getHotelId());
 		model.addAttribute("order", o);
 		model.addAttribute("house", house);
 		model.addAttribute("hotel", hotel);
+		java.util.Date curDate=format.parse(format.format(new java.util.Date()));
+		java.util.Date end=format.parse(format.format(curDate.getTime()+1000*60*30));
+		model.addAttribute("orderId", o.getId());
+		session.setAttribute("curDate", curDate);
+		session.setAttribute("end", end);
 		return "developer/order2";
 	}
-	//
+	
 	@RequestMapping("/subOrder")
 	public String subOrder(String houseId, String checkInDate, String checkOutDate, String email, String phone,
 			String userNames, String place, String payAmount, String houseCount, String day, Model model,
@@ -190,13 +175,14 @@ public class PayController {
 					&& userNames != null && place != null && payAmount != null && houseCount != null) {
 				House house = houseService.qeuryHouseByHouseId(Integer.valueOf(houseId));
 				Hotel hotel = hotelService.getHotelById(house.getHotelId());
+				order.setPresetItme(format.parse(format.format(new java.util.Date())));
 				order.setCheckInDate(format.parse(format.format(format.parse(checkInDate))));
 				order.setCheckOutDate(format.parse(format.format(format.parse(checkOutDate))));
 				order.setHouseId(Integer.valueOf(houseId));
 				order.setHotelId(hotel.getHotelId());
 				order.setHouseCount(Integer.valueOf(houseCount));
 				int intoInfoId = orderService.getIntoNew().getId();
-				;
+				
 				order.setIntoInfoId(intoInfoId);
 				User loginUser = (User) session.getAttribute("loginUser");
 				if (loginUser == null) {
@@ -209,6 +195,8 @@ public class PayController {
 				order.setPayAmount(Double.valueOf(payAmount));
 				order.setPlace(place);
 				order.setRemarks(0);
+			
+				System.out.println(order.getPresetItme());
 				order.setOrderNo("AVSD00" + order.getHotelId() + order.getHouseId() + order.getHouseCount()
 						+ order.getUserId() + order.getIntoInfoId());
 				int result = orderService.addOrder(order);
@@ -243,9 +231,11 @@ public class PayController {
 					r.setStore(r.getStore() - order.getHouseCount());
 					realtimeinventoryService.updRealtimeinventory(r);
 					int orderId=o.getId();
-					java.util.Date curDate=format.parse(format.format(new java.util.Date()));
+					java.util.Date curDate=o.getPresetItme();
+					java.util.Date end=format.parse(format.format(curDate.getTime()+1000*60*5));
 					model.addAttribute("orderId", orderId);
-					model.addAttribute("curDate", curDate);
+					session.setAttribute("curDate", curDate);
+					session.setAttribute("end", end);
 					return "developer/order2";
 				} else {
 
@@ -256,6 +246,8 @@ public class PayController {
 		return "redirect:/toIndex";
 	}
 
+	
+	//获得几天后时间
 	public Date getNextDate(java.util.Date date2, int day) {
 		long addTime = 1; // 以1为乘以的基数
 		addTime *= day; // 1天以后 （如果是30天以后，则这里是30）
