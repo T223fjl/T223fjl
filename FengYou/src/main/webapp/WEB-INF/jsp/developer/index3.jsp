@@ -607,6 +607,12 @@
 					<ul class="cclst_con">
 								
 							</ul>
+							<div id="pageContainer" class="paging1">
+				<input type="hidden" id="count" name="count" value="5">
+				<a href="javascript:void(0)" class="page_back" title="上一页">上一页</a> 第<a
+					href="javascript:void(0)" id="curPage" title=""></a> 页<a
+					href="javascript:void(0)" class="page_next" title="下一页">下一页</a>
+			</div>
 					</div>
 					<div class="m_cclst" data-name="favor" style="display: none">
 					</div>
@@ -615,7 +621,7 @@
 				<div id="surroundingHotelContainer"></div>
 				<div class="dsider_perim_more">
 					<a target="_blank"
-						href="/search/list_cn_0101.html?startLat=39.91372316&startLng=116.3497983&starLevels=5&keywordsType=99&keywords=%E5%8C%97%E4%BA%AC%E5%94%90%E6%8B%89%E9%9B%85%E7%A7%80%E9%85%92%E5%BA%97"><span>查看周边同价位酒店</span><i
+						href="#"><span>查看周边同价位酒店</span><i
 						class="icon_sort_arrr4"></i><i class="icon_perim_b"></i></a>
 				</div>
 				<div class="dsider_service_us">
@@ -802,8 +808,8 @@
 		src="${pageContext.request.contextPath }/statics/js/register/account.min.js"></script>
 	<script type="text/javascript">
 	
-	function addNote(hotelId) {
-		$.get("addNote","hotelId="+hotelId,function(data){		
+	function addNote(hotelId,curPage) {
+		$.get("addNote","curPage="+curPage+"&hotelId="+hotelId,function(data){		
 			var html='';
 			for (var i = 0; i < data.length; i++) {
 				html+='<li class="ccitem" ><a href="javascript:void(0);"  data-hotelid="'+data[i].hotelId+
@@ -812,6 +818,8 @@
 				'</b></span></p><p class="ccpri"><span class="t14 c555">¥</span><span class="t18 cf55">'+data[i].hotelPrice+'</span><span class="t12 cf55">起</span></p></div></a></li>';
 				
 			}
+			$("#curPage").html(curPage)
+			$("#curPage").attr("title","第"+curPage+"页");
 			$(".cclst_con").html(html);
 		})
 	}
@@ -838,19 +846,8 @@
 	}      
 	
 		$(function() {
-			
-				$.get("addNote","hotelId="+null,function(data){		
-					var html='';
-					for (var i = 0; i < data.length; i++) {
-						html+='<li class="ccitem" ><a href="javascript:void(0);"  data-hotelid="'+data[i].hotelId+
-						'" class="itembg clearfix"><div class="lb"><img src="${pageContext.request.contextPath }'+data[i].fileUrl+
-						'"></div><div class="item_c"><h3 class="cctit">'+data[i].hotelName+'</h3><p class="cccm"><span class="">评分：<b>'+data[i].hotelRatings+
-						'</b></span></p><p class="ccpri"><span class="t14 c555">¥</span><span class="t18 cf55">'+data[i].hotelPrice+'</span><span class="t12 cf55">起</span></p></div></a></li>';
-						
-					}
-					$(".cclst_con").html(html);
-				})
-			
+			addNote(null,1);
+				
 			var error=$("#error").val();
 			if(error!=null&&error!=''){
 				alert("此房间空余数量不足,请重新选择！")
@@ -929,6 +926,24 @@
 
 		})
 	</script>
+	
+	<script type="text/javascript">
+		//分页
+		$(".page_next").click(function() {
+			if (parseInt($("#count").val()) > parseInt($("#curPage").html())) {
+				$("#curPage").html(parseInt($("#curPage").html()) + 1);
+			}
+			addNote(null,$("#curPage").html());
+		})
+		$(".page_back").click(function() {
+			if (1 < parseInt($("#curPage").html())) {
+				$("#curPage").html(parseInt($("#curPage").html()) - 1);
+			}
+			addNote(null,$("#curPage").html());
+		})
+
+	</script>
+	
 <script async>
 	function fp_ready() {
 		var calendars = document.getElementsByClassName("flatpickr")

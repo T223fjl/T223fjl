@@ -22,6 +22,7 @@ import pojo.Hotel;
 import pojo.House;
 import pojo.Itrip;
 import pojo.Level;
+import pojo.Mycollection;
 import pojo.Order;
 import pojo.Realtimeinventory;
 import pojo.User;
@@ -29,6 +30,7 @@ import service.DictionarydateService;
 import service.HotelService;
 import service.HouseService;
 import service.LevelService;
+import service.MycollectionService;
 import service.OrderService;
 import service.RealtimeinventoryService;
 import service.UserService;
@@ -51,6 +53,8 @@ public class DevController {
 	private OrderService orderService;
 	@Autowired
 	private RealtimeinventoryService realtimeinventoryService;
+	@Autowired
+	private MycollectionService mycollectionService;
 
 	/**
 	 * 跳转到订单详情页面
@@ -151,14 +155,15 @@ public class DevController {
 
 	// 跳转前台三级页面
 	@RequestMapping("/toIndex3")
-	public String toIndex3(String hotelId, String error, Model model) {
+	public String toIndex3(String hotelId, String error, Model model,HttpSession session) {
 		int hid = 1;
 		if (hotelId != null && !"".equals(hotelId)) {
 			hid = (Integer.valueOf(hotelId));
 		}
 		Hotel hotel = hotelService.getHotelById(hid);
 		List<House> houseList = houseService.qeuryHouseByHotelId(hid);
-
+		List<Mycollection> collections = userService.queryMycollection();
+		session.setAttribute("collections", collections);
 		model.addAttribute("houseList", houseList);
 		model.addAttribute("hotel", hotel);
 		if (error != null && !"".equals(error)) {
@@ -307,7 +312,16 @@ public class DevController {
 				CurFully = fullys.get(i);
 			}
 		}
-
+		User user=(User)session.getAttribute("loginUser");
+		if(user!=null){
+			System.out.println("用户id"+user.getId());
+			List<Hotel> hotlet=mycollectionService.query(user.getId());
+			session.setAttribute("hotlet", hotlet);
+		}
+		
+		//查询所有的收藏的酒店
+		List<Mycollection> collections = userService.queryMycollection();
+		session.setAttribute("collections", collections);
 		session.setAttribute("CurStar", CurStar);
 		session.setAttribute("CurPrice", CurPrice);
 		session.setAttribute("CurType", CurType);

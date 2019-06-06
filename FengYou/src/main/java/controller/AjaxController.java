@@ -37,7 +37,7 @@ public class AjaxController {
 	// addNote
 	@RequestMapping("/addNote")
 	@ResponseBody
-	public List<Hotel> addNote(String hotelId, HttpServletResponse response, HttpServletRequest request)
+	public List<Hotel> addNote(String hotelId,String curPage, HttpServletResponse response, HttpServletRequest request)
 			throws IOException, ParseException {
 		List<Hotel> list = new ArrayList<Hotel>();
 
@@ -89,8 +89,22 @@ public class AjaxController {
 				}
 			}
 		}
-		System.out.println(list.size());
-		return list;
+		int pageSize=3;
+		int page=1;
+		if(curPage!=null&&!"".equals(curPage)){
+			page=Integer.valueOf(curPage);
+		}
+		
+		int sum=list.size();
+		int count=sum%pageSize==0?sum/pageSize:sum/pageSize+1;
+		List<Hotel> hotellist =new  ArrayList<Hotel>();
+		for (int i = (page-1)*pageSize; i <(page-1)*pageSize+pageSize; i++) {
+			if(i<sum){
+				hotellist.add(list.get(i));
+			}
+		}
+		System.out.println(hotellist.size());
+		return hotellist;
 	}
 
 	@RequestMapping("/TimeOut")

@@ -1,10 +1,12 @@
 package pojo;
 
+import java.util.Date;
+
 public class Mycollection {
 	private int id;
 	private int conbyUserId;
 	private int hotelById;
-	private int hotelByConTime;
+	private Date hotelByConTime;
 	
 	public int getId() {
 		return id;
@@ -24,10 +26,10 @@ public class Mycollection {
 	public void setHotelById(int hotelById) {
 		this.hotelById = hotelById;
 	}
-	public int getHotelByConTime() {
+	public Date getHotelByConTime() {
 		return hotelByConTime;
 	}
-	public void setHotelByConTime(int hotelByConTime) {
+	public void setHotelByConTime(Date hotelByConTime) {
 		this.hotelByConTime = hotelByConTime;
 	}
 	

@@ -29,6 +29,235 @@
 	overflow: hidden;
 	height: 23px
 }
+
+.container-fluid {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.nav {
+	padding-left: 0;
+	margin-bottom: 0;
+	list-style: none;
+}
+
+.nav>li {
+	position: relative;
+	display: block;
+}
+
+.nav>li>a {
+	position: relative;
+	display: block;
+	padding: 10px 15px;
+}
+
+.nav>li>a:hover, .nav>li>a:focus {
+	text-decoration: none;
+	background-color: #eee;
+}
+
+.nav>li.disabled>a {
+	color: #777;
+}
+
+.nav>li.disabled>a:hover, .nav>li.disabled>a:focus {
+	color: #777;
+	text-decoration: none;
+	cursor: not-allowed;
+	background-color: transparent;
+}
+
+.nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
+	background-color: #eee;
+	border-color: #337ab7;
+}
+
+.nav .nav-divider {
+	height: 1px;
+	margin: 9px 0;
+	overflow: hidden;
+	background-color: #e5e5e5;
+}
+
+.nav>li>a>img {
+	max-width: none;
+}
+
+.nav-tabs {
+	border-bottom: 1px solid #ddd;
+}
+
+.nav-tabs>li {
+	float: left;
+	margin-bottom: -1px;
+}
+
+.nav-tabs>li>a {
+	margin-right: 2px;
+	line-height: 1.42857143;
+	border: 1px solid transparent;
+	border-radius: 4px 4px 0 0;
+}
+
+.nav-tabs>li>a:hover {
+	border-color: #eee #eee #ddd;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus
+	{
+	color: #555;
+	cursor: default;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-bottom-color: transparent;
+}
+
+.nav-tabs.nav-justified {
+	width: 100%;
+	border-bottom: 0;
+}
+
+.nav-tabs.nav-justified>li {
+	float: none;
+}
+
+.nav-tabs.nav-justified>li>a {
+	margin-bottom: 5px;
+	text-align: center;
+}
+
+.nav-tabs.nav-justified>.dropdown .dropdown-menu {
+	top: auto;
+	left: auto;
+}
+
+@media ( min-width : 768px) {
+	.nav-tabs.nav-justified>li {
+		display: table-cell;
+		width: 1%;
+	}
+	.nav-tabs.nav-justified>li>a {
+		margin-bottom: 0;
+	}
+}
+
+.nav-tabs.nav-justified>li>a {
+	margin-right: 0;
+	border-radius: 4px;
+}
+
+.nav-tabs.nav-justified>.active>a, .nav-tabs.nav-justified>.active>a:hover,
+	.nav-tabs.nav-justified>.active>a:focus {
+	border: 1px solid #ddd;
+}
+
+@media ( min-width : 768px) {
+	.nav-tabs.nav-justified>li>a {
+		border-bottom: 1px solid #ddd;
+		border-radius: 4px 4px 0 0;
+	}
+	.nav-tabs.nav-justified>.active>a, .nav-tabs.nav-justified>.active>a:hover,
+		.nav-tabs.nav-justified>.active>a:focus {
+		border-bottom-color: #fff;
+	}
+}
+
+.nav-pills>li {
+	float: left;
+}
+
+.nav-pills>li>a {
+	border-radius: 4px;
+}
+
+.nav-pills>li+li {
+	margin-left: 2px;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus
+	{
+	color: #fff;
+	background-color: #337ab7;
+}
+
+.nav-stacked>li {
+	float: none;
+}
+
+.nav-stacked>li+li {
+	margin-top: 2px;
+	margin-left: 0;
+}
+
+.nav-justified {
+	width: 100%;
+}
+
+.nav-justified>li {
+	float: none;
+}
+
+.nav-justified>li>a {
+	margin-bottom: 5px;
+	text-align: center;
+}
+
+.nav-justified>.dropdown .dropdown-menu {
+	top: auto;
+	left: auto;
+}
+
+@media ( min-width : 768px) {
+	.nav-justified>li {
+		display: table-cell;
+		width: 1%;
+	}
+	.nav-justified>li>a {
+		margin-bottom: 0;
+	}
+}
+
+.nav-tabs-justified {
+	border-bottom: 0;
+}
+
+.nav-tabs-justified>li>a {
+	margin-right: 0;
+	border-radius: 4px;
+}
+
+.nav-tabs-justified>.active>a, .nav-tabs-justified>.active>a:hover,
+	.nav-tabs-justified>.active>a:focus {
+	border: 1px solid #ddd;
+}
+
+@media ( min-width : 768px) {
+	.nav-tabs-justified>li>a {
+		border-bottom: 1px solid #ddd;
+		border-radius: 4px 4px 0 0;
+	}
+	.nav-tabs-justified>.active>a, .nav-tabs-justified>.active>a:hover,
+		.nav-tabs-justified>.active>a:focus {
+		border-bottom-color: #fff;
+	}
+}
+
+.tab-content>.tab-pane {
+	display: none;
+}
+
+.tab-content>.active {
+	display: block;
+}
+
+.nav-tabs .dropdown-menu {
+	margin-top: -1px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
 </style>
 <link rel="stylesheet" rev="stylesheet"
 	href='${pageContext.request.contextPath }/statics/css/new2015.min.css'
@@ -42,6 +271,10 @@
 	href='${pageContext.request.contextPath }/statics/css/img_box_layer.css' />
 <link rel="stylesheet" type="text/css"
 	href='${pageContext.request.contextPath }/statics/css/list_intro_room.css' />
+<script
+	src="${pageContext.request.contextPath }/statics/js/userlist/jquery-1.12.4.js"></script>
+<script
+	src="${pageContext.request.contextPath }/statics/js/userlist/bootstrap.js"></script>
 </head>
 <body>
 	<!-- ===================== header 2019-04-29 start ===================== -->
@@ -288,10 +521,49 @@
 		</div>
 		<!--引导登陆end-->
 	</c:if>
+	<script type="text/javascript">
+				function add_collect(e) {
+					var hotelById = $("#hotelById").val();
+					var hotelId = $(e).attr("data-hotelid");
+					var collect = $(e).find(".collec").html();
+					if (collect == "收藏") {
+						$.ajax({
+							url : 'ToCollectAdd',
+							type : 'POST',
+							data : {
+								hotelId : hotelId
+							},
+							success : function(data) {
+								if (data == "true") {
+									$(e).find(".collec").html("已收藏");
+									$(e).addClass("on");
+								} else if (data == "false") {
+								}
+							}
+						})
+					} else if (collect == "已收藏") {
+						$.ajax({
+							url : 'ToCollectDel',
+							type : 'POST',
+							data : {
+								hotelById : hotelId
+							},
+							success : function(data) {
+								if (data == "true") {
+									$(e).find(".collec").html("收藏");
+									$(e).removeClass("on");
+								} else if (data == "false") {
+								}
+							}
+						})
+					}
+				}
+			</script>
+
+
 	<div class="hlist_box">
 		<!--左侧内容 start-->
 		<div class="hlist_main left">
-
 			<div class="h_booked_wrap mt10 mb10" id="bookingRateZone"
 				style="display: none">
 				<div class="bcde h_booked">
@@ -407,22 +679,24 @@
 										</a>
 										<!-- <span class="block listTagItem">“出行方便”</span> -->
 										<!-- 收藏 -->
-										<div class="h_add_cc">
+										<!-- 收藏 -->
+										<div class="h_add_cc" id="h_add_cc">
 											<c:set var="on"></c:set>
 											<c:forEach items="${collections }" var="col">
-												<c:if test="${hotel.id==col.hotelById }">
+												<c:if test="${hotel.hotelId==col.hotelById}">
 													<c:set var="on" value="on"></c:set>
 													<span class="add_collect on"
-														data-hotelid="${hotel.hotelId }"> <i
-														class="icon_add_coll"></i> <span data-showname="favStatus">
-															已收藏 </span>
+														data-hotelid="${hotel.hotelId }"
+														onclick="add_collect(this)"> <i class="icon_coll"></i>
+														<span data-showname="favStatus" class="collec">已收藏</span>
 													</span>
 												</c:if>
 											</c:forEach>
-											<c:if test="${on!='on' }">
-												<span class="add_collect " data-hotelid="${hotel.hotelId }">
-													<i class="icon_add_coll"></i> <span
-													data-showname="favStatus">收藏 </span>
+											<c:if test="${on!='on'}">
+												<input type="hidden" value="${hotel.hotelId}" id="hotelId">
+												<span class="add_collect" data-hotelid="${hotel.hotelId }"
+													onclick="add_collect(this)"> <i class="icon_coll"></i>
+													<span data-showname="favStatus" class="collec">收藏</span>
 												</span>
 											</c:if>
 										</div>
@@ -469,17 +743,10 @@
 								<!-- 地图 end-->
 								<div id="soso_map_wrap${hotel.hotelId }" style="display: none"
 									class='mt10'></div>
-
 							</div>
 						</div>
-
 					</c:forEach>
-
-
-
 				</div>
-
-
 			</div>
 			<div id="pageContainer" class="paging1">
 				<input type="hidden" id="count" name="count" value="${count }">
@@ -487,8 +754,6 @@
 					href="javascript:void(0)" title="第${curPage }页">第${curPage }页</a> <a
 					href="javascript:void(0)" class="page_next" title="下一页">下一页</a>
 			</div>
-
-
 
 		</div>
 		<!-- 右侧内容 -->
@@ -512,26 +777,51 @@
 							<span class="loading_b"></span>
 						</div>
 					</div>
-
-
+					<!-- 收藏和浏览记录开始 -->
 					<div class="m_collect" id="favorAndSeenContainer">
-						<div class="m_cctit">
-							<ul class="m_ccnav clearfix">
-								<li class="pos" method="dataTab" data-name="seen"
-									data-status="0">历史浏览</li>
-								<li class="pos" method="dataTab" data-name="favor"
-									data-status="0">我的收藏</li>
-							</ul>
-							<span class="line" method="statusLine"></span>
-						</div>
-						<div class="m_cclst" data-name="seen" style="display:">
-							<ul class="cclst_con">
-								
-							</ul>
-						</div>
-						<div class="m_cclst" data-name="favor" style="display: none">
+						<div class="m_cctit" style="height: 400px;">
+							<div class="container-fluid">
+								<ul class="nav nav-tabs clearfix" id="myTab">
+									<li class="active"><a href="#home" data-toggle="tab">浏览历史</a></li>
+									<li><a href="#b" data-toggle="tab">我的收藏</a></li>
+								</ul>
+								<div id="myTabContent" class="tab-content">
+									<div class="tab-pane active now m_cclst" id="home">
+										<ul class="cclst_con">
+
+										</ul>
+										<div id="pageConta" class="paging1" style="position: relative;top:-20px;">
+											<input type="hidden" id="coun" name="coun" value="5"> 
+											<a href="javascript:void(0)" class="page_bac" title="上一页">上一页</a>
+											第<a href="javascript:void(0)" id="curPag" title=""></a> 页<a
+												href="javascript:void(0)" class="page_nex" title="下一页">下一页</a>
+										</div>
+									</div>
+									<div class="tab-pane m_cclst" id="b">
+										<c:forEach items="${hotlet}" var="hotlet">
+											<ul style="height: 70px; margin-bottom: 15px;">
+												<li><a href="javascript:void(0);" data-hotelid="2">
+														<div class="lb">
+															<img src="/FengYou/${hotlet.fileUrl}">
+														</div>
+														<div>
+															<span style="position: relative; top: -15px;">${hotlet.hotelName}</span>
+															<p style="position: relative; top: -33px;">
+																<span>评分：<b>${hotlet.hotelRatings}</b></span>
+															</p>
+															<p style="position: relative; top: -52px; left: 80px;">
+																<span>¥</span><span class="t18 cf55">${hotlet.hotelPrice}</span><span>起</span>
+															</p>
+														</div>
+												</a></li>
+											</ul>
+										</c:forEach>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
+					<!-- 收藏和浏览记录开始 -->
 				</div>
 			</div>
 		</div>
@@ -739,32 +1029,23 @@
 	<script type="text/javascript">
 	
 	
-	function addNote(hotelId) {
-		$.get("addNote","hotelId="+hotelId,function(data){		
+	function addNote(hotelId,curPage) {
+		$.get("addNote","curPage="+curPage+"&hotelId="+hotelId,function(data){		
 			var html='';
 			for (var i = 0; i < data.length; i++) {
 				html+='<li class="ccitem" ><a href="javascript:void(0);"  data-hotelid="'+data[i].hotelId+
 				'" class="itembg clearfix"><div class="lb"><img src="${pageContext.request.contextPath }'+data[i].fileUrl+
-				'"></div><div class="item_c"><h3 class="cctit">'+data[i].hotelName+'</h3><p class="cccm"><span class="">评分：<b>'+data[i].hotelRatings+
-				'</b></span></p><p class="ccpri"><span class="t14 c555">¥</span><span class="t18 cf55">'+data[i].hotelPrice+'</span><span class="t12 cf55">起</span></p></div></a></li>';
-				
+				'"></div><div class="item_c"><span style="position: relative; top: -15px;">'+data[i].hotelName+'</span><p  style="position: relative; top: -33px;"><span class="">评分：<b>'+data[i].hotelRatings+
+				'</b></span></p><p style="position: relative; top: -52px;"><span class="t14 c555">¥</span><span class="t18 cf55">'+data[i].hotelPrice+'</span><span class="t12 cf55">起</span></p></div></a></li>';				
 			}
+			$("#curPag").html(curPage)
+			$("#curPag").attr("title","第"+curPage+"页");
 			$(".cclst_con").html(html);
 		})
 	}
 		var map = new BMap.Map("sidebarMap");
 		$(function() {
-			$.get("addNote","hotelId="+null,function(data){		
-				var html='';
-				for (var i = 0; i < data.length; i++) {
-					html+='<li class="ccitem" ><a href="javascript:void(0);"  data-hotelid="'+data[i].hotelId+
-					'" class="itembg clearfix"><div class="lb"><img src="${pageContext.request.contextPath }'+data[i].fileUrl+
-					'"></div><div class="item_c"><h3 class="cctit">'+data[i].hotelName+'</h3><p class="cccm"><span class="">评分：<b>'+data[i].hotelRatings+
-					'</b></span></p><p class="ccpri"><span class="t14 c555">¥</span><span class="t18 cf55">'+data[i].hotelPrice+'</span><span class="t12 cf55">起</span></p></div></a></li>';
-					
-				}
-				$(".cclst_con").html(html);
-			})
+			addNote(null,1);
 			
 			for (var i = 0; i < $(".bigImg").length; i++) {
 				$(".bigImg").eq(i).attr("src",
@@ -1114,6 +1395,22 @@
 			$(this).parent().addClass("slip")
 
 		})
+	</script>
+	<script type="text/javascript">
+		//分页
+		$(".page_nex").click(function() {
+			if (parseInt($("#coun").val()) > parseInt($("#curPag").html())) {
+				$("#curPag").html(parseInt($("#curPag").html()) + 1);
+			}
+			addNote(null,$("#curPag").html());
+		})
+		$(".page_bac").click(function() {
+			if (1 < parseInt($("#curPag").html())) {
+				$("#curPag").html(parseInt($("#curPag").html()) - 1);
+			}
+			addNote(null,$("#curPag").html());
+		})
+
 	</script>
 </body>
 </html>
