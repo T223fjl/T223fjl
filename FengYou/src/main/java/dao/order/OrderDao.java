@@ -11,6 +11,12 @@ import pojo.Order;
 public interface OrderDao {
 	
 	/**
+	 * 通过id得到订单
+	 * @return
+	 */
+	public Order getOrderById(int id);
+	
+	/**
 	 * 通过房间id查询订单
 	 * @param hid
 	 * @return

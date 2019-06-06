@@ -75,7 +75,6 @@ public class HotelServiceImpl implements HotelService {
 	@Override
 	public Hotel getHotelById(int hid) {
 		Hotel hotel=hotelDao.getHotelById(hid);
-		System.out.println("sss"+hotel.getHotelServe());
 		hotel.setHotelServePy(PinYinUtil.getPinYinHeadChar(hotel.getHotelServe()));
 		return hotel;
 	}

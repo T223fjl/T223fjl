@@ -114,7 +114,7 @@
 						<div id="isOnTimeProduct" class="ss_tips_a"
 							style="width: 350px; left: -2px; top: 35px;">
 							请在<span class="c49f">30分钟内</span>完成支付，过期或离开此页面自动取消。
-							<table border="0" style="display: inline-block;">
+							<table border="0" style="display: inline-block;" id="timeout">
 								<tr>
 									<td>
 										 现在还有：<span id="mmm"></span>分
@@ -162,7 +162,7 @@
 					</div>
 				</div>
 				<form id="pay" style="display: none;" action="pay" method="post"
-					target="_blank">
+					>
 					<input id="WIDout_trade_no" name="WIDout_trade_no"
 						value="${order.orderNo }" /> <input id="WIDsubject"
 						name="WIDsubject" value="${house.houseType }" /> <input
@@ -304,6 +304,18 @@
         second = checkTime(second);
 		$("#sss").html(second)
 		$("#mmm").html(minute)
+		if(second==0&&minute==0){
+			$.get("TimeOut","orderId="+$("#orderId").val(),function(data){
+				if(data=='yes'){
+					$('#timeout').html("已超时");
+				}else if(data=='no0'){
+					$('#timeout').html("已支付");
+				}else if(data=='no1'){
+					$('#timeout').html("已退款");
+				}
+				
+			});
+		}
         //document.getElementById("p").innerHTML = "距离活动截止，还剩" + day + "天" + hour + "时" + minute + "分" + second + "秒";
 
         if (plus <= 1) {

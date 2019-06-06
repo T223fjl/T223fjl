@@ -1,10 +1,10 @@
 package dao.realtimeinventory;
 
-import java.util.List;
 
 import pojo.Realtimeinventory;
 
 public interface RealtimeinventoryDao {
+
 
 	/**
 	 * 通过房间id和酒店id查询临时库存表

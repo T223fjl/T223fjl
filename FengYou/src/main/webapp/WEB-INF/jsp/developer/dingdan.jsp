@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt"%> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -472,7 +473,7 @@
 </script>
 
 				<c:forEach items="${order}" var="order">
-					
+
 					<div class="my_list_detail">
 						<div class="date left">
 							<div class="date_week right" id="date_week">
@@ -525,33 +526,52 @@
 										</li>
 										<li class="info_price trace_cancel">
 											<h2>
-												<span class="icon_trace"></span>
-										<span <c:if test="${order.orderStatus==0}"> id='timeout'</c:if> > 
-												<c:if test="${order.orderStatus==0}">
-													待支付<input type="hidden" id="orderId" value="${order.id }" />
-													<table border="0" style="display: inline-block;">
-														<tr>
-															<td>现在还有：
-															</td>
-															<td><span id="mmm"></span>分<span id="sss"></span>秒</td>
-														</tr>
-													</table>
-												</c:if>
-												<c:if test="${order.orderStatus==1}">
+												<span class="icon_trace"></span> <span
+													<c:if test="${order.orderStatus==0}"> id='timeout'</c:if>>
+													<c:if test="${order.orderStatus==0}">
+													待支付
+														<table id="pay" border="0" style="display: inline-block;">
+															<tr>
+																<td>现在还有：</td>
+																<td><span id="mmm"></span>分<span id="sss"></span>秒</td>
+															</tr>
+														</table>
+														<a href="pay">支付</a>or
+														
+														 
+													</c:if> <c:if test="${order.orderStatus==1}">
                              								已支付
+                             								<jsp:useBean id="now" class="java.util.Date" />
+															<fmt:formatDate value="${now}" type="both" dateStyle="long" pattern="yyyy-MM-dd" var="today"/>
+															<fmt:formatDate value="${order.checkOutDate}" type="both" dateStyle="long" pattern="yyyy-MM-dd" var="date"/>
+															
+ 
+                             								<c:if test="${date >= today }">
+                             								
+														<form method="post"  action="refund" style="display: ;">
+															  <input type="hidden" type="hidden" id="WIDtrade_no" name="WIDtrade_no" />
+															  <input type="hidden" id="WIDrefund_reason" name="WIDrefund_reason" />
+															   <input type="hidden" id="WIDout_request_no" name="WIDout_request_no" />
+															<input type="hidden" id="userId" name="userId" value="${userId }" />
+															<input  type="hidden" id="orderId" name="orderId" value="${order.id }" />
+															<input type="hidden"  id="WIDout_trade_no" name="WIDout_trade_no" value="${order.orderNo }" />
+														 	<input type="hidden"  id="WIDrefund_amount" name="WIDrefund_amount" value="${order.payAmount }" />
+														 	<input type="submit" name="refund" value="退款" />
+														</form>
                              								</c:if>
-												<c:if test="${order.orderStatus==2}">
+                             								
+                             								</c:if> <c:if
+														test="${order.orderStatus==2}">
                              								已超时
-                             								</c:if>
-												<c:if test="${order.orderStatus==3}">
+                             								</c:if> <c:if
+														test="${order.orderStatus==3}">
                              								 已经取消
                              								</c:if>
-</span>
+												</span>
 												<p class="t_w"></p>
-											</h2>
-											<a class="check" data="559640308"
+											</h2> <a class="check" data="559640308"
 											detailurl="/hotel/myhotelorderdetail_cn_559640308.html"
-											method="viewOrderProgress">查看订单进度 <span class="icon"></span>
+											method="viewOrderProgress"></span>
 										</a> <input type="hidden" id="userAutograph559640308"
 											value="0d773a34c6ed83e1873380261c7e0b63">
 										</li>
@@ -569,8 +589,32 @@
 					</div>
 
 				</c:forEach>
+				<div id="pageContainer" class="paging1">
+					<input type="hidden" id="count" name="count" value="${count }" /> <a
+						href="javascript:void(0)" class="page_back" title="上一页">上一页</a> <a
+						href="javascript:void(0)" title="第${curPage }页">第${curPage }页</a>
+					<a href="javascript:void(0)" class="page_next" title="下一页">下一页</a><span style="color: red">共${count }页</span>
+				</div>
 
-
+				<form id="form" action="toOrderDetails" method="post" style="display: none;">
+					<input id="curPage" name="curPage" value="${curPage }" /> <input
+						id="userId" name="userId" value="${userId }" />
+				</form>
+				<script type="text/javascript">
+		//分页
+		$(".page_next").click(function() {
+			if (parseInt($("#count").val()) > parseInt($("#curPage").val())) {
+				$("#curPage").val(parseInt($("#curPage").val()) + 1);
+			}
+			$("#form").submit();
+		})
+		$(".page_back").click(function() {
+			if (1 < parseInt($("#curPage").val())) {
+				$("#curPage").val(parseInt($("#curPage").val()) - 1);
+			}
+			$("#form").submit();
+		})
+	</script>
 				<input type="hidden" id="OrderTotalPageCount" value="0" />
 				<div class="no_result none" style="color: Black; display: none">
 					您目前还没有订单哦~</div>
@@ -599,73 +643,11 @@
 				<!-- cms end -->
 			</div>
 
-			<div id="feedbackWindow" class="none">
-				<div class="fk_Box" style="height: 290px;">
-					<form action="" style="">
-						<input type="hidden" id="cashBackIden" />
-						<h1 data-para="0">
-							<span class="icon_gift"></span>提交反馈，享受优先处理特权
-						</h1>
-						<h1 class="none" data-para="1">
-							<span class="icon_apply_me"></span>如您已经入住酒店，请帮助填写以下反馈信息，离店日期后3个工作日内将获得返现
-						</h1>
-						<ul class="form_ul" style="width: 350px; margin: 0 auto;">
-							<li><label for="">房间号:</label> <input type="text"
-								class="text gray " name="roomNo" id="roomNo" value="房间号1/房间号2" />
-								<!--错误提示开始-->
-								<div class="warning none" msgnull="请输入房间号" msgerr="请检查房间号格式">
-									<span class="icon_alert"></span> 请输入房间号
-								</div> <!--错误提示结束--></li>
-							<li><label for="">入住人姓名:</label> <input type="text"
-								class="text" name="checkInName" id="checkInName" />
-								<div class="warning none" msgnull="请输入入住人姓名" msgerr="请检查姓名格式">
-									<span class="icon_alert"></span> 请输入入住人姓名
-								</div></li>
-							<li><label for="">入住日期:</label> <input type="text"
-								class="text" name="checkInDate" id="checkInDate" readonly="true" />
-								<div class="warning none" msgnull="请输入入住日期">
-									<span class="icon_alert"></span> 请输入入住日期
-								</div></li>
-							<li><label for="">离店日期:</label> <input type="text"
-								class="text" name="departDate" id="departDate" readonly="true" />
-								<div class="warning none" msgnull="请输入离店日期">
-									<span class="icon_alert"></span> 请输入离店日期
-								</div></li>
 
-						</ul>
-						<ul class="form_ul" style="width: 350px; margin: 0 auto;">
-							<li><label for="">&nbsp;</label> <input
-								method="feedbackSubmit" class="submitBtn" type="submit"
-								value="提交" /><a method="feedbackCancel" style="cursor: pointer"
-								class="cancel">取消反馈</a></li>
-						</ul>
-					</form>
-
-					<!--反馈成功开始-->
-					<div class="fk_success none">
-						<h1>
-							<span class="icon_smile"></span>提交成功
-						</h1>
-						<h6>感谢您的反馈，我们将在48小时内与酒店确认~</h6>
-					</div>
-					<!--反馈成功结束-->
-
-					<!--loading开始-->
-					<div class="icon_loading" style="display: none;">
-						<div></div>
-					</div>
-					<!--loading结束-->
-				</div>
-			</div>
 
 		</div>
 
-		<div id="loading" class="none">
-			<div class="tc">
-				<img alt="loading"
-					src='http://m.elongstatic.com/static/webapp/pc_static/pc_hotel/other/hotels/pic/loading3.gif' />
-			</div>
-		</div>
+
 
 		<form id="applyBackCashForm" method="post"></form>
 	</div>
@@ -677,219 +659,6 @@
 	<div id="m_adsContainer" style="display: none"></div>
 
 
-	<script type="text/javascript">
-						var HotelController = {
-							cardNo: "240000000737318535",
-							sixMonthPageCount: 0,
-							twelveMonthPageCount: 0,
-							totalPageCount: 1,
-							isEn: false,
-							reserNo: 0,
-							couponMaxAccount: 0,
-							inDate: null,
-							expressWay: 0,
-							invoicePay: 0,
-							outDate: null,
-							today: null,
-							updateOrderHotelUrl: "http:\/\/hotel.elong.com\/updateOrder_0.html",
-							customerName: null,
-							infactCustomerList: null,
-							checkInCustomerList: null,
-							isHasNationality: false,
-							invoiceInfoViewModel: null,
-							orderCash: null,
-							isForeignOrder: false,
-							currentHost: "http:\/\/hotel.elong.com:80",
-							myHost: "http:\/\/hotel.elong.com:80",
-							currentLanguage: null,
-							payProviderId: 0,
-							isShowFeedBackBtn: false,
-							ReserNo: 0,
-							paymentFlowType: 0,
-							hotelOrderListUrl: null,
-							hotelOrderDetailUrl: null,
-							hotelUrl: null,
-							isLogin: true,
-							enabledYesterday: false,
-							serverTime: "2019-05-31",
-							serverTimeHour: "2019-05-31 14:39:22",
-							webHotelTjObj: null,
-							needElongRisk: true,
-							needCtripRisk: true,
-							showLoginOption: true,
-							showCommentInfo: true,
-							commonStaticPath: "\/\/file.40017.cn\/js40017cnproduct\/cn\/h\/elong_pc\/common\/",
-							hotelStaticJsPath: "http:\/\/m.elongstatic.com\/static\/webapp\/pc_static\/pc_hotel\/2018\/09\/11\/views\/",
-							hotelStaticCssPath: "http:\/\/m.elongstatic.com\/static\/webapp\/pc_static\/pc_hotel\/2018\/09\/11\/css\/",
-							hotelStaticJsPathTmapi: "\/\/file.40017.cn\/js40017cnproduct\/cn\/h\/elong_pc\/20190529_15.13907\/",
-							hotelStaticCssPathTmapi: "\/\/file.40017.cn\/css40017cnproduct\/cn\/h\/elong_pc\/20190529_15.13907\/",
-							appUrlVersion: "20190530062337",
-							urlVersion: null,
-							jsPath: "..\/..\/..\/web\/hotel\/views\/",
-							basePath: "",
-							curDate: "2019-05-31",
-							fastConfirm: function(orderNo, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/fastconfirm", {
-									orderNo: orderNo
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							getOrderProgress: function(orderNo, autograph, isfromDetail, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/getorderprogress", {
-									orderNo: orderNo,
-									autograph: autograph,
-									isfromDetail: isfromDetail
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							confirmHotelOrderCancel: function(ReserNo, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/confirmhotelordercancel", {
-									ReserNo: ReserNo
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							ajaxHotelOrderCancelSuccess: function(ReserNo, CancelReasonCode, CancelReason, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/ajaxhotelordercancelsuccess", {
-									ReserNo: ReserNo,
-									CancelReasonCode: CancelReasonCode,
-									CancelReason: CancelReason
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							pagedOrderList: function(pageIndex, pageSize, sign, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/pagedorderlist", {
-									pageIndex: pageIndex,
-									pageSize: pageSize,
-									sign: sign
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							cancelOrder: function(reserNo, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/cancelorder", {
-									reserNo: reserNo
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							collectCancelReason: function(reserNo, cancelReasonCode, cancelReason, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/colletcancelreason", {
-									reserNo: reserNo,
-									cancelReasonCode: cancelReasonCode,
-									cancelReason: cancelReason
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							buildUserCache: function(reserNo, userStartDate, userEndDate, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/buildusercache", {
-									reserNo: reserNo,
-									userStartDate: userStartDate,
-									userEndDate: userEndDate
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							getOrderOperation: function(reserNo, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/getorderoperation", {
-									reserNo: reserNo
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							getPaymentProviderId: function(reserNo, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/getpaymentproviderid", {
-									reserNo: reserNo
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							getGoToPayInfo: function(ReserNo, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/getgotopayinfo", {
-									ReserNo: ReserNo
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							getGoToPayInvoice: function(ReserNo, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/getgotopayinvoice", {
-									ReserNo: ReserNo
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							resendConfirmation: function(reserNo, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/resendconfirmation", {
-									reserNo: reserNo
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							changeCustomInfo: function(tel, email, name, reserNo, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/changecustominfo", {
-									tel: tel,
-									email: email,
-									name: name,
-									reserNo: reserNo
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							wordValidate: function(customName, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/wordvalidate", {
-									customName: customName
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							updateGuests: function(reserNo, model, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/updateguests", {
-									reserNo: reserNo,
-									model: model
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							getInvoiceHistory: function(iCount, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/getinvoicehistory", {
-									iCount: iCount
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							getInvoiceAddress: function(iCount, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/getinvoiceaddress", {
-									iCount: iCount
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							saveInvoiceInfo: function(invoiceInfoVM, opertionType, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/saveinvoiceinfo", {
-									invoiceInfoVM: invoiceInfoVM,
-									opertionType: opertionType
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							getInvoiceDeliveryInfo: function(reserNo, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/getinvoicedeliveryinfo", {
-									reserNo: reserNo
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							saveFeedbackInfo: function(feedbackInfo, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/savefeedbackinfo", {
-									feedbackInfo: feedbackInfo
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							hotelAgreed: function(orderNo, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/hotelagreed", {
-									orderNo: orderNo
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							feedBackMessage: function(orderNo, notes, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/feedbackmessage", {
-									orderNo: orderNo,
-									notes: notes
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							claimInsurance: function(orderNo, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/insuranceclaim", {
-									orderNo: orderNo
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							getApplyCashBackStatus: function(orderNo, isCanComment, isCanFeedBack, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/getapplycashbackstatus", {
-									orderNo: orderNo,
-									isCanComment: isCanComment,
-									isCanFeedBack: isCanFeedBack
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							applyCashBack: function(orderNo, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/applycashback", {
-									orderNo: orderNo
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							},
-							append: function(amount, reserNo, couponMax, callback, E, httpmethod, dataType, timeoute, enabledCache) {
-								E.ajax.exec("/ajax/myelong/append", {
-									amount: amount,
-									reserNo: reserNo,
-									couponMax: couponMax
-								}, callback, httpmethod, dataType, timeoute, enabledCache);
-							}
-						};
-						var pageController = HotelController;
-					</script>
-	<script type="text/javascript">
-						var hotelPageController = pageController;
-						var tj_jsStartTime = new Date().getTime();
-					</script>
 	<script
 		data-main='http://m.elongstatic.com/static/webapp/pc_static/pc_hotel/2018/09/11/views/myelong/hotelorderlist.js?20190530062337'
 		src='//file.40017.cn/js40017cnproduct/cn/h/elong_pc/common/js/require.js?20190530062337'></script>
@@ -1189,7 +958,11 @@
 		$("#mmm").html(minute);
 		if(second==0&&minute==0){
 			$.get("TimeOut","orderId="+$("#orderId").val(),function(data){
-				$('#timeout').html("已超时");
+				if(data=='yes'){
+					$('#timeout').html("已超时");
+				}else{
+					$('#timeout').html("已支付");
+				}
 			});
 		}
         //document.getElementById("p").innerHTML = "距离活动截止，还剩" + day + "天" + hour + "时" + minute + "分" + second + "秒";

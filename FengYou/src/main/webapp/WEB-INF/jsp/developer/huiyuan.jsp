@@ -196,82 +196,7 @@
 							</div>
 
 							<div id="placeContent" style="color:#e8eff6">
-
-								<div id="priceMo" class="none">
-									<p class="tl"><span class="bold">温馨提醒: </span>&nbsp;您到酒店需要支付<span class="cf60">{0}{1}</span>。因汇率浮动人民币仅供参考。</p>
-								</div>
-								<div id="canReason" class="none">
-									<div class="canordpop">
-										<div class="canordpop_info">
-											<div class="canordpop_info_pri left">
-												<p class="t14 bold mt20" id="refund_txt">
-													取消将扣除金额</p>
-												<p class="mt20" id="refund_price">
-													<span class="c999">￥</span><span class="cf60">{0}</span></p>
-											</div>
-											<div id="cancelrules" class="canordpop_info_poli left t12">
-												<p class="mt20">
-													订单变更取消政策：</p>
-												<p class="mt10" id="rule_txt">
-													{1}
-												</p>
-												<i class="icon"></i>
-											</div>
-										</div>
-										<div class="canordpop_change clx" id="modOrderDiv">
-											<span class="canordpop_cha_icon"></span>
-											<p>
-												只是想修改日期或更换房型，您可以去</p>
-											<input type="button" class="canordpop_cha_btn" id="dialogModOrder" value="修改订单" />
-										</div>
-
-										<div class="canordpop_reason tl">
-											<p>
-												<span class="canordpop_rea_icon"></span>如果您需要取消订单，请告诉我们取消原因，便于更好的服务</p>
-											<ul>
-												<li><label><input name="reason" type="radio" value="101" >行程改变</label></li>
-												<li><label><input name="reason" type="radio" value="102">预订重复</label></li>
-												<li><label><input name="reason" type="radio" value="103">确认速度太慢</label></li>
-												<li><label><input name="reason" type="radio" value="104">在别家找到了更好的酒店</label></li>
-												<li><label><input name="reason" type="radio" value="105">价格太高</label></li>
-												<li><label><input name="reason" type="radio" value="106">其他</label><input id="otherReason" value="" type="text" class="canordpop_rea_text" /></li>
-											</ul>
-										</div>
-										<div class="canordpop_rea_btn">
-											<input type="button" class="" id="confirmCancelOrder" value="取消订单">
-										</div>
-									</div>
-								</div>
-
-								<div id="canSuccess" class="none">
-									<div class="canordpop">
-										<div class="canordpop_suc">
-											<div class="canordpop_suc_title">
-												<i></i>取消成功！</div>
-											<div class="canordpop_suc_pri">
-												<p name="danbao_txt">
-													本订单涉及退款<span class="c999 t14">￥</span><span class="cf60 t18">{0}</span>将于3-5个工作日退回至您的使用账户；</p>
-											</div>
-											<div class="canordpop_rea_btn">
-												<input type="button" id="btnOk" value="确定">
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<div id="canFaild" class="none">
-									<div class="canordpop canordpop_f">
-										<div class="canordpop_suc">
-											<div class="canordpop_fail_pri">
-												<i></i>取消失败！</div>
-											<div class="canordpop_suc_pri">
-												<p class="tc">
-													{0}
-												</p>
-											</div>
-										</div>
-									</div>
-								</div>
+								
 
 								<input type="hidden" id="OrderTotalPageCount" value="0" />
 								<div class="no_result none" style="color: Black; display: none">
@@ -294,67 +219,7 @@
 								<!-- cms end -->
 							</div>
 
-							<div id="feedbackWindow" class="none">
-								<div class="fk_Box" style="height: 290px;">
-									<form action="" style="">
-										<input type="hidden" id="cashBackIden" />
-										<h1 data-para="0"><span class="icon_gift"></span>提交反馈，享受优先处理特权</h1>
-										<h1 class="none" data-para="1"><span class="icon_apply_me"></span>如您已经入住酒店，请帮助填写以下反馈信息，离店日期后3个工作日内将获得返现</h1>
-										<ul class="form_ul" style="width: 350px;margin: 0 auto;">
-											<li>
-												<label for="">房间号:</label>
-												<input type="text" class="text gray " name="roomNo" id="roomNo" value="房间号1/房间号2" />
-												<!--错误提示开始-->
-												<div class="warning none" msgnull="请输入房间号" msgerr="请检查房间号格式">
-													<span class="icon_alert"></span> 请输入房间号
-												</div>
-												<!--错误提示结束-->
-											</li>
-											<li>
-												<label for="">入住人姓名:</label>
-												<input type="text" class="text" name="checkInName" id="checkInName" />
-												<div class="warning none" msgnull="请输入入住人姓名" msgerr="请检查姓名格式">
-													<span class="icon_alert"></span> 请输入入住人姓名
-												</div>
-											</li>
-											<li>
-												<label for="">入住日期:</label>
-												<input type="text" class="text" name="checkInDate" id="checkInDate" readonly="true" />
-												<div class="warning none" msgnull="请输入入住日期">
-													<span class="icon_alert"></span> 请输入入住日期
-												</div>
-											</li>
-											<li>
-												<label for="">离店日期:</label>
-												<input type="text" class="text" name="departDate" id="departDate" readonly="true" />
-												<div class="warning none" msgnull="请输入离店日期">
-													<span class="icon_alert"></span> 请输入离店日期
-												</div>
-											</li>
-
-										</ul>
-										<ul class="form_ul" style="width: 350px;margin: 0 auto;">
-											<li>
-												<label for="">&nbsp;</label>
-												<input method="feedbackSubmit" class="submitBtn" type="submit" value="提交" /><a method="feedbackCancel" style="cursor:pointer" class="cancel">取消反馈</a>
-											</li>
-										</ul>
-									</form>
-
-									<!--反馈成功开始-->
-									<div class="fk_success none">
-										<h1><span class="icon_smile"></span>提交成功</h1>
-										<h6>感谢您的反馈，我们将在48小时内与酒店确认~</h6>
-									</div>
-									<!--反馈成功结束-->
-
-									<!--loading开始-->
-									<div class="icon_loading" style="display: none;">
-										<div></div>
-									</div>
-									<!--loading结束-->
-								</div>
-							</div>
+							
 
 						</div>
 

@@ -4,11 +4,19 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
+import com.github.pagehelper.PageInfo;
+
+import pojo.Hotel;
 import pojo.Intoinfo;
 import pojo.Order;
 
 public interface OrderService {
 
+	/**
+	 * 通过id得到订单
+	 * @return
+	 */
+	public Order getOrderById(int id);
 	/**
 	 * 通过房间id查询订单
 	 * @param hid
@@ -63,5 +71,6 @@ public interface OrderService {
 	 * @return
 	 */
 	public  List<Order> queryOrderByUserId(int userId);
-	
+	// 分页
+	public   PageInfo<Order> findOrderByUserId(int userId, int page,int size);
 }

@@ -603,7 +603,10 @@
 						</ul>
 						<span class="line" method="statusLine"></span>
 					</div>
-					<div class="m_cclst" data-name="seen" style="display: none">
+					<div class="m_cclst" data-name="seen" style="display: ">
+					<ul class="cclst_con">
+								
+							</ul>
 					</div>
 					<div class="m_cclst" data-name="favor" style="display: none">
 					</div>
@@ -798,6 +801,21 @@
 	<script
 		src="${pageContext.request.contextPath }/statics/js/register/account.min.js"></script>
 	<script type="text/javascript">
+	
+	function addNote(hotelId) {
+		$.get("addNote","hotelId="+hotelId,function(data){		
+			var html='';
+			for (var i = 0; i < data.length; i++) {
+				html+='<li class="ccitem" ><a href="javascript:void(0);"  data-hotelid="'+data[i].hotelId+
+				'" class="itembg clearfix"><div class="lb"><img src="${pageContext.request.contextPath }'+data[i].fileUrl+
+				'"></div><div class="item_c"><h3 class="cctit">'+data[i].hotelName+'</h3><p class="cccm"><span class="">评分：<b>'+data[i].hotelRatings+
+				'</b></span></p><p class="ccpri"><span class="t14 c555">¥</span><span class="t18 cf55">'+data[i].hotelPrice+'</span><span class="t12 cf55">起</span></p></div></a></li>';
+				
+			}
+			$(".cclst_con").html(html);
+		})
+	}
+	
 	Date.prototype.format = function(fmt) { 
 	     var o = { 
 	        "M+" : this.getMonth()+1,                 //月份 
@@ -820,8 +838,22 @@
 	}      
 	
 		$(function() {
+			
+				$.get("addNote","hotelId="+null,function(data){		
+					var html='';
+					for (var i = 0; i < data.length; i++) {
+						html+='<li class="ccitem" ><a href="javascript:void(0);"  data-hotelid="'+data[i].hotelId+
+						'" class="itembg clearfix"><div class="lb"><img src="${pageContext.request.contextPath }'+data[i].fileUrl+
+						'"></div><div class="item_c"><h3 class="cctit">'+data[i].hotelName+'</h3><p class="cccm"><span class="">评分：<b>'+data[i].hotelRatings+
+						'</b></span></p><p class="ccpri"><span class="t14 c555">¥</span><span class="t18 cf55">'+data[i].hotelPrice+'</span><span class="t12 cf55">起</span></p></div></a></li>';
+						
+					}
+					$(".cclst_con").html(html);
+				})
+			
 			var error=$("#error").val();
 			if(error!=null&&error!=''){
+				alert("此房间空余数量不足,请重新选择！")
 				/* tipShow('房间数量不足,请重新选择！', function() {
 				}); */
 			}

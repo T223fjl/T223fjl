@@ -15,6 +15,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<if test="houseId!=0">
 			and houseId =#{houseId}
 		</if>
+		<if test="recordStopDate!=null">
+			and recordStopDate <![CDATA[ > ]]> #{recordStopDate}
+		</if>
+		
 	</select>
 
 	<!-- 得到最新的库存记录 -->

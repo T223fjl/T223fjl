@@ -30,14 +30,7 @@ public class LoginRegController {
 	@Autowired
 	private UserService userService;
 
-	@RequestMapping("/mtest")
-	public @ResponseBody Map ff() {
-		Map<String, String> m = new HashMap<String, String>();
-		m.put("mm", "10");
-		m.put("mm0", "100");
-		return m;
-	}
-
+	
 	// 前台登录
 	@RequestMapping("/dologin")
 	public String login(@RequestParam(required = false) String name, @RequestParam(required = false) String pwd,

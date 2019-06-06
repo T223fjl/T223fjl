@@ -5,11 +5,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="dao.order.OrderDao">
 
+
+	<!-- 通过id查询订单 -->
+	<select id="getOrderById" resultType="Order">
+		select * from `order` where id=#{id}
+	</select>
+
 	<!-- 通过房间id查询订单 -->
 	<select id="queryOrderByHouseId" resultType="House">
-		select * from
-		`order`
-		where houseId=#{houseId}
+		select * from `order` where houseId=#{houseId}
 	</select>
 
 	<!-- 添加订单 -->
@@ -55,7 +59,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				<![CDATA[
 				SELECT * FROM  `order` o 
 				where o.houseId=#{houseId} and  
-				((o.checkInDate>=#{checkInDate} and o.checkInDate<=#{checkOutDate}) or
+				((o.checkInDate>=#{checkInDate} and o.checkInDate<=#{checkOutDate})  or
 				(o.checkOutDate<=#{checkOutDate} and o.checkOutDate>=#{checkInDate})  )
 		]]>
 	</select>
@@ -71,7 +75,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<!-- 根据用户id查询订单详情 -->
 	<select id="queryOrderByUserId" resultType="Order">
-		SELECT * from `order` WHERE userId=#{userId}
+		SELECT * from `order` WHERE userId=#{userId}  order by id desc
 	</select>
 
 </mapper>

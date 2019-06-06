@@ -6,8 +6,12 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+
 import dao.hotel.HotelDao;
 import dao.order.OrderDao;
+import pojo.Hotel;
 import pojo.Intoinfo;
 import pojo.Order;
 import service.OrderService;
@@ -90,6 +94,19 @@ public class OrderServiceImpl implements OrderService {
 			System.out.println("le"+order.get(i).getHotel());
 		}
 		return order;
+	}
+
+	@Override
+	public PageInfo<Order> findOrderByUserId(int userId, int page,int size) {
+		PageHelper.startPage(page, size);
+		List<Order> orders = queryOrderByUserId(userId);
+		PageInfo<Order> pageInfoUser = new PageInfo<>(orders);
+		return pageInfoUser;
+	}
+
+	@Override
+	public Order getOrderById(int id) {
+		return orderDao.getOrderById(id);
 	}
 	
 }

@@ -125,7 +125,6 @@
 					<div class="booking_sinf pb0">
 						<span class="s_title yahei">预订信息</span>
 						<div id="isOnTimeProduct" class="ss_tips_a">
-							现在预订，<span class="c49f">30</span>秒内确认订单
 						</div>
 						<dl class="date_modify clearfix">
 							<dt class="lh-20">入离日期</dt>
@@ -146,7 +145,7 @@
 									value="1" id="rdoRoomNum1" /> <a href="javascript:void(0);"
 									class="btn-add" name="btnAdd" onclick="addIntoPerson()">+</a> 间
 								</span>
-								<div id="numLimitError" style="display: none"></div>
+								<div id="numLimitError" style="display: none"></div>此房间空余有<span>${real.store }</span>间
 								<div id="tenUpError" style="display: none">
 									<p>
 										<i class="icon_cancel_n mr5"></i>若需要预订10间以上，请您联系客服进行处理

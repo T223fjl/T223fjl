@@ -90,7 +90,8 @@
 			<div method="searchBox" id="m_searchBox" data-id="mainSearchBox"
 				class="search_box mb5">
 
-				<div data-wrap="cityWrap" class="search_item search_termini" style="margin-left: 100px;">
+				<div data-wrap="cityWrap" class="search_item search_termini"
+					style="margin-left: 100px;">
 					<label> <span>目的地</span> <input type="input"
 						class="input_f16 input_termini" value="${CurCity.name }"
 						cityname="${CurCity.name }" citynameen="beijing"
@@ -99,7 +100,7 @@
 					</label>
 				</div>
 
-				<div class="search_item search_keywords"  style="margin-left: 100px;">
+				<div class="search_item search_keywords" style="margin-left: 100px;">
 					<label> <span>关键词</span> <input type="input"
 						class="input_f16 input_termini" name="keywords"
 						placeholder="如位置\酒店名" />
@@ -241,7 +242,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="filter_item " method="facilityFilterPart"
 			data-typeId="1011" data-multi="1">
 			<div class="filter_title">
@@ -252,7 +253,8 @@
 					<div data-type="fully" data-id="-1"
 						class="filter_unlimited filter_unlimited_on">不限</div>
 					<ul class="filter_cb_list" method="facilityList">
-						<c:forEach var="fully" items="${fullys}" step="1" varStatus="statu" end="40">
+						<c:forEach var="fully" items="${fullys}" step="1"
+							varStatus="statu" end="40">
 							<li method="facility" data-type="fully" class="condition"
 								data-typeId="${fully.type }" data-id="${fully.id }"
 								data-name="${fully.name }" data-selected="0"
@@ -267,7 +269,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 	</div>
 
 	<div class="mb10" id="conditionZone" method="conditionZone">
@@ -360,7 +362,7 @@
 							<div class="h_info">
 								<div class="h_info_pic"
 									data-mark="img_${ hotel.hotelId}_container" method="">
-									<a
+									<a onclick="addNote(${ hotel.hotelId})"
 										href="${pageContext.request.contextPath }/toIndex3?hotelId=${ hotel.hotelId}"
 										target="_blank"> <img class="bigImg"
 										data-hotelid="${ hotel.hotelId}" data-producttype="0"
@@ -522,7 +524,10 @@
 							</ul>
 							<span class="line" method="statusLine"></span>
 						</div>
-						<div class="m_cclst" data-name="seen" style="display: none">
+						<div class="m_cclst" data-name="seen" style="display:">
+							<ul class="cclst_con">
+								
+							</ul>
 						</div>
 						<div class="m_cclst" data-name="favor" style="display: none">
 						</div>
@@ -718,9 +723,9 @@
 			<input type="hidden" id="bigPrice" name="bigPrice"
 				value="${fn:split(CurPrice.info, '-')[1]}"> <input
 				type="hidden" id="smallPrice" name="smallPrice"
-				value="${fn:split(CurPrice.info, '-')[0]}"> 
-				<input type="hidden" id="city" name="city" value="${CurCity.id }">
-				<input type="hidden" id="fully" name="fully" value="${CurFully.id }">
+				value="${fn:split(CurPrice.info, '-')[0]}"> <input
+				type="hidden" id="city" name="city" value="${CurCity.id }">
+			<input type="hidden" id="fully" name="fully" value="${CurFully.id }">
 			<input type="hidden" id="star" name="star"
 				value="${CurStar.dictCode }"> <input type="hidden" id="type"
 				name="type" value="${CurType.id }"> <input type="hidden"
@@ -732,8 +737,35 @@
 	</div>
 
 	<script type="text/javascript">
+	
+	
+	function addNote(hotelId) {
+		$.get("addNote","hotelId="+hotelId,function(data){		
+			var html='';
+			for (var i = 0; i < data.length; i++) {
+				html+='<li class="ccitem" ><a href="javascript:void(0);"  data-hotelid="'+data[i].hotelId+
+				'" class="itembg clearfix"><div class="lb"><img src="${pageContext.request.contextPath }'+data[i].fileUrl+
+				'"></div><div class="item_c"><h3 class="cctit">'+data[i].hotelName+'</h3><p class="cccm"><span class="">评分：<b>'+data[i].hotelRatings+
+				'</b></span></p><p class="ccpri"><span class="t14 c555">¥</span><span class="t18 cf55">'+data[i].hotelPrice+'</span><span class="t12 cf55">起</span></p></div></a></li>';
+				
+			}
+			$(".cclst_con").html(html);
+		})
+	}
 		var map = new BMap.Map("sidebarMap");
 		$(function() {
+			$.get("addNote","hotelId="+null,function(data){		
+				var html='';
+				for (var i = 0; i < data.length; i++) {
+					html+='<li class="ccitem" ><a href="javascript:void(0);"  data-hotelid="'+data[i].hotelId+
+					'" class="itembg clearfix"><div class="lb"><img src="${pageContext.request.contextPath }'+data[i].fileUrl+
+					'"></div><div class="item_c"><h3 class="cctit">'+data[i].hotelName+'</h3><p class="cccm"><span class="">评分：<b>'+data[i].hotelRatings+
+					'</b></span></p><p class="ccpri"><span class="t14 c555">¥</span><span class="t18 cf55">'+data[i].hotelPrice+'</span><span class="t12 cf55">起</span></p></div></a></li>';
+					
+				}
+				$(".cclst_con").html(html);
+			})
+			
 			for (var i = 0; i < $(".bigImg").length; i++) {
 				$(".bigImg").eq(i).attr("src",
 						$(".bigImg").eq(i).attr("data-src"))
