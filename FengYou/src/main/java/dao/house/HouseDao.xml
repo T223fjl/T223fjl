@@ -19,8 +19,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 	<!-- 通过房间类型查询房间 -->
-	<select id="getHouseByType" resultType="House" parameterType="String">
-		SELECT * FROM `house` WHERE houseType=#{houseType}
+	<select id="getHouseByType" resultType="House" >
+		SELECT * FROM `house` WHERE houseType=#{houseType} and hotelId=#{hotelId}
 	</select>
 
 </mapper>

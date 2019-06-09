@@ -561,7 +561,7 @@ border-bottom: 1px solid #ccc;
 									<li><strong style="font-size: 16px;">热门目的地:</strong><br/>
 										<p style="width:200px;">
 										<c:forEach items="${Leve}" var="Leve" end="20">
-										 <a href="#">${Leve.name}</a>
+										 <a href="${pageContext.request.contextPath}/toIndex2?fully=${Leve.id}">${Leve.name}</a>
 										</c:forEach>
 <%-- 										<c:forEach items="${levels}" var="temp"> --%>
 <%-- 											<c:forEach items="${temp.sonLevels}" var="vo" begin="1" end="5"> --%>

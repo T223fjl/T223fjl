@@ -31,6 +31,6 @@ public interface HouseDao {
 	 * @param hType
 	 * @return
 	 */
-	public List<House> getHouseByType(String hType);
+	public List<House> getHouseByType(@Param("hotelId") int hid,@Param("houseType") String hType);
 	
 }

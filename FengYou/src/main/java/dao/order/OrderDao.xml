@@ -8,12 +8,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<!-- 通过id查询订单 -->
 	<select id="getOrderById" resultType="Order">
-		select * from `order` where id=#{id}
+		select * from `order` where
+		id=#{id}
 	</select>
 
 	<!-- 通过房间id查询订单 -->
 	<select id="queryOrderByHouseId" resultType="House">
-		select * from `order` where houseId=#{houseId}
+		select * from
+		`order` where houseId=#{houseId}
 	</select>
 
 	<!-- 添加订单 -->
@@ -75,7 +77,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<!-- 根据用户id查询订单详情 -->
 	<select id="queryOrderByUserId" resultType="Order">
-		SELECT * from `order` WHERE userId=#{userId}  order by id desc
+		SELECT * from `order`
+		WHERE userId=#{userId} order by id desc
 	</select>
-
+	
 </mapper>

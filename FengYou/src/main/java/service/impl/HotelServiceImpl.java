@@ -82,7 +82,6 @@ public class HotelServiceImpl implements HotelService {
 	/**
 	 * 根据城市表的名称查询酒店
 	 */
-	@Override
 	public List<Hotel> query(String hotel) {
 		return hotelDao.query(hotel);
 	}

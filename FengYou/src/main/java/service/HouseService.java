@@ -27,6 +27,6 @@ public interface HouseService {
 	 * @param hType
 	 * @return
 	 */
-	public List<House> getHouseByType(String hType);
+	public List<House> getHouseByType(int id,String hType);
 	
 }

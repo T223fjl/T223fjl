@@ -17,7 +17,6 @@ public class HouseServiceImpl implements HouseService {
 	/**
 	 * 通过房间id查询房间
 	 */
-	@Override
 	public House qeuryHouseByHouseId(int houseId) {
 		return houseDao.qeuryHouseByHouseId(houseId);
 	}
@@ -28,7 +27,7 @@ public class HouseServiceImpl implements HouseService {
 	public List<House> qeuryHouseByHotelId(int hotelId) {
 		List<House> list = houseDao.qeuryHouseByHotelId(hotelId);
 		for (int i = 0; i < list.size(); i++) {
-			list.get(i).setHouseListByType(getHouseByType(list.get(i).getHouseType()));
+			list.get(i).setHouseListByType(getHouseByType(hotelId,list.get(i).getHouseType()));
 		}
 		return list;
 	}
@@ -36,9 +35,8 @@ public class HouseServiceImpl implements HouseService {
 	/**
 	 * 通过房间类型查询房间
 	 */
-	@Override
-	public List<House> getHouseByType(String hType) {
-		return houseDao.getHouseByType(hType);
+	public List<House> getHouseByType(int id,String hType) {
+		return houseDao.getHouseByType(id,hType);
 	}
 
 }

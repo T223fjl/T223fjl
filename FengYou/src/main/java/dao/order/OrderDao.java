@@ -70,5 +70,6 @@ public interface OrderDao {
 	 * @return
 	 */
 	public List<Order> queryOrderByUserId(@Param(value = "userId")int userId);
+
 	
 }
