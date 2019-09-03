@@ -9,7 +9,7 @@ public class Order {
 	private int hotelId;// 酒店id
 	private int houseId;// 房间id
 	private int houseCount;// 预订房间数量
-	private Date presetItme;//预订时间
+	private Date presetItme;// 预订时间
 	private Date checkInDate;// 入住日期
 	private Date checkOutDate;// 退房日期checkOutDate
 	private int orderStatus;// 订单状态
@@ -19,8 +19,16 @@ public class Order {
 	private int userId;// 用户外键
 	private int intoInfoId;// 入住信息外键
 	private int remarks;// 订单库存恢复状态
-	private Hotel hotel;//酒店查询
+	private Hotel hotel;// 酒店查询
+private String  hotelnames;
 	
+	public String getHotelnames() {
+		return hotelnames;
+	}
+
+	public void setHotelnames(String hotelnames) {
+		this.hotelnames = hotelnames;
+	}
 	public int getId() {
 		return id;
 	}

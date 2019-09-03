@@ -3,9 +3,7 @@ package controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,35 +11,67 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import pojo.Mycollection;
 import pojo.User;
-import service.UserService;
+import service.backend.BackendUserService;
+import service.developer.DeveloperUserService;
 import util.AliyunSMS;
 import util.ConvertJSONUtil;
 
 @Controller
 public class LoginRegController {
-	
-	@Autowired
-	private UserService userService;
 
-	
+	@Autowired
+	private DeveloperUserService developeruserService;
+
+	@Autowired
+	private BackendUserService backendUserService;
+
+	// 后台登录
+	@RequestMapping("/backLogin")
+	public String backlogin(@RequestParam(required = false) String name, @RequestParam(required = false) String pwd,
+			HttpSession session) {
+		User user = new User();
+		user.setName(name);
+		user.setPwd(pwd);
+		User dUser = backendUserService.backLogin(user);
+		System.out.println(dUser);
+		if (dUser != null) {
+			session.setAttribute("loginUser", dUser);
+			session.removeAttribute("error");
+			return "backend/index";
+		} else {
+			session.setAttribute("error", "用户名或密码不正确");
+			return "redirect:/logouts";
+		}
+
+	}
+
+	// 后台用户注销
+	@RequestMapping(value = "/logouts")
+	public void backendlogout(HttpSession session, HttpServletResponse response) {
+		session.removeAttribute("loginUser");
+		try {
+			response.sendRedirect("/FengYou/Backendlogin.jsp");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 	// 前台登录
 	@RequestMapping("/dologin")
-	public String login(@RequestParam(required = false) String name, @RequestParam(required = false) String pwd,
-			HttpSession session, HttpServletResponse response) {
+	public String developerlogin(@RequestParam(required = false) String name,
+			@RequestParam(required = false) String pwd, HttpSession session, HttpServletResponse response) {
 
 		User user = new User();
 		user.setName(name);
 		user.setPwd(pwd);
-		User dUser = userService.login(user);
+		User dUser = developeruserService.login(user);
 		if (dUser != null) {
-			List<Mycollection> collections = userService.queryMycollection();
+			List<Mycollection> collections = developeruserService.queryMycollection();
 			session.setAttribute("collections", collections);
 			session.setAttribute("loginUser", dUser);
 			session.removeAttribute("error");
@@ -50,7 +80,8 @@ public class LoginRegController {
 			try {
 				PrintWriter out = response.getWriter();
 				session.setAttribute("error", "用户名或密码不正确");
-				out.print("<script type='text/javascript'>location='http://localhost:8080/FengYou/login.jsp'</script>");
+				out.print(
+						"<script type='text/javascript'>location='http://localhost:8080/FengYou/Developerlogin.jsp'</script>");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -58,40 +89,12 @@ public class LoginRegController {
 		return null;
 	}
 
-	// 跳转后台登陆页面
-	@RequestMapping("/backToLogin")
-	public String toLogin(Model model) {
-		return "backend/login";
-	}
-
-	// 后台登陆
-	@RequestMapping("/backLogin")
-	public String backLogin(String name, String pwd, Model model, HttpSession session) {
-		System.out.println(name + "  " + pwd);
-		User user = new User();
-		user.setName(name);
-		user.setPwd(pwd);
-		User dUser = userService.login(user);
-		System.out.println(name);
-		System.out.println(pwd);
-		System.out.println(dUser);
-		if (dUser != null) {
-			session.setAttribute("loginUser", dUser);
-			session.removeAttribute("error");
-			return "backend/index";
-		} else {
-			session.setAttribute("error", "用户名或密码不正确");
-			return "403";
-		}
-	}
-
-	//手机获取验证码
+	// 手机获取验证码
 	@RequestMapping("/find_Code")
 	public void find_Code(String mobileNo, HttpServletResponse response, HttpSession session,
 			HttpServletRequest request) {
 		System.out.println("手机:" + mobileNo);
 		System.out.println("进入手机获取验证码");
-
 		PrintWriter out;
 		try {
 			out = response.getWriter();
@@ -107,14 +110,14 @@ public class LoginRegController {
 		}
 	}
 
-	//异步查询手机是否存在
+	// 异步查询手机是否存在
 	@RequestMapping("/sale.json")
 	public void registerByPhone(String phone, HttpSession session, HttpServletResponse response) {
 		System.out.println("phone" + phone);
 		PrintWriter out;
 		try {
 			out = response.getWriter();
-			User user = userService.registerByPhone(phone);
+			User user = developeruserService.registerByPhone(phone);
 			boolean ajax = false;
 			if (user != null) {
 				ajax = true;
@@ -129,7 +132,7 @@ public class LoginRegController {
 		}
 	}
 
-	//前台注册
+	// 前台注册
 	@RequestMapping("/register")
 	public void register(String userName, String password, String phone, String email, String captcha,
 			String ValidateCode, String inputCode, HttpServletResponse response, HttpServletRequest request) {
@@ -163,7 +166,7 @@ public class LoginRegController {
 			user.setEmail(email);
 			user.setPwd(password);
 			user.setBirthday(new Date());
-			int result = userService.Registration(user);
+			int result = developeruserService.Registration(user);
 			System.out.println("result=" + result);
 			if (result > 0) {
 				session.setAttribute("user", user);
@@ -174,7 +177,7 @@ public class LoginRegController {
 		}
 	}
 
-    //登录动态验证验证码是否正确
+	// 登录动态验证验证码是否正确
 	@RequestMapping("/blur.json")
 	public String Registration(String DynamicCode, String userPhone, HttpServletRequest request,
 			HttpServletResponse response) {
@@ -190,8 +193,8 @@ public class LoginRegController {
 			System.out.println("session里面的验证码" + sMs);
 			boolean ajax = false;
 			if (DynamicCode.equals(sMs.toString())) {
-				User user = userService.registerByPhone(userPhone);
-				List<Mycollection> collections = userService.queryMycollection();
+				User user = developeruserService.registerByPhone(userPhone);
+				List<Mycollection> collections = developeruserService.queryMycollection();
 				session.setAttribute("collections", collections);
 				session.setAttribute("loginUser", user);
 				// return "redirect:/toIndex"C;
@@ -209,12 +212,12 @@ public class LoginRegController {
 		return null;
 	}
 
-	// 用户注销
+	// 前台用户注销
 	@RequestMapping(value = "/logout")
-	public void logout(HttpSession session, HttpServletResponse response) {
+	public void developerlogout(HttpSession session, HttpServletResponse response) {
 		session.removeAttribute("loginUser");
 		try {
-			response.sendRedirect("/FengYou/login.jsp");
+			response.sendRedirect("/FengYou/Developerlogin.jsp");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

@@ -332,7 +332,7 @@
 						cityid="${CurCity.id }" />
 					</label>
 				</div>
-
+<input  type="hidden" class="curPage" name="curPage" value="${curPage }">
 				<div class="search_item search_keywords" style="margin-left: 100px;">
 					<label> <span>关键词</span> <input type="input"
 						class="input_f16 input_termini" name="keywords"
@@ -516,7 +516,7 @@
 		<div class="list_login">
 			<!-- <img src="${pageContext.request.contextPath }/statics/picture/login_detail.png"/  method="userLogin"> -->
 			<!-- <p>去登录</p> -->
-			<a href="${pageContext.request.contextPath }/login.jsp"><img
+			<a href="${pageContext.request.contextPath }/Developerlogin.jsp"><img
 				src="${pageContext.request.contextPath }/statics/picture/bg1.png" /></a>
 		</div>
 		<!--引导登陆end-->
@@ -628,13 +628,13 @@
 				<div class="h_list" method="hotelList">
 					<c:forEach var="hotel" items="${ hotels.list}" step="1"
 						varStatus="statu">
-						<div class="h_item mvt_171218" id="hotel${ hotel.hotelId}"
+						<div  class="h_item mvt_171218" id="hotel${ hotel.hotelId}"
 							data-hotelAddress="${hotel.hotelAddress}" method="hotelItem"
 							data-hotelid="${hotel.hotelId}">
 							<div class="h_info">
 								<div class="h_info_pic"
 									data-mark="img_${ hotel.hotelId}_container" method="">
-									<a onclick="addNote(${ hotel.hotelId})"
+									<a onclick="addNote(${ hotel.hotelId},1)"
 										href="${pageContext.request.contextPath }/toIndex3?hotelId=${ hotel.hotelId}"
 										target="_blank"> <img class="bigImg"
 										data-hotelid="${ hotel.hotelId}" data-producttype="0"
@@ -651,7 +651,7 @@
 									<!---------------->
 									<div class="h_info_pri">
 										<p>
-											<a
+											<a onclick="addNote(${ hotel.hotelId},1)"
 												href="${pageContext.request.contextPath }/toIndex3?hotelId=${ hotel.hotelId}"
 												target="_blank"> <span class="c666">&yen</span> <span
 												class="h_pri_num ">${hotel.hotelPrice }</span> <span
@@ -666,7 +666,7 @@
 										<p class="mt5"></p>
 										<div class="to_detail">
 											<p class="lastt_book mt10" id="recentOrder_${hotel.hotelId }"></p>
-											<a class="t14" href="toIndex3" target="_blank"> 查看详情 </a>
+											<a onclick="addNote(${ hotel.hotelId},1)" class="t14" href="toIndex3" target="_blank"> 查看详情 </a>
 										</div>
 									</div>
 									<!---------------->
@@ -705,7 +705,7 @@
 									<!---------------->
 									<div class="h_info_base">
 										<p class="h_info_b1">
-											<a href="toIndex3?hotelId=${hotel.hotelId }" target="_blank"
+											<a href="toIndex3?hotelId=${hotel.hotelId }" target="_blank" onclick="addNote(${ hotel.hotelId},1)"
 												title="${hotel.hotelName }"><span class="icon_nmb">
 													${statu.count }</span><span class="info_cn">${hotel.hotelName }</span></a>
 											<i class="icon_crown_new" title="战略合作酒店，为风游会员提供优质服务及优惠房价"></i>
@@ -749,10 +749,12 @@
 				</div>
 			</div>
 			<div id="pageContainer" class="paging1">
-				<input type="hidden" id="count" name="count" value="${count }">
-				<a href="javascript:void(0)" class="page_back" title="上一页">上一页</a> <a
+				<a href="javascript:void(0)" class="page_start" title="首页">首页</a> <input
+					type="hidden" id="count" name="count" value="${count }"> <a
+					href="javascript:void(0)" class="page_back" title="上一页">上一页</a> <a
 					href="javascript:void(0)" title="第${curPage }页">第${curPage }页</a> <a
-					href="javascript:void(0)" class="page_next" title="下一页">下一页</a>
+					href="javascript:void(0)" class="page_next" title="下一页">下一页</a> <a
+					href="javascript:void(0)" class="page_end" title="尾页">尾页</a> <span>共${count }页</span>
 			</div>
 
 		</div>
@@ -790,8 +792,9 @@
 										<ul class="cclst_con">
 
 										</ul>
-										<div id="pageConta" class="paging1" style="position: relative;top:-20px;">
-											<input type="hidden" id="coun" name="coun" value="5"> 
+										<div id="pageConta" class="paging1"
+											style="position: relative; top: -20px;">
+											<input type="hidden" id="coun" name="coun" value="${coun }">
 											<a href="javascript:void(0)" class="page_bac" title="上一页">上一页</a>
 											第<a href="javascript:void(0)" id="curPag" title=""></a> 页<a
 												href="javascript:void(0)" class="page_nex" title="下一页">下一页</a>
@@ -1020,7 +1023,7 @@
 				value="${CurStar.dictCode }"> <input type="hidden" id="type"
 				name="type" value="${CurType.id }"> <input type="hidden"
 				id="price" name="price" value="${CurPrice.dictCode }"> <input
-				type="hidden" id="curPage" name="curPage" value="${curPage }">
+				type="hidden" class="curPage" name="curPage" value="${curPage }">
 			<input type="hidden" id="sort" name="sort" value="${sort }">
 			<input type="hidden" id=desc name="desc" value="${desc }">
 		</form>
@@ -1065,7 +1068,7 @@
 				anchor : BMAP_ANCHOR_BOTTOM_RIGHT
 			})); //右下角，打开
 
-			var price = $("#price").val();
+			var  price= $("#price").val();
 			if (price != '' && price != null) {
 				if (price != 0) {
 					$("#curPrice").addClass("on")
@@ -1084,7 +1087,7 @@
 						$(".cond-list").html(html)
 					}
 				} else {
-					alert(price)
+					
 					var d = '<i>您已选择：</i><a title="清空条件" onclick="clearCondition()" href="javascript:void();">清空条件</a><span title="删除此条件" data-type=price'
 							+ ' onclick="delCondition(this)" '
 							+ '"  data-high="'
@@ -1266,8 +1269,8 @@
 			} else {
 				$("#smallPrice").val(lowPrice)
 				$("#bigPrice").val(highPrice);
+				$("#price").val("0");
 				$("#form").submit();
-				$("#price").val("");
 			}
 
 		}
@@ -1299,7 +1302,9 @@
 			if ($(this).attr('data-type') == "type") {
 				$("#type").val($(this).attr('data-id'));
 			}
+			$("#curPage").val(1);
 			$("#form").submit();
+			
 		})
 		function delCondition(e) {
 			if ($(e).attr('data-type') == "price") {
@@ -1321,6 +1326,7 @@
 			if ($(e).attr('data-type') == "type") {
 				$("#type").val("");
 			}
+			$("#curPage").val(1);
 			$("#form").submit();
 		}
 		function clearCondition() {
@@ -1332,6 +1338,7 @@
 			$("#bigPrice").val("");
 			$("#smallPrice").val("");
 			$("#type").val("");
+			$("#curPage").val(1);
 			$("#form").submit();
 		}
 
@@ -1377,18 +1384,69 @@
 	<script type="text/javascript">
 		//分页
 		$(".page_next").click(function() {
-			if (parseInt($("#count").val()) > parseInt($("#curPage").val())) {
-				$("#curPage").val(parseInt($("#curPage").val()) + 1);
+			var test = window.location.href;
+			var index = test .lastIndexOf("\/");  
+			test  = test .substring(index + 1, test .length);
+			if(test=='toIndex2'){
+				var curPage=$(".curPage").eq(1).val();
+				if (parseInt($("#count").val()) >parseInt(curPage) ) {
+					$(".curPage").eq(1).val(parseInt(curPage) + 1);
+				}
+				$("#form").submit();
+			}else if(test=='toIndexTwo'){
+				var curPage=$(".curPage").eq(0).val();
+				if (parseInt($("#count").val()) >parseInt(curPage) ) {
+					$(".curPage").eq(0).val(parseInt(curPage) + 1);
+				}
+				$("#form01").submit();
 			}
-			$("#form").submit();
+			
 		})
 		$(".page_back").click(function() {
-			if (1 < parseInt($("#curPage").val())) {
-				$("#curPage").val(parseInt($("#curPage").val()) - 1);
+			var test = window.location.href;
+			var index = test .lastIndexOf("\/");  
+			test  = test .substring(index + 1, test .length);
+			if(test=='toIndex2'){
+				var curPage=$(".curPage").eq(1).val();
+				if (1<parseInt(curPage) ) {
+					$(".curPage").eq(1).val(parseInt(curPage) - 1);
+				}
+				$("#form").submit();
+			}else if(test=='toIndexTwo'){
+				var curPage=$(".curPage").eq(0).val();
+				if (1 <parseInt(curPage) ) {
+					$(".curPage").eq(0).val(parseInt(curPage) - 1);
+				}
+				$("#form01").submit();
 			}
-			$("#form").submit();
+			
 		})
-
+		$(".page_start").click(function() {
+			var test = window.location.href;
+			var index = test .lastIndexOf("\/");  
+			test  = test .substring(index + 1, test .length);
+			if(test=='toIndex2'){
+				$(".curPage").eq(1).val(1);
+				$("#form").submit();
+			}else if(test=='toIndexTwo'){
+				$(".curPage").eq(0).val(1);
+				$("#form01").submit();
+			}
+		})
+		$(".page_end").click(function() {
+			var test = window.location.href;
+			var index = test .lastIndexOf("\/");  
+			test  = test .substring(index + 1, test .length);
+			if(test=='toIndex2'){
+				$(".curPage").eq(1).val(parseInt($("#count").val()));
+				$("#form").submit();
+			}else if(test=='toIndexTwo'){
+				$(".curPage").eq(0).val(parseInt($("#count").val()));
+				$("#form01").submit();
+			}
+		})
+		
+		
 		$(".icon_hl_more1").toggle(function() {
 			$(this).parent().removeClass("slip")
 		}, function() {

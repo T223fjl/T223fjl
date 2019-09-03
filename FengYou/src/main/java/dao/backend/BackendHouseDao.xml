@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.backend.BackendHouseDao">
+
+	<!-- 查询所有房间信息 -->
+	<select id="queryhouse" resultType="House">
+		SELECT a.houseId,b.hotelName as
+		houseName,a.houseType,a.housePrice,a.isHavingBreakfast,a.contentOne,a.contentTow,a.contentThree,a.contentFour,
+		a.contentFive,a.creationDate,a.productName,a.productPolicy,a.bedType
+		from house a,hotel b
+		WHERE a.hotelId=b.hotelId
+	</select>
+	
+   <insert id="addorder" parameterType="Order" >
+   INSERT INTO house(hotelId,houseType,housePrice,isHavingBreakfast,contentOne,contentTow,contentThree,contentFour,contentFive,creationDate,createBy) VALUES(#{hotelId},#{houseType},#{housePrice},#{isHavingBreakfast},#{contentOne},#{contentTow},#{contentThree},#{contentFour},#{contentFive},NOW(),#{createBy});
+   </insert>
+   
+   <select id="gethouseByid" resultType="House">
+	select * from house  where hotelId=#{id}
+	</select>
+	
+	   <select id="gethouseByID" resultType="House" >
+	select * from house  where houseId=#{houseId}
+	</select>
+	
+		<!-- 删除房间信息 -->
+	<delete id="delete" parameterType="Hotel">
+		delete from house where houseId=#{id}
+	</delete>
+
+	<!-- 批量删除 -->
+	<delete id="delhouses" parameterType="java.lang.String">
+		delete from house where houseId in
+		<foreach collection="ids" item="ids" index="on" open="("
+			separator="," close=")">
+			#{ids}
+		</foreach>
+	</delete>
+	<!-- 修改房间信息 -->
+	   <update id="updatehouse" parameterType="House" >
+  update House set
+		houseType=#{houseType},housePrice=#{housePrice},isHavingBreakfast=#{isHavingBreakfast},contentOne=#{contentOne},contentTow=#{contentTow},contentThree=#{contentThree},contentFour=#{contentFour},contentFive=#{contentFive}
+		where houseId=#{houseId}
+   </update>
+   
+   		<!-- 得到最新的库存记录 -->
+	<select id="getHouseNew" resultType="House">
+		select * from `house` order by houseId desc limit 1
+	</select>
+   
+</mapper>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.backend.BackendHotelDao">
+
+	<select id="queryHotel" resultType="Hotel">
+		SELECT * from `hotel`
+	</select>
+
+	<!-- 根据条件查询酒店信息列表hotelName -->
+	<select id="gethotel" resultType="Hotel">
+		select * from `hotel` where 1=1
+		<if test="hotelName!=null">
+			CONCAT(IFNULL(`hotelName`,''),IFNULL(`hotelphone`,'')) LIKE '%${hotelName}%'
+		</if>
+	</select>
+
+	<!-- 查询总记录数 -->
+	<select id="getCount" resultType="Int">
+		select count(*) from hotel
+		where CONCAT(IFNULL(`hotelName`,''),IFNULL(`hotelphone`,'')) LIKE
+		'%${hotelName}%'
+	</select>
+
+	<!-- 根据id查询酒店信息 -->
+	<select id="gethotelByid" resultType="Hotel">
+		select * from hotel where hotelId=#{id}
+	</select>
+
+	<!-- 新增信息 -->
+	<insert id="addhotel" parameterType="Hotel">
+		insert into hotel
+		values(null,#{productNo},#{hotelName},#{hotelRating},#{hotelAddress},#{hotelPrice},#{hotelIntro},#{hotelServe},#{hotelRatings},#{level1},#{level2},#{level3},#{fileUrl},#{hotelphone})
+	</insert>
+
+	<!-- 修改酒店信息 -->
+	<update id="updateHotel" parameterType="Hotel">
+		update hotel set
+		productNo=#{productNo},hotelName=#{hotelName},hotelRating=#{hotelRating},hotelAddress=#{hotelAddress},hotelPrice=#{hotelPrice},hotelIntro=#{hotelIntro},hotelServe=#{hotelServe},hotelRatings=#{hotelRatings},level1=#{level1},level2=#{level2},level3=#{level3},fileUrl=#{fileUrl},hotelphone=#{hotelphone}
+		where hotelId=#{hotelId}
+	</update>
+
+	<!-- 删除酒店信息 -->
+	<delete id="delete" parameterType="Hotel">
+		delete from hotel where hotelId=#{id}
+	</delete>
+
+	<!-- 批量删除 -->
+	<delete id="delhotels" parameterType="java.lang.String">
+		delete from hotel where hotelId in
+		<foreach collection="ids" item="ids" index="on" open="("
+			separator="," close=")">
+			#{ids}
+		</foreach>
+	</delete>
+
+	<!-- <select id="getServer" resultType="Hotel" parameterType="int"> SELECT 
+		hotelServe FROM hotel </select> -->
+
+</mapper>

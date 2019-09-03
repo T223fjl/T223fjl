@@ -435,11 +435,11 @@
 									var gc = new BMap.Geocoder();
 									gc.getLocation(point, function(rs) {
 										var addComp = rs.addressComponents;
-										alert(addComp.province + ", "
+										/* alert(addComp.province + ", "
 												+ addComp.city + ", "
 												+ addComp.district + ", "
 												+ addComp.street + ", "
-												+ addComp.streetNumber);
+												+ addComp.streetNumber); */
 										$("#place").val(addComp.city);
 										$("#orderFrom").submit();
 									});

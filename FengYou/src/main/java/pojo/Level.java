@@ -7,11 +7,7 @@ public class Level {
 	private String name;// 分类名称
 	private int parentId;// 父级分类
 	private int type;// 所属分类
-	private List<Level> sonLevels; //子类集合
-	
-
-	
-	
+	private List<Level> sonLevels; // 子类集合
 
 	public List<Level> getSonLevels() {
 		return sonLevels;

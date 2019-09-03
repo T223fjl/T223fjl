@@ -440,7 +440,7 @@ padding-left: 50px;
 			}
 			self.inSubmiting(true);
 			var inputCode =document.getElementById("inputCode").value;
-				$.post('modifyPwd', {
+				$.post('DevModifyPwd', {
 					id:id,
 					oldpassword : self.oldpassword(),
 					password : self.password(),

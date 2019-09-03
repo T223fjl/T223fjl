@@ -1,5 +1,6 @@
 package pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -7,7 +8,7 @@ import java.util.List;
  * 
  * @author Administrator 房型表：
  */
-public class House {
+public class House implements Serializable{
 	private int houseId; // 房型ID
 	private int hotelId;// 酒店id外键
 	private String houseType;// 房间床型
@@ -23,8 +24,25 @@ public class House {
 	private String productName;
 	private String supplier;
 	private String productPolicy;
-	private String bedType;//床型
-	
+	private String bedType;// 床型
+	private String createBy;
+	private String houseName;
+	public String getHouseName() {
+		return houseName;
+	}
+
+	public void setHouseName(String houseName) {
+		this.houseName = houseName;
+	}
+
+	public String getCreateBy() {
+		return createBy;
+	}
+
+	public void setCreateBy(String createBy) {
+		this.createBy = createBy;
+	}
+
 	public String getBedType() {
 		return bedType;
 	}
@@ -33,8 +51,8 @@ public class House {
 		this.bedType = bedType;
 	}
 
-	private List<House> houseListByType;//每个类型的房间集合
-	
+	private List<House> houseListByType;// 每个类型的房间集合
+
 	public List<House> getHouseListByType() {
 		return houseListByType;
 	}
@@ -67,7 +85,6 @@ public class House {
 		this.productPolicy = productPolicy;
 	}
 
-	
 	public int getHouseCountByType() {
 		return houseCountByType;
 	}

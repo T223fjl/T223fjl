@@ -34,7 +34,37 @@
 <body>
 	
    <!-- ===================== header 2019-04-29 start ===================== -->
-	
+	<%@ include file="header.jsp"%>
+	<div id="header" class="header" v='20190429' b='myelong' g='1' lg='t'>
+		<link rel="stylesheet" type="text/css"
+			href="${pageContext.request.contextPath }/statics/css/header.css">
+		<!--导航-->
+		<div class="nav_box" style="margin-top: 0px;">
+			<div id="nav" class="response_wrap3"
+				style="width: 1200px; margin-left: 170px;">
+				<ul class="link" id="channelMenu">
+					<li><a href="toIndex" title="风游旅行网" id="nav_home">首页</a></li>
+					<li><a title="酒店预订" href="#" id="nav_hotels">国内酒店</a></li>
+					<li><a href="#" id="nav_hotelsw" title="国际•港澳台酒店">国际•港澳台酒店<span
+							class="icon_coupon"></span></a></li>
+					<li style="display: none;"><a href="#" id="nav_apartment"
+						title="短租公寓">短租公寓<span class="icon_apart"
+							style="background: url(http://img.elongstatic.com/index/fixed/icon2015-0.png) no-repeat; background-position: -307px 0;"></span></a>
+					</li>
+					<li style="display: none;"><a href="http://qiang.elong.com"
+						title="限时抢">限时抢</a>
+					<li><a href="" title="机票预订">国内•国际机票<span
+							style="left: 60px; background-position: -589px -29px;"
+							class="icon_coupon"></span></a></li>
+					<li><a href="#" title="火车票">火车票</a></li>
+					<li><a href="#" title="汽车票">汽车票</a></li>
+					<li><a href="#" title="旅游指南">旅游指南</a></li>
+					<li><a href="#" title="商旅" target='_blank'>商旅</a></li>
+				</ul>
+				<!-- 弹出 end -->
+			</div>
+		</div>
+	</div>
 	<!-- ===================== header end ===================== -->
 
 	<div class="cont_box response_wrap3">

@@ -5,11 +5,12 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 
 
 <configuration>
+   <!-- 开启二级缓存 -->
+    <settings>
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+    
 	<typeAliases>
 		<package name="pojo"/>
-	
 	</typeAliases>
-
-   
-	
 </configuration>

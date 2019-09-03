@@ -125,11 +125,11 @@ body {
 }
 
 .input-button:hover {
-	background-color: #0F4AC2;
+	background-color: #0284E2;
 }
 
 .input-button:active {
-	background-color: #ea6f1d;
+	background-color: #0078D7;
 }
 
 .forgot-wrapper {
@@ -142,7 +142,6 @@ body {
 	background-color: #ffffff;
 	display: none;
 }
-
 /* .forgot-forms { */
 /*     float: left; */
 /* } */
@@ -301,12 +300,14 @@ body {
 		if (wait == 0) {
 			i.attr("disabled", false);
 			$('#mobileNo').attr("disabled", false);
+			$("#captchaText").val("");
 			i.val("免费获取验证码");//改变按钮中value的值 
 			wait = 120;
 			return;
 		} else {
 			i.attr("disabled", true);//倒计时过程中禁止点击按钮 
 			$('#mobileNo').attr("disabled", true);
+			$("#captchaText").val($("#captcha").val());
 			i.val(wait + "秒后重新获取");//改变按钮中value的值 
 			wait--;
 			setTimeout(function() {
@@ -314,7 +315,7 @@ body {
 			}, 1000);
 		}
 	}
-	
+
 	$(function() {
 		$('#sendCodeBtns').click(function() {
 			var mobileNo = $.trim($('#mobileNo').val());
@@ -323,26 +324,30 @@ body {
 				tipShow('请输入正确手机号', function() {
 				});
 				return false;
-			};
-			  $.ajax({        
-                  url: 'sale.json',
-                  type: 'POST',
-                  data: { 
-                     phone:$('#mobileNo').val()
-                   },
-                   success:function(data) {  
-                	   if (data == "false") {
-                		   $.post('find_Code',{mobileNo:$('#mobileNo').val()}, function(data) {
-                			   time($(this));
-               			});
-                	   }else if(data == "true"){
-                		   tipShow('手机号码已被注册,请重新输入！', function() {
-           				});
-                		   return ;
-                	   }
-                  }
-			  });
-  		  
+			}
+			;
+			$.ajax({
+				url : 'sale.json',
+				type : 'POST',
+				data : {
+					phone : $('#mobileNo').val()
+				},
+				success : function(data) {
+					if (data == "false") {
+						time($(this));
+// 						$.post('find_Code', {
+// 						mobileNo : $('#mobileNo').val()
+// 						}, function(data) {
+							
+// 						});
+					} else if (data == "true") {
+						tipShow('手机号码已被注册,请重新输入！', function() {
+						});
+						return;
+					}
+				}
+			});
+
 		})
 	});
 </script>
@@ -473,6 +478,7 @@ body {
 						<input type="button" class="input-button" id="sendCodeBtns"
 							style="width: 130px;" value="免费获取验证码" />
 					</div>
+					<input type="hidden" id="captchaText">
 				</div>
 
 				<div class="forms-list">
@@ -500,41 +506,42 @@ body {
 	<script
 		src="${pageContext.request.contextPath }/statics/js/register/account.min.js"></script>
 	<script>
-		var ViewModel = function() {       
-			  var inputCode = document.getElementById("inputCode").value;
+		var ViewModel = function() {
+			var inputCode = document.getElementById("inputCode").value;
+			var captchaText=document.getElementById("captchaText").value;
 			var self = this;
 			self.mobileNo = ko.observable().extend({
-				required : true,			
-// 	                required: {
-// 	                    params: true,
-// 	                    message: "请输入名称"
-// 	                }
-	               pattern : {
-						message : '请正确输入11位手机号码',
-						params : /^1[3|4|5|7|8]\d{9}$/
+				required : true,
+				// 	                required: {
+				// 	                    params: true,
+				// 	                    message: "请输入名称"
+				// 	                }
+				pattern : {
+					message : '请正确输入11位手机号码',
+					params : /^1[3|4|5|7|8]\d{9}$/
+				},
+				validation : {
+					params : true,
+					async : true,
+					validator : function(val, opts, callback) {
+						$.ajax({
+							url : 'sale.json',
+							type : 'POST',
+							data : {
+								phone : val
+							},
+							success : function(data) {
+								if (data == "true") {
+									callback(false)
+								} else if (data == "false") {
+									callback(true);
+								}
+							}
+						})
 					},
-					 validation: {
-                         params: true,
-                         async: true,
-                         validator: function(val, opts, callback) {
-                              $.ajax({        
-                                  url: 'sale.json',
-                                  type: 'POST',
-                                  data: { 
-                                     phone:val
-                                   },
-                                   success:function(data) {  
-                                	   if (data == "true")   {                            
-                                		   callback(false)
-                                		   } else if(data == "false"){
-                                			   callback(true);                               			 
-                                			   }
-                                  }
-                              })        
-                         }, 
-                         message: '手机已注册,请重新输入！'
-                  }			
-			}); 
+					message : '手机已注册,请重新输入！'
+				}
+			});
 			self.password = ko.observable().extend({
 				required : true,
 				minLength : 6,
@@ -550,7 +557,7 @@ body {
 			});
 			self.ValidateCode = ko.observable().extend({
 				required : true,
-				});
+			});
 			self.captcha = ko.observable().extend({
 				required : true,
 				maxLength : 7
@@ -567,7 +574,7 @@ body {
 				}, 100);
 			}
 			self.initChecker();
-			self.inSubmiting = ko.observable(false);    
+			self.inSubmiting = ko.observable(false);
 			self.toggleAgree = function(data, event) {
 				setTimeout(function() {
 					var check = $(event.target);
@@ -589,32 +596,36 @@ body {
 					return;
 				}
 				self.inSubmiting(true);
-				var inputCode =document.getElementById("inputCode").value;
-				$.post('register', {
-					phone : self.mobileNo(),
-					password : self.password(),
-					email : self.email(),
-					userName : self.name(),
-					captcha : self.captcha(),
-					ValidateCode : self.ValidateCode(),
-					inputCode:inputCode
-				}, function(data) {
-					if (data == "success") {
-						location="http://localhost:8080/FengYou/login.jsp";
-					} else if (data == "failure") {
-						tipShow('注册失败！', function() {
-						});
-						location="http://localhost:8080/FengYou/register.jsp";
-					} else if (data == "error") {
-						self.inSubmiting(false);
-						tipShow('短信验证码错误！', function() {
-						});
-					}else if (data == "existence") {
-						self.inSubmiting(false);
-						tipShow('验证码错误！', function() {
-						});
-					}
-				});
+				var inputCode = document.getElementById("inputCode").value;
+				$
+						.post(
+								'register',
+								{
+									phone : self.mobileNo(),
+									password : self.password(),
+									email : self.email(),
+									userName : self.name(),
+									captcha :captchaText,
+									ValidateCode : self.ValidateCode(),
+									inputCode : inputCode
+								},
+								function(data) {
+									if (data == "success") {
+										location = "http://localhost:8080/FengYou/login.jsp";
+									} else if (data == "failure") {
+										tipShow('注册失败！', function() {
+										});
+										location = "http://localhost:8080/FengYou/register.jsp";
+									} else if (data == "error") {
+										self.inSubmiting(false);
+										tipShow('短信验证码错误！', function() {
+										});
+									} else if (data == "existence") {
+										self.inSubmiting(false);
+										tipShow('验证码错误！', function() {
+										});
+									}
+								});
 			};
 		}
 		ko.validation.init({
@@ -628,35 +639,36 @@ body {
 
 	<script type="text/javascript">
 		//页面加载时，生成随机验证码
-	    window.onload=function(){
-	     createCode(4);    
-	    }
-		//生成验证码的方法
-	    function createCode(length) {
-	        var code = "";
-	        var codeLength = parseInt(length); //验证码的长度
-	        var checkCode = document.getElementById("validateCode");
-	        ////所有候选组成验证码的字符，当然也可以用中文的
-	        var codeChars = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
-	        'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
-	        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'); 
-	        //循环组成验证码的字符串
-	        for (var i = 0; i < codeLength; i++)
-	        {
-	            //获取随机验证码下标
-	            var charNum = Math.floor(Math.random() * 62);
-	            //组合成指定字符验证码
-	            code += codeChars[charNum];
-	        }
-	        if (checkCode)
-	        {
-	            //为验证码区域添加样式名
-	            checkCode.className = "code";
-	            //将生成验证码赋值到显示区
-	            checkCode.innerHTML = code;
-	        }
+		window.onload = function() {
+			createCode(4);
 		}
-		</script>
+		//生成验证码的方法
+		function createCode(length) {
+			var code = "";
+			var codeLength = parseInt(length); //验证码的长度
+			var checkCode = document.getElementById("validateCode");
+			////所有候选组成验证码的字符，当然也可以用中文的
+			var codeChars = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b',
+					'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
+					'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+					'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
+					'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X',
+					'Y', 'Z');
+			//循环组成验证码的字符串
+			for (var i = 0; i < codeLength; i++) {
+				//获取随机验证码下标
+				var charNum = Math.floor(Math.random() * 62);
+				//组合成指定字符验证码
+				code += codeChars[charNum];
+			}
+			if (checkCode) {
+				//为验证码区域添加样式名
+				checkCode.className = "code";
+				//将生成验证码赋值到显示区
+				checkCode.innerHTML = code;
+			}
+		}
+	</script>
 
 
 

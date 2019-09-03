@@ -12,6 +12,10 @@
 	content="风游为您提供最新的跟团游报价，国内热门跟团游线路——三亚、云南、桂林、北京，出境热门跟团游线路——港澳、日韩、泰国、澳新、欧洲、美国，旅游就选港中旅旗下风游。">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript"
+	src="${pageContext.request.contextPath }/statics/js/jquery1.8.3.min.js"></script>
+<script type="text/javascript"
+	src="http://api.map.baidu.com/api?v=2.0&ak=Z60o25qSRChjRBuFMBO5T705Bbv53cbC"></script>
 <link type="image/x-icon" rel="shortcut icon"
 	href="http://webres.mangocity.com/web/public/skin/img/favicon.ico">
 <!--
@@ -185,7 +189,7 @@
 					<li class="has-child"><a href="UserInfo?id=${loginUser.id}" >会员中心</a></li>
 				</c:if>
 				<c:if test="${loginUser.name==null }">
-				<li class="has-child"><a href="http://localhost:8080/FengYou/login.jsp" target="_blank">请登录</a></li>
+				<li class="has-child"><a href="http://localhost:8080/FengYou/Developerlogin.jsp" target="_blank">请登录</a></li>
 				<li class="has-child"><a href="http://localhost:8080/FengYou/register.jsp" target="_blank">快速注册</a></li>
 				<li class="has-child"><a href="http://localhost:8080/FengYou/login.jsp" >会员中心</a></li>
 				</c:if>	
@@ -208,6 +212,7 @@
 			</div>
 			<!--logo和搜索栏之间的空格开始-->
 			<div class="hr_city">
+				<div>当前位置:<span id="address"></span></div>
 				<div class="hr_city_change" style="display: none;">
 					<span class="hr_city_site" id="citysite"></span> <i
 						class="icon iconfont icon-xiajiantou"></i>
@@ -221,6 +226,29 @@
 					class="hr_search_btn" href="javascript:void(0)">搜索</a>
 			</div>
 		</div>
+		<script type="text/javascript">
+		var map = new BMap.Map("address");
+				var geolocation = new BMap.Geolocation();
+				geolocation.getCurrentPosition(
+						function(r) {
+							if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+								var mk = new BMap.Marker(r.point);
+								map.addOverlay(mk);
+								map.panTo(r.point);
+								var point = new BMap.Point(r.point.lng,
+										r.point.lat);
+								var gc = new BMap.Geocoder();
+								gc.getLocation(point, function(rs) {
+									var addComp = rs.addressComponents;
+									$("#address").html(addComp.city);
+								});
+							} else {
+								alert('failed' + this.getStatus());
+							}
+						}, {
+							enableHighAccuracy : true
+			})
+		</script>
 		<!-- logo和搜索栏结束-->
 		<!-- 主要内容 ]]-->
 		<!-- 主导航 [[-->

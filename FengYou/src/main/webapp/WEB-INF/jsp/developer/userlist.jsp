@@ -215,7 +215,7 @@
 		<script
 			src="${pageContext.request.contextPath }/statics/js/userlist/bootstrap.js"></script>
 		<div class="rightMain">
-			<form action="modifyUser" method="post" enctype="multipart/form-data">
+			<form action="DevModifyUser" method="post" enctype="multipart/form-data">
 				<div class="container-fluid" style="margin-top: 20px;">
 					<ul class="nav nav-tabs" id="myTab">
 						<li class="active"><a href="#home" data-toggle="tab">基本资料</a></li>

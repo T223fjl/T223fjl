@@ -130,7 +130,7 @@
 						id="div_user_center">
 						<ul class='clx'>
 							<li class='icon_d1'><b></b><a
-								href="http://my.elong.com/hotel/MyHotelOrderList_cn.html?rnd=20190531143924"
+								href=""
 								rel="nofollow">酒店订单</a></li>
 							<li class='icon_d2' style="display: none;"><b></b><a
 								href="http://my.elong.com/GrouponOrder_cn.html?rnd=20190531143924"
@@ -250,7 +250,7 @@
 
 			<li class="title"><a><span class="icon i01"></span>订单管理</a></li>
 
-			<li><a href="/hotel/myhotelorderlist_cn.html?rnd=1559284762861">酒店订单</a></li>
+			<li><a href="toOrderDetails?userId=${user.id}">酒店订单</a></li>
 
 			<li><a href="/ihotel/orderlist_cn.html?rnd=1559284762861">国际&#183;港澳台订单</a></li>
 

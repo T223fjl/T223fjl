@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.developer.DeveloperRealtimeinventoryDao">
+
+
+<!-- 通过房间id和酒店id查询原始库存表 -->
+	<select id="queryRawstockByHHid" resultType="Rawstock"
+		parameterType="Realtimeinventory">
+		SELECT * FROM Rawstock where 1=1
+		<if test="hotelId!=0">
+			and hotelId =#{hotelId}
+		</if>
+		<if test="houseId!=0">
+			and houseId =#{houseId}
+		</if>
+		
+	</select>
+	<!-- 通过房间id和酒店id查询临时库存表 -->
+	<select id="queryRealtimeinventoryByHHid" resultType="Realtimeinventory"
+		parameterType="Realtimeinventory">
+		SELECT * FROM Realtimeinventory where 1=1
+		<if test="hotelId!=0">
+			and hotelId =#{hotelId}
+		</if>
+		<if test="houseId!=0">
+			and houseId =#{houseId}
+		</if>
+		<if test="recordStopDate!=null">
+			and recordStopDate <![CDATA[ > ]]> #{recordStopDate}
+		</if>
+		
+	</select>
+
+	<!-- 得到最新的库存记录 -->
+	<select id="queryRealtimeinventoryNew" resultType="Realtimeinventory">
+		select * from `realtimeinventory` order by id desc limit 1
+	</select>
+
+	<!-- 修改临时库存表中的库存 -->
+	<update id="updRealtimeinventory">
+		UPDATE `test`.`realtimeinventory` SET `hotelId`=#{hotelId},
+		`houseId`=#{houseId}, `recordDate`=#{recordDate},
+		`recordStopDate`=#{recordStopDate}, `store`=#{store} WHERE
+		(`id`=#{id});
+	</update>
+
+	<!--增加库存 -->
+	<insert id="addRealtimeinventory">
+		INSERT INTO `test`.`realtimeinventory` ( `hotelId`, `houseId`, `recordDate`,
+		`recordStopDate`, `store`) VALUES
+		(#{hotelId}, #{houseId}, #{recordDate}, #{recordStopDate}, #{store});
+	</insert>
+
+</mapper>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.developer.DeveloperHotelDao">
+ <!-- 使用Redis二级缓存 -->
+    <cache type="util.RedisCache"></cache>
+
+<!-- 多条件查询酒店信息 -->
+	<select id="queryHotel" resultType="Hotel"  useCache="true">
+		SELECT * from hotel where 1=1
+		<if test="hotelRating!=0">
+			and hotelRating=#{hotelRating}
+		</if>
+		<if test="level1!=0">
+			and level1=#{level1}
+		</if>
+		<if test="level2!=0">
+			and level2=#{level2}
+		</if>
+		<if test="level3!=0">
+			and level3=#{level3}
+		</if>
+		<if test="smallPrice!=0">
+			and hotelPrice <![CDATA[ > ]]>
+			#{smallPrice}
+		</if>
+		<if test="bigPrice!=0">
+			and hotelPrice <![CDATA[ < ]]>
+			#{bigPrice}
+		</if>
+
+		<!-- <if test="sort!=null and sort!=''"> ORDER BY #{sort} <if test="desc!=null 
+			and desc!=''">desc</if> </if> -->
+	</select>
+	
+	
+	
+	<!-- 通过酒店名字和地址的关键字和目的地来搜索酒店 -->
+	<select id="queryHotelByName" resultType="Hotel">
+		SELECT * FROM `hotel` WHERE 1=1
+		<if test="keywords!='' and keywords!=null ">
+			and
+			CONCAT(IFNULL(`hotelName`,''),IFNULL(`hotelAddress`,'')) LIKE
+			'%${keywords}%'
+		</if>
+		<if test="destination!='' and destination!=null ">
+			and level2 = #{destination}
+		</if>
+	</select>
+
+	<!-- 根据id来查询酒店 -->
+	<select id="getHotelById" resultType="Hotel" parameterType="int">
+		SELECT * FROM `hotel` WHERE hotelId=#{hotelId}
+	</select>
+
+	<!-- 根据城市表的名称查询酒店 -->
+	<select id="query" resultType="Hotel">
+	SELECT * FROM hotel WHERE level2=(SELECT id FROM `level` WHERE `name`=#{hotel});
+	</select>
+
+	<!-- 根据订单id查询酒店信息 -->
+	<select id="queryHotelByOrderId"  resultType="Hotel" >
+		select o.*,h.* from  `order` o  
+		LEFT JOIN  hotel as h ON(o.hotelId=h.hotelId)	 
+		where id=#{OrderId}
+	</select>
+
+</mapper>

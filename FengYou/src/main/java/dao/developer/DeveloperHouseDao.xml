@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.developer.DeveloperHouseDao">
+
+	<!-- 通过房间id查询房间 -->
+	<select id="qeuryHouseByHouseId" resultType="House">
+		select * from house
+		where houseId=#{houseId}
+	</select>
+
+	<!-- 通过酒店id查询房间并通过类型分组 -->
+	<select id="qeuryHouseByHotelId" resultType="House">
+		select *,count(0) as
+		houseCountByType from house where hotelId=#{hotelId}
+		GROUP BY houseType
+	</select>
+
+	<!-- 通过房间类型查询房间 -->
+	<select id="getHouseByType" resultType="House" >
+		SELECT * FROM `house` WHERE houseType=#{houseType} and hotelId=#{hotelId}
+	</select>
+
+</mapper>
